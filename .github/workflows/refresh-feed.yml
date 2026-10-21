@@ -1,0 +1,49 @@
+name: Refresh public competition status feed
+
+on:
+  schedule:
+    - cron: "23 09 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "scripts/refresh_competition_feed.py"
+      - "tests/**"
+      - ".github/workflows/refresh-feed.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Test project checks
+        run: python -m unittest discover -v
+      - name: Refresh public source status
+        run: python scripts/refresh_competition_feed.py --output docs/data/feed.json
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4

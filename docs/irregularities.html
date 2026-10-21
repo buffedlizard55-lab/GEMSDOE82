@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data, score, format and protocol issues requiring review in GEMSDOE82.">
+  <title>Review Flags | GEMSDOE82</title><link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">GEMSDOE82</a>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">Submission guide</a><a href="hypotheses.html">Hypotheses</a><a href="sources.html">Sources</a><a aria-current="page" href="irregularities.html">Review flags</a></nav>
+</div></header>
+<main>
+  <section class="hero"><p class="eyebrow">Open issues</p><h1>Irregularities for review</h1><p class="lead">Problems are recorded with evidence and impact so the next step is explicit and no unknown is quietly turned into a claim.</p></section>
+  <section class="status blocked"><h2>Blocking issues</h2><ul class="list"><li>No competition rasters, cached feature stack, shared evaluator/writer or registry rasters in this checkout.</li><li>The data page redirects unauthenticated requests to login.</li><li>The parallel-run instruction references a method paragraph that was not supplied.</li><li>The quoted GEMSDOE32 result lacks a receipt in the public build record reviewed here.</li></ul></section>
+  <section class="section"><h2>Specific flags</h2>
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Issue</th><th>Disposition</th></tr></thead><tbody>
+      <tr><td>IR-82-01</td><td>Lane paragraph absent.</td><td>No placement or emission; lane is provisional.</td></tr>
+      <tr><td>IR-82-02</td><td>Shared feature cache, `evaluate_holdout.py`, and `submission_writer.py` are absent.</td><td>Locate canonical template; do not privately fork shared tools.</td></tr>
+      <tr><td>IR-82-03</td><td>Competition data page requires login; no files are local.</td><td>Data-dependent holdout and submission are blocked.</td></tr>
+      <tr><td>IR-82-04</td><td>The user’s prompt gives inconsistent descriptions of the current leader.</td><td>The live official leaderboard is the reference; check it again when making a decision.</td></tr>
+      <tr><td>IR-82-05</td><td>GEMSDOE32 build metadata says its H33 artifact was unscored.</td><td>Do not treat the quoted result as a verified score without its receipt.</td></tr>
+      <tr><td>IR-82-06</td><td>Earlier portal range error has no attached TIFF for diagnosis.</td><td>Do not guess whether the cause was an out-of-range value, NaN, nodata sentinel, or packaging.</td></tr>
+      <tr><td>IR-82-07</td><td>Outside-bounds masking and portal range checking need exact template-level verification.</td><td>Compare sample mask and test the actual serialized file/portal rule before choosing outside fill.</td></tr>
+      <tr><td>IR-82-08</td><td>Current weekly slot cap is only visible in the logged-in submission interface.</td><td>No slot selection or upload.</td></tr>
+      <tr><td>IR-82-09</td><td>Experiment names cannot prove cross-site novelty.</td><td>Audit code and rasters, then run the duplicate correlation/overlap gate.</td></tr>
+      <tr><td>IR-82-10</td><td>The official rules PDF was not line-reviewed.</td><td>Revisit before using external data or submitting.</td></tr>
+      <tr><td>IR-82-11</td><td>The first Nevada geology link tested returned 404; the official state-geology listing was found and verified afterward.</td><td>Links were corrected; the NV.zip bytes, AOI coverage and alignment remain unchecked.</td></tr>
+    </tbody></table></div>
+    <p><a class="button secondary" href="irregularities.md">Open full evidence and source details</a></p>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · open issues</span><span>Current disposition: negative / blocked</span></div></footer>
+</body>
+</html>
