@@ -1,4 +1,10 @@
+# Merged 2026-10-21: canonical-track patterns (anchored) + lane-82 patterns.
+# NOTE: patterns are anchored with leading / so docs/data/ (Pages artifact)
+# stays committable.
+
 # Authorized competition inputs and derived caches are local-only.
+/data/
+!/data/README.md
 /data/*.tif
 /data/*.tiff
 /data/*.zip
@@ -19,5 +25,8 @@ __pycache__/
 # Keep generated candidate artifacts out of source unless deliberately published
 # after validation in docs/downloads/ with a run card and checksum.
 submission.tif
-
 gems82-*-inspection.tif
+
+# Lane-82 local fetch/scratch (reproducible via scripts/fetch_data.sh).
+*.egg-info/
+.pytest_cache/

@@ -1,78 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Preregistered GEMS fault-mapping hypotheses and validation gates.">
-  <title>Research Hypotheses | GEMSDOE82</title><link rel="stylesheet" href="site.css">
-</head>
-<body>
-<header class="site-header"><div class="header-inner">
-  <a class="brand" href="index.html">GEMSDOE82</a>
-  <nav class="nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">Submission guide</a><a aria-current="page" href="hypotheses.html">Hypotheses</a><a href="sources.html">Sources</a><a href="irregularities.html">Review flags</a></nav>
-</div></header>
-<main>
-  <section class="hero">
-    <p class="eyebrow">Preregistered, not scored</p>
-    <h1>New geological hypotheses</h1>
-    <p class="lead">Four candidate mechanisms are ranked by expected improvement per effort. They are design hypotheses only—not tested results, score projections, or approval to spend a submission slot.</p>
-  </section>
-  <section class="status caution">
-    <h2>Validation is blocked</h2>
-    <p>This checkout has no feature stack, labels, template, cached feature cache, shared holdout evaluator/writer, or registry raster set. The required “single method paragraph” was also absent from the prompt. No pixels were placed and no candidate TIFF was emitted.</p>
-  </section>
-  <section class="section">
-    <div class="grid">
-      <article class="card">
-        <span class="kicker">Rank 1 · provisional lane</span>
-        <h2>Magnetic source-depth boundaries</h2>
-        <p><strong>Layers:</strong> top-of-crustal magnetic-source depth estimate, TMI, reduced-to-pole anomaly, and supplied TMI gradients.</p>
-        <p><strong>Signature:</strong> scale-persistent, oriented boundary in the source-depth estimate, independently supported by magnetic-field gradients.</p>
-        <p><strong>Off-catalogue rationale:</strong> a buried basement step may have no clear surface scarp for the public catalogue. It may instead be a lithologic contact, dike, or intrusion.</p>
-        <p><strong>Expected gain / effort:</strong> moderate potential, low confidence; low-to-medium effort if official bands are already cached.</p>
-        <p class="small">No new external data, but the competition feature raster is missing. Not yet viable.</p>
-      </article>
-      <article class="card">
-        <span class="kicker">Rank 2 · external-data gate</span>
-        <h2>Residual heat flow at independent structural edges</h2>
-        <p><strong>Layers:</strong> USGS Great Basin background conductive heat flow and well residuals, paired with a competition geophysical boundary.</p>
-        <p><strong>Signature:</strong> localized heat-flow residual aligned with a distinct structural edge—not broad regional heat alone.</p>
-        <p><strong>Off-catalogue rationale:</strong> local fluid circulation may reveal a permeable fault with no mapped surface trace. Groundwater and measurement effects can mimic it.</p>
-        <p><strong>Expected gain / effort:</strong> low-to-moderate potential, low confidence; high effort for data acquisition, gridding and alignment.</p>
-        <p class="small">Official USGS release is listed; bytes, grid resolution and AOI coverage were not checked. Not viable yet.</p>
-      </article>
-      <article class="card">
-        <span class="kicker">Rank 3 · external-data gate</span>
-        <h2>Lithology-conditioned magnetic residual</h2>
-        <p><strong>Layers:</strong> competition magnetic depth/TMI gradients plus USGS Nevada geologic-unit polygons only; exclude mapped fault-line features.</p>
-        <p><strong>Signature:</strong> test magnetic-edge persistence after modeling ordinary lithologic contacts as a confounder.</p>
-        <p><strong>Off-catalogue rationale:</strong> a concealed fault may create a boundary not represented as a fault on generalized surface mapping. But coarse polygons may hide or falsely create a residual.</p>
-        <p><strong>Expected gain / effort:</strong> low-to-moderate potential, low confidence; medium-to-high effort.</p>
-        <p class="small">A previous user-listed map/fault-gap experiment creates overlap risk. Official downloads are listed but bytes and AOI alignment are not verified.</p>
-      </article>
-      <article class="card">
-        <span class="kicker">Rank 4 · low-cost screen</span>
-        <h2>Fault-localized strain-rate change points</h2>
-        <p><strong>Layers:</strong> dilatation rate, shear-strain rate, second invariant; no vector orientation will be inferred from scalar layers.</p>
-        <p><strong>Signature:</strong> compact co-located shear/dilatation change points, not broad regional maxima.</p>
-        <p><strong>Off-catalogue rationale:</strong> active or recent deformation could precede a clear surface trace. Regional tectonic loading, volcanic inflation and interpolation artifacts can mimic it.</p>
-        <p><strong>Expected gain / effort:</strong> low and uncertain; low-to-medium effort if the feature stack exists.</p>
-        <p class="small">No new external data, but the stack and evaluator are missing. Novelty against generic prior “geophysics” titles is not confirmed.</p>
-      </article>
-    </div>
-  </section>
-  <section class="section">
-    <h2>Hard gates before emitting any candidate</h2>
-    <ol class="list">
-      <li>Find the canonical shared template and verify its cached stack, evaluator/writer versions and data manifest. Do not create a private fork.</li>
-      <li>Withhold entire fault segments and a buffer. Derive catalogue features from visible segments only and mask them pixel-exactly.</li>
-      <li>Run each feature alone through the leakage canary; investigate AUC above 0.90.</li>
-      <li>Report pooled HOLDOUT-DTI with evaluator version, withheld positives and 95% CI; compare against the current holdout best, not the leaderboard.</li>
-      <li>Before placement and on final dots, test registry rank-correlation and 3-pixel overlap. If a threshold is crossed, log duplicate and stop.</li>
-      <li>Only after a holdout win may a separate selector consider a slot; then validate the exact GeoTIFF and SHA-256.</li>
-    </ol>
-    <p><a class="button secondary" href="research/hypotheses.md">Open full candidate rationale</a> <a href="data/run_card.json">Current run card</a></p>
-  </section>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hypotheses — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
+<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
+<p>Lane H82-2 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
+<nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="lanes.html">Lanes</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
+<section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
+<p><b>Lane H82-2 (mirror-verified track):</b> the file below passed the lane's 7-rule gate — see the verdict badge.
+<b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
+mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
+the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
+exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
+Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
+<a href="canon/index.html">archived canonical-track position</a>.</p></section>
+
+<section class="card"><h2>Five candidate hypotheses (ranked by holdout evidence + cost)</h2>
+<p class="small">All label-free (never open labels.tif). Canary: max AUC 0.5415 (bar 0.90) — no leakage. Fresh-emission screens at matched 37,654-dot budget are shown for ranking ONLY; SGMC-FAR is not licensed for wholesale replacement (see Research). Display IDs H82-2.1..H82-2.5 (code identifiers h82_1..h82_5); distinct from lane H82-1 blindstep — see <a href="lanes.html">Lanes</a>.</p>
+<table><tr><th># / hypothesis</th><th>Layers</th><th>Physical signature / transform</th><th>Why it catches catalogue-missing faults</th><th>Differs from prior art</th><th>Evidence</th></tr><tr><td><b>H82-1</b> antislope lineament (PRIMARY)</td><td>lidar upface_max + coh100/strike + cross_max</td><td>NMS crest × strike-agreement vote × bank-suppression</td><td>piedmont antithetics/graben faults w/o 100 m expression; uphill-facing ⇒ not fluvial</td><td>group used downface composites only; antislope never the primary</td><td>SGMC-FAR 0.1403 fresh / core of shipped C</td></tr><tr><td><b>H82-2</b> radiometric break</td><td>GeoDAWN K/Th/U + ThK/UK/UTh</td><td>max gradient magnitude, NMS-crided</td><td>blind clay-cap faults: K-enrichment/U-mobility edges w/o scarp</td><td>ratios never used as NMS edges; prior art used raw counts</td><td>SGMC-FAR 0.0749 (weak alone; fusion only)</td></tr><tr><td><b>H82-3</b> valley deflection</td><td>lidar lappos_max + relief + strike</td><td>valley-floor crest × 7px straightness</td><td>fan-buried range-front steps (young fans erase 1 m scarps)</td><td>no group valley-kink operator at 100 m aggregates</td><td>SGMC-FAR 0.1361 (kept OUT of C: playa aliasing risk)</td></tr><tr><td><b>H82-4</b> conjugate intersection</td><td>lidar strike/coh100 + relief</td><td>low resultant-R × high fabric energy (strike variance)</td><td>relay ramps/stepovers between mapped segments (Faulds & Hinz 2015)</td><td>junction sourcing was catalogue-based (H18-3a) or detector-based (H33-5); never LiDAR-fabric-based</td><td>SGMC-FAR 0.1120 / core of shipped C</td></tr><tr><td><b>H82-5</b> thermal upflow halo</td><td>GDR 1391 spring geothermometers (max of 3)</td><td>IDW L=20px,k=8,σ=3 of T_reservoir</td><td>>150 °C reservoir needs a deep conduit fault, no scarp required</td><td>H18-5 proposed, H33-1 built spring-T operator; ours differs by max-estimator + short-L halo use as corroboration only</td><td>SGMC-FAR 0.0397 (halo, no lineament value; documented, not shipped)</td></tr></table>
+<p>Top candidate validated on the spatially-blocked holdout BEFORE any slot use: fused-C additions screened at
+<b>0.331 SGMC-FAR credit/dot</b> (bar 0.111), pooled <b>+0.0096</b>, <b>4/4 quadrants</b> — then shipped. No new external data was needed
+(all inputs sha256-pinned free official sources already on disk).</p></section>
 </main>
-<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · preregistered hypotheses</span><span>No holdout experiment run</span></div></footer>
-</body>
-</html>
+<footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>

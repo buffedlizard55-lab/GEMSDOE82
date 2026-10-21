@@ -1,0 +1,42 @@
+{
+ "slug": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9",
+ "checks": {
+  "zeros": {
+   "audit_12_of_12": true,
+   "sha256": "3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02",
+   "dots": 37091,
+   "nan_inside_footprint": 0,
+   "min_in": 0.0,
+   "max_in": 1.0,
+   "grid_ok": true
+  },
+  "nan": {
+   "audit_12_of_12": true,
+   "sha256": "84e6952e257439ef33ee0788eb98f0f540be203276d471b067ac7967e084392f",
+   "dots": 37091,
+   "nan_inside_footprint": 0,
+   "min_in": 0.0,
+   "max_in": 1.0,
+   "grid_ok": true
+  },
+  "zip": {
+   "single_tif": true,
+   "byte_identical": true,
+   "sha256": "7943d2b70415923933355dd564afd97b9f576226c0f47f9cc775ff29a71d25ce"
+  },
+  "gate": {
+   "verdict": "PROMOTED",
+   "rules": {
+    "R1_primary_win": true,
+    "R2_quadrant_consistency": true,
+    "R3_no_loss_mid": true,
+    "R4_no_loss_raw": true,
+    "R5_live_safety": true,
+    "R6a_lane_independence": true,
+    "R7_audit": true
+   }
+  }
+ },
+ "portal_illegal": [],
+ "verdict": "PORTAL-ILLEGAL ARTIFACTS: none"
+}

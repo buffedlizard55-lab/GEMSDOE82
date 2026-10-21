@@ -1,0 +1,11 @@
+{
+ "lane": "H82-2 antislope-corroborated",
+ "updated_utc": "20261021T120000Z",
+ "slug": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9",
+ "verdict": "PROMOTED",
+ "dots": 37091,
+ "sha256_zeros": "3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02",
+ "holdout_far": 0.09630186412868248,
+ "quad_ci95": 0.015241611186542471,
+ "note": "GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt"
+}

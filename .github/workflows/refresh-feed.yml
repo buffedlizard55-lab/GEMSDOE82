@@ -39,8 +39,12 @@ jobs:
           python-version: "3.x"
       - name: Sync machine-readable run card into site artifact
         run: python scripts/sync_site_run_card.py
-      - name: Test project checks
+      - name: Install lane-82 test dependencies
+        run: pip install -r requirements.txt pytest
+      - name: Test project checks (canonical suite)
         run: python -m unittest discover -v
+      - name: Test lane H82-2 suite
+        run: python -m pytest tests/ -q
       - name: Refresh public source status
         run: python scripts/refresh_competition_feed.py --output docs/data/feed.json
       - name: Configure GitHub Pages

@@ -1,95 +1,51 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Auditable geological fault-discovery research for the DOE GEMS Prize Challenge.">
-  <title>GEMSDOE82 | Fault discovery, evidence first</title>
-  <link rel="stylesheet" href="site.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html">GEMSDOE82</a>
-    <nav class="nav" aria-label="Main navigation">
-      <a aria-current="page" href="index.html">Overview</a>
-      <a href="executive-summary.html">Submission guide</a>
-      <a href="hypotheses.html">Hypotheses</a>
-      <a href="sources.html">Sources</a>
-      <a href="irregularities.html">Review flags</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <section class="hero">
-    <p class="eyebrow">DOE GEMS Prize · fault discovery</p>
-    <h1>Find faults. Validate the evidence. Submit only when it is ready.</h1>
-    <p class="lead">An auditable research workspace for identifying faults that may be missing from the public catalogue. The target is fault presence—not a direct map of geothermal vents.</p>
-    <div class="hero-actions">
-      <a class="button" href="executive-summary.html">How submission works</a>
-      <a class="button secondary" href="hypotheses.html">Review candidate hypotheses</a>
-    </div>
-  </section>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Download — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
+<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
+<p>Lane H82-2 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
+<nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="lanes.html">Lanes</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
+<section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
+<p><b>Lane H82-2 (mirror-verified track):</b> the file below passed the lane's 7-rule gate — see the verdict badge.
+<b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
+mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
+the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
+exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
+Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
+<a href="canon/index.html">archived canonical-track position</a>.</p></section>
 
-  <section class="status blocked" aria-labelledby="submission-status">
-    <h2 id="submission-status">Submission status: NOT READY</h2>
-    <p><strong>There is no submission TIFF in this project.</strong> The authorized competition data, cached feature stack, shared holdout evaluator/writer, and registry rasters are absent. No candidate has passed holdout or duplicate checks.</p>
-    <p><strong>Do not download or submit a file from this site.</strong> A download control will appear only after the new raster is generated from data and passes every scientific, uniqueness, and format gate.</p>
-    <span class="button disabled" aria-disabled="true">No validated TIFF available</span>
-  </section>
-
-  <section class="section" aria-labelledby="state-heading">
-    <p class="eyebrow">Project state</p>
-    <h2 id="state-heading">The important facts, without guesswork</h2>
-    <div class="grid">
-      <article class="card">
-        <span class="label">Data access</span>
-        <h3>Competition files are gated</h3>
-        <p>The official data page redirected an unauthenticated request to login. No training features, labels, or sample template are in this checkout.</p>
-        <p><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">Open official data page</a></p>
-      </article>
-      <article class="card">
-        <span class="label">Validation</span>
-        <h3>Not run</h3>
-        <p>The shared evaluator, cached stack, holdout labels and candidate raster are missing, so there is no HOLDOUT-DTI or confidence interval to report.</p>
-        <p><a href="data/run_card.json">Open current JSON run card</a></p>
-      </article>
-      <article class="card">
-        <span class="label">Next experiment</span>
-        <h3>Magnetic source-depth boundaries</h3>
-        <p>A provisional hypothesis focused on a subsurface magnetic-source-depth boundary. It is preregistered, not tested, and cannot be emitted yet.</p>
-        <p><a href="hypotheses.html">Read the hypothesis register</a></p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="contract-heading">
-    <p class="eyebrow">Official task contract</p>
-    <h2 id="contract-heading">A valid submission is more than a map image</h2>
-    <div class="callout">
-      <p>The organizer specifies a single-band float32 GeoTIFF on the competition grid (EPSG:32611, 100 m), matching the supplied bounds/template. Predictions must be in [0,1]; the official page says data outside the bounds should be null/NaN. The scoring metric is distance-weighted Tversky with α=0.2, β=0.8, and a 300 m triangular kernel.</p>
-      <p class="small">Source: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description — metric and submission format</a>. The file-level validator has not run because there is no sample template or candidate TIFF.</p>
-    </div>
-    <p>Before any candidate is emitted, the required pipeline hides whole fault segments, derives catalogue-based features from visible faults only, masks visible faults pixel-exactly, runs a feature-by-feature leakage canary, and compares the final surface against the registry. See the <a href="hypotheses.html">pre-registered validation gates</a>.</p>
-  </section>
-
-  <section class="section" aria-labelledby="research-heading">
-    <p class="eyebrow">Research integrity</p>
-    <h2 id="research-heading">Why the cited H33 result is still under review</h2>
-    <p>The linked public GEMSDOE32 build record describes a sparse catalogue-flank-pruned emission, but also labels that artifact unscored and does not provide a submission-page receipt for the reported value. The “zeros” suffix does not establish an all-zero map. The mechanism is a plausible false-positive-control hypothesis, not a demonstrated causal explanation.</p>
-    <p><a class="button secondary" href="score-review.html">Read the score review</a> <a href="https://github.com/buffedlizard55-lab/GEMSDOE32/blob/main/registry/submission_build.json">Inspect the public build record</a></p>
-  </section>
-
-  <section class="section" aria-labelledby="feed-heading">
-    <p class="eyebrow">Current information</p>
-    <h2 id="feed-heading">Official pages and project feed</h2>
-    <p>Use the live organizer pages for the current leaderboard, rules, and submission cap. The local <a href="data/feed.json">source-status feed</a> records which sources were reviewed and what was not verified; it does not claim an up-to-the-minute score or an artifact receipt.</p>
-    <div class="hero-actions">
-      <a class="button secondary" href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Open live leaderboard</a>
-      <a class="button secondary" href="sources.html">Review official sources</a>
-    </div>
-  </section>
+<section class="card">
+<h2>⬇ Submission download — verdict first</h2>
+<p><span class="badge promoted">PROMOTED</span>
+ — machine-verified: safe to download and submit.</p>
+<p><a class="btn" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif">⬇ Download gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif (142.7 KB)</a>
+<a class="btn sec" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif">NaN-outside twin (186.2 KB)</a>
+<a class="btn sec" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip">ZIP container</a></p>
+<p class="small">Submit the <b>-zeros.tif</b> (or its <b>.zip</b>): all 12,279,160 cells finite and in [0,1], so the portal validator cannot raise
+“Predicted values must be in range [0,1]”. Copy-paste note (≤140 chars):<br>
+<code class="mono">GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt</code></p>
+<table><tr><th>Receipt</th><th>Value</th></tr>
+<tr><td>Dots (positive px)</td><td>37,091</td></tr>
+<tr><td>On-catalogue dots</td><td>0</td></tr>
+<tr><td>sha256 (-zeros.tif)</td><td class="mono">3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02</td></tr>
+<tr><td>Grid</td><td>3730×3292 · EPSG:32611 · 100 m · float32 · single band</td></tr>
+<tr><td>Validator audit</td><td>12/12 PASS (<a href="downloads/checks-gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif.json">zeros receipt</a> · <a href="downloads/checks-gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif.json">nan receipt</a>)</td></tr></table>
+</section>
+<section class="card"><h2>What this file is</h2>
+<p>Lane-82 candidate: the group's H33-2-B2 base (37,654 dots) with <b>2,063</b> uncorroborated flank/ring dots
+selectively removed and <b>1,500</b> corroborated far-field dots added (novel content 9.6%). Corroboration =
+mean(antislope-scarp lineament, conjugate-intersection density, radiometric-break edges) from 1 m LiDAR +
+GeoDAWN — all label-free (canary: no AUC above 0.55, trip bar 0.90).</p>
+<div class="grid"><div><h3>Holdout-DTI (gems82-holdout-v2)</h3>
+<table><tr><th>Instrument</th><th>Pooled</th><th>Margin vs base</th></tr>
+<tr><td>SGMC-FAR (primary, K=55,109)</td><td>0.096302</td><td>+0.009619</td></tr>
+<tr><td>SGMC-MID (K=62,122)</td><td>0.104130</td><td>+0.008744</td></tr>
+<tr><td>SGMC-RAW (K=62,703)</td><td>0.104551</td><td>+0.008491</td></tr></table>
+<p class="small">Primary 95% CI (quadrant): 0.09594 ± 0.01524; quadrants positive 4/4. A projection is never written as a score.</p></div>
+<div><h3>Gate (7 rules)</h3><table><tr><td><code>R1_primary_win</code></td><td>PASS</td></tr><tr><td><code>R2_quadrant_consistency</code></td><td>PASS</td></tr><tr><td><code>R3_no_loss_mid</code></td><td>PASS</td></tr><tr><td><code>R4_no_loss_raw</code></td><td>PASS</td></tr><tr><td><code>R5_live_safety</code></td><td>PASS</td></tr><tr><td><code>R6a_lane_independence</code></td><td>PASS</td></tr><tr><td><code>R7_audit</code></td><td>PASS</td></tr></table>
+<p class="small">Live-anchored safety: infinite (zero measured proxy cost on 2,063 removals) · addition screen 0.331/dot vs 0.111 bar.</p></div></div></section>
+<section class="card"><h2>Lane independence (R6a)</h2>
+<table><tr><th>Registry raster</th><th>Surface rank-ρ (≤0.90)</th><th>Added-dots 3px overlap (≤0.70)</th><th>Lane verdict</th></tr><tr><td><code>d28-44090</code></td><td>0.0198</td><td>0.0393</td><td>independent</td></tr><tr><td><code>r1-solo-40199</code></td><td>0.0187</td><td>0.0393</td><td>independent</td></tr><tr><td><code>h33-2-b2-37654</code></td><td>0.0181</td><td>0.0393</td><td>independent</td></tr><tr><td><code>h36-rung30</code></td><td>0.0190</td><td>0.0433</td><td>independent</td></tr><tr><td><code>h19-5</code></td><td>0.0288</td><td>0.0660</td><td>independent</td></tr></table>
+<p class="small">Full-mask carrier overlap (R6b disclosure): ρ 0.95 / overlap 0.96 vs the H33-2-B2 carrier — expected, disclosed, and the weekly selector's diversification input. No slot is picked here.</p></section>
+<section class="card"><h2>Per-quadrant primary DTI</h2><table><tr><th>Quadrant</th><th>SGMC-FAR DTI</th></tr><tr><td>NW</td><td>0.080427</td></tr><tr><td>NE</td><td>0.097645</td></tr><tr><td>SW</td><td>0.116750</td></tr><tr><td>SE</td><td>0.088938</td></tr></table></section>
 </main>
-<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · evidence-first research</span><span>Last evidence review: 2026-10-21 · no submit-ready TIFF</span></div></footer>
-</body>
-</html>
+<footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>
