@@ -1,0 +1,44 @@
+{
+  "evidence_class": "LOCAL-FORMAT-VALIDATION-NOT-ORGANIZER-ACCEPTANCE",
+  "file": "docs/downloads/gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.tif",
+  "sha256": "1deab2d36b9dd2b702bf1775fa3d0aad1ae5a4cd36617e0028aa9dfeb37a1036",
+  "bytes": 88415,
+  "shape": [
+    3730,
+    3292
+  ],
+  "crs": "EPSG:32611",
+  "transform": [
+    100.0,
+    0.0,
+    243350.0,
+    0.0,
+    -100.0,
+    4508550.0
+  ],
+  "dtype": "float32",
+  "nodata": null,
+  "finite_pixels": 12279160,
+  "nan_pixels": 0,
+  "infinity_pixels": 0,
+  "min": 0.0,
+  "max": 1.0,
+  "positive_pixels_total": 37654,
+  "positive_pixels_in_footprint": 37654,
+  "checks": {
+    "single_band": true,
+    "dtype_float32": true,
+    "shape_match": true,
+    "crs_match": true,
+    "transform_match": true,
+    "bounds_match": true,
+    "all_cells_finite": true,
+    "in_footprint_all_finite": true,
+    "in_footprint_range_0_1": true,
+    "all_cells_range_0_1": true,
+    "outside_footprint_zero": true,
+    "nodata_tag_safe": true,
+    "no_positive_on_catalogue": true
+  },
+  "all_checks_passed": true
+}

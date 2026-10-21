@@ -1,0 +1,182 @@
+{
+  "evidence_class": "LOCAL-FORMAT-VALIDATION-NOT-ORGANIZER-ACCEPTANCE",
+  "download_ok": true,
+  "submit_ready_format": true,
+  "approved_for_weekly_slot": false,
+  "organizer_receipt": null,
+  "file": "gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.tif",
+  "submission_name": "GEMSDOE82-H82B-20261021",
+  "note": "H82-B signed curvature discordance; 37654 dots; HOLDOUT-DTI 0.01393 [0.00995,0.01829]; local validation only",
+  "note_characters": 108,
+  "sha256": "1deab2d36b9dd2b702bf1775fa3d0aad1ae5a4cd36617e0028aa9dfeb37a1036",
+  "validator": {
+    "evidence_class": "LOCAL-FORMAT-VALIDATION-NOT-ORGANIZER-ACCEPTANCE",
+    "file": "gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.tif",
+    "sha256": "1deab2d36b9dd2b702bf1775fa3d0aad1ae5a4cd36617e0028aa9dfeb37a1036",
+    "bytes": 88415,
+    "shape": [
+      3730,
+      3292
+    ],
+    "crs": "EPSG:32611",
+    "transform": [
+      100.0,
+      0.0,
+      243350.0,
+      0.0,
+      -100.0,
+      4508550.0
+    ],
+    "dtype": "float32",
+    "nodata": null,
+    "finite_pixels": 12279160,
+    "nan_pixels": 0,
+    "infinity_pixels": 0,
+    "min": 0.0,
+    "max": 1.0,
+    "positive_pixels_total": 37654,
+    "positive_pixels_in_footprint": 37654,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "shape_match": true,
+      "crs_match": true,
+      "transform_match": true,
+      "bounds_match": true,
+      "all_cells_finite": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_range_0_1": true,
+      "all_cells_range_0_1": true,
+      "outside_footprint_zero": true,
+      "nodata_tag_safe": true,
+      "no_positive_on_catalogue": true
+    },
+    "all_checks_passed": true
+  },
+  "zip_file": "gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.zip",
+  "zip_sha256": "9b2e5b3a67d879d9589744bed0665d4300643b5c11bea1683a8588063106f7cf",
+  "metadata": {
+    "hypothesis": "H82-B",
+    "mechanism": "Signed multi-physics curvature discordance across magnetic RTP, gravity, basement depth and conductivity, gated by weak detrended-elevation curvature.",
+    "named_non_fault_mimic": "lithologic contacts and processing edge artifacts can create coincident geophysical curvature without a fault",
+    "holdout": {
+      "evidence_class": "HOLDOUT-DTI",
+      "evaluator_version": "gemsdoe82-pooled-hide-v1",
+      "alpha": 0.2,
+      "beta": 0.8,
+      "triangular_radius_m": 300.0,
+      "budget": 37654,
+      "buffer_px": 3,
+      "per_fold": {
+        "NW": {
+          "tp": 102.9933271970323,
+          "fp": 37477.45572693927,
+          "fn": 1746.0066728029676,
+          "n_truth": 1849,
+          "n_emitted": 37654,
+          "dti": 0.011449695269747002
+        },
+        "NE": {
+          "tp": 53.146006672146086,
+          "fp": 37572.70036514174,
+          "fn": 2239.853993327854,
+          "n_truth": 2293,
+          "n_emitted": 37654,
+          "dti": 0.005678253465970996
+        },
+        "SW": {
+          "tp": 197.0103470641056,
+          "fp": 37292.5746874498,
+          "fn": 3350.9896529358944,
+          "n_truth": 3548,
+          "n_emitted": 37654,
+          "dti": 0.019060014019745955
+        },
+        "SE": {
+          "tp": 184.76811704163595,
+          "fp": 37344.64419909874,
+          "fn": 2855.231882958364,
+          "n_truth": 3040,
+          "n_emitted": 37654,
+          "dti": 0.018592302507632854
+        }
+      },
+      "pooled": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gemsdoe82-pooled-hide-v1",
+        "dti": 0.013925211177605194,
+        "ci95": [
+          0.009949051706376702,
+          0.018292877858376997
+        ],
+        "withheld_positive_pixels": 10730,
+        "spatial_blocks": 159,
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 8203,
+        "tpw": 537.91779797492,
+        "fpw": 149687.3749786295,
+        "fnw": 10192.082202025083
+      }
+    },
+    "canaries": {
+      "surface": {
+        "evidence_class": "LEAKAGE-CANARY",
+        "auc": 0.5279163014911463,
+        "suspicious": false,
+        "withheld_positive_pixels": 10730,
+        "negative_sample_pixels": 400000
+      },
+      "magnetic_rtp": {
+        "evidence_class": "LEAKAGE-CANARY",
+        "auc": 0.5088971227425059,
+        "suspicious": false,
+        "withheld_positive_pixels": 10730,
+        "negative_sample_pixels": 400000
+      },
+      "gravity": {
+        "evidence_class": "LEAKAGE-CANARY",
+        "auc": 0.4707563635682209,
+        "suspicious": false,
+        "withheld_positive_pixels": 10730,
+        "negative_sample_pixels": 400000
+      },
+      "basement_depth": {
+        "evidence_class": "LEAKAGE-CANARY",
+        "auc": 0.5193675953773719,
+        "suspicious": false,
+        "withheld_positive_pixels": 10730,
+        "negative_sample_pixels": 400000
+      },
+      "conductivity": {
+        "evidence_class": "LEAKAGE-CANARY",
+        "auc": 0.49622043131019156,
+        "suspicious": false,
+        "withheld_positive_pixels": 10730,
+        "negative_sample_pixels": 400000
+      }
+    },
+    "grid": {
+      "shape": [
+        3730,
+        3292
+      ],
+      "crs": "EPSG:32611",
+      "transform": [
+        100.0,
+        0.0,
+        243350.0,
+        0.0,
+        -100.0,
+        4508550.0
+      ],
+      "template_nodata": "nan"
+    },
+    "emission": {
+      "budget": 37654,
+      "catalogue_buffer_px": 3,
+      "positive_pixels": 37654
+    },
+    "selection": "Best of exactly three preregistered H82 experiments by HOLDOUT-DTI; no organizer slot used; selector remains negative because no comparison to a current in-repository holdout incumbent was passed.",
+    "surface_bitpack_sha12": "d1727ccc21e9"
+  }
+}
