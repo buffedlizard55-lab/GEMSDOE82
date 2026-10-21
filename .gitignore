@@ -1,0 +1,10 @@
+# Reproducibility caches and raw competition inputs (large / license-controlled)
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local scratch artifacts
+*.log
+/tmp/

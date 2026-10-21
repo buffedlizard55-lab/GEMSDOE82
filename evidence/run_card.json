@@ -1,0 +1,121 @@
+{
+  "evidence_class": "RUN-CARD",
+  "generated_utc": "2026-10-21T22:08:47Z",
+  "hypothesis": "H82-B: signed multi-physics curvature discordance on magnetic RTP, isostatic gravity, basement depth and conductivity, gated by weak detrended-elevation curvature.",
+  "mechanism": "A blind fault may juxtapose lithologies that produce coincident but oppositely signed second-derivative responses in independent potential-field and subsurface layers while leaving weak surface relief. The emitted field is the top 37,654 off-catalogue pixels after a visible-catalogue 3-pixel collar.",
+  "named_non_fault_process_that_could_mimic_it": "Lithologic contacts, broad basin edges, survey line-leveling artifacts, and correlated gridding/processing boundaries can create coincident geophysical curvature without a fault.",
+  "holdout_dti": {
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gemsdoe82-pooled-hide-v1",
+    "dti": 0.013925211177605194,
+    "ci95": [
+      0.009949051706376702,
+      0.018292877858376997
+    ],
+    "withheld_positive_pixels": 10730,
+    "spatial_blocks": 159,
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 8203,
+    "tpw": 537.91779797492,
+    "fpw": 149687.3749786295,
+    "fnw": 10192.082202025083,
+    "evaluator_implementation_sha256": "e03214f01bb2fe106dd3c943a952c3b28a35cc40d2506cb60ce66c0cc27fcdcb"
+  },
+  "leakage_canaries": {
+    "surface": {
+      "evidence_class": "LEAKAGE-CANARY",
+      "auc": 0.5279163014911463,
+      "suspicious": false,
+      "withheld_positive_pixels": 10730,
+      "negative_sample_pixels": 400000
+    },
+    "magnetic_rtp": {
+      "evidence_class": "LEAKAGE-CANARY",
+      "auc": 0.5088971227425059,
+      "suspicious": false,
+      "withheld_positive_pixels": 10730,
+      "negative_sample_pixels": 400000
+    },
+    "gravity": {
+      "evidence_class": "LEAKAGE-CANARY",
+      "auc": 0.4707563635682209,
+      "suspicious": false,
+      "withheld_positive_pixels": 10730,
+      "negative_sample_pixels": 400000
+    },
+    "basement_depth": {
+      "evidence_class": "LEAKAGE-CANARY",
+      "auc": 0.5193675953773719,
+      "suspicious": false,
+      "withheld_positive_pixels": 10730,
+      "negative_sample_pixels": 400000
+    },
+    "conductivity": {
+      "evidence_class": "LEAKAGE-CANARY",
+      "auc": 0.49622043131019156,
+      "suspicious": false,
+      "withheld_positive_pixels": 10730,
+      "negative_sample_pixels": 400000
+    }
+  },
+  "correlation_overlap_vs_registry": {
+    "surface_phase": {
+      "inventory_class": "SURFACE-UNIQUENESS-REGISTRY-CHECK-NOT-ORGANIZER-COMPLETE",
+      "scanned_rasters": 48,
+      "max_sampled_spearman": 0.05307039932280373,
+      "max_candidate_support_within_3px": 0.2294891427423567,
+      "duplicate": false
+    },
+    "final_dots_phase": {
+      "inventory_class": "SURFACE-UNIQUENESS-REGISTRY-CHECK-NOT-ORGANIZER-COMPLETE",
+      "scanned_rasters": 48,
+      "max_sampled_spearman": 0.03683331529931281,
+      "max_candidate_dots_within_3px": 0.6726775375790088,
+      "duplicate": false
+    },
+    "thresholds": {
+      "rank_correlation_gt": 0.9,
+      "candidate_dots_within_3px_gt": 0.7
+    },
+    "scope_warning": "Only locally available GEMSDOE32 and GEMSDOE70 public owner-mirror rasters were scanned; this is not organizer-complete."
+  },
+  "raster": {
+    "file": "gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.tif",
+    "sha256": "1deab2d36b9dd2b702bf1775fa3d0aad1ae5a4cd36617e0028aa9dfeb37a1036",
+    "bytes": 88415,
+    "positive_pixels": 37654
+  },
+  "validator_output": {
+    "evidence_class": "LOCAL-FORMAT-VALIDATION-NOT-ORGANIZER-ACCEPTANCE",
+    "no_nan_inside_footprint": true,
+    "values_in_0_1": true,
+    "crs_shape_transform_match": true,
+    "all_checks_passed": true,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "shape_match": true,
+      "crs_match": true,
+      "transform_match": true,
+      "bounds_match": true,
+      "all_cells_finite": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_range_0_1": true,
+      "all_cells_range_0_1": true,
+      "outside_footprint_zero": true,
+      "nodata_tag_safe": true,
+      "no_positive_on_catalogue": true
+    }
+  },
+  "submission": {
+    "name": "GEMSDOE82-H82B-20261021",
+    "note": "H82-B signed curvature discordance; 37654 dots; HOLDOUT-DTI 0.01393 [0.00995,0.01829]; local validation only",
+    "note_characters": 108,
+    "download_ok": true,
+    "submit_ready_format": true,
+    "weekly_slot_used": 0,
+    "organizer_receipt": null
+  },
+  "verdict": "negative",
+  "verdict_reason": "Format is valid and the candidate is unique within the scanned inventory, but no organizer-confirmed score exists and the local holdout instrument did not establish improvement over a current cross-repository incumbent. Do not spend a weekly slot automatically."
+}
