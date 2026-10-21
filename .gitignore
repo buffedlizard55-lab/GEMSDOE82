@@ -19,3 +19,5 @@ __pycache__/
 # Keep generated candidate artifacts out of source unless deliberately published
 # after validation in docs/downloads/ with a run card and checksum.
 submission.tif
+
+gems82-*-inspection.tif

@@ -76,3 +76,11 @@ The official [problem description](https://www.drivendata.org/competitions/306/c
 ---
 
 **Repository rule:** no score, result, source, or submit-ready state is promoted from a hypothesis, leaderboard title, filename, or projection. It requires reproducible evidence and a permanent link.
+## Parallel-session research record (2026-10-21, arena/d0d8912f) — negative, no artifact
+
+A parallel session tested lane **H82-1** (buried-fault potential-field step × anti-scarp gate)
+using sha256-pinned sibling mirrors and a clean-room local evaluator. Consistent with IR-82-12,
+its GeoTIFF is **withheld from main** and its tooling is **not canonical**. Evidence only:
+[`research/h82-blindstep/`](research/h82-blindstep/) — HOLDOUT-DTI (local `gems82-hide-v1`,
+57,407 withheld) 0.0745 vs random 0.0693 (n.s. overall; low-slope subgroup +0.019 significant).
+Verdict **negative**; submission status above (**NOT READY**) is unchanged. Slots used: 0.
