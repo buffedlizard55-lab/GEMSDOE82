@@ -12,7 +12,7 @@
 </div></header>
 <main>
   <section class="hero"><p class="eyebrow">Open issues</p><h1>Irregularities for review</h1><p class="lead">Problems are recorded with evidence and impact so the next step is explicit and no unknown is quietly turned into a claim.</p></section>
-  <section class="status blocked"><h2>Blocking issues</h2><ul class="list"><li>No competition rasters, cached feature stack, shared evaluator/writer or registry rasters in this checkout.</li><li>The data page redirects unauthenticated requests to login.</li><li>The parallel-run instruction references a method paragraph that was not supplied.</li><li>The quoted GEMSDOE32 result lacks a receipt in the public build record reviewed here.</li><li>A concurrent PR briefly added an unaccepted TIFF and private evaluator/writer; its revert is recorded as IR-82-12.</li></ul></section>
+  <section class="status blocked"><h2>Blocking issues</h2><ul class="list"><li>No competition rasters, cached feature stack, shared evaluator/writer or registry rasters in this checkout.</li><li>The data page redirects unauthenticated requests to login.</li><li>The parallel-run instruction references a method paragraph that was not supplied.</li><li>The quoted GEMSDOE32 result lacks a receipt in the public build record reviewed here.</li><li>A concurrent PR briefly added an unaccepted TIFF and private evaluator/writer; its revert is recorded as IR-82-12.</li><li>The public Pages root uses legacy branch publishing; a root redirect to the verified docs site is recorded as IR-82-13.</li></ul></section>
   <section class="section"><h2>Specific flags</h2>
     <div class="table-wrap"><table><thead><tr><th>ID</th><th>Issue</th><th>Disposition</th></tr></thead><tbody>
       <tr><td>IR-82-01</td><td>Lane paragraph absent.</td><td>No placement or emission; lane is provisional.</td></tr>
@@ -27,6 +27,7 @@
       <tr><td>IR-82-10</td><td>The official rules PDF was not line-reviewed.</td><td>Revisit before using external data or submitting.</td></tr>
       <tr><td>IR-82-11</td><td>The first Nevada geology link tested returned 404; the official state-geology listing was found and verified afterward.</td><td>Links were corrected; the NV.zip bytes, AOI coverage and alignment remain unchecked.</td></tr>
       <tr><td>IR-82-12</td><td>A concurrent merged PR briefly added a purported submission TIFF, mirror-derived inputs and a custom evaluator/writer.</td><td>PR #3 was reverted. Its local metrics and format/uniqueness claims are not accepted; do not download or submit that removed artifact. No weekly slot was used.</td></tr>
+      <tr><td>IR-82-13</td><td>Pages is configured as legacy main:/; the root showed README instead of the docs site and the settings API returned 403.</td><td>A root index redirect and fallback link now target docs/. Verify after merge; docs/ currently renders correctly.</td></tr>
     </tbody></table></div>
     <p><a class="button secondary" href="irregularities.md">Open full evidence and source details</a></p>
   </section>

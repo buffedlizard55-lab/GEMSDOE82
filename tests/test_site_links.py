@@ -46,6 +46,15 @@ class SiteLinksTests(unittest.TestCase):
         self.assertTrue(published.is_file(), "run card must be included in the Pages artifact")
         self.assertEqual(published.read_bytes(), canonical.read_bytes())
 
+    def test_public_repository_root_redirects_into_site(self):
+        root_page = ROOT / "index.html"
+        content = root_page.read_text(encoding="utf-8")
+        parser = LinkCollector()
+        parser.feed(content)
+        self.assertIn('http-equiv="refresh"', content.lower())
+        self.assertIn("docs/", parser.links)
+        self.assertTrue((ROOT / "docs" / "index.html").is_file())
+
     def test_all_pages_have_title_and_language(self):
         for html_path in DOCS.rglob("*.html"):
             content = html_path.read_text(encoding="utf-8")

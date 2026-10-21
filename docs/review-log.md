@@ -33,7 +33,9 @@ A concurrent PR #3 was merged to `main` after the pass-3 review. It added a down
 
 ## Deployment smoke test and correction
 
-After the PR #4 restoration deployed, the public GitHub Pages page was fetched and reviewed. Its run-card link escaped the project-site prefix and targeted a file outside the published `docs/` artifact. The page now links to `docs/data/run_card.json`; `scripts/sync_site_run_card.py` copies the canonical registry card into that published location during deployment, and the link test now fails on paths that escape the Pages artifact. The current suite has eight passing tests. The updated workflow still requires its post-merge run to confirm the corrected site deployment.
+After PR #4, a fetch of the public site exposed a run-card link that escaped the project-site prefix and targeted a file outside the published `docs/` artifact. The site now links to `docs/data/run_card.json`; `scripts/sync_site_run_card.py` copies the canonical registry card into that published location, and link tests fail on paths that escape the Pages artifact. PR #5's workflow completed successfully, including sync, tests, upload, and deploy; all eight local tests pass.
+
+A further cache-busted request to the registered root URL returned the repository README, while `/docs/` rendered the intended site. The Pages API still reports legacy `main:/`; changing the Pages build type through the available API returned HTTP 403. A root `index.html` redirect with a fallback link to `docs/` is now included so the registered URL can reach the site without a settings change. The root-redirect guard adds a ninth local test. **Root redirect behavior still requires post-merge verification; until then, `/docs/` is the verified public site path.**
 
 ## Reproducible local checks
 
