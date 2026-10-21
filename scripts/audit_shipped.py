@@ -1,16 +1,9 @@
-"""Independent re-verification of shipped artifacts (no trust in build scripts).
+"""Recheck archived candidate bytes and distinguish format from authorization.
 
-Re-opens every file in docs/downloads from disk and checks:
-  1. -zeros.tif: 12/12 submission audit (strict: whole grid finite in [0,1]).
-  2. -nan.tif: 12/12 submission audit (competition format: NaN outside).
-  3. -zeros.zip: contains exactly one .tif, byte-identical to the shipped zeros.
-  4. checks-*.json receipts match recomputed sha256/size/dots.
-  5. submissions_manifest.json names files that exist.
-  6. evidence/gate.json verdict == PROMOTED and slug matches downloads.
-  7. No NaN inside footprint (both variants), values in [0,1], CRS/shape/
-     transform match the template.
-
-Exit 0 + 'PORTAL-ILLEGAL ARTIFACTS: none' on success; exit 1 otherwise.
+This audit can establish only raster-format properties (range, NaN, grid, hash).
+It must never claim organizer eligibility or authorize upload. Submission status
+requires registry/submission_authorization.json with an independent selector
+receipt bound to the exact candidate SHA-256.
 """
 from __future__ import annotations
 
@@ -41,7 +34,14 @@ def main() -> int:
     manifest = json.loads((dl / "submissions_manifest.json").read_text())
     slug = manifest["slug"]
     assert slug == gate["slug"], (slug, gate["slug"])
-    report = {"slug": slug, "checks": {}, "portal_illegal": []}
+    authorization = json.loads(Path("registry/submission_authorization.json").read_text())
+    report = {
+        "slug": slug,
+        "checks": {},
+        "format_audit_passed": False,
+        "submission_authorized": False,
+        "authorization_status": authorization.get("status", "MISSING"),
+    }
 
     for mode in ("zeros", "nan"):
         tif = dl / f"{slug}-{mode}.tif"
@@ -69,17 +69,30 @@ def main() -> int:
         assert z.read(names[0]) == (dl / f"{slug}-zeros.tif").read_bytes()
     report["checks"]["zip"] = {"single_tif": True, "byte_identical": True,
                                "sha256": G.sha256(zp)}
-    report["checks"]["gate"] = {"verdict": gate["verdict"],
-                                "rules": gate["rules"]}
-    if gate["verdict"] != "PROMOTED":
-        report["portal_illegal"].append("gate verdict is not PROMOTED")
     for f in manifest["files"]:
         assert (dl / f).exists(), f
-    report["verdict"] = "PORTAL-ILLEGAL ARTIFACTS: none" if not report["portal_illegal"] else "FAIL"
+    raster_sha = report["checks"]["zeros"]["sha256"]
+    authorized = (
+        authorization.get("status") == "AUTHORIZED"
+        and authorization.get("selected_for_submission") is True
+        and bool(authorization.get("selector_receipt"))
+        and authorization.get("authorized_sha256") == raster_sha
+        and not authorization.get("duplicate_screen", {}).get("verdict", "").startswith("DUPLICATE")
+    )
+    report["format_audit_passed"] = all(
+        report["checks"][mode]["audit_12_of_12"] for mode in ("zeros", "nan")
+    )
+    report["submission_authorized"] = authorized
+    report["authorization_reason"] = authorization.get("reason")
+    report["verdict"] = (
+        "FORMAT AUDIT PASS; SELECTOR AUTHORIZATION VERIFIED"
+        if report["format_audit_passed"] and authorized
+        else "FORMAT AUDIT ONLY; NOT AUTHORIZED FOR SUBMISSION"
+    )
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(report, indent=1))
     print(report["verdict"], "->", args.out)
-    return 0 if not report["portal_illegal"] else 1
+    return 0 if report["format_audit_passed"] else 1
 
 
 if __name__ == "__main__":

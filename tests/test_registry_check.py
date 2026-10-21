@@ -36,3 +36,14 @@ def test_shifted_overlap_counts():
     c = np.zeros((100, 100), bool)
     c[10, 10] = True
     assert RC.overlap_within_3px(a, c) == 0.0
+
+
+def test_lane_gate_checks_final_mask_and_fails_closed_on_missing_registry():
+    clean_surface = {"one": {"duplicate": False}}
+    clean_final = {"duplicate": False}
+    assert RC.lane_independence_pass(clean_surface, clean_final, 5, 5)
+    # A clean newly-added component cannot hide a duplicate final carrier.
+    assert not RC.lane_independence_pass(
+        clean_surface, {"duplicate": True}, 5, 5
+    )
+    assert not RC.lane_independence_pass(clean_surface, clean_final, 4, 5)

@@ -1,8 +1,20 @@
 {
  "lane": "H82-2 antislope-corroborated",
  "updated_utc": "20261021T120000Z",
+ "research_gate_status": "PASS",
+ "submission_status": "DUPLICATE \u2014 NOT SELECTED \u2014 DO NOT SUBMIT",
+ "selector_receipt": null,
+ "duplicate_screen": {
+  "registry_raster": "H33-2-B2 carrier",
+  "final_dot_spearman_rho": 0.9522129193117653,
+  "final_dots_within_3px": 0.9611496050254779,
+  "protocol_limits": {
+   "spearman_rho_max": 0.9,
+   "dots_within_3px_max": 0.7
+  },
+  "verdict": "DUPLICATE \u2014 exceeds both lane thresholds"
+ },
  "slug": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9",
- "verdict": "PROMOTED",
  "dots": 37091,
  "sha256_zeros": "3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02",
  "holdout_far": 0.09630186412868248,

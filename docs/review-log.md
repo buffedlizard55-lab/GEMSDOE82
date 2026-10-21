@@ -48,10 +48,28 @@ python scripts/check_readiness.py
 
 The readiness command returns a nonzero status while required assets are absent; this is expected and is not a score or model failure. The public-feed refresh uses no authentication and never downloads competition data or copies leaderboard score values.
 
-## 2026-10-21 follow-up: strict duplicate stop (three-pass review)
+## Current branch review — fail-closed correction (2026-10-21)
 
-Pass 1: Re-read the charter, hypotheses, sources, canonical run card, lane gate and final-dot comparisons. The archived H82-2 lane gate exempts carrier dots, whereas the user's final-dot rule has no exemption. `evidence/gate.json` reports H33-2-B2 final-dot rank correlation 0.9522 and 3-pixel overlap 0.9611, both above the stop thresholds. No new experiment was run.
+### Pass 1 — inspect state and evidence
 
-Pass 2: Fixed `scripts/build_site.py` to fail closed on **final-dot** comparisons, removing submission/download links from the two entry pages while preserving historical artifacts and receipts for audit. Added a standard-library regression test. This does not claim the historical TIFF's format audit is false; it means it is **ineligible under the duplicate protocol**.
+- Read `PROMPT.md`, `README.md`, project instructions, research hypotheses, run cards, irregularities, manifest, and relevant generation/audit code.
+- Found that the site presented the archived H82-2 TIFF as safe to submit despite the canonical-track block, missing selector receipt, and the protocol's separate slot-selection requirement.
+- Found a more direct duplicate-rule failure: the stored final-mask comparison against H33-2-B2 records rank rho 0.9522 and 96.1% of final dots within 3 px, exceeding the stated 0.90 / 70% limits. The prior H82-2 R6a gate screened the new surface and added dots, while treating carrier overlap as disclosure; that does not satisfy the current full-final-dot rule.
+- Confirmed official competition assets, shared evaluator/writer, and complete registry rasters are absent. The top untried magnetic-source-depth hypothesis cannot be validated on this checkout. No new experiment, candidate raster, or submission slot was used.
 
-Pass 3: Regenerated the entry pages; checked that both say DO NOT SUBMIT / Submission blocked and have no download links. Canonical run card remains negative; the old lane JSON and other historical pages retain their archival gate verdict and must not be treated as authorization. No weekly slot was used. To resume, obtain a clear lane assignment, official data and shared template tools plus full registry, then run holdout, canaries, full-mask duplicate check and automatic validator before publication.
+### Pass 2 — correct unsafe behavior and claims
+
+- Added `registry/submission_authorization.json`, defaulting to `NOT_AUTHORIZED`; a green site status now requires a separate selector receipt bound to the exact SHA-256 and no duplicate finding.
+- Updated the site and README to label the archived TIFF `DUPLICATE — NOT SELECTED — DO NOT SUBMIT`; removed TIFF download links from the entry pages while retaining the binary only in the repository for audit/learning.
+- Reclassified the old format audit as format-only; it no longer prints “PORTAL-ILLEGAL ARTIFACTS: none” or infers submission legality from a research gate.
+- Corrected the lane writer to apply duplicate screening to both the pre-placement surface and complete final-dot mask; incomplete registry inventory or any duplicate now writes a stop record and exits before TIFF writing. The research gate is named `RESEARCH_GATE_PASS/NEGATIVE`, not submission promotion.
+- Logged IR-82-DUP-01 and made the historical H33-2-B2 explanation explicitly owner-reported and causally unconfirmed.
+
+### Pass 3 — verify requirements and regressions
+
+- Rebuilt generated Pages artifacts without modifying `docs/data/feed.json` or the canonical run-card copy.
+- `.venv/bin/python -m pytest -q -rs`: passed; two data-dependent tests skipped because `data/` is absent.
+- `.venv/bin/python -m unittest discover -v`: 10 tests passed, including the final-dot duplicate link-block regression.
+- `py_compile`, JSON parsing, and `git diff --check`: passed.
+- Verified the public download and executive-summary pages state the same fail-closed status; the active candidate is explicitly identified as a duplicate and is not authorized.
+- Final outcome: negative / blocked. The archived H82-2 file is not a new unique submission and must not be uploaded. Remaining blockers: obtain official competition package and canonical shared tools, define the session's authorized method paragraph, complete registry inventory, validate the preregistered top hypothesis using whole-segment buffered holdout + feature-only canary, then let the separate selector decide whether any slot is used.
