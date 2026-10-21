@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "docs/**"
+      - "index.html"
       - "scripts/refresh_competition_feed.py"
       - "scripts/sync_site_run_card.py"
       - "registry/run_card.json"
