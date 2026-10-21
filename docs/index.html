@@ -1,46 +1,95 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>GEMSDOE82 — DOE GEMS Prize: blind-fault lane (NEGATIVE, do not submit)</title><style>body{font-family:system-ui,sans-serif;max-width:920px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#17202a} .no{background:#b00020;color:#fff;padding:1rem;border-radius:8px} .ok{background:#0b6e2f;color:#fff;padding:.4rem .7rem;border-radius:6px;display:inline-block} .warn{background:#fff3cd;border:1px solid #e0a800;padding:1rem;border-radius:8px} table{border-collapse:collapse} td,th{border:1px solid #ccc;padding:.35rem .6rem} code{background:#eef1f4;padding:.1rem .3rem;border-radius:4px} a{color:#0b5394}</style></head><body>
-<h1>GEMSDOE82 — blind-fault (buried-step) lane for the DOE GEMS Prize</h1>
-<p><b>Core values:</b> Maximize P(Win) — a weekly slot is an experiment, not a lottery ticket.
-Own the Outcome — this lane measured negative, so it is published as negative.</p>
-<div class=no><h2>⛔ SUBMIT VERDICT: DO NOT SUBMIT THIS FILE</h2>
-<p>The unique file below is <b>safe to download and inspect</b> (portal validator: all checks pass)
-but it is <b>NOT cleared to submit</b>: on the preregistered hide-and-recover holdout it does not
-beat the holdout best (see numbers). Submitting it would spend a scarce weekly slot against the evidence.</p></div>
-<h2>⬇ Unique inspection file (download OK · submit NO)</h2>
-<p><span class=ok>DOWNLOAD FOR INSPECTION: OK</span> <b>SUBMIT: ⛔ NO</b></p>
-<ul>
-<li><a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.tif">Download gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.tif</a> · <a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.zip">.zip</a> · <a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-nan.tif">NaN-outside twin</a> · <a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-receipt.json">receipt</a></li>
-<li>Unique submission name (if a future selector ever overrules): <code>GEMSDOE82-BLINDSTEP-LINE-37654</code></li>
-<li>Note (101/140 chars): <code>GEMSDOE82 blind-step line 37,654 dots; HOLDOUT-DTI 0.0745 n.s. vs random; DO NOT SUBMIT negative lane</code></li>
-<li>single-band float32 · EPSG:32611 · 100 m · 3730×3292 · 37,654 dots · 0 on catalogue · min 0.0 max 1.0 · 0 NaN inside footprint · no nodata tag (zeros file) · sha256 <code>cfd9a3279f24f4db…</code></li>
-</ul>
-<h2>Why the 0.2778 file (H33-2-B2) scored highest — and what beating it requires</h2>
-<p>H33-2-B2 is not a new detector. It is the group's best <i>surface</i> (H19-5 multiline-corroborated)
-after two metric-arbitrage steps, each removing mass whose expected kernel credit is below the
-break-even bar <code>k &gt; α·DTI ≈ 0.054</code> at DTI≈0.27 (derived from the organizer's formula;
-denominator rises by exactly α=0.2 per unit mass): (1) <b>dot-thinning</b> 121,131→44,090 px
-(owner-report 0.1922→0.2600) — one dot credits any truth within 300 m, so dense lines pay redundant
-false-positive mass; (2) <b>catalogue-flank prune</b> deleting dots within 2 px of mapped faults
-(40,199→37,654) — mapped pixels are masked from scoring and their halo is mapper-saturated, so flank
-dots earn the least credit per dot. Beating it at the same mass needs ~25% more mean credit per dot
-(the gap 0.26→0.3262 measured by GEMSDOE32) — i.e. a genuinely better <i>ranking</i>, not more dots.
-This lane did not demonstrate that ranking (below). <b>Irregularity IR-82-01:</b> the brief asserts
-0.2778 as H33-2-B2's score, but GEMSDOE32's own site labels that file <i>UNSCORED</i> (projected
-0.2747, a model). Treat 0.2778 as OWNER-REPORT, not ORGANIZER-CONFIRMED, until a portal receipt is filed.</p>
-<h2>Evidence (every number labelled)</h2>
-<table><tr><th>Arm (matched mass)</th><th>HOLDOUT-DTI pooled [95% CI]</th><th>Withheld +</th></tr>
-<tr><td>H82-1 line-blind (this file's rule)</td><td>0.0745 [0.0693, 0.0799]</td><td>57,407</td></tr>
-<tr><td>Random control</td><td>0.0693</td><td>57,407</td></tr>
-<tr><td>Scarp control (E1, gate inverted)</td><td>0.0779</td><td>57,407</td></tr></table>
-<p>Paired Δ (blind − random) = +0.0053,
-CI [-0.0009, +0.0114] — includes 0.
-Low-slope stratum (n=21,246): blind 0.0748 vs random 0.0556,
-Δ +0.0190 CI excludes 0 — a real subgroup signal on
-catalogue-biased truth; it does <b>not</b> meet the promotion gate. Leakage canary: max feature AUC
-0.544 (&lt; 0.90, no leakage). ORGANIZER-CONFIRMED scores: none.
-Uniqueness vs H33-2-B2 / dotted-0.26: Spearman ρ ≈ 0.007 / 0.006;
-dot overlap ≤3 px ≈ 19.3% / 20.2% (gates: 0.90 / 70%) — unique lane, confirmed.</p>
-<p><a href="executive-summary.html">Executive summary: exactly how to submit (and why not to submit this one)</a> ·
-<a href="hypotheses.html">Ranked hypotheses</a> · <a href="sources.html">Verified sources</a></p>
-<p><small>Competition: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DOE GEMS Prize problem description</a>.
-Inspection here is fully automated (validator + holdout + uniqueness in code); no human-inspector step exists or is required.</small></p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Auditable geological fault-discovery research for the DOE GEMS Prize Challenge.">
+  <title>GEMSDOE82 | Fault discovery, evidence first</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">GEMSDOE82</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a aria-current="page" href="index.html">Overview</a>
+      <a href="executive-summary.html">Submission guide</a>
+      <a href="hypotheses.html">Hypotheses</a>
+      <a href="sources.html">Sources</a>
+      <a href="irregularities.html">Review flags</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">DOE GEMS Prize · fault discovery</p>
+    <h1>Find faults. Validate the evidence. Submit only when it is ready.</h1>
+    <p class="lead">An auditable research workspace for identifying faults that may be missing from the public catalogue. The target is fault presence—not a direct map of geothermal vents.</p>
+    <div class="hero-actions">
+      <a class="button" href="executive-summary.html">How submission works</a>
+      <a class="button secondary" href="hypotheses.html">Review candidate hypotheses</a>
+    </div>
+  </section>
+
+  <section class="status blocked" aria-labelledby="submission-status">
+    <h2 id="submission-status">Submission status: NOT READY</h2>
+    <p><strong>There is no submission TIFF in this project.</strong> The authorized competition data, cached feature stack, shared holdout evaluator/writer, and registry rasters are absent. No candidate has passed holdout or duplicate checks.</p>
+    <p><strong>Do not download or submit a file from this site.</strong> A download control will appear only after the new raster is generated from data and passes every scientific, uniqueness, and format gate.</p>
+    <span class="button disabled" aria-disabled="true">No validated TIFF available</span>
+  </section>
+
+  <section class="section" aria-labelledby="state-heading">
+    <p class="eyebrow">Project state</p>
+    <h2 id="state-heading">The important facts, without guesswork</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="label">Data access</span>
+        <h3>Competition files are gated</h3>
+        <p>The official data page redirected an unauthenticated request to login. No training features, labels, or sample template are in this checkout.</p>
+        <p><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">Open official data page</a></p>
+      </article>
+      <article class="card">
+        <span class="label">Validation</span>
+        <h3>Not run</h3>
+        <p>The shared evaluator, cached stack, holdout labels and candidate raster are missing, so there is no HOLDOUT-DTI or confidence interval to report.</p>
+        <p><a href="data/run_card.json">Open current JSON run card</a></p>
+      </article>
+      <article class="card">
+        <span class="label">Next experiment</span>
+        <h3>Magnetic source-depth boundaries</h3>
+        <p>A provisional hypothesis focused on a subsurface magnetic-source-depth boundary. It is preregistered, not tested, and cannot be emitted yet.</p>
+        <p><a href="hypotheses.html">Read the hypothesis register</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contract-heading">
+    <p class="eyebrow">Official task contract</p>
+    <h2 id="contract-heading">A valid submission is more than a map image</h2>
+    <div class="callout">
+      <p>The organizer specifies a single-band float32 GeoTIFF on the competition grid (EPSG:32611, 100 m), matching the supplied bounds/template. Predictions must be in [0,1]; the official page says data outside the bounds should be null/NaN. The scoring metric is distance-weighted Tversky with α=0.2, β=0.8, and a 300 m triangular kernel.</p>
+      <p class="small">Source: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description — metric and submission format</a>. The file-level validator has not run because there is no sample template or candidate TIFF.</p>
+    </div>
+    <p>Before any candidate is emitted, the required pipeline hides whole fault segments, derives catalogue-based features from visible faults only, masks visible faults pixel-exactly, runs a feature-by-feature leakage canary, and compares the final surface against the registry. See the <a href="hypotheses.html">pre-registered validation gates</a>.</p>
+  </section>
+
+  <section class="section" aria-labelledby="research-heading">
+    <p class="eyebrow">Research integrity</p>
+    <h2 id="research-heading">Why the cited H33 result is still under review</h2>
+    <p>The linked public GEMSDOE32 build record describes a sparse catalogue-flank-pruned emission, but also labels that artifact unscored and does not provide a submission-page receipt for the reported value. The “zeros” suffix does not establish an all-zero map. The mechanism is a plausible false-positive-control hypothesis, not a demonstrated causal explanation.</p>
+    <p><a class="button secondary" href="score-review.html">Read the score review</a> <a href="https://github.com/buffedlizard55-lab/GEMSDOE32/blob/main/registry/submission_build.json">Inspect the public build record</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="feed-heading">
+    <p class="eyebrow">Current information</p>
+    <h2 id="feed-heading">Official pages and project feed</h2>
+    <p>Use the live organizer pages for the current leaderboard, rules, and submission cap. The local <a href="data/feed.json">source-status feed</a> records which sources were reviewed and what was not verified; it does not claim an up-to-the-minute score or an artifact receipt.</p>
+    <div class="hero-actions">
+      <a class="button secondary" href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Open live leaderboard</a>
+      <a class="button secondary" href="sources.html">Review official sources</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · evidence-first research</span><span>Last evidence review: 2026-10-21 · no submit-ready TIFF</span></div></footer>
+</body>
+</html>

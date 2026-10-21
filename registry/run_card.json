@@ -1,107 +1,47 @@
 {
-  "hypothesis": "H82-1: buried faults absent from the scarp-biased USGS/INGENIOUS catalogue appear as coincident gravity/RTP/basement-depth steps with shared strike and LOW topographic slope.",
-  "mechanism": "Hessian line response (sigma 1.5/3) geomean over bands 13/2/15 x gradient-direction agreement x (0.15+0.85*(1-slope19)); thin_topn spacing2, d_cat>2px, N=37654.",
-  "named_nonfault_mimic": "Buried lithologic contact / intrusive margin / paleo-shoreline producing coincident potential-field steps with no fault offset.",
-  "holdout": {
-    "label": "HOLDOUT-DTI",
-    "evaluator": "gems82-hide-v1 (quadrants, 30px buffer, visible-only exclusion, pixel-exact known mask, pooled a0.2 b0.8 R3px)",
-    "n_withheld_positives": 57407,
-    "dti": 0.07450963317383763,
-    "ci95": [
-      0.06934738097998147,
-      0.07985606653106879
-    ],
-    "random_dti": 0.06925209722619241,
-    "scarp_control_dti_E1": 0.07794021558210355,
-    "delta_vs_random": {
-      "mean": 0.0052830239091415186,
-      "ci95": [
-        -0.0008836656582938405,
-        0.01144465925871377
-      ]
-    },
-    "lowslope_stratum": {
-      "n": 21246,
-      "dti": 0.07475951230198136,
-      "ci95": [
-        0.06696800317370455,
-        0.08247014440452283
-      ],
-      "random_dti": 0.05557042121344876,
-      "delta_vs_random": {
-        "mean": 0.018998541822626287,
-        "ci95": [
-          0.009886461386163635,
-          0.028086548188222198
-        ]
-      }
-    },
-    "organizer_confirmed": null
+  "schema_version": "1.0",
+  "experiment_id": "gemsdoe82-magnetic-source-depth-edge-prereg",
+  "hypothesis": "A scale-persistent boundary in the official top-of-crustal magnetic-source-depth feature, independently supported by magnetic gradients, may mark a concealed fault missed by surface mapping.",
+  "mechanism": "Detect an oriented, persistent magnetic-source-depth edge and retain it only when independent TMI or reduced-to-pole gradient evidence supports a coherent boundary. Do not use catalogue-derived features to construct the prediction surface.",
+  "non_fault_process_that_could_mimic_it": "A lithologic contact, dike, or intrusive body can create magnetic-source-depth and field-gradient boundaries without a fault.",
+  "HOLDOUT-DTI": {
+    "status": "NOT RUN — required data, cached feature stack, and shared evaluator are absent",
+    "evaluator_version": null,
+    "withheld_positives": null,
+    "score": null,
+    "ci_95": null
   },
-  "leakage_canary": {
-    "max_feature_auc_or_inverse": 0.5438090409341083,
-    "threshold": 0.9,
-    "pass": true
-  },
-  "correlation_overlap_vs_registry": [
-    {
-      "raster": "GEMSDOE32 docs/downloads/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
-      "spearman_rho": 0.006681802174749246,
-      "my_dots_within3px": 0.19270197057417537,
-      "their_dots_within3px": 0.19328623784989643,
-      "duplicate": false,
-      "raster_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
-    },
-    {
-      "raster": "GEMSDOE32 docs/downloads/gems25-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
-      "spearman_rho": 0.006303389386560212,
-      "my_dots_within3px": 0.20199713177882828,
-      "their_dots_within3px": 0.17836244046268995,
-      "duplicate": false,
-      "raster_sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8"
+  "correlation_overlap_vs_registry": {
+    "status": "NOT RUN — no candidate surface or registry rasters are present",
+    "spearman_rank_correlation": null,
+    "fraction_of_dots_within_3_px": null,
+    "duplicate_thresholds": {
+      "spearman_gt": 0.9,
+      "overlap_fraction_gt": 0.7
     }
-  ],
-  "raster_sha256": "cfd9a3279f24f4dbf48225f4ed9d5df188053a0a1d0024a91129ea6af7761307",
-  "validator": {
-    "all_passed": true,
-    "checks": {
-      "single_band": true,
-      "dtype_float32": true,
-      "shape_3730x3292": true,
-      "crs_epsg32611": true,
-      "transform_match": true,
-      "no_nan_inside_footprint": true,
-      "no_inf_inside_footprint": true,
-      "no_sentinel_inside_footprint": true,
-      "all_finite_inside_footprint": true,
-      "range_0_1_inside_footprint": true,
-      "nodata_safe": true,
-      "outside_compliant": true,
-      "full_grid_all_finite_0_1": true,
-      "zero_on_catalogue": true
-    },
-    "min_in": 0.0,
-    "max_in": 1.0,
-    "shape": [
-      3730,
-      3292
-    ],
-    "crs": "EPSG:32611",
-    "transform": [
-      100.0,
-      0.0,
-      243350.0,
-      0.0,
-      -100.0,
-      4508550.0
-    ]
   },
-  "submission_name": "GEMSDOE82-BLINDSTEP-LINE-37654",
-  "file": "docs/downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.tif",
-  "note_140": "GEMSDOE82 blind-step line 37,654 dots; HOLDOUT-DTI 0.0745 n.s. vs random; DO NOT SUBMIT negative lane",
-  "download_ok_for_inspection": true,
-  "submit_ok": false,
-  "weekly_slots_used": 0,
+  "raster_sha256": null,
+  "validator_output": {
+    "status": "BLOCKED — no raster generated",
+    "file": null,
+    "no_nan_inside_footprint": null,
+    "values_in_range_0_1": null,
+    "crs_shape_transform_match": null,
+    "details": "No data, template grid, shared writer, or candidate TIFF is present in this checkout."
+  },
+  "submission": {
+    "name": "gemsdoe82-msdepth-edge-prereg",
+    "artifact_generated": false,
+    "note": "NO FILE — required data and shared validation tools are absent; do not submit."
+  },
   "verdict": "negative",
-  "verdict_reason": "Overall pooled HOLDOUT-DTI does not significantly beat random (CI includes 0) and trails the scarp control; protocol forbids spending a slot. Low-slope stratum is significantly positive but is a subgroup on biased truth and does not meet the promotion gate."
+  "rejected_nonconforming_activity": {
+    "reference": "IR-82-12",
+    "source": "Concurrent merged PR #3, reverted on this branch",
+    "status": "REVERTED_NOT_ACCEPTED",
+    "reason": "Used public sibling-repository mirrors and a private evaluator/writer instead of the authorized inputs and canonical shared tools required by the project protocol.",
+    "candidate_artifact_present": false,
+    "accepted_holdout_dti": null,
+    "weekly_slot_used": false
+  }
 }

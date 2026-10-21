@@ -1,12 +1,37 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Verified sources — GEMSDOE82</title><style>body{font-family:system-ui,sans-serif;max-width:920px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#17202a} .no{background:#b00020;color:#fff;padding:1rem;border-radius:8px} .ok{background:#0b6e2f;color:#fff;padding:.4rem .7rem;border-radius:6px;display:inline-block} .warn{background:#fff3cd;border:1px solid #e0a800;padding:1rem;border-radius:8px} table{border-collapse:collapse} td,th{border:1px solid #ccc;padding:.35rem .6rem} code{background:#eef1f4;padding:.1rem .3rem;border-radius:4px} a{color:#0b5394}</style></head><body><h1>Sources for manual review (official first)</h1><table>
-<tr><th>Claim used</th><th>Source</th></tr>
-<tr><td>Metric (α=0.2 β=0.8 R=300m), worked example 0.60, submission contract, bands</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description p.967</a> (fetched &amp; transcribed into src/gems82/metric.py; unit-tested vs brute force)</td></tr>
-<tr><td>Reference U-Net baseline</td><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">drivendataorg/gems-prize-reference-solution</a></td></tr>
-<tr><td>Prize rules PDF</td><td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">NLR 96647</a></td></tr>
-<tr><td>GeoDAWN surveys</td><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN</a></td></tr>
-<tr><td>INGENIOUS project</td><td><a href="https://gbcge.org/current-projects/ingenious/">GBCGE INGENIOUS</a></td></tr>
-<tr><td>EPSG:32611</td><td><a href="https://epsg.io/32611">epsg.io/32611</a></td></tr>
-<tr><td>Tversky index background</td><td><a href="https://en.wikipedia.org/wiki/Tversky_index">Wikipedia</a></td></tr>
-<tr><td>H33-2-B2 construction, credit-bar algebra, dot-thin measurements (group-internal, owner-report scores)</td><td><a href="https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html">GEMSDOE32 site</a> + cloned repo audit JSON (sha256 c55bafc4…)</td></tr>
-<tr><td>Leaderboard (read live yourself; numbers in brief conflict — IR-82-04)</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Official leaderboard</a></td></tr>
-</table><p>Data files: login-walled at DrivenData; restored from sha256-pinned owner mirrors (registry/data_manifest.json). Pins prove mirror consistency, not organizer authentication.</p><p><a href="index.html">← Home</a></p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Official references and data-access status for GEMSDOE82.">
+  <title>Official Sources | GEMSDOE82</title><link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">GEMSDOE82</a>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">Submission guide</a><a href="hypotheses.html">Hypotheses</a><a aria-current="page" href="sources.html">Sources</a><a href="irregularities.html">Review flags</a></nav>
+</div></header>
+<main>
+  <section class="hero"><p class="eyebrow">Primary-source review</p><h1>Official sources and what they verify</h1><p class="lead">A live source page is not the same as a downloaded, aligned, license-checked or validated dataset. Each claim has an explicit evidence status.</p></section>
+  <section class="status caution"><h2>Important boundary</h2><p>The competition data page redirected to login. No official training raster or sample template was retrieved in this checkout. The external USGS catalogs below identify potential free data sources, but their specific files are not part of the current model inputs.</p></section>
+  <section class="section">
+    <div class="table-wrap"><table>
+      <thead><tr><th>Source</th><th>Supports</th><th>Current verification</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description</a></td><td>Fault-mapping task, official feature descriptions, distance-weighted Tversky and GeoTIFF specification.</td><td>Official page read; no local rasters to validate.</td></tr>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">DrivenData data tab</a></td><td>Authorized training package and sample format.</td><td>Redirects to login when unauthenticated; data absent here.</td></tr>
+        <tr><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">Official reference solution</a></td><td>Organizer-provided baseline implementation.</td><td>Public repository page inspected; not the missing local shared holdout/writer template.</td></tr>
+        <tr><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN</a> · <a href="https://www.sciencebase.gov/catalog/item/657e1d85d34e23d3533209f7">ScienceBase</a></td><td>Source and context for GeoDAWN airborne magnetic/radiometric surveys.</td><td>Official metadata identified; raw data not downloaded or aligned.</td></tr>
+        <tr><td><a href="https://data.usgs.gov/datacatalog/data/USGS:77ae0551-c61e-4979-aedd-d797abdcde0e">USGS 3DEP 1 m DEM</a></td><td>Official bare-earth elevation data; useful for surface-geomorphology hypotheses.</td><td>Catalog page read; study-area tile coverage not verified.</td></tr>
+        <tr><td><a href="https://www.usgs.gov/data/heat-flow-maps-and-supporting-data-great-basin-usa">USGS Great Basin heat-flow release</a></td><td>Background conductive heat-flow maps and well residuals.</td><td>Official release identified; files/resolution/AOI coverage not checked.</td></tr>
+        <tr><td><a href="https://mrdata.usgs.gov/geology/state/">USGS Nevada geology</a> · <a href="https://mrdata.usgs.gov/geology/state/shp/NV.zip">NV.zip listing</a> · <a href="https://www.sciencebase.gov/catalog/item/5888bf4fe4b05ccb964bab9d">USGS SGMC</a></td><td>Geologic unit polygons that could model lithologic confounding.</td><td>Download listings identified; bytes, coverage and grid alignment not checked.</td></tr>
+        <tr><td><a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS ComCat/FDSN</a></td><td>Official earthquake-event API documentation.</td><td>Documentation read; no study-area event or focal-mechanism query was validated.</td></tr>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Official leaderboard</a></td><td>Current public competition standings.</td><td>Page checked 2026-10-21; external leaderboard context only, not a receipt for this project.</td></tr>
+        <tr><td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">DOE/NLR GEMS rules PDF</a></td><td>Competition rules/terms.</td><td>Link recorded; PDF not line-reviewed in this checkout.</td></tr>
+      </tbody>
+    </table></div>
+    <p><a class="button secondary" href="sources.md">Open complete evidence ledger</a></p>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · source ledger</span><span>Review date: 2026-10-21</span></div></footer>
+</body>
+</html>

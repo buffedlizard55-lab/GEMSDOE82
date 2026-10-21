@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "gemsdoe82-magnetic-source-depth-edge-prereg",
+  "hypothesis": "A scale-persistent boundary in the official top-of-crustal magnetic-source-depth feature, independently supported by magnetic gradients, may mark a concealed fault missed by surface mapping.",
+  "mechanism": "Detect an oriented, persistent magnetic-source-depth edge and retain it only when independent TMI or reduced-to-pole gradient evidence supports a coherent boundary. Do not use catalogue-derived features to construct the prediction surface.",
+  "non_fault_process_that_could_mimic_it": "A lithologic contact, dike, or intrusive body can create magnetic-source-depth and field-gradient boundaries without a fault.",
+  "HOLDOUT-DTI": {
+    "status": "NOT RUN — required data, cached feature stack, and shared evaluator are absent",
+    "evaluator_version": null,
+    "withheld_positives": null,
+    "score": null,
+    "ci_95": null
+  },
+  "correlation_overlap_vs_registry": {
+    "status": "NOT RUN — no candidate surface or registry rasters are present",
+    "spearman_rank_correlation": null,
+    "fraction_of_dots_within_3_px": null,
+    "duplicate_thresholds": {
+      "spearman_gt": 0.9,
+      "overlap_fraction_gt": 0.7
+    }
+  },
+  "raster_sha256": null,
+  "validator_output": {
+    "status": "BLOCKED — no raster generated",
+    "file": null,
+    "no_nan_inside_footprint": null,
+    "values_in_range_0_1": null,
+    "crs_shape_transform_match": null,
+    "details": "No data, template grid, shared writer, or candidate TIFF is present in this checkout."
+  },
+  "submission": {
+    "name": "gemsdoe82-msdepth-edge-prereg",
+    "artifact_generated": false,
+    "note": "NO FILE — required data and shared validation tools are absent; do not submit."
+  },
+  "verdict": "negative",
+  "rejected_nonconforming_activity": {
+    "reference": "IR-82-12",
+    "source": "Concurrent merged PR #3, reverted on this branch",
+    "status": "REVERTED_NOT_ACCEPTED",
+    "reason": "Used public sibling-repository mirrors and a private evaluator/writer instead of the authorized inputs and canonical shared tools required by the project protocol.",
+    "candidate_artifact_present": false,
+    "accepted_holdout_dti": null,
+    "weekly_slot_used": false
+  }
+}
