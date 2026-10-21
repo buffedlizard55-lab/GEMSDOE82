@@ -147,11 +147,13 @@ def orientation_coherence_vote(strike_deg: np.ndarray, coh: np.ndarray,
 
 
 # ----------------------------------------------------------------------------------
-# Lane-82 hypothesis surfaces (H82-1 .. H82-5). Each returns float32 in [0,1]-ish.
+# Lane H82-2 hypothesis surfaces (display IDs H82-2.1 .. H82-2.5; code names
+# h82_1 .. h82_5 predate the H82-1-blindstep lane — see docs/lanes.html).
+# Each returns float32 in [0,1]-ish.
 # ----------------------------------------------------------------------------------
 
 def h82_1_antislope_lineament(lidar: dict, foot: np.ndarray) -> np.ndarray:
-    """H82-1 (PRIMARY): antislope (uphill-facing) scarp lineaments.
+    """H82-2.1 (PRIMARY): antislope (uphill-facing) scarp lineaments.
 
     upface_max = max 10 m-scale step gradient AGAINST the regional slope, i.e.
     scarps that face uphill. A fluvial bank or terrace riser always faces
@@ -177,14 +179,14 @@ def h82_1_antislope_lineament(lidar: dict, foot: np.ndarray) -> np.ndarray:
 
 
 def h82_2_radiometric_break(rad: dict, ext: dict, foot: np.ndarray) -> np.ndarray:
-    """H82-2: airborne radiometric ratio breaks (K-enrichment / U-mobility edges).
+    """H82-2.2: airborne radiometric ratio breaks (K-enrichment / U-mobility edges).
 
     Hydrothermal alteration along a fault resets K (enrichment in argillic caps)
     and mobilises U; the RATIO edges (Th/K, U/Th) mark alteration fronts even
     where absolute counts are low. Surface = max gradient magnitude over the
     six ratio/count fields, NMS-crided. Catches blind faults with clay caps but
     no scarp. Mimic: lithologic contacts (addressed by requiring lineament
-    straightness via H82-1 agreement in the fusion, not here).
+    straightness via H82-2.1 agreement in the fusion, not here).
     """
     fields = [rad["K"], rad["Th"], rad["U"], ext["ThK"], ext["UK"], ext["UTh"]]
     gm = np.zeros(foot.shape, np.float32)
@@ -196,7 +198,7 @@ def h82_2_radiometric_break(rad: dict, ext: dict, foot: np.ndarray) -> np.ndarra
 
 
 def h82_3_valley_deflection(lidar: dict, foot: np.ndarray) -> np.ndarray:
-    """H82-3: deflected-drainage lineaments (valley-floor kink detector).
+    """H82-2.3: deflected-drainage lineaments (valley-floor kink detector).
 
     Faults offset and align channels; the signature is a straight valley reach
     that kinks: high relief-gradient coherence along a line. Proxy from 100 m
@@ -217,7 +219,7 @@ def h82_3_valley_deflection(lidar: dict, foot: np.ndarray) -> np.ndarray:
 
 
 def h82_4_conjugate_intersection(lidar: dict, foot: np.ndarray) -> np.ndarray:
-    """H82-4: conjugate / intersection-node density (dilatational jog proxy).
+    """H82-2.4: conjugate / intersection-node density (dilatational jog proxy).
 
     Geothermal upflow concentrates at fault intersections and stepovers (Faulds
     & Hinz 2015). Label-free proxy: pixels where TWO distinct strikes coexist
@@ -245,7 +247,7 @@ def h82_4_conjugate_intersection(lidar: dict, foot: np.ndarray) -> np.ndarray:
 
 def h82_5_thermal_upflow_prior(data_dir: str | Path, foot: np.ndarray,
                                length_px: float = 20.0) -> np.ndarray:
-    """H82-5: GDR measured-geothermometer upflow halo (IDW of T_reservoir max).
+    """H82-2.5: GDR measured-geothermometer upflow halo (IDW of T_reservoir max).
 
     Per-spring max of quartz/chalcedony/cation geothermometers (measured spring
     chemistry, GDR 1391, CC BY 4.0); IDW surface w = 1/(1+(d/L)^2), L=20 px.

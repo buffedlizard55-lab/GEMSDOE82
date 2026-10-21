@@ -15,16 +15,16 @@ is label-derived and is NEVER used as a model input.
   marks evolved magmatic heat. A vent WITHOUT a nearby mapped fault implies a
   blind feeder structure — the canonical catalogue-missing fault. Lane 82 does
   not emit on vents directly (21 points cannot support a lineament operator);
-  they corroborate the H82-5 thermal halo instead.
+  they corroborate the H82-2.5 thermal halo instead.
 
 ## Well/spring chemistry (gdr_wellspring_in_footprint.csv)
 
 * 27,092 rows in footprint; 1,247 sites with ≥1 geothermometer reading;
   **180 sites with T_reservoir > 150 °C** (per-site max of quartz/chalcedony/
   cation estimators); max measured `temp_c` 296.54 °C.
-* H82-5 turns the 1,247 measured reservoir temperatures into an IDW halo
+* H82-2.5 turns the 1,247 measured reservoir temperatures into an IDW halo
   (L=20 px, k=8, σ=3). Holdout screen at matched budget: SGMC-FAR 0.0397
-  (below base) — a halo is not a lineament, so H82-5 was DOCUMENTED, not
+  (below base) — a halo is not a lineament, so H82-2.5 was DOCUMENTED, not
   shipped. Its role in future work: gate additions (already-hot corridors get
   priority), not emission.
 

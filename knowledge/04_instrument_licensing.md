@@ -18,7 +18,7 @@ experts do not label "new" faults in the shadow of mapped ones.
 
 ## What SGMC-FAR may NOT judge: detector choice
 
-A fresh 37,654-dot emission from the H82-1 antislope surface scores SGMC-FAR
+A fresh 37,654-dot emission from the H82-2.1 antislope surface scores SGMC-FAR
 **0.1403** (vs base 0.0867) — yet CAT-HIDDEN **0.0030** (≈ random 0.0023).
 SGMC faults are surface-expressed BY CONSTRUCTION (they were mapped from
 surface geology), so any scarp detector over-scores on SGMC while the live

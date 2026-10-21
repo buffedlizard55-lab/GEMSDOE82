@@ -1,9 +1,18 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Executive summary — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
-<body><header><h1>GEMSDOE82 — antislope-scarp fault discovery (DOE GEMS Prize)</h1>
-<p>Unique lane-82 submission for DrivenData #306 · every number below is generated from audited receipts</p></header>
-<nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
+<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
+<p>Lane H82-2 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
+<nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="lanes.html">Lanes</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
+<section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
+<p><b>Lane H82-2 (mirror-verified track):</b> the file below passed the lane's 7-rule gate — see the verdict badge.
+<b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
+mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
+the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
+exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
+Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
+<a href="canon/index.html">archived canonical-track position</a>.</p></section>
+
 <section class="card"><h2>Executive summary — how to submit (5 minutes)</h2>
 <ol>
 <li><b>Download</b> <a href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif"><code>gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif</code></a>
@@ -19,7 +28,7 @@ matches the submission format's CRS/shape/geotransform; receipts above).</li>
 use <b>-zeros.tif</b> (all-finite), never a raw model output.</li>
 </ol>
 <p><span class="badge promoted">PROMOTED</span> — this badge is rendered from <code>evidence/gate.json</code>
-by <code>scripts/build_site.py</code>; no human edits it. Today it reads PROMOTED.</p></div></section>
+by <code>scripts/build_site.py</code>; no human edits it. Today it reads PROMOTED. See the dispute banner above before submitting.</p></section>
 <section class="card"><h2>What the gate checked (7 rules, all machine-run)</h2><table><tr><td><code>R1_primary_win</code></td><td>PASS</td></tr><tr><td><code>R2_quadrant_consistency</code></td><td>PASS</td></tr><tr><td><code>R3_no_loss_mid</code></td><td>PASS</td></tr><tr><td><code>R4_no_loss_raw</code></td><td>PASS</td></tr><tr><td><code>R5_live_safety</code></td><td>PASS</td></tr><tr><td><code>R6a_lane_independence</code></td><td>PASS</td></tr><tr><td><code>R7_audit</code></td><td>PASS</td></tr></table>
 <p class="small">R1 primary win +0.009619 · R2 4/4 quadrants · R3/R4 no-loss secondaries · R5 live safety infinite + addition screen 0.331 ≥ 0.111 ·
 R6a lane independence (surface ρ ≤ 0.029, added overlap ≤ 0.066) · R7 12/12 audits on both twins. Full method: Research page.</p></section>

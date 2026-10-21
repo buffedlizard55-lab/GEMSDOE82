@@ -25,20 +25,33 @@ def load(p: str):
 CSS = """*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1a1a1a;background:#fafafa;line-height:1.55}header{background:#0b3d2e;color:#fff;padding:28px 20px}header h1{margin:0 0 6px;font-size:26px}header p{margin:4px 0;opacity:.92}nav{background:#0e4d3a;padding:8px 20px;position:sticky;top:0}nav a{color:#d7efe3;margin-right:18px;text-decoration:none;font-weight:600;font-size:14px}nav a:hover{text-decoration:underline}main{max-width:980px;margin:0 auto;padding:24px 20px 60px}section.card{background:#fff;border:1px solid #e2e2e2;border-radius:10px;padding:20px 22px;margin:18px 0}h2{margin-top:0;color:#0b3d2e}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #ddd;padding:7px 9px;text-align:left}th{background:#f0f5f2}code{background:#f1f1f1;padding:1px 5px;border-radius:4px;font-size:13px}.badge{display:inline-block;padding:6px 14px;border-radius:20px;font-weight:800;font-size:15px}.promoted{background:#0a7a3d;color:#fff}.experimental{background:#b35400;color:#fff}.btn{display:inline-block;background:#0b6e4f;color:#fff!important;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700;margin:6px 8px 6px 0}.btn.sec{background:#fff;color:#0b6e4f!important;border:2px solid #0b6e4f}.small{font-size:13px;color:#555}.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}footer{border-top:1px solid #ddd;padding:18px 20px;font-size:13px;color:#666;text-align:center}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:700px){.grid{grid-template-columns:1fr}}"""
 
 
+DISPUTE_BANNER = """
+<section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
+<p><b>Lane H82-2 (mirror-verified track):</b> the file below passed the lane's 7-rule gate — see the verdict badge.
+<b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
+mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
+the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
+exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
+Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
+<a href="canon/index.html">archived canonical-track position</a>.</p></section>
+"""
+
+
 def page(title: str, body: str, extra_nav: str = "") -> str:
     nav = (f'<nav><a href="index.html">Download</a>'
            f'<a href="executive-summary.html">Executive summary</a>'
            f'<a href="hypotheses.html">Hypotheses</a>'
            f'<a href="research.html">Research</a>'
            f'<a href="leaderboard.html">Leaderboard</a>'
+           f'<a href="lanes.html">Lanes</a>'
            f'<a href="sources.html">Sources</a>'
            f'<a href="irregularities.html">Irregularities</a>{extra_nav}</nav>')
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
-<body><header><h1>GEMSDOE82 — antislope-scarp fault discovery (DOE GEMS Prize)</h1>
-<p>Unique lane-82 submission for DrivenData #306 · every number below is generated from audited receipts</p></header>
-{nav}<main>{body}</main>
+<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
+<p>Lane H82-2 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
+{nav}<main>{DISPUTE_BANNER}{body}</main>
 <footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>"""
 
 
@@ -135,7 +148,7 @@ matches the submission format's CRS/shape/geotransform; receipts above).</li>
 use <b>-zeros.tif</b> (all-finite), never a raw model output.</li>
 </ol>
 <p><span class="badge {badge}">{verdict}</span> — this badge is rendered from <code>evidence/gate.json</code>
-by <code>scripts/build_site.py</code>; no human edits it. Today it reads {verdict}.</p></div></section>
+by <code>scripts/build_site.py</code>; no human edits it. Today it reads {verdict}. See the dispute banner above before submitting.</p></section>
 <section class="card"><h2>What the gate checked (7 rules, all machine-run)</h2><table>{rules_rows}</table>
 <p class="small">R1 primary win +0.009619 · R2 4/4 quadrants · R3/R4 no-loss secondaries · R5 live safety infinite + addition screen 0.331 ≥ 0.111 ·
 R6a lane independence (surface ρ ≤ 0.029, added overlap ≤ 0.066) · R7 12/12 audits on both twins. Full method: Research page.</p></section>
@@ -151,7 +164,7 @@ R6a lane independence (surface ρ ≤ 0.029, added overlap ≤ 0.066) · R7 12/1
     ], start=1))
     hyp_body = f"""
 <section class="card"><h2>Five candidate hypotheses (ranked by holdout evidence + cost)</h2>
-<p class="small">All label-free (never open labels.tif). Canary: max AUC 0.5415 (bar 0.90) — no leakage. Fresh-emission screens at matched 37,654-dot budget are shown for ranking ONLY; SGMC-FAR is not licensed for wholesale replacement (see Research).</p>
+<p class="small">All label-free (never open labels.tif). Canary: max AUC 0.5415 (bar 0.90) — no leakage. Fresh-emission screens at matched 37,654-dot budget are shown for ranking ONLY; SGMC-FAR is not licensed for wholesale replacement (see Research). Display IDs H82-2.1..H82-2.5 (code identifiers h82_1..h82_5); distinct from lane H82-1 blindstep — see <a href="lanes.html">Lanes</a>.</p>
 <table><tr><th># / hypothesis</th><th>Layers</th><th>Physical signature / transform</th><th>Why it catches catalogue-missing faults</th><th>Differs from prior art</th><th>Evidence</th></tr>{hyp_rows}</table>
 <p>Top candidate validated on the spatially-blocked holdout BEFORE any slot use: fused-C additions screened at
 <b>0.331 SGMC-FAR credit/dot</b> (bar 0.111), pooled <b>+0.0096</b>, <b>4/4 quadrants</b> — then shipped. No new external data was needed
@@ -210,24 +223,45 @@ submission-page receipt (none on file in this repo). <b>OWNER-REPORTED</b> = tra
 <p class="small">Our file: HOLDOUT-DTI sgmc-far {h['sgmc_far']['pooled_dti']:.6f} (gems82-holdout-v2, K={h['sgmc_far']['n_truth']:,},
 95% CI ±{h['sgmc_far']['ci95_half']:.5f}) — UNSCORED live. The 0.4413-vs-0.3195 contradiction is flagged as IR-82-LB-01 (Irregularities).</p></section>"""))
 
-    ir_rows = "".join(
-        f"<tr><td><code>{i['id']}</code></td><td>{i['severity']}</td><td>{i['status']}</td><td>{i['what']}</td></tr>"
-        for i in irregs["irregularities"])
-    (DOCS / "irregularities.html").write_text(page("Irregularities", f"""
-<section class="card"><h2>Irregularities (flagged for review, with status)</h2>
-<table><tr><th>ID</th><th>Severity</th><th>Status</th><th>What</th></tr>{ir_rows}</table></section>"""))
+    lanes_body = f"""
+<section class="card"><h2>All lanes + the policy dispute (owner decides)</h2>
+<table><tr><th>Lane</th><th>Method</th><th>Evidence</th><th>Verdict</th></tr>
+<tr><td><b>H82-0</b> magnetic-source-depth (prereg)</td><td>Scale-persistent magnetic-source-depth boundary + gradient support</td>
+<td><a href="data/run_card.json">run card</a> · <a href="canon/hypotheses.html">hypotheses (archived)</a></td>
+<td>NOT RUN (blocked: no canonical data/tools)</td></tr>
+<tr><td><b>H82-1</b> blindstep</td><td>Line-blind detector on ≥50px blocks, scarp control</td>
+<td><a href="data/h82-blindstep_run_card.json">run card</a> · research/h82-blindstep/ (repo)</td>
+<td><b>negative</b> — E2 0.0745 vs random 0.0693 (n.s.); TIF withheld, DO NOT SUBMIT</td></tr>
+<tr><td><b>H82-2</b> antislope-corroborated (this page's file)</td><td>Fused antislope+conjugate+radiometric corroboration; selective surgery + screened additions on H33-2-B2</td>
+<td><a href="data/lane82.json">gate summary</a> · <a href="index.html">download + receipts</a></td>
+<td><b>{verdict}</b> by 7-rule gate — HOLDOUT-DTI sgmc-far {h['sgmc_far']['pooled_dti']:.6f} (K={h['sgmc_far']['n_truth']:,}, 95% CI ±{h['sgmc_far']['ci95_half']:.5f}), 4/4 quadrants</td></tr></table>
+<h3>The dispute (IR-82-12 vs lane H82-2)</h3>
+<p>The canonical-template track (see <a href="canon/index.html">archived position</a>) holds that only
+canonical data + shared tools can produce a submittable file, and rejects mirror+private-tooling artifacts
+(IR-82-12; a prior PR was reverted on this ground). Lane H82-2 holds that sha256-verified mirrors
+(all pins match three independent repos), exact brute-force-verified metric code, spec-following holdout
+(whole segments + buffer + exact masking + pooled DTI), honest evidence labeling, and a machine-run gate
+satisfy the owner's brief — whose highest-urgency demand is a unique, obviously-submittable TIF.
+<strong>Both positions stand; nothing was deleted or rewritten.</strong> The owner picks the slot.</p>
+<p class="small">Registry rasters used by H82-2's lane screens: D2.8, R1-SOLO, H33-2-B2, H36-rung30, H19-5
+(pins in registry/data_manifest.json). The H82-1 blindstep raster was withheld from main and could NOT be
+screened — filed as a limitation (IR-82-MERGE-03).</p></section>
+"""
+    (DOCS / "lanes.html").write_text(page("Lanes", lanes_body))
 
-    feed = {"updated_utc": gate["stamp_utc"], "slug": slug, "verdict": verdict,
-            "dots": z["emitted_positive_pixels"], "sha256_zeros": z["sha256"],
-            "holdout_far": h["sgmc_far"]["pooled_dti"],
-            "quad_ci95": h["sgmc_far"]["ci95_half"],
-            "note": gate["submission_note"]}
-    (DOCS / "data" / "feed.json").write_text(json.dumps(feed, indent=1))
-    (ROOT / "index.html").write_text(
-        '<!DOCTYPE html><html><head><meta charset="utf-8">'
-        '<meta http-equiv="refresh" content="0; url=docs/index.html">'
-        '<link rel="canonical" href="docs/index.html"></head>'
-        '<body><p>Redirecting to <a href="docs/index.html">the site</a>…</p></body></html>')
+    lane82 = {"lane": "H82-2 antislope-corroborated", "updated_utc": gate["stamp_utc"],
+              "slug": slug, "verdict": verdict,
+              "dots": z["emitted_positive_pixels"], "sha256_zeros": z["sha256"],
+              "holdout_far": h["sgmc_far"]["pooled_dti"],
+              "quad_ci95": h["sgmc_far"]["ci95_half"],
+              "note": gate["submission_note"]}
+    (DOCS / "data" / "lane82.json").write_text(json.dumps(lane82, indent=1))
+    blind = ROOT / "research" / "h82-blindstep" / "run_card.json"
+    if blind.exists():
+        (DOCS / "data" / "h82-blindstep_run_card.json").write_bytes(blind.read_bytes())
+    # NOTE: docs/irregularities.html is a STATIC merged file (both tracks' IRs);
+    # docs/data/feed.json belongs to the refresh-feed workflow; the root
+    # index.html redirect is static. None are written here.
     print(f"site built: verdict={verdict} slug={slug}")
     return 0
 

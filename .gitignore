@@ -1,9 +1,32 @@
-# fetched competition/mirror data (reproducible via scripts/fetch_data.sh; never committed)
-data/
-# python
+# Merged 2026-10-21: canonical-track patterns (anchored) + lane-82 patterns.
+# NOTE: patterns are anchored with leading / so docs/data/ (Pages artifact)
+# stays committable.
+
+# Authorized competition inputs and derived caches are local-only.
+/data/
+!/data/README.md
+/data/*.tif
+/data/*.tiff
+/data/*.zip
+/data/*.csv
+/data/*.json
+/data/cache/
+/cache/
+/work/
+/registry/rasters/*.tif
+/registry/rasters/*.tiff
+
+# Python and local environment artifacts.
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+.env
+
+# Keep generated candidate artifacts out of source unless deliberately published
+# after validation in docs/downloads/ with a run card and checksum.
+submission.tif
+gems82-*-inspection.tif
+
+# Lane-82 local fetch/scratch (reproducible via scripts/fetch_data.sh).
 *.egg-info/
-# work scratch
-work/
+.pytest_cache/

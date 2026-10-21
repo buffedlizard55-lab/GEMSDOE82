@@ -3,6 +3,11 @@
 Requires data/ (skipped if absent). Guards against hand-copied-constant bugs:
 the base mask evaluated in-process must reproduce evidence/holdout_registry_v2.json.
 """
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
 import json
 from pathlib import Path
 

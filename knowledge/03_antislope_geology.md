@@ -31,11 +31,11 @@ a 100 m-grid expert compilation misses.
 
 | hypothesis | mimic | mitigation in the operator |
 | --- | --- | --- |
-| H82-1 antislope lineament | sackung/landslide headscarps; dip-slope benches | strike-agreement vote (faults are straight over 100s of m; slumps are arcuate) + channel-bank suppression (low `cross_max`) + NMS crest (thin lines, not alcoves) |
-| H82-2 radiometric break | lithologic contacts (K/Th contrasts with no fault) | gradient-NMS (thin edges) + fusion (an isolated contact rarely coincides with antislope fabric); contacts are reported, not hidden |
-| H82-3 valley deflection | axial playas, meander cutoffs, fan-head trenches | 7 px straightness vote; playa/meander curvature fails it |
-| H82-4 conjugate intersection | dendritic drainage junctions | scarp-relief weighting (junctions on flat fans score ~0) |
-| H82-5 thermal halo | lateral outflow plumes, shallow mixing | per-site MAX of three independent geothermometers (disagreement = mixing, down-weighted) + short IDW length (L=20 px) |
+| H82-2.1 antislope lineament | sackung/landslide headscarps; dip-slope benches | strike-agreement vote (faults are straight over 100s of m; slumps are arcuate) + channel-bank suppression (low `cross_max`) + NMS crest (thin lines, not alcoves) |
+| H82-2.2 radiometric break | lithologic contacts (K/Th contrasts with no fault) | gradient-NMS (thin edges) + fusion (an isolated contact rarely coincides with antislope fabric); contacts are reported, not hidden |
+| H82-2.3 valley deflection | axial playas, meander cutoffs, fan-head trenches | 7 px straightness vote; playa/meander curvature fails it |
+| H82-2.4 conjugate intersection | dendritic drainage junctions | scarp-relief weighting (junctions on flat fans score ~0) |
+| H82-2.5 thermal halo | lateral outflow plumes, shallow mixing | per-site MAX of three independent geothermometers (disagreement = mixing, down-weighted) + short IDW length (L=20 px) |
 
 Residual risk (stated, not hidden): sackung in high-relief ranges produces
 straight uphill-facing scarps that pass every gate above. A relief-mask
@@ -46,7 +46,7 @@ ablation is filed as next work; the shipped candidate mitigates by fusion
 
 * Faulds & Hinz (2015) — Great Basin geothermal systems concentrate at fault
   terminations, stepovers, and relay ramps (structural-setting rationale).
-* Siler et al. (2019) — fault-intersection permeability (H82-4 rationale).
-* Fournier & Potter — quartz/chalcedony geothermometers (H82-5 estimators).
+* Siler et al. (2019) — fault-intersection permeability (H82-2.4 rationale).
+* Fournier & Potter — quartz/chalcedony geothermometers (H82-2.5 estimators).
 * USGS GeoDAWN release, DOI 10.5066/P93LGLVQ (radiometric/magnetic source).
 * GDR 1391, DOI 10.15121/1881483, CC BY 4.0 (spring-chemistry source).

@@ -1,19 +1,164 @@
 {
-  "schema_version": 1,
-  "note": "Every hash was computed from the fetched bytes (scripts/verify_data.py). Pins prove mirror consistency, NOT organizer authentication. Lane 82 uses ONLY these files; the 19-band training_features.tif was never fetched or used.",
-  "files": [
-    {"id": "labels", "path": "data/labels.tif", "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093", "bytes": 425830, "provenance": "owner mirror (GEMSDOE24@07345ea:data/bridge/labels.tif) of DrivenData labels.tif; int8 grid 3730x3292 EPSG:32611; 60988 fault px"},
-    {"id": "sample_submission", "path": "data/sample_submission.tif", "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc", "bytes": 1599597, "provenance": "owner mirror of DrivenData sample_submission.tif; float32 grid template; footprint = 5167373 finite px"},
-    {"id": "existing_faults", "path": "data/existing_faults.tif", "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093", "bytes": 425830, "provenance": "byte-identical to labels.tif (verified)"},
-    {"id": "sgmc_faults", "path": "data/external/derived_sgmc_faults_100m_u8.tif", "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0", "bytes": 198602, "provenance": "USGS State Geologic Map Compilation faults rasterized to 100m (proxy truth ONLY; 83593 px)"},
-    {"id": "lidar_scarp_u8", "path": "data/external/lidar_scarp_features_u8.tif", "sha256": "d580bb8bdcdb941e32fefb8b38044bc5bf04e199bf2e83498c3576e6fc465568", "bytes": 36943606, "provenance": "owner-CI derivation from USGS 3DEP 1m DEM tiles (706/716); 12 bands incl. upface_max (H82-1), lappos_max (H82-3), coh100/strike (H82-4)"},
-    {"id": "geodawn_rad_u8", "path": "data/external/geodawn_rad_u8.tif", "sha256": "c22420f75999030d7cc65c9e31e50d232ea6158423bca051613a18a8b20ba682", "bytes": 26612970, "provenance": "USGS GeoDAWN DOI 10.5066/P93LGLVQ; bands K,Th,U,TC (H82-2)"},
-    {"id": "geodawn_ext_u8", "path": "data/external/geodawn_extensions_u8.tif", "sha256": "a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b", "bytes": 27132925, "provenance": "USGS GeoDAWN DOI 10.5066/P93LGLVQ; bands ThK,UK,UTh,TMI_up150 (H82-2)"},
-    {"id": "gdr_wellspring", "path": "data/external/gdr_wellspring_in_footprint.csv", "sha256": "122718e65bdf55aab0ee12ad20d80062f0deb1de957225a61ad880dd5dc196ea", "bytes": 2146771, "provenance": "GDR 1391 DOI 10.15121/1881483 CC-BY-4.0; measured geothermometers (H82-5); dist_known_fault_px NEVER used"},
-    {"id": "reg_d28", "path": "data/registry/d28-44090-nan.tif", "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8", "bytes": 1603424, "provenance": "GEMSDOE32 docs/downloads; 44090 dots; owner-reported 0.2600"},
-    {"id": "reg_r1", "path": "data/registry/r1-solo-40199-nan.tif", "sha256": "ab02300152248fdda04e988e2cd2a0c13f35eec42fcf670a15e8b76b19e24a73", "bytes": 1595850, "provenance": "GEMSDOE28 docs/downloads; 40199 dots; owner-reported 0.2708; verified pixel-exact D2.8-minus-d1-flank"},
-    {"id": "reg_h36", "path": "data/registry/h36-rung30-nan.tif", "sha256": "5556aa1438fd67376b60d5ffc99228ec09dcc11a8408298a743ccb88d6163641", "bytes": 1590848, "provenance": "GEMSDOE28 docs/downloads h36-1-rung30-blind-r1; owner-reported 0.2710; duplicate-guard reference only"},
-    {"id": "reg_h195", "path": "data/registry/h19-5-nan.tif", "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d", "bytes": 1712322, "provenance": "GEMSDOE24 inputs; 121131 dots; owner-reported 0.1922; duplicate-guard reference only"},
-    {"id": "reg_b2", "path": "data/registry/h33-2-b2-37654-nan.tif", "sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd", "bytes": 355443, "provenance": "GEMSDOE32 docs/downloads; 37654 dots; owner-reported 0.2778; verified pixel-exact R1-minus-d2-flank; lane-82 carrier base"}
-  ]
+ "schema_version": "1.0",
+ "checked_on_utc": "2026-10-21",
+ "status": "blocked",
+ "checkout_at_review_start": [
+  "README.md"
+ ],
+ "competition_inputs": [
+  {
+   "logical_name": "features",
+   "accepted_names_from_project_request": [
+    "training_features.tif",
+    "gems-geodawn-numerical-features.tif"
+   ],
+   "status": "missing"
+  },
+  {
+   "logical_name": "fault_labels_or_existing_faults",
+   "accepted_names_from_project_request": [
+    "labels.tif",
+    "existing_faults.tif"
+   ],
+   "status": "missing"
+  },
+  {
+   "logical_name": "sample_submission_grid",
+   "accepted_names_from_project_request": [
+    "sample_submission.tif",
+    "example_submission.tif"
+   ],
+   "status": "missing"
+  },
+  {
+   "logical_name": "1m_dem_links",
+   "accepted_names_from_project_request": [
+    "1m_DEM_links.csv",
+    "digital_elevation_model_links.json"
+   ],
+   "status": "missing"
+  }
+ ],
+ "shared_template_assets": [
+  {
+   "logical_name": "cached_feature_stack",
+   "canonical_path": null,
+   "status": "missing_or_unspecified"
+  },
+  {
+   "logical_name": "evaluate_holdout.py",
+   "canonical_path": null,
+   "status": "missing"
+  },
+  {
+   "logical_name": "submission_writer.py",
+   "canonical_path": null,
+   "status": "missing"
+  }
+ ],
+ "registry_rasters": {
+  "status": "missing",
+  "candidate_comparison_possible": false
+ },
+ "submission_tiff": {
+  "generated": false,
+  "submit_ready": false,
+  "reason": "No authorized competition data, cached feature stack, shared tools, template grid, or registry rasters are present."
+ },
+ "source": "Local checkout inspection; official competition data page was observed redirecting unauthenticated access to DrivenData login. See docs/sources.md.",
+ "merge_note_2026_10_21": "Two-track repo. Sections competition_inputs/shared_template_assets/registry_rasters/submission_tiff are the CANONICAL-track position (unchanged: canonical assets absent). The lane82_mirror_inputs section is lane H82-2's sha256-verified owner-mirror manifest (disputed under IR-82-12; lane position in IR-82-MERGE-01).",
+ "lane82_mirror_inputs": [
+  {
+   "id": "labels",
+   "path": "data/labels.tif",
+   "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+   "bytes": 425830,
+   "provenance": "owner mirror (GEMSDOE24@07345ea:data/bridge/labels.tif) of DrivenData labels.tif; int8 grid 3730x3292 EPSG:32611; 60988 fault px"
+  },
+  {
+   "id": "sample_submission",
+   "path": "data/sample_submission.tif",
+   "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+   "bytes": 1599597,
+   "provenance": "owner mirror of DrivenData sample_submission.tif; float32 grid template; footprint = 5167373 finite px"
+  },
+  {
+   "id": "existing_faults",
+   "path": "data/existing_faults.tif",
+   "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+   "bytes": 425830,
+   "provenance": "byte-identical to labels.tif (verified)"
+  },
+  {
+   "id": "sgmc_faults",
+   "path": "data/external/derived_sgmc_faults_100m_u8.tif",
+   "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
+   "bytes": 198602,
+   "provenance": "USGS State Geologic Map Compilation faults rasterized to 100m (proxy truth ONLY; 83593 px)"
+  },
+  {
+   "id": "lidar_scarp_u8",
+   "path": "data/external/lidar_scarp_features_u8.tif",
+   "sha256": "d580bb8bdcdb941e32fefb8b38044bc5bf04e199bf2e83498c3576e6fc465568",
+   "bytes": 36943606,
+   "provenance": "owner-CI derivation from USGS 3DEP 1m DEM tiles (706/716); 12 bands incl. upface_max (H82-1), lappos_max (H82-3), coh100/strike (H82-4)"
+  },
+  {
+   "id": "geodawn_rad_u8",
+   "path": "data/external/geodawn_rad_u8.tif",
+   "sha256": "c22420f75999030d7cc65c9e31e50d232ea6158423bca051613a18a8b20ba682",
+   "bytes": 26612970,
+   "provenance": "USGS GeoDAWN DOI 10.5066/P93LGLVQ; bands K,Th,U,TC (H82-2)"
+  },
+  {
+   "id": "geodawn_ext_u8",
+   "path": "data/external/geodawn_extensions_u8.tif",
+   "sha256": "a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b",
+   "bytes": 27132925,
+   "provenance": "USGS GeoDAWN DOI 10.5066/P93LGLVQ; bands ThK,UK,UTh,TMI_up150 (H82-2)"
+  },
+  {
+   "id": "gdr_wellspring",
+   "path": "data/external/gdr_wellspring_in_footprint.csv",
+   "sha256": "122718e65bdf55aab0ee12ad20d80062f0deb1de957225a61ad880dd5dc196ea",
+   "bytes": 2146771,
+   "provenance": "GDR 1391 DOI 10.15121/1881483 CC-BY-4.0; measured geothermometers (H82-5); dist_known_fault_px NEVER used"
+  },
+  {
+   "id": "reg_d28",
+   "path": "data/registry/d28-44090-nan.tif",
+   "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+   "bytes": 1603424,
+   "provenance": "GEMSDOE32 docs/downloads; 44090 dots; owner-reported 0.2600"
+  },
+  {
+   "id": "reg_r1",
+   "path": "data/registry/r1-solo-40199-nan.tif",
+   "sha256": "ab02300152248fdda04e988e2cd2a0c13f35eec42fcf670a15e8b76b19e24a73",
+   "bytes": 1595850,
+   "provenance": "GEMSDOE28 docs/downloads; 40199 dots; owner-reported 0.2708; verified pixel-exact D2.8-minus-d1-flank"
+  },
+  {
+   "id": "reg_h36",
+   "path": "data/registry/h36-rung30-nan.tif",
+   "sha256": "5556aa1438fd67376b60d5ffc99228ec09dcc11a8408298a743ccb88d6163641",
+   "bytes": 1590848,
+   "provenance": "GEMSDOE28 docs/downloads h36-1-rung30-blind-r1; owner-reported 0.2710; duplicate-guard reference only"
+  },
+  {
+   "id": "reg_h195",
+   "path": "data/registry/h19-5-nan.tif",
+   "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+   "bytes": 1712322,
+   "provenance": "GEMSDOE24 inputs; 121131 dots; owner-reported 0.1922; duplicate-guard reference only"
+  },
+  {
+   "id": "reg_b2",
+   "path": "data/registry/h33-2-b2-37654-nan.tif",
+   "sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+   "bytes": 355443,
+   "provenance": "GEMSDOE32 docs/downloads; 37654 dots; owner-reported 0.2778; verified pixel-exact R1-minus-d2-flank; lane-82 carrier base"
+  }
+ ],
+ "lane82_note": "Every hash was computed from the fetched bytes (scripts/verify_data.py). Pins prove mirror consistency, NOT organizer authentication. Lane 82 uses ONLY these files; the 19-band training_features.tif was never fetched or used."
 }
