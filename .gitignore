@@ -1,0 +1,9 @@
+# fetched competition/mirror data (reproducible via scripts/fetch_data.sh; never committed)
+data/
+# python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+# work scratch
+work/

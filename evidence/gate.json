@@ -1,0 +1,231 @@
+{
+ "slug": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9",
+ "stamp_utc": "20261021T120000Z",
+ "submission_note": "GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt",
+ "margins": {
+  "sgmc_far": 0.009618864128682486,
+  "sgmc_mid": 0.008744312659323752,
+  "sgmc_offcat": 0.008490568351262759,
+  "quadrants_positive": 4
+ },
+ "live_safety": null,
+ "live_safety_note": "infinite (zero measured MID-credit cost)",
+ "screen_credit_per_dot": 0.3312751368778748,
+ "n_added": 1500,
+ "duplicate_guard": {
+  "lane_R6a": {
+   "d28-44090": {
+    "surface_rho": 0.019836775638068776,
+    "added_overlap_3px": 0.03933333333333333,
+    "duplicate": false
+   },
+   "r1-solo-40199": {
+    "surface_rho": 0.01867265432555882,
+    "added_overlap_3px": 0.03933333333333333,
+    "duplicate": false
+   },
+   "h33-2-b2-37654": {
+    "surface_rho": 0.018093977180237253,
+    "added_overlap_3px": 0.03933333333333333,
+    "duplicate": false
+   },
+   "h36-rung30": {
+    "surface_rho": 0.01897080812161397,
+    "added_overlap_3px": 0.043333333333333335,
+    "duplicate": false
+   },
+   "h19-5": {
+    "surface_rho": 0.0287940860655265,
+    "added_overlap_3px": 0.066,
+    "duplicate": false
+   }
+  },
+  "carrier_R6b": {
+   "d28-44090": {
+    "spearman_rho": 0.8797225499779231,
+    "overlap_3px": 0.9611496050254779,
+    "duplicate": true
+   },
+   "r1-solo-40199": {
+    "spearman_rho": 0.9214738945605546,
+    "overlap_3px": 0.9611496050254779,
+    "duplicate": true
+   },
+   "h33-2-b2-37654": {
+    "spearman_rho": 0.9522129193117653,
+    "overlap_3px": 0.9611496050254779,
+    "duplicate": true
+   },
+   "h36-rung30": {
+    "spearman_rho": 0.6669834860767037,
+    "overlap_3px": 0.9604755870696395,
+    "duplicate": true
+   },
+   "h19-5": {
+    "spearman_rho": 0.5289322488407957,
+    "overlap_3px": 0.9622280337548192,
+    "duplicate": true
+   }
+  },
+  "n_removed_vs_base": 2063,
+  "n_added": 1500,
+  "novel_fraction": 0.09606103906608073
+ },
+ "rules": {
+  "R1_primary_win": true,
+  "R2_quadrant_consistency": true,
+  "R3_no_loss_mid": true,
+  "R4_no_loss_raw": true,
+  "R5_live_safety": true,
+  "R6a_lane_independence": true,
+  "R7_audit": true
+ },
+ "verdict": "PROMOTED",
+ "receipts": {
+  "zeros": {
+   "filename": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif",
+   "size_bytes": 146094,
+   "sha256": "3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02",
+   "mode": "zeros",
+   "crs": "EPSG:32611",
+   "transform": [
+    100.0,
+    0.0,
+    243350.0,
+    0.0,
+    -100.0,
+    4508550.0
+   ],
+   "shape": [
+    3730,
+    3292
+   ],
+   "dtype": "float32",
+   "nodata": null,
+   "nodata_repr": "None",
+   "emitted_positive_pixels": 37091,
+   "footprint_fraction": 0.007178,
+   "on_catalogue_positive_pixels": 0,
+   "in_footprint_finite_pixels": 5167373,
+   "in_footprint_min": 0.0,
+   "in_footprint_max": 1.0,
+   "full_grid_finite_pixels": 12279160,
+   "checks": {
+    "single_band": true,
+    "dtype_float32": true,
+    "dimensions_3730x3292": true,
+    "crs_epsg_32611": true,
+    "in_footprint_all_finite": true,
+    "in_footprint_zero_nan": true,
+    "in_footprint_zero_inf": true,
+    "in_footprint_zero_sentinel": true,
+    "in_footprint_range_0_1": true,
+    "outside_footprint_compliant": true,
+    "zero_on_catalogue_leakage": true,
+    "validator_range_0_1_guaranteed": true
+   },
+   "all_checks_passed": true
+  },
+  "nan": {
+   "filename": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif",
+   "size_bytes": 190643,
+   "sha256": "84e6952e257439ef33ee0788eb98f0f540be203276d471b067ac7967e084392f",
+   "mode": "nan",
+   "crs": "EPSG:32611",
+   "transform": [
+    100.0,
+    0.0,
+    243350.0,
+    0.0,
+    -100.0,
+    4508550.0
+   ],
+   "shape": [
+    3730,
+    3292
+   ],
+   "dtype": "float32",
+   "nodata": null,
+   "nodata_repr": "nan",
+   "emitted_positive_pixels": 37091,
+   "footprint_fraction": 0.007178,
+   "on_catalogue_positive_pixels": 0,
+   "in_footprint_finite_pixels": 5167373,
+   "in_footprint_min": 0.0,
+   "in_footprint_max": 1.0,
+   "full_grid_finite_pixels": 5167373,
+   "checks": {
+    "single_band": true,
+    "dtype_float32": true,
+    "dimensions_3730x3292": true,
+    "crs_epsg_32611": true,
+    "in_footprint_all_finite": true,
+    "in_footprint_zero_nan": true,
+    "in_footprint_zero_inf": true,
+    "in_footprint_zero_sentinel": true,
+    "in_footprint_range_0_1": true,
+    "outside_footprint_compliant": true,
+    "zero_on_catalogue_leakage": true,
+    "validator_range_0_1_guaranteed": true
+   },
+   "all_checks_passed": true
+  }
+ },
+ "raster_sha256_zeros": "3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02",
+ "zip": {
+  "filename": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip",
+  "size_bytes": 113618,
+  "sha256": "7943d2b70415923933355dd564afd97b9f576226c0f47f9cc775ff29a71d25ce"
+ },
+ "holdout": {
+  "sgmc_far": {
+   "pooled_dti": 0.09630186412868248,
+   "tp": 5015.529069650257,
+   "fp": 34955.11596415209,
+   "n_truth": 55109,
+   "quad_mean": 0.09593987167823087,
+   "ci95_half": 0.015241611186542471,
+   "per_quadrant": {
+    "NW": 0.08042653794231876,
+    "NE": 0.09764481478909441,
+    "SW": 0.11674999983388026,
+    "SE": 0.08893813414763005
+   }
+  },
+  "sgmc_mid": {
+   "pooled_dti": 0.10413031265932375,
+   "tp": 6018.8681329222,
+   "fp": 34499.66508539878,
+   "n_truth": 62122,
+   "quad_mean": 0.10508999502959263,
+   "ci95_half": 0.013992979837677782,
+   "per_quadrant": {
+    "NW": 0.10019171117363361,
+    "NE": 0.10465248084189618,
+    "SW": 0.12468732212441967,
+    "SE": 0.09082846597842105
+   }
+  },
+  "sgmc_offcat": {
+   "pooled_dti": 0.10455056835126277,
+   "tp": 6092.843929494161,
+   "fp": 34477.78677145944,
+   "n_truth": 62703,
+   "quad_mean": 0.1055534741420805,
+   "ci95_half": 0.014007061016086177,
+   "per_quadrant": {
+    "NW": 0.10127528304791257,
+    "NE": 0.10517132287138896,
+    "SW": 0.12496513064007192,
+    "SE": 0.09080216000894852
+   }
+  },
+  "cat_hidden": {
+   "pooled_dti": 0.002377039596573345,
+   "tp": 75.34424922456044,
+   "fp": 69480.02584939306,
+   "n_truth": 22232,
+   "ci95_half": 0.0004235390819490634
+  }
+ }
+}
