@@ -60,7 +60,7 @@ The readiness command returns a nonzero status while required assets are absent;
 ### Pass 2 — correct unsafe behavior and claims
 
 - Added `registry/submission_authorization.json`, defaulting to `NOT_AUTHORIZED`; a green site status now requires a separate selector receipt bound to the exact SHA-256 and no duplicate finding.
-- Updated the site and README to label the existing downloadable TIFF `DUPLICATE — NOT SELECTED — DO NOT SUBMIT`, retaining download access for inspection/learning only.
+- Updated the site and README to label the archived TIFF `DUPLICATE — NOT SELECTED — DO NOT SUBMIT`; removed TIFF download links from the entry pages while retaining the binary only in the repository for audit/learning.
 - Reclassified the old format audit as format-only; it no longer prints “PORTAL-ILLEGAL ARTIFACTS: none” or infers submission legality from a research gate.
 - Corrected the lane writer to apply duplicate screening to both the pre-placement surface and complete final-dot mask; incomplete registry inventory or any duplicate now writes a stop record and exits before TIFF writing. The research gate is named `RESEARCH_GATE_PASS/NEGATIVE`, not submission promotion.
 - Logged IR-82-DUP-01 and made the historical H33-2-B2 explanation explicitly owner-reported and causally unconfirmed.
@@ -69,7 +69,7 @@ The readiness command returns a nonzero status while required assets are absent;
 
 - Rebuilt generated Pages artifacts without modifying `docs/data/feed.json` or the canonical run-card copy.
 - `.venv/bin/python -m pytest -q -rs`: passed; two data-dependent tests skipped because `data/` is absent.
-- `.venv/bin/python -m unittest discover -v`: 9 tests passed.
+- `.venv/bin/python -m unittest discover -v`: 10 tests passed, including the final-dot duplicate link-block regression.
 - `py_compile`, JSON parsing, and `git diff --check`: passed.
 - Verified the public download and executive-summary pages state the same fail-closed status; the active candidate is explicitly identified as a duplicate and is not authorized.
 - Final outcome: negative / blocked. The archived H82-2 file is not a new unique submission and must not be uploaded. Remaining blockers: obtain official competition package and canonical shared tools, define the session's authorized method paragraph, complete registry inventory, validate the preregistered top hypothesis using whole-segment buffered holdout + feature-only canary, then let the separate selector decide whether any slot is used.

@@ -13,6 +13,14 @@
 > **Own the Outcome.** Results owned end to end: every number carries an evidence
 > class and a receipt link; disputes are disclosed, not buried.
 
+**Current submission decision (2026-10-21): DO NOT SUBMIT.** The historical
+H82-2 candidate fails the user's final-dot duplicate rule against H33-2-B2
+(rank correlation 0.9522; 3-pixel overlap 0.9611). Its lane-specific gate
+exempted carrier dots, which cannot override the explicit protocol. The
+historical TIFF remains archived for audit but is not an eligible new candidate;
+the site entry pages deliberately contain no download links. No new unique
+eligible TIFF was produced. See `docs/review-log.md` and `registry/run_card.json`.
+
 ## Track status (read before downloading anything)
 
 | track | position | evidence |
@@ -41,9 +49,9 @@ validate provenance, scientific performance, or organizer eligibility.
 
 | inspection-only file | reported dots | size | sha256 |
 | --- | ---: | ---: | --- |
-| [`gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif`](docs/downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif) | 37,091 | 146,094 B | `3a167949311bb4ca…` |
-| [`…-nan.tif`](docs/downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif) | 37,091 | 190,643 B | `84e6952e257439ef…` |
-| [`…-zeros.zip`](docs/downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip) | 37,091 | 113,618 B | see receipt |
+| `gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif` | 37,091 | 146,094 B | `3a167949311bb4ca…` |
+| `gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif` | 37,091 | 190,643 B | `84e6952e257439ef…` |
+| `gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip` | 37,091 | 113,618 B | see receipt |
 
 **Do not upload these files.** The separate selector authorization is intentionally
 fail-closed in [`registry/submission_authorization.json`](registry/submission_authorization.json).

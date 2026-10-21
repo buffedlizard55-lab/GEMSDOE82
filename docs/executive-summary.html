@@ -11,20 +11,5 @@ the canonical track (IR-82-12). The existing file is retained for <b>inspection/
 alone do not establish scientific validity or competition eligibility. This page will say “OK TO SUBMIT” only
 when an explicit selector authorization is bound to the exact file SHA-256. See <a href="lanes.html">lane status</a>,
 <a href="irregularities.html">irregularities</a>, and the <a href="canon/index.html">canonical-track record</a>.</p></section>
-
-<section class="card"><h2>Executive summary — submission instructions</h2>
-<p><span class="badge experimental">DUPLICATE — NOT SELECTED — DO NOT SUBMIT</span> — the existing TIFF is for inspection only; no submission is authorized.
-A separate selector receipt bound to the exact raster hash is required. The lane research gate is not that receipt.</p>
-<h3>When a future candidate is explicitly authorized</h3>
-<ol>
-<li>Download only the file marked <b>OK TO SUBMIT</b> on this page. Confirm the displayed SHA-256 equals the selector authorization record.</li>
-<li>Open the <b>DrivenData submission page</b> for competition 306 (DOE GEMS) and review the current contest rules and weekly cap.</li>
-<li>Choose the authorized single-band GeoTIFF under “File to submit”; ensure its CRS, shape, geotransform, and [0,1] values match the official sample format.</li>
-<li>Enter the authorized candidate name and short note (≤140 characters), then submit. Preserve the submission-page receipt.</li>
-</ol>
-<p>The current candidate's format audit is available for inspection at <a href="downloads/checks-gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif.json">the audit receipt</a>,
-but format compliance alone cannot override the “DO NOT SUBMIT” status or establish a competition score.</p></section>
-<section class="card"><h2>Historical lane-local gate record (not current acceptance)</h2><table><tr><td><code>R1_primary_win</code></td><td>PASS</td></tr><tr><td><code>R2_quadrant_consistency</code></td><td>PASS</td></tr><tr><td><code>R3_no_loss_mid</code></td><td>PASS</td></tr><tr><td><code>R4_no_loss_raw</code></td><td>PASS</td></tr><tr><td><code>R5_live_safety</code></td><td>PASS</td></tr><tr><td><code>R6a_lane_independence</code></td><td>PASS</td></tr><tr><td><code>R7_audit</code></td><td>PASS</td></tr></table>
-<p class="small">This archived gate reported R1–R7 PASS, but its R6a screen checked the surface and novel additions, not the required full final-dot mask. The final mask fails the active duplicate rule against H33-2-B2 (see index and IR-82-DUP-01). The gate is not canonical holdout validation or selector authorization.</p></section>
-</main>
+<section class='card dispute'><h2>Submission blocked — do not download or upload</h2><p>The historical H82-2 artifact violates the final-dot duplicate threshold and has no separate selector authorization. The canonical shared evaluator, feature cache, template and complete registry are absent. No new eligible TIFF has been generated.</p><p>When an independently validated candidate exists: compare its final dots to every registry raster; pass buffered segment holdout and feature canaries; validate a single-band GeoTIFF against the official sample grid, with finite in-footprint values in [0,1]; then download and upload via the official competition submission form with a unique name and a note of at most 140 characters. Do not spend a weekly slot until a separate selector approves it.</p></section></main>
 <footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>

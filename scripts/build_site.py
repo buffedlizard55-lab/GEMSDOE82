@@ -139,6 +139,28 @@ GeoDAWN — all label-free (canary: no AUC above 0.55, trip bar 0.90).</p>
 <p class="small"><b>Final-dot duplicate screen FAIL:</b> vs H33-2-B2, rank-ρ {authorization['duplicate_screen']['final_dot_spearman_rho']:.4f} &gt; 0.90 and {authorization['duplicate_screen']['final_dots_within_3px']:.1%} of final dots within 3 px &gt; 70%. The protocol says log duplicate and stop. This candidate is disqualified; no selector step or slot is allowed.</p></section>
 <section class="card"><h2>Per-quadrant primary DTI</h2><table><tr><th>Quadrant</th><th>SGMC-FAR DTI</th></tr>{quad_rows}</table></section>
 """
+    # Full-mask comparison is mandatory: the R6a added-dot exemption is not
+    # the user's >70% final-dot duplicate rule. Never promote this carrier.
+    carrier = gate["duplicate_guard"]["carrier_R6b"]
+    duplicate = any(v["spearman_rho"] > 0.90 or v["overlap_3px"] > 0.70
+                    for v in carrier.values())
+    blocked = not authorized or duplicate
+    if blocked and duplicate:
+        index_body = ("<section class='card dispute'><h2>DO NOT SUBMIT — duplicate</h2>"
+                      "<p>Historical H82-2 final dots overlap a registered raster by more than 70% "
+                      "within 3 pixels (H33-2-B2: 96.1%; rank correlation 0.952). "
+                      "The previous lane gate exempted carrier dots; that exemption conflicts "
+                      "with the explicit final-dot duplicate rule. No selector receipt or eligible "
+                      "candidate is available. No TIFF download is linked from this page. "
+                      "See the negative run card and irregularities.</p>"
+                      "<p><a href='data/run_card.json'>Canonical run card</a></p></section>")
+    elif blocked:
+        index_body = ("<section class='card dispute'><h2>DO NOT SUBMIT — not selected</h2>"
+                      "<p>No separate selector receipt authorizes this candidate SHA-256. "
+                      "No TIFF download is linked from this page. Complete the required holdout, "
+                      "feature canary, final-dot registry screen, and format validation before "
+                      "asking the separate selector to consider a submission slot.</p>"
+                      "<p><a href='data/run_card.json'>Canonical run card</a></p></section>")
     (DOCS / "index.html").write_text(page("Download", index_body))
 
     lb_rows = ""
@@ -165,6 +187,23 @@ but format compliance alone cannot override the “DO NOT SUBMIT” status or es
 <section class="card"><h2>Historical lane-local gate record (not current acceptance)</h2><table>{rules_rows}</table>
 <p class="small">This archived gate reported R1–R7 PASS, but its R6a screen checked the surface and novel additions, not the required full final-dot mask. The final mask fails the active duplicate rule against H33-2-B2 (see index and IR-82-DUP-01). The gate is not canonical holdout validation or selector authorization.</p></section>
 """
+    if blocked:
+        why_blocked = (
+            "The historical H82-2 artifact violates the final-dot duplicate threshold "
+            "and has no separate selector authorization."
+            if duplicate else
+            "No separate selector receipt authorizes this candidate."
+        )
+        exec_body = ("<section class='card dispute'><h2>Submission blocked — do not download or upload</h2>"
+                     f"<p>{why_blocked} The canonical shared evaluator, feature cache, template "
+                     "and complete registry are absent. No new eligible TIFF has been generated.</p>"
+                     "<p>When an independently validated candidate exists: compare its final "
+                     "dots to every registry raster; pass buffered segment holdout and feature "
+                     "canaries; validate a single-band GeoTIFF against the official sample "
+                     "grid, with finite in-footprint values in [0,1]; then download and "
+                     "upload via the official competition submission form with a unique "
+                     "name and a note of at most 140 characters. Do not spend a weekly "
+                     "slot until a separate selector approves it.</p></section>")
     (DOCS / "executive-summary.html").write_text(page("Executive summary", exec_body))
 
     hyp_rows = "".join(f"<tr><td><b>H82-{i}</b> {r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td><td>{r[4]}</td><td>{r[5]}</td></tr>" for i, r in enumerate([
