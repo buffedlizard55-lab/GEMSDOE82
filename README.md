@@ -13,6 +13,14 @@
 > **Own the Outcome.** Results owned end to end: every number carries an evidence
 > class and a receipt link; disputes are disclosed, not buried.
 
+**Current submission decision (2026-10-21): DO NOT SUBMIT.** The historical
+H82-2 candidate fails the user's final-dot duplicate rule against H33-2-B2
+(rank correlation 0.9522; 3-pixel overlap 0.9611). Its lane-specific gate
+exempted carrier dots, which cannot override the explicit protocol. The
+historical TIFF remains archived for audit but is not an eligible new candidate;
+the site entry pages deliberately contain no download links. No new unique
+eligible TIFF was produced. See `docs/review-log.md` and `registry/run_card.json`.
+
 ## Track status (read before downloading anything)
 
 | track | position | evidence |

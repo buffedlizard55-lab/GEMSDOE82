@@ -12,25 +12,5 @@ the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>reg
 exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
 Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
 <a href="canon/index.html">archived canonical-track position</a>.</p></section>
-
-<section class="card"><h2>Executive summary — how to submit (5 minutes)</h2>
-<ol>
-<li><b>Download</b> <a href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif"><code>gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif</code></a>
-(or <a href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip">the .zip</a> — one GeoTIFF inside, same bytes). Verify size 146,094 B,
-sha256 <code class="mono">3a167949311bb4cac947b95bf8f78b83…</code> if you like.</li>
-<li>Open the <b>DrivenData submission page</b> for competition 306 (DOE GEMS). Read the
-<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">rules</a> first: 3 scored submissions/week,
-one file counts for both prize rounds.</li>
-<li><b>File to submit → choose the -zeros.tif</b> (single-band GeoTIFF, EPSG:32611, 3730×3292, float32 —
-matches the submission format's CRS/shape/geotransform; receipts above).</li>
-<li><b>Note (optional) → paste:</b> <code class="mono">GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt</code></li>
-<li>Submit. If the portal ever says “Predicted values must be in range [0,1]”, you grabbed the wrong twin —
-use <b>-zeros.tif</b> (all-finite), never a raw model output.</li>
-</ol>
-<p><span class="badge promoted">PROMOTED</span> — this badge is rendered from <code>evidence/gate.json</code>
-by <code>scripts/build_site.py</code>; no human edits it. Today it reads PROMOTED. See the dispute banner above before submitting.</p></section>
-<section class="card"><h2>What the gate checked (7 rules, all machine-run)</h2><table><tr><td><code>R1_primary_win</code></td><td>PASS</td></tr><tr><td><code>R2_quadrant_consistency</code></td><td>PASS</td></tr><tr><td><code>R3_no_loss_mid</code></td><td>PASS</td></tr><tr><td><code>R4_no_loss_raw</code></td><td>PASS</td></tr><tr><td><code>R5_live_safety</code></td><td>PASS</td></tr><tr><td><code>R6a_lane_independence</code></td><td>PASS</td></tr><tr><td><code>R7_audit</code></td><td>PASS</td></tr></table>
-<p class="small">R1 primary win +0.009619 · R2 4/4 quadrants · R3/R4 no-loss secondaries · R5 live safety infinite + addition screen 0.331 ≥ 0.111 ·
-R6a lane independence (surface ρ ≤ 0.029, added overlap ≤ 0.066) · R7 12/12 audits on both twins. Full method: Research page.</p></section>
-</main>
+<section class='card dispute'><h2>Submission blocked — do not download or upload</h2><p>The historical H82-2 artifact violates the final-dot duplicate threshold. The canonical shared evaluator, feature cache, template and full registry are absent. No new eligible TIFF has been generated.</p><p>When an independently validated candidate exists: compare its final dots to every registry raster; pass buffered segment holdout and feature canaries; validate a single-band GeoTIFF against the official sample grid, with finite in-footprint values in [0,1]; then download and upload via the official competition submission form with a unique name and a note of at most 140 characters. Do not spend a weekly slot until a separate selector approves it.</p></section></main>
 <footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>
