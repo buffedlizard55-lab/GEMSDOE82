@@ -31,11 +31,16 @@
 
 A concurrent PR #3 was merged to `main` after the pass-3 review. It added a downloadable TIFF, local experiment receipts, and private evaluator/writer code; its fetcher sourced the feature/label rasters from public sibling-repository mirrors because the official data page required login. The canonical shared tools and organizer-authorized inputs were still absent, and the scanned registry was explicitly incomplete. Under the standing protocol, those local metrics and the file's format/uniqueness claims are **not accepted**. PR #3's changes were reverted on this branch in commit `a489d79`; the TIFF, ZIP and receipts are no longer in the checkout. The associated Pages run failed at its test step before deployment. This remediation used no organizer submission slot. See IR-82-12.
 
+## Deployment smoke test and correction
+
+After the PR #4 restoration deployed, the public GitHub Pages page was fetched and reviewed. Its run-card link escaped the project-site prefix and targeted a file outside the published `docs/` artifact. The page now links to `docs/data/run_card.json`; `scripts/sync_site_run_card.py` copies the canonical registry card into that published location during deployment, and the link test now fails on paths that escape the Pages artifact. The current suite has eight passing tests. The updated workflow still requires its post-merge run to confirm the corrected site deployment.
+
 ## Reproducible local checks
 
 ```bash
 python -m unittest discover -v
-python -m py_compile scripts/check_readiness.py scripts/refresh_competition_feed.py tests/test_readiness.py tests/test_refresh_feed.py tests/test_site_links.py
+python -m py_compile scripts/check_readiness.py scripts/refresh_competition_feed.py scripts/sync_site_run_card.py tests/test_readiness.py tests/test_refresh_feed.py tests/test_site_links.py
+python scripts/sync_site_run_card.py
 python scripts/check_readiness.py
 ```
 

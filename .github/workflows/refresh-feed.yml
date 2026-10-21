@@ -9,6 +9,8 @@ on:
     paths:
       - "docs/**"
       - "scripts/refresh_competition_feed.py"
+      - "scripts/sync_site_run_card.py"
+      - "registry/run_card.json"
       - "tests/**"
       - ".github/workflows/refresh-feed.yml"
 
@@ -34,6 +36,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Sync machine-readable run card into site artifact
+        run: python scripts/sync_site_run_card.py
       - name: Test project checks
         run: python -m unittest discover -v
       - name: Refresh public source status
