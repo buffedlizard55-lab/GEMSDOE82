@@ -1,9 +1,95 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GEMSDOE82 · validated submission</title><link rel="stylesheet" href="site.css"></head><body>
-<nav class="nav"><div class="wrap navin"><a class="brand" href="index.html">GEMSDOE82</a><a class="active" href="index.html">Summary</a><a href="executive-summary.html">Submit guide</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></div></nav>
-<main class="wrap">
-<section class="hero"><div class="eyebrow">DOE GEMS · DrivenData 306 · 2026-10-21</div><h1>One auditable path from geology to a legal GeoTIFF.</h1><p class="lede">A unique H82-B candidate was generated from the supplied geophysical stack, evaluated with a spatially blocked hide-and-recover instrument, checked for lane drift, and re-read from the bytes on disk. The download decision and the scientific promotion decision are intentionally separate.</p><div class="actions"><a class="button" href="downloads/gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.tif">⬇ Download TIF</a><a class="button secondary" href="downloads/gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.zip">Download one-TIF ZIP</a></div><div class="grid"><div class="panel"><span class="status good">Download OK</span><h3>Format validated</h3><p>Single-band float32, EPSG:32611, 3730 × 3292, all finite, all cells in [0, 1], no positive cell outside the footprint.</p></div><div class="panel"><span class="status warn">Submit promotion: no</span><h3>Selector is negative</h3><p>No organizer receipt exists. The local holdout did not establish improvement over a current cross-repository incumbent, so no weekly slot was used.</p></div><div class="panel"><span class="status good">Unique in scan</span><h3>Lane gate passed</h3><p>Surface and final dots were checked against 48 locally available GEMSDOE32/GEMSDOE70 rasters. The inventory is not organizer-complete.</p></div></div></section>
-<section class="two"><div><h2>Upload fields</h2><div class="panel"><table><tr><th>Field</th><th>Value</th></tr><tr><td>Unique submission name</td><td><code>GEMSDOE82-H82B-20261021</code></td></tr><tr><td>Note · 108/140 characters</td><td><code>H82-B signed curvature discordance; 37654 dots; HOLDOUT-DTI 0.01393 [0.00995,0.01829]; local validation only</code></td></tr><tr><td>TIF SHA-256</td><td><code>1deab2d36b9dd2b702bf1775fa3d0aad1ae5a4cd36617e0028aa9dfeb37a1036</code></td></tr></table><p class="small">Upload either the TIF or the one-TIF ZIP, never both. The JSON receipt is evidence, not an upload.</p></div><h2>Why H82-B?</h2><p>H82-B tests signed curvature polarity dispersion across magnetic RTP, isostatic gravity, basement depth, and conductivity, with weak detrended-elevation curvature as a surface-relief gate. Lithologic contacts and survey artifacts are explicit non-fault mimics. It is not a copy of a prior catalogue-flank, ridge, tip, relay, or submodular output.</p><p><a href="hypotheses.html">Read the five ranked hypotheses →</a></p></div><aside><h2>Run card</h2><div class="panel"><div class="metric">0.013925<span class="small">HOLDOUT-DTI · gemsdoe82-pooled-hide-v1</span></div><p class="small">Withheld positives: 10730 · 95% CI [0.009949, 0.018293] · 2000 spatial-block draws</p><hr style="border-color:#29405b;border-width:1px 0 0"><p><strong>Validator</strong><br><span class="check">✓ no NaN in footprint</span><br><span class="check">✓ values in [0, 1]</span><br><span class="check">✓ CRS/shape/transform match</span><br><span class="check">✓ all checks passed</span></p><p><strong>Verdict:</strong> <span class="status bad">negative</span></p><p class="small">See the complete <a href="../evidence/run_card.json">JSON run card</a> and <a href="downloads/gemsdoe82-h82b-signed-curvature-37654-20261021-d1727ccc21e9-SUBMIT.json">validator receipt</a>.</p></div></aside></section>
-<section><h2>What the H33 result does—and does not—show</h2><div class="callout warn"><strong>Do not confuse a mirror page with an organizer receipt.</strong> The GEMSDOE32 page displays a mirror-reported H33 value of 0.2778, but no organizer hash-to-score crosswalk is available. The official leaderboard currently shows an ORGANIZER-CONFIRMED public leader of 0.4413. Those are not this file's score.</div><p>H33's likely useful lesson is emission economics: at alpha 0.2, redundant probability mass costs false-positive penalty, so thinning and avoiding known-catalogue support can improve credit density. The hidden expert faults remain unavailable; this project records that mechanism as conditional, not proven attribution.</p></section>
-<section><h2>Verified sources</h2><div class="grid"><div class="panel"><h3>Competition</h3><p><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem and metric</a><br><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Official leaderboard</a><br><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">Official rules PDF</a></p></div><div class="panel"><h3>Geoscience</h3><p><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN</a><br><a href="https://gdr.openei.org/submissions/1391">DOE GDR / INGENIOUS</a><br><a href="https://gbcge.org/current-projects/ingenious/">GBCGE INGENIOUS</a></p></div><div class="panel"><h3>Code and grid</h3><p><a href="https://github.com/drivendataorg/gems-prize-reference-solution">Reference solution</a><br><a href="https://epsg.io/32611">EPSG:32611</a><br><a href="sources.html">Source matrix with limits</a></p></div></div></section>
-</main><footer class="footer"><div class="wrap">GEMSDOE82 · local format validation is not organizer acceptance · <a href="../README.md">repository README</a> · <a href="../PROMPT.md">retained project prompt</a></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Auditable geological fault-discovery research for the DOE GEMS Prize Challenge.">
+  <title>GEMSDOE82 | Fault discovery, evidence first</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">GEMSDOE82</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a aria-current="page" href="index.html">Overview</a>
+      <a href="executive-summary.html">Submission guide</a>
+      <a href="hypotheses.html">Hypotheses</a>
+      <a href="sources.html">Sources</a>
+      <a href="irregularities.html">Review flags</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">DOE GEMS Prize · fault discovery</p>
+    <h1>Find faults. Validate the evidence. Submit only when it is ready.</h1>
+    <p class="lead">An auditable research workspace for identifying faults that may be missing from the public catalogue. The target is fault presence—not a direct map of geothermal vents.</p>
+    <div class="hero-actions">
+      <a class="button" href="executive-summary.html">How submission works</a>
+      <a class="button secondary" href="hypotheses.html">Review candidate hypotheses</a>
+    </div>
+  </section>
+
+  <section class="status blocked" aria-labelledby="submission-status">
+    <h2 id="submission-status">Submission status: NOT READY</h2>
+    <p><strong>There is no submission TIFF in this project.</strong> The authorized competition data, cached feature stack, shared holdout evaluator/writer, and registry rasters are absent. No candidate has passed holdout or duplicate checks.</p>
+    <p><strong>Do not download or submit a file from this site.</strong> A download control will appear only after the new raster is generated from data and passes every scientific, uniqueness, and format gate.</p>
+    <span class="button disabled" aria-disabled="true">No validated TIFF available</span>
+  </section>
+
+  <section class="section" aria-labelledby="state-heading">
+    <p class="eyebrow">Project state</p>
+    <h2 id="state-heading">The important facts, without guesswork</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="label">Data access</span>
+        <h3>Competition files are gated</h3>
+        <p>The official data page redirected an unauthenticated request to login. No training features, labels, or sample template are in this checkout.</p>
+        <p><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">Open official data page</a></p>
+      </article>
+      <article class="card">
+        <span class="label">Validation</span>
+        <h3>Not run</h3>
+        <p>The shared evaluator, cached stack, holdout labels and candidate raster are missing, so there is no HOLDOUT-DTI or confidence interval to report.</p>
+        <p><a href="../registry/run_card.json">Open current JSON run card</a></p>
+      </article>
+      <article class="card">
+        <span class="label">Next experiment</span>
+        <h3>Magnetic source-depth boundaries</h3>
+        <p>A provisional hypothesis focused on a subsurface magnetic-source-depth boundary. It is preregistered, not tested, and cannot be emitted yet.</p>
+        <p><a href="hypotheses.html">Read the hypothesis register</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contract-heading">
+    <p class="eyebrow">Official task contract</p>
+    <h2 id="contract-heading">A valid submission is more than a map image</h2>
+    <div class="callout">
+      <p>The organizer specifies a single-band float32 GeoTIFF on the competition grid (EPSG:32611, 100 m), matching the supplied bounds/template. Predictions must be in [0,1]; the official page says data outside the bounds should be null/NaN. The scoring metric is distance-weighted Tversky with α=0.2, β=0.8, and a 300 m triangular kernel.</p>
+      <p class="small">Source: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description — metric and submission format</a>. The file-level validator has not run because there is no sample template or candidate TIFF.</p>
+    </div>
+    <p>Before any candidate is emitted, the required pipeline hides whole fault segments, derives catalogue-based features from visible faults only, masks visible faults pixel-exactly, runs a feature-by-feature leakage canary, and compares the final surface against the registry. See the <a href="hypotheses.html">pre-registered validation gates</a>.</p>
+  </section>
+
+  <section class="section" aria-labelledby="research-heading">
+    <p class="eyebrow">Research integrity</p>
+    <h2 id="research-heading">Why the cited H33 result is still under review</h2>
+    <p>The linked public GEMSDOE32 build record describes a sparse catalogue-flank-pruned emission, but also labels that artifact unscored and does not provide a submission-page receipt for the reported value. The “zeros” suffix does not establish an all-zero map. The mechanism is a plausible false-positive-control hypothesis, not a demonstrated causal explanation.</p>
+    <p><a class="button secondary" href="score-review.html">Read the score review</a> <a href="https://github.com/buffedlizard55-lab/GEMSDOE32/blob/main/registry/submission_build.json">Inspect the public build record</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="feed-heading">
+    <p class="eyebrow">Current information</p>
+    <h2 id="feed-heading">Official pages and project feed</h2>
+    <p>Use the live organizer pages for the current leaderboard, rules, and submission cap. The local <a href="data/feed.json">source-status feed</a> records which sources were reviewed and what was not verified; it does not claim an up-to-the-minute score or an artifact receipt.</p>
+    <div class="hero-actions">
+      <a class="button secondary" href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Open live leaderboard</a>
+      <a class="button secondary" href="sources.html">Review official sources</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · evidence-first research</span><span>Last evidence review: 2026-10-21 · no submit-ready TIFF</span></div></footer>
+</body>
+</html>

@@ -1,16 +1,4 @@
-# Reproducibility caches and raw competition inputs (large / license-controlled)
-.cache/
-.venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-
-# Local scratch artifacts
-*.log
-/tmp/
-.env
-
-# Optional official/public input placement and derived caches
+# Authorized competition inputs and derived caches are local-only.
 /data/*.tif
 /data/*.tiff
 /data/*.zip
@@ -22,6 +10,12 @@ __pycache__/
 /registry/rasters/*.tif
 /registry/rasters/*.tiff
 
-# Generated candidate artifacts are retained only when deliberately published
-# under docs/downloads/ with a run card and checksum.
+# Python and local environment artifacts.
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Keep generated candidate artifacts out of source unless deliberately published
+# after validation in docs/downloads/ with a run card and checksum.
 submission.tif

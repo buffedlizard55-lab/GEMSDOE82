@@ -1,257 +1,69 @@
 {
-  "evidence_class": "DATA-MEASUREMENT",
-  "prepared_utc": "2026-10-21T22:11:09+00:00",
-  "source": "official DrivenData download if GEMS_DATA_DIR points there; otherwise pinned public GitHub mirror",
-  "data_dir": ".cache/gems_data/core",
-  "grid": {
-    "shape": [
-      3730,
-      3292
-    ],
-    "crs": "EPSG:32611",
-    "epsg": 32611,
-    "transform": [
-      100.0,
-      0.0,
-      243350.0,
-      0.0,
-      -100.0,
-      4508550.0
-    ],
-    "footprint_pixels": 5167373
-  },
-  "catalogue_pixels": 60988,
-  "files": {
-    "training_features.tif": {
-      "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
-      "bytes": 418912844
-    },
-    "labels.tif": {
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
-      "bytes": 425830
-    },
-    "existing_faults.tif": {
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
-      "bytes": 425830
-    },
-    "sample_submission.tif": {
-      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
-      "bytes": 1599597
-    }
-  },
-  "bands": [
+  "schema_version": "1.0",
+  "checked_on_utc": "2026-10-21",
+  "status": "blocked",
+  "checkout_at_review_start": [
+    "README.md"
+  ],
+  "competition_inputs": [
     {
-      "index": 1,
-      "name": "mag_anom",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -1052.0047607421875,
-      "p02": -252.58673095703125,
-      "median": -57.68793487548828,
-      "p98": 246.265625,
-      "max": 2109.447509765625
+      "logical_name": "features",
+      "accepted_names_from_project_request": [
+        "training_features.tif",
+        "gems-geodawn-numerical-features.tif"
+      ],
+      "status": "missing"
     },
     {
-      "index": 2,
-      "name": "rtp",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -2786.299560546875,
-      "p02": -407.9018249511719,
-      "median": -137.22166442871094,
-      "p98": 288.38165283203125,
-      "max": 4508.76025390625
+      "logical_name": "fault_labels_or_existing_faults",
+      "accepted_names_from_project_request": [
+        "labels.tif",
+        "existing_faults.tif"
+      ],
+      "status": "missing"
     },
     {
-      "index": 3,
-      "name": "tmi_hg",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 0.004909869749099016,
-      "p02": 0.9594014286994934,
-      "median": 13.155465126037598,
-      "p98": 143.52780151367188,
-      "max": 2200.4365234375
+      "logical_name": "sample_submission_grid",
+      "accepted_names_from_project_request": [
+        "sample_submission.tif",
+        "example_submission.tif"
+      ],
+      "status": "missing"
     },
     {
-      "index": 4,
-      "name": "geod_2ndinv",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 1.2000000476837158,
-      "p02": 2.0,
-      "median": 19.90778923034668,
-      "p98": 52.20000076293945,
-      "max": 87.45342254638672
-    },
-    {
-      "index": 5,
-      "name": "iso_grav_anom_slope",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 0.0013825353235006332,
-      "p02": 0.020130423828959465,
-      "median": 0.10218460857868195,
-      "p98": 0.32612523436546326,
-      "max": 0.6517290472984314
-    },
-    {
-      "index": 6,
-      "name": "tc",
-      "finite_inside": 5164300,
-      "sentinel_inside": 3073,
-      "min": 2.9534237384796143,
-      "p02": 10.461785316467285,
-      "median": 18.481700897216797,
-      "p98": 27.591217041015625,
-      "max": 88.56654357910156
-    },
-    {
-      "index": 7,
-      "name": "geod_shearrate",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 0.0,
-      "p02": 0.0,
-      "median": 9.699999809265137,
-      "p98": 34.599998474121094,
-      "max": 54.400001525878906
-    },
-    {
-      "index": 8,
-      "name": "geod_dilaterate",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -16.5,
-      "p02": -6.199999809265137,
-      "median": 5.5,
-      "p98": 25.348047256469727,
-      "max": 34.52448272705078
-    },
-    {
-      "index": 9,
-      "name": "tmi_vg",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -7.650597095489502,
-      "p02": -0.49424147605895996,
-      "median": -0.008997071534395218,
-      "p98": 0.5645039081573486,
-      "max": 20.510923385620117
-    },
-    {
-      "index": 10,
-      "name": "deq_n100a15",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 0.0,
-      "p02": 147.1999969482422,
-      "median": 622.7999877929688,
-      "p98": 26550.0,
-      "max": 4962515.0
-    },
-    {
-      "index": 11,
-      "name": "iso_grav_anom_vg",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -18.164581298828125,
-      "p02": -3.6292054653167725,
-      "median": -0.07213491946458817,
-      "p98": 3.52728271484375,
-      "max": 12.578903198242188
-    },
-    {
-      "index": 12,
-      "name": "det_elev",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -589.9837036132812,
-      "p02": -410.866455078125,
-      "median": -75.57621002197266,
-      "p98": 604.6973266601562,
-      "max": 1469.9127197265625
-    },
-    {
-      "index": 13,
-      "name": "iso_grav_anom",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -45.75756072998047,
-      "p02": -30.140840530395508,
-      "median": -7.26103401184082,
-      "p98": 10.83142375946045,
-      "max": 24.232954025268555
-    },
-    {
-      "index": 14,
-      "name": "tmi",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -2178.27783203125,
-      "p02": -369.2342224121094,
-      "median": -124.8157730102539,
-      "p98": 259.63836669921875,
-      "max": 4506.14111328125
-    },
-    {
-      "index": 15,
-      "name": "depth_to_base_surf",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -14.837310791015625,
-      "p02": 2.307393789291382,
-      "median": 316.3645324707031,
-      "p98": 2651.78125,
-      "max": 7135.306640625
-    },
-    {
-      "index": 16,
-      "name": "ieq_n100a15",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 236.8000030517578,
-      "p02": 278.70001220703125,
-      "median": 755.7000122070312,
-      "p98": 4015.800048828125,
-      "max": 7869.5
-    },
-    {
-      "index": 17,
-      "name": "cond_surf",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 0.1937037855386734,
-      "p02": 1.455568552017212,
-      "median": 2.885897636413574,
-      "p98": 4.25739860534668,
-      "max": 4.969292640686035
-    },
-    {
-      "index": 18,
-      "name": "iso_grav_anom_hg",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": -15.441243171691895,
-      "p02": -4.4349565505981445,
-      "median": 0.037620771676301956,
-      "p98": 4.503795623779297,
-      "max": 12.856057167053223
-    },
-    {
-      "index": 19,
-      "name": "det_elev_slope",
-      "finite_inside": 5164312,
-      "sentinel_inside": 3061,
-      "min": 0.001103136339224875,
-      "p02": 0.10061033815145493,
-      "median": 3.749262809753418,
-      "p98": 29.982831954956055,
-      "max": 62.64591598510742
+      "logical_name": "1m_dem_links",
+      "accepted_names_from_project_request": [
+        "1m_DEM_links.csv",
+        "digital_elevation_model_links.json"
+      ],
+      "status": "missing"
     }
   ],
-  "irregularities": [
-    "The competition data tab redirects to login in the current environment; public-mirror provenance is therefore not organizer-authenticated.",
-    "Feature nodata sentinels are excluded from feature calculations; submission writer emits zeros outside the finite sample footprint to avoid the portal range error."
-  ]
+  "shared_template_assets": [
+    {
+      "logical_name": "cached_feature_stack",
+      "canonical_path": null,
+      "status": "missing_or_unspecified"
+    },
+    {
+      "logical_name": "evaluate_holdout.py",
+      "canonical_path": null,
+      "status": "missing"
+    },
+    {
+      "logical_name": "submission_writer.py",
+      "canonical_path": null,
+      "status": "missing"
+    }
+  ],
+  "registry_rasters": {
+    "status": "missing",
+    "candidate_comparison_possible": false
+  },
+  "submission_tiff": {
+    "generated": false,
+    "submit_ready": false,
+    "reason": "No authorized competition data, cached feature stack, shared tools, template grid, or registry rasters are present."
+  },
+  "source": "Local checkout inspection; official competition data page was observed redirecting unauthenticated access to DrivenData login. See docs/sources.md."
 }

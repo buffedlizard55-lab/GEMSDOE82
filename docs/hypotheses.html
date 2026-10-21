@@ -1,1 +1,78 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GEMSDOE82 · hypotheses</title><link rel="stylesheet" href="site.css"></head><body><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html">GEMSDOE82</a><a href="index.html">Summary</a><a href="executive-summary.html">Submit guide</a><a class="active" href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></div></nav><main class="wrap"><section class="hero"><div class="eyebrow">Preregistered before the three runs</div><h1>Five geological hypotheses</h1><p class="lede">The first three were implementable from the cached 19-band stack and consumed the complete experiment budget. H82-D and H82-E are explicitly deferred rather than faked because they require additional official layers.</p></section><section class="panel"><table><tr><th>Rank</th><th>Candidate and layers</th><th>Physical signature / off-catalogue reason</th><th>Difference and cost</th><th>Gate</th></tr><tr><td>1</td><td><strong>H82-A · scale-commuting boundary triplet</strong><br><span class="tag">rtp</span><span class="tag">gravity</span><span class="tag">conductivity</span><span class="tag">basement depth</span><span class="tag">detrended elevation</span></td><td>Robust gradient persistence at sigma 1, 3, and 6 px, absolute sigma-3 Laplacian curvature, pairwise boundary-orientation agreement, and weak-relief gate. A covered fault can juxtapose subsurface properties while leaving little scarp.</td><td>Not a catalogue-flank, ridge, tip, relay, or submodular allocation rule. Medium CPU cost: several Gaussian derivatives over four fields.</td><td><span class="status good">run</span><br><span class="small">HOLDOUT-DTI 0.009069 [0.005784,0.012703]; 10730 positives.</span></td></tr><tr><td>2</td><td><strong>H82-B · signed curvature discordance</strong><br><span class="tag">magnetic RTP</span><span class="tag">gravity</span><span class="tag">basement depth</span><span class="tag">conductivity</span><span class="tag">weak topography gate</span></td><td>Absolute Gaussian-Laplacian curvature and edge magnitude are combined with the dispersion of curvature signs across independent fields. A juxtaposed lithologic boundary can reverse contrast between physical properties; weak surface curvature suppresses obvious erosional edges.</td><td>Not a plain gradient magnitude or a prior orientation-vote surface; it uses signed second-derivative disagreement. Medium CPU cost. Named mimic: lithologic contact, basin edge, line-leveling artifact.</td><td><span class="status good">best of 3</span><br><span class="small">HOLDOUT-DTI 0.013925 [0.009949,0.018293]; 10730 positives.</span></td></tr><tr><td>3</td><td><strong>H82-C · strain saddle × cover edge</strong><br><span class="tag">shear rate</span><span class="tag">dilatation</span><span class="tag">strain invariant</span><span class="tag">conductivity</span><span class="tag">basement depth</span></td><td>Positive dilation, shear/invariant magnitude, and coincident cover/conductivity edges identify a permeability or damage-zone saddle without using the earthquake-density bands. This can target a blind fault under sedimentary cover rather than a mapped surface trace.</td><td>Differs from the earlier swarm-coupling family by excluding seismic density and from plain conductive breach by requiring a strain saddle. Low-to-medium CPU cost.</td><td><span class="status warn">run</span><br><span class="small">HOLDOUT-DTI 0.009446 [0.005257,0.014528]; 10730 positives.</span></td></tr><tr><td>4</td><td><strong>H82-D · radiometric ratio curvature</strong><br><span class="tag">GeoDAWN K</span><span class="tag">Th</span><span class="tag">U</span><span class="tag">TC</span><span class="tag">magnetic edge</span></td><td>Multi-scale curvature of K/Th, U/Th, and total-count ratios at magnetic boundary offsets could detect alteration or weathering along a covered fault. Radiometric contrasts are not in the supplied 19-band stack.</td><td>Differs from prior single-ratio or radiometric-fusion attempts by requiring cross-scale curvature and offset residual, not a scalar ratio. Official source: USGS GeoDAWN DOI 10.5066/P93LGLVQ. Obtainability is confirmed at the USGS data-release page, but it was not added to this three-run budget.</td><td><span class="status warn">deferred</span></td></tr><tr><td>5</td><td><strong>H82-E · 1 m LiDAR directional roughness persistence</strong><br><span class="tag">USGS 3DEP LiDAR</span><span class="tag">openness</span><span class="tag">local roughness</span></td><td>Persistent directional roughness and aligned low-relief scarplets can reveal faults below the 100 m catalogue raster. A multi-scale persistence rule is intended to reject roads, gullies, and isolated scarps.</td><td>Differs from prior scarp-height and curvature maxima by using directional roughness persistence and a road/coverage deconfounder. Official source: USGS 3DEP/GeoDAWN-linked data and the competition DEM links. The required cache was not present at preregistration time, so no result is claimed.</td><td><span class="status warn">deferred</span></td></tr></table></section><section><h2>Experiment accounting</h2><div class="grid"><div class="panel"><h3>Exactly three runs</h3><p>H82-A, H82-B, and H82-C were executed at a matched 37654-dot budget. The second pass corrected an exact-tie bug in percentile clipping before the final recorded run; the corrected receipt is the only result retained.</p></div><div class="panel"><h3>Canaries</h3><p>Each used raw layer and each candidate surface was tested alone. No H82-B canary exceeded the leakage stop threshold. The full machine-readable values are in <a href="../evidence/experiments.json">experiments.json</a>.</p></div><div class="panel"><h3>Promotion rule</h3><p>The best of these three was packaged, but no automatic promotion occurred. The separate selector must compare a current incumbent under the same evaluator and review the complete registry.</p></div></div></section><section><h2>Prior-lane audit</h2><p>The novelty statement is a method audit, not a claim that all private code is known. The sibling sites show earlier families including catalogue buffers, dotted ridge thinning, DEM scarp/curvature, Euler/tip/relay operators, multi-physics orientation votes, conductivity breach, radiometric fusion, supervised HGB, and exact submodular allocation. H82-B was intentionally defined around signed Laplacian polarity dispersion before code was written.</p></section></main><footer class="footer"><div class="wrap"><a href="index.html">← Summary</a> · <a href="../registry/hypotheses.json">hypothesis registry</a></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Preregistered GEMS fault-mapping hypotheses and validation gates.">
+  <title>Research Hypotheses | GEMSDOE82</title><link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">GEMSDOE82</a>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">Submission guide</a><a aria-current="page" href="hypotheses.html">Hypotheses</a><a href="sources.html">Sources</a><a href="irregularities.html">Review flags</a></nav>
+</div></header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Preregistered, not scored</p>
+    <h1>New geological hypotheses</h1>
+    <p class="lead">Four candidate mechanisms are ranked by expected improvement per effort. They are design hypotheses only—not tested results, score projections, or approval to spend a submission slot.</p>
+  </section>
+  <section class="status caution">
+    <h2>Validation is blocked</h2>
+    <p>This checkout has no feature stack, labels, template, cached feature cache, shared holdout evaluator/writer, or registry raster set. The required “single method paragraph” was also absent from the prompt. No pixels were placed and no candidate TIFF was emitted.</p>
+  </section>
+  <section class="section">
+    <div class="grid">
+      <article class="card">
+        <span class="kicker">Rank 1 · provisional lane</span>
+        <h2>Magnetic source-depth boundaries</h2>
+        <p><strong>Layers:</strong> top-of-crustal magnetic-source depth estimate, TMI, reduced-to-pole anomaly, and supplied TMI gradients.</p>
+        <p><strong>Signature:</strong> scale-persistent, oriented boundary in the source-depth estimate, independently supported by magnetic-field gradients.</p>
+        <p><strong>Off-catalogue rationale:</strong> a buried basement step may have no clear surface scarp for the public catalogue. It may instead be a lithologic contact, dike, or intrusion.</p>
+        <p><strong>Expected gain / effort:</strong> moderate potential, low confidence; low-to-medium effort if official bands are already cached.</p>
+        <p class="small">No new external data, but the competition feature raster is missing. Not yet viable.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Rank 2 · external-data gate</span>
+        <h2>Residual heat flow at independent structural edges</h2>
+        <p><strong>Layers:</strong> USGS Great Basin background conductive heat flow and well residuals, paired with a competition geophysical boundary.</p>
+        <p><strong>Signature:</strong> localized heat-flow residual aligned with a distinct structural edge—not broad regional heat alone.</p>
+        <p><strong>Off-catalogue rationale:</strong> local fluid circulation may reveal a permeable fault with no mapped surface trace. Groundwater and measurement effects can mimic it.</p>
+        <p><strong>Expected gain / effort:</strong> low-to-moderate potential, low confidence; high effort for data acquisition, gridding and alignment.</p>
+        <p class="small">Official USGS release is listed; bytes, grid resolution and AOI coverage were not checked. Not viable yet.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Rank 3 · external-data gate</span>
+        <h2>Lithology-conditioned magnetic residual</h2>
+        <p><strong>Layers:</strong> competition magnetic depth/TMI gradients plus USGS Nevada geologic-unit polygons only; exclude mapped fault-line features.</p>
+        <p><strong>Signature:</strong> test magnetic-edge persistence after modeling ordinary lithologic contacts as a confounder.</p>
+        <p><strong>Off-catalogue rationale:</strong> a concealed fault may create a boundary not represented as a fault on generalized surface mapping. But coarse polygons may hide or falsely create a residual.</p>
+        <p><strong>Expected gain / effort:</strong> low-to-moderate potential, low confidence; medium-to-high effort.</p>
+        <p class="small">A previous user-listed map/fault-gap experiment creates overlap risk. Official downloads are listed but bytes and AOI alignment are not verified.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Rank 4 · low-cost screen</span>
+        <h2>Fault-localized strain-rate change points</h2>
+        <p><strong>Layers:</strong> dilatation rate, shear-strain rate, second invariant; no vector orientation will be inferred from scalar layers.</p>
+        <p><strong>Signature:</strong> compact co-located shear/dilatation change points, not broad regional maxima.</p>
+        <p><strong>Off-catalogue rationale:</strong> active or recent deformation could precede a clear surface trace. Regional tectonic loading, volcanic inflation and interpolation artifacts can mimic it.</p>
+        <p><strong>Expected gain / effort:</strong> low and uncertain; low-to-medium effort if the feature stack exists.</p>
+        <p class="small">No new external data, but the stack and evaluator are missing. Novelty against generic prior “geophysics” titles is not confirmed.</p>
+      </article>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Hard gates before emitting any candidate</h2>
+    <ol class="list">
+      <li>Find the canonical shared template and verify its cached stack, evaluator/writer versions and data manifest. Do not create a private fork.</li>
+      <li>Withhold entire fault segments and a buffer. Derive catalogue features from visible segments only and mask them pixel-exactly.</li>
+      <li>Run each feature alone through the leakage canary; investigate AUC above 0.90.</li>
+      <li>Report pooled HOLDOUT-DTI with evaluator version, withheld positives and 95% CI; compare against the current holdout best, not the leaderboard.</li>
+      <li>Before placement and on final dots, test registry rank-correlation and 3-pixel overlap. If a threshold is crossed, log duplicate and stop.</li>
+      <li>Only after a holdout win may a separate selector consider a slot; then validate the exact GeoTIFF and SHA-256.</li>
+    </ol>
+    <p><a class="button secondary" href="research/hypotheses.md">Open full candidate rationale</a> <a href="../registry/run_card.json">Current run card</a></p>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · preregistered hypotheses</span><span>No holdout experiment run</span></div></footer>
+</body>
+</html>
