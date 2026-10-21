@@ -1,0 +1,21 @@
+# Authorized competition inputs and derived caches are local-only.
+/data/*.tif
+/data/*.tiff
+/data/*.zip
+/data/*.csv
+/data/*.json
+/data/cache/
+/cache/
+/work/
+/registry/rasters/*.tif
+/registry/rasters/*.tiff
+
+# Python and local environment artifacts.
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Keep generated candidate artifacts out of source unless deliberately published
+# after validation in docs/downloads/ with a run card and checksum.
+submission.tif

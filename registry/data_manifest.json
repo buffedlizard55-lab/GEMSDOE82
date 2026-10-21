@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "checked_on_utc": "2026-10-21",
+  "status": "blocked",
+  "checkout_at_review_start": [
+    "README.md"
+  ],
+  "competition_inputs": [
+    {
+      "logical_name": "features",
+      "accepted_names_from_project_request": [
+        "training_features.tif",
+        "gems-geodawn-numerical-features.tif"
+      ],
+      "status": "missing"
+    },
+    {
+      "logical_name": "fault_labels_or_existing_faults",
+      "accepted_names_from_project_request": [
+        "labels.tif",
+        "existing_faults.tif"
+      ],
+      "status": "missing"
+    },
+    {
+      "logical_name": "sample_submission_grid",
+      "accepted_names_from_project_request": [
+        "sample_submission.tif",
+        "example_submission.tif"
+      ],
+      "status": "missing"
+    },
+    {
+      "logical_name": "1m_dem_links",
+      "accepted_names_from_project_request": [
+        "1m_DEM_links.csv",
+        "digital_elevation_model_links.json"
+      ],
+      "status": "missing"
+    }
+  ],
+  "shared_template_assets": [
+    {
+      "logical_name": "cached_feature_stack",
+      "canonical_path": null,
+      "status": "missing_or_unspecified"
+    },
+    {
+      "logical_name": "evaluate_holdout.py",
+      "canonical_path": null,
+      "status": "missing"
+    },
+    {
+      "logical_name": "submission_writer.py",
+      "canonical_path": null,
+      "status": "missing"
+    }
+  ],
+  "registry_rasters": {
+    "status": "missing",
+    "candidate_comparison_possible": false
+  },
+  "submission_tiff": {
+    "generated": false,
+    "submit_ready": false,
+    "reason": "No authorized competition data, cached feature stack, shared tools, template grid, or registry rasters are present."
+  },
+  "source": "Local checkout inspection; official competition data page was observed redirecting unauthenticated access to DrivenData login. See docs/sources.md."
+}

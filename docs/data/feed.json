@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "checked_on_utc": "2026-10-21",
+  "feed_scope": "Public-source availability/status only. No competition labels, private data, project scores, or submission receipts are included.",
+  "leaderboard": {
+    "source_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+    "status": "official_public_page_checked",
+    "checked_by": "research browsing path",
+    "note": "Use the live official page for current standings. This feed does not copy scores or imply a GEMSDOE82 receipt."
+  },
+  "competition_data": {
+    "source_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
+    "status": "redirected_to_login_when_unauthenticated",
+    "observed_final_url": "https://www.drivendata.org/accounts/login/?next=/competitions/306/competition-doe-gems/data/",
+    "note": "No credentials were supplied or used; no competition data were downloaded."
+  },
+  "project": {
+    "status": "no_submit_ready_tiff",
+    "run_card": "../../registry/run_card.json",
+    "sources_ledger": "../sources.md"
+  },
+  "refresh": {
+    "mechanism": "scripts/refresh_competition_feed.py",
+    "automation": "GitHub Actions scheduled deployment; see .github/workflows/refresh-feed.yml",
+    "note": "This initial snapshot records the research check. The workflow has not run from this checkout."
+  }
+}
