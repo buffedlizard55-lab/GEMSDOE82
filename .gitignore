@@ -8,3 +8,20 @@ __pycache__/
 # Local scratch artifacts
 *.log
 /tmp/
+.env
+
+# Optional official/public input placement and derived caches
+/data/*.tif
+/data/*.tiff
+/data/*.zip
+/data/*.csv
+/data/*.json
+/data/cache/
+/cache/
+/work/
+/registry/rasters/*.tif
+/registry/rasters/*.tiff
+
+# Generated candidate artifacts are retained only when deliberately published
+# under docs/downloads/ with a run card and checksum.
+submission.tif
