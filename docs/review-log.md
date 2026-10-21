@@ -47,3 +47,11 @@ python scripts/check_readiness.py
 ```
 
 The readiness command returns a nonzero status while required assets are absent; this is expected and is not a score or model failure. The public-feed refresh uses no authentication and never downloads competition data or copies leaderboard score values.
+
+## 2026-10-21 follow-up: strict duplicate stop (three-pass review)
+
+Pass 1: Re-read the charter, hypotheses, sources, canonical run card, lane gate and final-dot comparisons. The archived H82-2 lane gate exempts carrier dots, whereas the user's final-dot rule has no exemption. `evidence/gate.json` reports H33-2-B2 final-dot rank correlation 0.9522 and 3-pixel overlap 0.9611, both above the stop thresholds. No new experiment was run.
+
+Pass 2: Fixed `scripts/build_site.py` to fail closed on **final-dot** comparisons, removing submission/download links from the two entry pages while preserving historical artifacts and receipts for audit. Added a standard-library regression test. This does not claim the historical TIFF's format audit is false; it means it is **ineligible under the duplicate protocol**.
+
+Pass 3: Regenerated the entry pages; checked that both say DO NOT SUBMIT / Submission blocked and have no download links. Canonical run card remains negative; the old lane JSON and other historical pages retain their archival gate verdict and must not be treated as authorization. No weekly slot was used. To resume, obtain a clear lane assignment, official data and shared template tools plus full registry, then run holdout, canaries, full-mask duplicate check and automatic validator before publication.

@@ -122,6 +122,19 @@ GeoDAWN — all label-free (canary: no AUC above 0.55, trip bar 0.90).</p>
 <p class="small">Full-mask carrier overlap (R6b disclosure): ρ 0.95 / overlap 0.96 vs the H33-2-B2 carrier — expected, disclosed, and the weekly selector's diversification input. No slot is picked here.</p></section>
 <section class="card"><h2>Per-quadrant primary DTI</h2><table><tr><th>Quadrant</th><th>SGMC-FAR DTI</th></tr>{quad_rows}</table></section>
 """
+    # Full-mask comparison is mandatory: the R6a added-dot exemption is not
+    # the user's >70% final-dot duplicate rule. Never promote this carrier.
+    carrier = gate["duplicate_guard"]["carrier_R6b"]
+    duplicate = any(v["spearman_rho"] > 0.90 or v["overlap_3px"] > 0.70
+                    for v in carrier.values())
+    if duplicate:
+        index_body = ("<section class='card dispute'><h2>DO NOT SUBMIT — duplicate</h2>"
+                      "<p>Historical H82-2 final dots overlap a registered raster by more than 70% "
+                      "within 3 pixels (H33-2-B2: 96.1%; rank correlation 0.952). "
+                      "The previous lane gate exempted carrier dots; that exemption conflicts "
+                      "with the explicit final-dot duplicate rule. No eligible submission "
+                      "is available. See the negative run card and irregularities.</p>"
+                      "<p><a href='data/run_card.json'>Canonical run card</a></p></section>")
     (DOCS / "index.html").write_text(page("Download", index_body))
 
     lb_rows = ""
@@ -153,6 +166,18 @@ by <code>scripts/build_site.py</code>; no human edits it. Today it reads {verdic
 <p class="small">R1 primary win +0.009619 · R2 4/4 quadrants · R3/R4 no-loss secondaries · R5 live safety infinite + addition screen 0.331 ≥ 0.111 ·
 R6a lane independence (surface ρ ≤ 0.029, added overlap ≤ 0.066) · R7 12/12 audits on both twins. Full method: Research page.</p></section>
 """
+    if duplicate:
+        exec_body = ("<section class='card dispute'><h2>Submission blocked — do not download or upload</h2>"
+                     "<p>The historical H82-2 artifact violates the final-dot duplicate "
+                     "threshold. The canonical shared evaluator, feature cache, template "
+                     "and full registry are absent. No new eligible TIFF has been generated.</p>"
+                     "<p>When an independently validated candidate exists: compare its final "
+                     "dots to every registry raster; pass buffered segment holdout and feature "
+                     "canaries; validate a single-band GeoTIFF against the official sample "
+                     "grid, with finite in-footprint values in [0,1]; then download and "
+                     "upload via the official competition submission form with a unique "
+                     "name and a note of at most 140 characters. Do not spend a weekly "
+                     "slot until a separate selector approves it.</p></section>")
     (DOCS / "executive-summary.html").write_text(page("Executive summary", exec_body))
 
     hyp_rows = "".join(f"<tr><td><b>H82-{i}</b> {r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td><td>{r[4]}</td><td>{r[5]}</td></tr>" for i, r in enumerate([
