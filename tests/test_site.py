@@ -14,12 +14,27 @@ def test_download_links_resolve():
         assert (ROOT / "docs" / h).exists(), h
 
 
-def test_badge_matches_gate():
-    gate = json.loads((ROOT / "evidence" / "gate.json").read_text())
+def test_no_submission_badge_without_selector_receipt():
+    auth = json.loads((ROOT / "registry" / "submission_authorization.json").read_text())
     html = (ROOT / "docs" / "index.html").read_text()
-    assert gate["verdict"] in html
-    assert gate["slug"] in html
-    assert gate["raster_sha256_zeros"] in html
+    assert auth["selected_for_submission"] is False
+    assert "NOT SELECTED" in html
+    assert "DO NOT SUBMIT" in html
+    assert "inspection" in html.lower()
+
+
+def test_selector_gate_fails_closed_and_binds_sha():
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from scripts.build_site import submission_authorized
+
+    base = {"status": "AUTHORIZED", "selected_for_submission": True,
+            "selector_receipt": "receipt-123", "authorized_sha256": "abc"}
+    assert submission_authorized(base, "abc")
+    assert not submission_authorized(base, "different")
+    assert not submission_authorized({**base, "selector_receipt": None}, "abc")
+    assert not submission_authorized({**base, "selected_for_submission": False}, "abc")
+    assert not submission_authorized({**base, "duplicate_screen": {"verdict": "DUPLICATE"}}, "abc")
 
 
 def test_numbers_trace_to_receipts():
@@ -28,9 +43,10 @@ def test_numbers_trace_to_receipts():
     far = gate["holdout"]["sgmc_far"]["pooled_dti"]
     assert f"{far:.6f}" in html
     assert f"{gate['receipts']['zeros']['emitted_positive_pixels']:,}" in html
-    # executive summary carries the exact submission note
+    # A note may be used only after a separate selector authorization.
     ex = (ROOT / "docs" / "executive-summary.html").read_text()
-    assert gate["submission_note"] in ex
+    assert "no submission is authorized" in ex.lower()
+    assert "selector receipt" in ex.lower()
     assert len(gate["submission_note"]) <= 140
 
 

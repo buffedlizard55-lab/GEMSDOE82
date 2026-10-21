@@ -1,13 +1,10 @@
-"""Build the lane-82 submission pair, run the frozen gate, write receipts.
+"""Build a lane-local research artifact and record its internal gate checks.
 
-Loads the experiment winner mask, evaluates the gate (registry/slot_gate.json
-R1-R7: primary win, quadrant consistency, no-loss secondaries, live safety,
-duplicate guard, 12/12 audits), writes docs/downloads/<slug>-{zeros,nan}.tif
-(+ .zip of the zeros variant), checks-*.json receipts, and evidence/gate.json
-with verdict PROMOTED or EXPERIMENTAL.
-
-The site download block reads evidence/gate.json, so the OK/not-OK-to-submit
-badge is machine-generated — no human intervention, no hand-editing.
+This utility is not the canonical shared submission writer and does not
+authorize a competition upload. It writes candidate bytes and local audit
+receipts for inspection. A separate selector authorization, bound to the exact
+SHA-256, is required before any site may say OK TO SUBMIT. Its gate result is
+RESEARCH_GATE_PASS or RESEARCH_GATE_NEGATIVE, never submission promotion.
 """
 from __future__ import annotations
 
@@ -75,17 +72,20 @@ def main() -> int:
     cpd = pipe["experiments"]["exp3"]["screen_credit_per_dot"]
     n_added = pipe["experiments"]["exp3"]["added"]
 
-    # duplicate guard vs registry: R6a lane-independence (surface + novel dots),
-    # R6b carrier disclosure (full mask, report-only)
+    # Required protocol screen: candidate surface BEFORE placement and the
+    # complete FINAL dot mask against every available registry raster. The
+    # full final-mask result is a hard stop, not report-only carrier disclosure.
+    data_manifest = json.loads(Path("registry/data_manifest.json").read_text())
+    reg_meta = data_manifest.get("registry_rasters", {})
+    reg_entries = [
+        item for item in data_manifest.get("lane82_mirror_inputs", [])
+        if item.get("id", "").startswith("reg_")
+    ]
     reg = {}
-    for name, rel in (("d28-44090", "registry/d28-44090-nan.tif"),
-                      ("r1-solo-40199", "registry/r1-solo-40199-nan.tif"),
-                      ("h33-2-b2-37654", "registry/h33-2-b2-37654-nan.tif"),
-                      ("h36-rung30", "registry/h36-rung30-nan.tif"),
-                      ("h19-5", "registry/h19-5-nan.tif")):
-        p = ddir / rel
+    for item in reg_entries:
+        p = ddir / item["path"]
         if p.exists():
-            reg[name] = G.read_binary_mask(p)
+            reg[item["id"][4:]] = G.read_binary_mask(p)
     from scipy.stats import rankdata
     C = np.load(Path("work/corroboration_C.npy"))
     add = np.load(Path("work/exp3_addmask.npy"))
@@ -100,9 +100,34 @@ def main() -> int:
         ov = RC.overlap_within_3px(add, ref)
         lane[name] = dict(surface_rho=rho, added_overlap_3px=ov,
                           duplicate=bool(rho > 0.90 or ov > 0.70))
-    dup_full = RC.check_vs_registry(mask, reg)  # R6b disclosure
+    dup_full = RC.check_vs_registry(mask, reg)
+    # Registry completeness must be explicitly certified in the shared
+    # manifest. A convenient partial list is not a complete duplicate screen.
+    expected_registry_count = reg_meta.get("expected_count")
+    registry_complete = (
+        reg_meta.get("status") == "complete"
+        and isinstance(expected_registry_count, int)
+        and len(reg) == expected_registry_count == len(reg_entries)
+    )
     n_removed = int(base_mask.sum() - (base_mask & mask).sum())
     novel_frac = float((n_removed + int(add.sum())) / int(mask.sum()))
+
+    duplicate_pass = RC.lane_independence_pass(
+        lane, dup_full, len(reg), expected_registry_count=expected_registry_count
+    )
+    if not duplicate_pass:
+        stop_card = {
+            "verdict": "DUPLICATE_OR_INCOMPLETE_REGISTRY — STOP BEFORE TIFF WRITING",
+            "surface_screen": lane,
+            "final_dot_screen": dup_full,
+            "registry_complete": registry_complete,
+            "registry_expected_count": expected_registry_count,
+            "registry_observed_count": len(reg),
+            "note": "Protocol requires surface screening before placement and complete final-dot screening; no candidate TIFF was written by this run.",
+        }
+        Path("evidence/duplicate_screen.json").write_text(json.dumps(stop_card, indent=1))
+        print(stop_card["verdict"], "-> evidence/duplicate_screen.json", flush=True)
+        return 2
 
     r5 = bool(safety >= 2.0 and ((n_added <= 1500 and cpd >= 0.111) or (n_added <= 1000 and cpd >= 0.05556) or n_added == 0))
     verdict = {
@@ -111,14 +136,17 @@ def main() -> int:
         "R3_no_loss_mid": bool(m_mid >= -0.001),
         "R4_no_loss_raw": bool(m_raw >= -0.001),
         "R5_live_safety": r5,
-        "R6a_lane_independence": bool(not any(v["duplicate"] for v in lane.values())),
+        "R6a_lane_independence": duplicate_pass,
     }
     print(f"margins: far={m_far:+.6f} mid={m_mid:+.6f} raw={m_raw:+.6f} quads_pos={qpos}/4 "
           f"safety={safety} cpd={cpd:.4f} n_added={n_added}", flush=True)
     print("R6a lane:", {k: (round(v['surface_rho'], 4), round(v['added_overlap_3px'], 4)) for k, v in lane.items()}, flush=True)
     print("R6b carrier:", {k: (round(v['spearman_rho'], 4), round(v['overlap_3px'], 4)) for k, v in dup_full["per_ref"].items()},
           "novel_frac=", round(novel_frac, 4), flush=True)
-    dup = {"lane_R6a": lane, "carrier_R6b": dup_full["per_ref"],
+    dup = {"surface_screen": lane, "final_dot_screen": dup_full["per_ref"],
+           "registry_complete": registry_complete,
+           "registry_expected_count": expected_registry_count,
+           "registry_observed_count": len(reg),
            "n_removed_vs_base": n_removed, "n_added": int(add.sum()),
            "novel_fraction": novel_frac}
 
@@ -143,7 +171,7 @@ def main() -> int:
         "live_safety_note": "infinite (zero measured MID-credit cost)" if safety_json is None else "",
         "screen_credit_per_dot": cpd, "n_added": n_added,
         "duplicate_guard": dup, "rules": verdict,
-        "verdict": "PROMOTED" if promoted else "EXPERIMENTAL",
+        "verdict": "RESEARCH_GATE_PASS" if promoted else "RESEARCH_GATE_NEGATIVE",
         "receipts": receipts,
         "raster_sha256_zeros": receipts["zeros"]["sha256"],
         "zip": {"filename": zp.name, "size_bytes": zp.stat().st_size,

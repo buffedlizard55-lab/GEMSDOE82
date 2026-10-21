@@ -22,7 +22,7 @@
    "id": "IR-82-SGMC-01",
    "severity": "medium",
    "status": "DOCUMENTED (validity domain in knowledge/04_instrument_licensing.md)",
-   "what": "SGMC-proxy truth covers only PART of the live hidden truth and rewards scarp-chasing (SGMC faults are surface-expressed by construction): a fresh h82_1 emission scores SGMC-FAR 0.1403 yet CAT-HIDDEN 0.0030 (~random). SGMC-FAR is therefore licensed ONLY for flank surgery on a fixed carrier + small screened additions \u2014 never for wholesale emission replacement. The shipped candidate respects this license."
+   "what": "SGMC-proxy truth covers only PART of the live hidden truth and rewards scarp-chasing (SGMC faults are surface-expressed by construction): a fresh h82_1 emission scores SGMC-FAR 0.1403 yet CAT-HIDDEN 0.0030 (~random). SGMC-FAR is therefore licensed ONLY for flank surgery on a fixed carrier + small screened additions \u2014 never for wholesale emission replacement. The historical lane candidate used this proxy within its declared lane, but its results are noncanonical and it is not authorized for submission."
   },
   {
    "id": "IR-82-DATA-01",
@@ -33,8 +33,8 @@
   {
    "id": "IR-82-MERGE-01",
    "severity": "high",
-   "status": "OPEN (owner decides)",
-   "what": "Track dispute: canonical track (IR-82-12) rejects mirror+private-tooling artifacts for submission; lane H82-2 (verified mirrors + exact-verified code + honest labels + machine gate) holds its file submittable. Both preserved; owner picks."
+   "status": "RESOLVED FAIL-CLOSED (no selector authorization)",
+   "what": "The H82-2 lane-local research gate is not a selector decision. Canonical inputs/shared tools are absent, the mirror/private-tooling provenance is disputed, and no selector receipt is present. registry/submission_authorization.json is NOT_AUTHORIZED; the archived TIFF is inspection-only and must not be submitted."
   },
   {
    "id": "IR-82-MERGE-02",
@@ -47,6 +47,12 @@
    "severity": "medium",
    "status": "OPEN",
    "what": "H82-1 blindstep raster withheld from main: lane H82-2 could not run duplicate screens against it. Methods differ; no collision inferable, none verifiable."
+  },
+  {
+   "id": "IR-82-DUP-01",
+   "severity": "high",
+   "status": "CONFIRMED DUPLICATE \u2014 STOP",
+   "what": "The archived H82-2 final dots fail the current parallel-run duplicate rule against H33-2-B2: recorded rank rho=0.9522 exceeds 0.90 and 96.1% of final dots fall within 3 px, exceeding 70%. Earlier R6a checks screened only the novel additions; they do not override the required full final-dot screen. Do not submit or promote this raster."
   }
  ]
 }

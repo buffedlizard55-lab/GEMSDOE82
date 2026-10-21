@@ -1,27 +1,26 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Download — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
-<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
-<p>Lane H82-2 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
+<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize</h1>
+<p>Research candidate status · a local format audit is not submission approval or an organizer score</p></header>
 <nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="lanes.html">Lanes</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
-<section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
-<p><b>Lane H82-2 (mirror-verified track):</b> the file below passed the lane's 7-rule gate — see the verdict badge.
-<b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
-mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
-the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
-exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
-Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
-<a href="canon/index.html">archived canonical-track position</a>.</p></section>
+<section class="card dispute"><h2>⛔ NO SUBMISSION AUTHORIZED — do not submit the archived TIFF</h2>
+<p>The lane's internal research gate is <b>not</b> the separate selector decision required by the run protocol.
+No selector receipt is recorded, and the candidate's owner-mirror/private-tooling provenance is disputed against
+the canonical track (IR-82-12). The existing file is retained for <b>inspection/learning only</b>; format checks
+alone do not establish scientific validity or competition eligibility. This page will say “OK TO SUBMIT” only
+when an explicit selector authorization is bound to the exact file SHA-256. See <a href="lanes.html">lane status</a>,
+<a href="irregularities.html">irregularities</a>, and the <a href="canon/index.html">canonical-track record</a>.</p></section>
 
 <section class="card">
-<h2>⬇ Submission download — verdict first</h2>
-<p><span class="badge promoted">PROMOTED</span>
- — machine-verified: safe to download and submit.</p>
-<p><a class="btn" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif">⬇ Download gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif (142.7 KB)</a>
-<a class="btn sec" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif">NaN-outside twin (186.2 KB)</a>
-<a class="btn sec" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip">ZIP container</a></p>
-<p class="small">Submit the <b>-zeros.tif</b> (or its <b>.zip</b>): all 12,279,160 cells finite and in [0,1], so the portal validator cannot raise
-“Predicted values must be in range [0,1]”. Copy-paste note (≤140 chars):<br>
+<h2>Existing candidate artifact — status first</h2>
+<p><span class="badge experimental">DUPLICATE — NOT SELECTED — DO NOT SUBMIT</span>
+ — this artifact is inspection-only; do not upload it.</p>
+<p><a class="btn" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif">⬇ Download for inspection: gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif (142.7 KB)</a>
+<a class="btn sec" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif">Inspection twin (-nan.tif)</a>
+<a class="btn sec" href="downloads/gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip">Inspection ZIP</a></p>
+<p class="small">Format-audit evidence only: the local audit reports finite values in [0,1] for this artifact. This does not establish organizer eligibility,
+scientific validity, or submission authorization. Do not upload while the badge says NOT SELECTED. Candidate note (≤140 chars, for identification only):<br>
 <code class="mono">GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt</code></p>
 <table><tr><th>Receipt</th><th>Value</th></tr>
 <tr><td>Dots (positive px)</td><td>37,091</td></tr>
@@ -35,7 +34,7 @@ Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities
 selectively removed and <b>1,500</b> corroborated far-field dots added (novel content 9.6%). Corroboration =
 mean(antislope-scarp lineament, conjugate-intersection density, radiometric-break edges) from 1 m LiDAR +
 GeoDAWN — all label-free (canary: no AUC above 0.55, trip bar 0.90).</p>
-<div class="grid"><div><h3>Holdout-DTI (gems82-holdout-v2)</h3>
+<div class="grid"><div><h3>Lane-local HOLDOUT-DTI (gems82-holdout-v2; noncanonical)</h3>
 <table><tr><th>Instrument</th><th>Pooled</th><th>Margin vs base</th></tr>
 <tr><td>SGMC-FAR (primary, K=55,109)</td><td>0.096302</td><td>+0.009619</td></tr>
 <tr><td>SGMC-MID (K=62,122)</td><td>0.104130</td><td>+0.008744</td></tr>
@@ -43,9 +42,9 @@ GeoDAWN — all label-free (canary: no AUC above 0.55, trip bar 0.90).</p>
 <p class="small">Primary 95% CI (quadrant): 0.09594 ± 0.01524; quadrants positive 4/4. A projection is never written as a score.</p></div>
 <div><h3>Gate (7 rules)</h3><table><tr><td><code>R1_primary_win</code></td><td>PASS</td></tr><tr><td><code>R2_quadrant_consistency</code></td><td>PASS</td></tr><tr><td><code>R3_no_loss_mid</code></td><td>PASS</td></tr><tr><td><code>R4_no_loss_raw</code></td><td>PASS</td></tr><tr><td><code>R5_live_safety</code></td><td>PASS</td></tr><tr><td><code>R6a_lane_independence</code></td><td>PASS</td></tr><tr><td><code>R7_audit</code></td><td>PASS</td></tr></table>
 <p class="small">Live-anchored safety: infinite (zero measured proxy cost on 2,063 removals) · addition screen 0.331/dot vs 0.111 bar.</p></div></div></section>
-<section class="card"><h2>Lane independence (R6a)</h2>
-<table><tr><th>Registry raster</th><th>Surface rank-ρ (≤0.90)</th><th>Added-dots 3px overlap (≤0.70)</th><th>Lane verdict</th></tr><tr><td><code>d28-44090</code></td><td>0.0198</td><td>0.0393</td><td>independent</td></tr><tr><td><code>r1-solo-40199</code></td><td>0.0187</td><td>0.0393</td><td>independent</td></tr><tr><td><code>h33-2-b2-37654</code></td><td>0.0181</td><td>0.0393</td><td>independent</td></tr><tr><td><code>h36-rung30</code></td><td>0.0190</td><td>0.0433</td><td>independent</td></tr><tr><td><code>h19-5</code></td><td>0.0288</td><td>0.0660</td><td>independent</td></tr></table>
-<p class="small">Full-mask carrier overlap (R6b disclosure): ρ 0.95 / overlap 0.96 vs the H33-2-B2 carrier — expected, disclosed, and the weekly selector's diversification input. No slot is picked here.</p></section>
+<section class="card"><h2>Prior surface/addition screens (not final-mask authorization)</h2>
+<table><tr><th>Registry raster</th><th>Surface rank-ρ (≤0.90)</th><th>Added-dots 3px overlap (≤0.70)</th><th>Partial screen only</th></tr><tr><td><code>d28-44090</code></td><td>0.0198</td><td>0.0393</td><td>independent</td></tr><tr><td><code>r1-solo-40199</code></td><td>0.0187</td><td>0.0393</td><td>independent</td></tr><tr><td><code>h33-2-b2-37654</code></td><td>0.0181</td><td>0.0393</td><td>independent</td></tr><tr><td><code>h36-rung30</code></td><td>0.0190</td><td>0.0433</td><td>independent</td></tr><tr><td><code>h19-5</code></td><td>0.0288</td><td>0.0660</td><td>independent</td></tr></table>
+<p class="small"><b>Final-dot duplicate screen FAIL:</b> vs H33-2-B2, rank-ρ 0.9522 &gt; 0.90 and 96.1% of final dots within 3 px &gt; 70%. The protocol says log duplicate and stop. This candidate is disqualified; no selector step or slot is allowed.</p></section>
 <section class="card"><h2>Per-quadrant primary DTI</h2><table><tr><th>Quadrant</th><th>SGMC-FAR DTI</th></tr><tr><td>NW</td><td>0.080427</td></tr><tr><td>NE</td><td>0.097645</td></tr><tr><td>SW</td><td>0.116750</td></tr><tr><td>SE</td><td>0.088938</td></tr></table></section>
 </main>
 <footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>

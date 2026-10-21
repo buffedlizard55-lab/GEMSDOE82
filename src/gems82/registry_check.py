@@ -62,3 +62,13 @@ def check_vs_registry(dots: np.ndarray, registry: dict[str, np.ndarray]) -> dict
     return dict(per_ref=per_ref, duplicate=bool(dup),
                 rho_limit=RHO_LIMIT, overlap_limit=OVERLAP_LIMIT,
                 n_dots=int(dots.sum()))
+
+
+def lane_independence_pass(surface_checks: dict, final_dot_check: dict,
+                           registry_count: int, expected_registry_count: int) -> bool:
+    """Fail closed unless surface AND complete final-mask screens are clean."""
+    return bool(
+        registry_count == expected_registry_count
+        and not any(v.get("duplicate", False) for v in surface_checks.values())
+        and not final_dot_check.get("duplicate", False)
+    )
