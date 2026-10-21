@@ -16,8 +16,8 @@
     "spearman_rank_correlation": null,
     "fraction_of_dots_within_3_px": null,
     "duplicate_thresholds": {
-      "spearman_gt": 0.90,
-      "overlap_fraction_gt": 0.70
+      "spearman_gt": 0.9,
+      "overlap_fraction_gt": 0.7
     }
   },
   "raster_sha256": null,
@@ -34,5 +34,14 @@
     "artifact_generated": false,
     "note": "NO FILE — required data and shared validation tools are absent; do not submit."
   },
-  "verdict": "negative"
+  "verdict": "negative",
+  "rejected_nonconforming_activity": {
+    "reference": "IR-82-12",
+    "source": "Concurrent merged PR #3, reverted on this branch",
+    "status": "REVERTED_NOT_ACCEPTED",
+    "reason": "Used public sibling-repository mirrors and a private evaluator/writer instead of the authorized inputs and canonical shared tools required by the project protocol.",
+    "candidate_artifact_present": false,
+    "accepted_holdout_dti": null,
+    "weekly_slot_used": false
+  }
 }

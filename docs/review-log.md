@@ -21,11 +21,15 @@
 
 ## Pass 3 — final requirement and regression check
 
-- Confirmed there is no TIF, submission download, holdout result, confidence interval, leakage-canary result, correlation/overlap result, or organizer receipt in this checkout. No scientific experiment or competition slot was spent.
+- At the end of this pass, confirmed there was no TIFF, submission download, canonical holdout result, confidence interval, leakage-canary result, correlation/overlap result, or organizer receipt in this branch. No canonical experiment or competition slot was spent.
 - Ran `python -m unittest discover -v`: all seven local unit tests passed, including readiness fail-closed behavior, feed parsing without scores, and local site-link validation.
 - Ran Python byte-compilation for the scripts/tests, parsed each JSON registry/feed file, checked the run-card note length and negative disposition, ran `git diff --check`, and smoke-tested the static site over HTTP. The site pages and feed returned successfully.
 - Re-read the top-level README against the task: it makes non-readiness obvious, records the missing lane paragraph and required shared tools, captures the requested Core Values, links sources, and explains the upload process. The executive summary says plainly that there is no file to download or submit.
 - **Final verdict: negative / blocked.** Generating a synthetic or copied TIFF would violate the uniqueness, shared-tool, holdout and duplicate-screening rules. The only safe next scientific step is to obtain the authorized competition package and canonical shared template, then run the preregistered top candidate through the exact holdout and registry gates.
+
+## Post-pass merged-branch remediation
+
+A concurrent PR #3 was merged to `main` after the pass-3 review. It added a downloadable TIFF, local experiment receipts, and private evaluator/writer code; its fetcher sourced the feature/label rasters from public sibling-repository mirrors because the official data page required login. The canonical shared tools and organizer-authorized inputs were still absent, and the scanned registry was explicitly incomplete. Under the standing protocol, those local metrics and the file's format/uniqueness claims are **not accepted**. PR #3's changes were reverted on this branch in commit `a489d79`; the TIFF, ZIP and receipts are no longer in the checkout. The associated Pages run failed at its test step before deployment. This remediation used no organizer submission slot. See IR-82-12.
 
 ## Reproducible local checks
 
