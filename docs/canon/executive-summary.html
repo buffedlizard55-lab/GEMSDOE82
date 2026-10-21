@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Executive summary and step-by-step official upload instructions for GEMS Prize submissions.">
+  <title>Executive Summary | GEMSDOE82</title>
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">GEMSDOE82</a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html">Overview</a><a aria-current="page" href="executive-summary.html">Submission guide</a><a href="hypotheses.html">Hypotheses</a><a href="sources.html">Sources</a><a href="irregularities.html">Review flags</a>
+  </nav>
+</div></header>
+<main>
+<div class="notice archived"><p><strong>Archived position (pre-merge session, 2026-10-21).</strong> This page states the canonical-template track position: no canonical data/tools, therefore no submission. It is preserved verbatim for audit. The merged repo now also carries lane H82-2 (mirror-verified, gate-promoted); see <a href="../index.html">current site</a> and <a href="../lanes.html">all lanes + the policy dispute</a>.</p></div>
+  <section class="hero">
+    <p class="eyebrow">Executive summary</p>
+    <h1>How to submit a GEMS GeoTIFF</h1>
+    <p class="lead">This page explains the upload process and, just as importantly, says when a file is not safe to submit.</p>
+  </section>
+
+  <section class="status blocked" aria-labelledby="now-status">
+    <h2 id="now-status">Current decision: do not submit</h2>
+    <p>There is no candidate TIFF in this checkout. Competition rasters and the canonical evaluation/writing tools are missing, and no spatial holdout or portal-format validation was performed.</p>
+    <p><strong>Download status: NO FILE — NOT OK TO SUBMIT.</strong> The control below is intentionally disabled. A file will be advertised as “OK TO SUBMIT” only when the final raster, SHA-256, duplicate check, holdout card, and validator receipt are present and pass.</p>
+    <span class="button disabled" aria-disabled="true">Download unavailable — no validated TIFF</span>
+  </section>
+
+  <section class="section" aria-labelledby="before-heading">
+    <p class="eyebrow">Before the upload</p>
+    <h2 id="before-heading">Required project-side checks</h2>
+    <ol class="steps">
+      <li><strong>Read the run card.</strong> Confirm the current experiment has a `promote` verdict from the separate selector. A `negative`, `blocked`, or missing card is not approval to upload.</li>
+      <li><strong>Download only the exact validated file.</strong> The card must contain the file name, SHA-256, method and a validator receipt. Do not substitute a file with a similar name or use a previous submission raster.</li>
+      <li><strong>Run the shared writer and validator.</strong> Compare CRS, dimensions, transform, resolution, band count and data mask against the official sample template. Confirm float32 and valid predictions in [0,1]. Confirm the footprint has no NaN and no nodata sentinel inside it. Respect the organizer’s outside-bounds rule and confirm the portal handles the chosen outside-fill representation.</li>
+      <li><strong>Review uniqueness and evidence.</strong> Check the final raster against all registered rasters. Confirm no duplicate threshold was crossed and that the hide-and-recover result includes the evaluator version, withheld-positive count and 95% CI.</li>
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="official-steps">
+    <p class="eyebrow">DrivenData upload</p>
+    <h2 id="official-steps">Step-by-step submission form</h2>
+    <ol class="steps">
+      <li><strong>Sign in to the competition.</strong> Open the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">official GEMS Prize page</a> and sign in with your existing DrivenData account. The data page redirects unauthenticated visitors to login; this project does not access or store credentials.</li>
+      <li><strong>Open the submission form.</strong> Choose the competition’s “New submission” action. Check the submission cap and deadline shown on the logged-in page at that time; neither is hard-coded here.</li>
+      <li><strong>Choose the file.</strong> Select the single-band GeoTIFF. The project request quotes the logged-in submission form as accepting a single-band GeoTIFF or a ZIP containing one GeoTIFF; the public problem page specifies a GeoTIFF. Verify the logged-in form at upload time and prefer the `.tif` directly. If using ZIP, include exactly one `.tif` and no unrelated files. The current project has no file to select.</li>
+      <li><strong>Enter a unique name and a short note.</strong> Give the entry a team-specific name that is not reused. In the optional note, describe the one method change and its evidence status; keep the note at or below 140 characters. Never label a projection as a score.</li>
+      <li><strong>Submit and save the receipt.</strong> After the organizer accepts the file, save the submission-page receipt (submission ID, exact filename, timestamp, and displayed score/status) with the raster SHA-256 in the project registry. Only a receipt can establish an `ORGANIZER-CONFIRMED` result for that artifact.</li>
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="format-heading">
+    <p class="eyebrow">Format contract</p>
+    <h2 id="format-heading">Organizer requirements</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Property</th><th>Organizer specification</th><th>Project check</th></tr></thead>
+      <tbody>
+        <tr><td>File</td><td>Single-band GeoTIFF; a ZIP may contain one GeoTIFF.</td><td>Not tested; no candidate file.</td></tr>
+        <tr><td>CRS and grid</td><td>UTM zone 11N, EPSG:32611; 100 m; same bounds/grid as training data.</td><td>Must be compared directly with the official sample template.</td></tr>
+        <tr><td>Data type</td><td>32-bit float (`float32`).</td><td>Not tested.</td></tr>
+        <tr><td>Values and footprint</td><td>Prediction values in [0,1]; outside data bounds null/NaN according to the official description.</td><td>Check footprint and entire serialized array; do not guess portal nodata behavior.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">Source: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">official problem description, “Submission format”</a>. The exact cause of the earlier “Predicted values must be in range [0, 1]” rejection is unknown because the rejected file is not available for inspection.</p>
+  </section>
+
+  <section class="section">
+    <div class="callout"><strong>When the button becomes active:</strong> it must point to the newly generated candidate—not an example, template, previous submission or synthetic smoke-test file—and the page must show its short name, SHA-256, validation status, and clear “OK TO SUBMIT” label. See the machine-readable <a href="../data/run_card.json">run card</a>.</div>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>GEMSDOE82 · submission instructions</span><span>Current state: no validated file</span></div></footer>
+</body>
+</html>

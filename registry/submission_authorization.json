@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "status": "NOT_AUTHORIZED",
+  "selected_for_submission": false,
+  "selector_receipt": null,
+  "authorized_sha256": null,
+  "duplicate_screen": {
+    "registry_raster": "H33-2-B2 carrier",
+    "final_dot_spearman_rho": 0.9522129193117653,
+    "final_dots_within_3px": 0.9611496050254779,
+    "protocol_limits": {
+      "spearman_rho_max": 0.9,
+      "dots_within_3px_max": 0.7
+    },
+    "verdict": "DUPLICATE — exceeds both lane thresholds"
+  },
+  "reason": "No separate selector decision exists. The available H82-2 candidate was built from owner-mirror inputs and lane-local tooling; canonical competition data, cached feature stack, and shared evaluator/writer are absent. Its final-dot overlap with the H33-2-B2 registry carrier also exceeds the active duplicate thresholds (rho 0.9522 > 0.90; 96.1% within 3 px > 70%). Retain for inspection/learning only; do not submit or promote.",
+  "checked_utc": "2026-10-21"
+}
