@@ -1,0 +1,6 @@
+{"schema":1,"note":"Owner-mirror bytes, sha256-pinned; pins prove mirror consistency across GEMSDOE32 registry, NOT organizer authentication. DrivenData data page is login-walled; no credentials used.",
+"files":[
+{"id":"training_features","dest":"data/training_features.tif","sha256":"4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5","bytes":418912844,"source":"buffedlizard55-lab/GEMSDOE data/bridge parts 000-004 concatenated"},
+{"id":"labels","dest":"data/labels.tif","sha256":"7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093","bytes":425830,"source":"buffedlizard55-lab/GEMSDOE24 data/bridge/labels.tif"},
+{"id":"existing_faults","dest":"data/existing_faults.tif","sha256":"7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093","bytes":425830,"source":"buffedlizard55-lab/GEMSDOE24 data/bridge/existing_faults.tif (byte-identical to labels; flagged IR-82-03)"},
+{"id":"sample_submission","dest":"data/sample_submission.tif","sha256":"2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc","bytes":1599597,"source":"buffedlizard55-lab/GEMSDOE24 data/bridge/sample_submission.tif"}]}

@@ -1,0 +1,53 @@
+{
+  "evaluator": "gems82-hide-v1 quadrants buf30 pooled-DTI a.2 b.8 R3px",
+  "n_withheld_total": 57407,
+  "canary_n_pos": 57407,
+  "canary_n": 344442,
+  "canary": {
+    "grav_step": {
+      "auc": 0.5350041342502987,
+      "max_auc_or_inverse": 0.5350041342502987,
+      "leakage_flag": false
+    },
+    "rtp_step": {
+      "auc": 0.519935904081214,
+      "max_auc_or_inverse": 0.519935904081214,
+      "leakage_flag": false
+    },
+    "depth_step": {
+      "auc": 0.5183149475563352,
+      "max_auc_or_inverse": 0.5183149475563352,
+      "leakage_flag": false
+    },
+    "cond_step": {
+      "auc": 0.5006949322313028,
+      "max_auc_or_inverse": 0.5006949322313028,
+      "leakage_flag": false
+    },
+    "strike_agree": {
+      "auc": 0.5060477746215121,
+      "max_auc_or_inverse": 0.5060477746215121,
+      "leakage_flag": false
+    },
+    "slope_unit": {
+      "auc": 0.5438090409341083,
+      "max_auc_or_inverse": 0.5438090409341083,
+      "leakage_flag": false
+    },
+    "core_geomean": {
+      "auc": 0.5171716755697228,
+      "max_auc_or_inverse": 0.5171716755697228,
+      "leakage_flag": false
+    },
+    "s_blind": {
+      "auc": 0.5170388548305048,
+      "max_auc_or_inverse": 0.5170388548305048,
+      "leakage_flag": false
+    },
+    "s_scarp_control": {
+      "auc": 0.517799282989967,
+      "max_auc_or_inverse": 0.517799282989967,
+      "leakage_flag": false
+    }
+  }
+}

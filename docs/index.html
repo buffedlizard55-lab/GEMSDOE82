@@ -1,0 +1,46 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>GEMSDOE82 — DOE GEMS Prize: blind-fault lane (NEGATIVE, do not submit)</title><style>body{font-family:system-ui,sans-serif;max-width:920px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#17202a} .no{background:#b00020;color:#fff;padding:1rem;border-radius:8px} .ok{background:#0b6e2f;color:#fff;padding:.4rem .7rem;border-radius:6px;display:inline-block} .warn{background:#fff3cd;border:1px solid #e0a800;padding:1rem;border-radius:8px} table{border-collapse:collapse} td,th{border:1px solid #ccc;padding:.35rem .6rem} code{background:#eef1f4;padding:.1rem .3rem;border-radius:4px} a{color:#0b5394}</style></head><body>
+<h1>GEMSDOE82 — blind-fault (buried-step) lane for the DOE GEMS Prize</h1>
+<p><b>Core values:</b> Maximize P(Win) — a weekly slot is an experiment, not a lottery ticket.
+Own the Outcome — this lane measured negative, so it is published as negative.</p>
+<div class=no><h2>⛔ SUBMIT VERDICT: DO NOT SUBMIT THIS FILE</h2>
+<p>The unique file below is <b>safe to download and inspect</b> (portal validator: all checks pass)
+but it is <b>NOT cleared to submit</b>: on the preregistered hide-and-recover holdout it does not
+beat the holdout best (see numbers). Submitting it would spend a scarce weekly slot against the evidence.</p></div>
+<h2>⬇ Unique inspection file (download OK · submit NO)</h2>
+<p><span class=ok>DOWNLOAD FOR INSPECTION: OK</span> <b>SUBMIT: ⛔ NO</b></p>
+<ul>
+<li><a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.tif">Download gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.tif</a> · <a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-zeros.zip">.zip</a> · <a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-nan.tif">NaN-outside twin</a> · <a href="downloads/gems82-blindstep-line-37654-20261021T221925Z-f73ec641-receipt.json">receipt</a></li>
+<li>Unique submission name (if a future selector ever overrules): <code>GEMSDOE82-BLINDSTEP-LINE-37654</code></li>
+<li>Note (101/140 chars): <code>GEMSDOE82 blind-step line 37,654 dots; HOLDOUT-DTI 0.0745 n.s. vs random; DO NOT SUBMIT negative lane</code></li>
+<li>single-band float32 · EPSG:32611 · 100 m · 3730×3292 · 37,654 dots · 0 on catalogue · min 0.0 max 1.0 · 0 NaN inside footprint · no nodata tag (zeros file) · sha256 <code>cfd9a3279f24f4db…</code></li>
+</ul>
+<h2>Why the 0.2778 file (H33-2-B2) scored highest — and what beating it requires</h2>
+<p>H33-2-B2 is not a new detector. It is the group's best <i>surface</i> (H19-5 multiline-corroborated)
+after two metric-arbitrage steps, each removing mass whose expected kernel credit is below the
+break-even bar <code>k &gt; α·DTI ≈ 0.054</code> at DTI≈0.27 (derived from the organizer's formula;
+denominator rises by exactly α=0.2 per unit mass): (1) <b>dot-thinning</b> 121,131→44,090 px
+(owner-report 0.1922→0.2600) — one dot credits any truth within 300 m, so dense lines pay redundant
+false-positive mass; (2) <b>catalogue-flank prune</b> deleting dots within 2 px of mapped faults
+(40,199→37,654) — mapped pixels are masked from scoring and their halo is mapper-saturated, so flank
+dots earn the least credit per dot. Beating it at the same mass needs ~25% more mean credit per dot
+(the gap 0.26→0.3262 measured by GEMSDOE32) — i.e. a genuinely better <i>ranking</i>, not more dots.
+This lane did not demonstrate that ranking (below). <b>Irregularity IR-82-01:</b> the brief asserts
+0.2778 as H33-2-B2's score, but GEMSDOE32's own site labels that file <i>UNSCORED</i> (projected
+0.2747, a model). Treat 0.2778 as OWNER-REPORT, not ORGANIZER-CONFIRMED, until a portal receipt is filed.</p>
+<h2>Evidence (every number labelled)</h2>
+<table><tr><th>Arm (matched mass)</th><th>HOLDOUT-DTI pooled [95% CI]</th><th>Withheld +</th></tr>
+<tr><td>H82-1 line-blind (this file's rule)</td><td>0.0745 [0.0693, 0.0799]</td><td>57,407</td></tr>
+<tr><td>Random control</td><td>0.0693</td><td>57,407</td></tr>
+<tr><td>Scarp control (E1, gate inverted)</td><td>0.0779</td><td>57,407</td></tr></table>
+<p>Paired Δ (blind − random) = +0.0053,
+CI [-0.0009, +0.0114] — includes 0.
+Low-slope stratum (n=21,246): blind 0.0748 vs random 0.0556,
+Δ +0.0190 CI excludes 0 — a real subgroup signal on
+catalogue-biased truth; it does <b>not</b> meet the promotion gate. Leakage canary: max feature AUC
+0.544 (&lt; 0.90, no leakage). ORGANIZER-CONFIRMED scores: none.
+Uniqueness vs H33-2-B2 / dotted-0.26: Spearman ρ ≈ 0.007 / 0.006;
+dot overlap ≤3 px ≈ 19.3% / 20.2% (gates: 0.90 / 70%) — unique lane, confirmed.</p>
+<p><a href="executive-summary.html">Executive summary: exactly how to submit (and why not to submit this one)</a> ·
+<a href="hypotheses.html">Ranked hypotheses</a> · <a href="sources.html">Verified sources</a></p>
+<p><small>Competition: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DOE GEMS Prize problem description</a>.
+Inspection here is fully automated (validator + holdout + uniqueness in code); no human-inspector step exists or is required.</small></p></body></html>
