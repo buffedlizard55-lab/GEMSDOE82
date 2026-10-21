@@ -1,0 +1,310 @@
+{
+  "schema": "gemsdoe82-run-card-v1",
+  "lane_id": "H82-CSAM",
+  "repo": "buffedlizard55-lab/GEMSDOE82",
+  "branch": "arena/f3077251-gemsdoe82",
+  "date_utc": "2026-10-21",
+  "hypothesis": "H82-CSAM (Coupled Subsurface-to-Surface Up-Dip Advection, Upslope Hydraulic Plume Back-Projection & Biharmonic Basement Flexure with Anisotropic Ridge-Crest Dinkelbach Allocation): Dipping basin-bounding normal faults offset dense/magnetic pre-Tertiary basement and deep 1-5 km conductors in the hanging wall 150-350 m down-dip of the surface rupture, while lateral shallow groundwater flow advects thermal anomalies down-gradient into valleys. Back-projecting CBA/HGM gravity, RTP magnetic HGM, and MT clay-cap edges up-dip along +grad(Basement_15) onto deconfounded surface scarps and back-projecting shallow temperature gradients upslope along +grad(z_smooth), combined with biharmonic basement flexure |nabla^4 B_15|, cross-branch fluvial chi-disequilibrium, transtensional releasing-bend fault-valve dilation, and multi-scale potential-field tilt-phase congruency inside a strictly Leave-One-Quadrant-Out (LOQO) 114-channel ensemble + Dinkelbach 300 m submodular emitter, recovers concealed range-front piedmont and intra-basin faults missed by USGS/INGENIOUS.",
+  "mechanism": "106 static zero-SGMC physical channels (98 base + 8 novel H82-CSAM up-dip/upslope/flexure/chi/phase channels) + 8 fold-visible structural continuation channels + 8 geomechanical-CSAM interaction channels fitted via strictly Leave-One-Quadrant-Out (LOQO) spatial cross-fitting with Horvitz-Thompson 4-stratum inverse-probability weighting, across-strike 1D Hessian ridge-crest sharpening, and exact Bayes-calibrated Dinkelbach 300 m submodular dot placement under a simultaneous 168-raster 3.0-px halo overlap cap (0.610 <= 0.70).",
+  "named_non_fault_mimic_process": "Alluvial fan coalescent aprons, shoreline beach ridges (Lake Lahontan), and non-tectonic volcanic flow-front / caldera margins in low-slope basins, plus 1 m LiDAR tile-boundary step artifacts and unfaulted steep canyon talus slopes.",
+  "deconfounding_strategy": "(1) Up-dip basement advection requires spatial coincidence between the up-dip-advected subsurface gravity/magnetic/MT step and a deconfounded surface scarp; (2) within-survey quantile normalization on acquisition_block_id_100m.tif and explicit lidar_1m_tile_boundary_dist_km conditioning suppress survey-seam steps; (3) strike-frame tangential vs normal gradient projection vetoes drainage canyons perpendicular to structural strike.",
+  "experiments_executed": 3,
+  "experiment_budget_limit": 3,
+  "leakage_canary": {
+    "evidence_class": "HOLDOUT-DTI",
+    "seed": 30,
+    "withheld_positive_pixels": 11342,
+    "n_channels_tested": 114,
+    "threshold_symmetric_auc": 0.9,
+    "max_symmetric_auc": 0.802001,
+    "max_channel": "vis_logdist",
+    "max_novel_csam8_symmetric_auc": 0.57466,
+    "max_novel_csam8_channel": "csam_updip_grav_scarp",
+    "all_passed": true
+  },
+  "holdout_dti": {
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "evaluator_hashes": {
+      "evaluate_holdout.py": "ad86640b46f3c5fc6b1aceec4c4bfc82d03e35008b37ab2a8ad6076e6810ff3a",
+      "holdout.py": "7a0a84176986190b527aa9c6a84216c2dab4b599f25b1143db5f420e85020ab1",
+      "metric.py": "4afe10cbaa229948520c75194b1ebc32676e72544f05582f0725092b097b4d7f",
+      "spatial.py": "fad7b09db9efc512247b9a176a7e7ce8631e287592b4e07902d0b9c38bed00f8"
+    },
+    "alpha": 0.2,
+    "beta": 0.8,
+    "kernel_radius_m": 300.0,
+    "bootstrap_draws": 1000,
+    "block_size_km": 20.0,
+    "seed_30": {
+      "withheld_positive_pixels": 11342,
+      "H82_CSAM_41200_dti": 0.17283652067715535,
+      "H82_CSAM_41200_ci95": [
+        0.15344823141653577,
+        0.19083097570812554
+      ],
+      "H82_CSAM_37654_dti": 0.1716023200628977,
+      "H33_fold_fair_dti": 0.09889767286222764,
+      "H33_static_ref_dti": 0.004313279502805548
+    },
+    "seed_20": {
+      "withheld_positive_pixels": 11321,
+      "H82_CSAM_41200_dti": 0.15870091441027523,
+      "H82_CSAM_41200_ci95": [
+        0.1376893343400706,
+        0.18083324001275466
+      ],
+      "H82_CSAM_37654_dti": 0.1573731263281337,
+      "H33_fold_fair_dti": 0.09608619416803546,
+      "H33_static_ref_dti": 0.003698680598708719
+    },
+    "pooled_dual_seed": {
+      "seeds": [
+        30,
+        20
+      ],
+      "withheld_positive_pixels": 22663,
+      "H82_CSAM_41200_dti": 0.16577757980681618,
+      "H82_CSAM_41200_ci95": [
+        0.15145739363106955,
+        0.1798736645342427
+      ],
+      "H82_CSAM_37654_dti": 0.16449670245298645,
+      "H82_CSAM_37654_ci95": [
+        0.1499417517308718,
+        0.17885604881473524
+      ],
+      "H33_fold_fair_dti": 0.09749305179496678,
+      "H33_fold_fair_ci95": [
+        0.08860659019966738,
+        0.10727178358618421
+      ],
+      "H33_static_ref_dti": 0.004006147174684741,
+      "H33_static_ref_ci95": [
+        0.003459478959749529,
+        0.004567484067208953
+      ],
+      "paired_delta_vs_H33_fold_fair": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.0682845280118494,
+        "ci95": [
+          0.05867206753518221,
+          0.07815938210988405
+        ],
+        "withheld_positive_pixels": 22663
+      },
+      "paired_delta_vs_H33_static_ref": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.16177143263213142,
+        "ci95": [
+          0.14756966577488043,
+          0.17574321525973147
+        ],
+        "withheld_positive_pixels": 22663
+      }
+    },
+    "secondary_piedmont_sgmc_benchmark": {
+      "schema": "gemsdoe82-piedmont-sgmc-benchmark-v1",
+      "description": "External zero-training evaluation against USGS SGMC faults strictly inside low-slope (<=5 deg) off-catalogue (d_cat > 3 px) basin/piedmont terrain",
+      "piedmont_off_catalogue_pixels": 1966476,
+      "piedmont_sgmc_positive_pixels": 3155,
+      "surface_roc_auc_in_piedmont": {
+        "phys98_seed30_loqo": 0.637703,
+        "phys106_csam_seed30_loqo": 0.637571,
+        "h82_csam_full_seed30_loqo": 0.691551
+      },
+      "dot_hit_rate_within_300m_of_piedmont_sgmc": {
+        "H33_static_ref": 0.043257,
+        "D28_static_ref": 0.043257,
+        "H82_CSAM_37654_seed30": 0.033131,
+        "H82_CSAM_41200_seed30": 0.031384
+      }
+    }
+  },
+  "uniqueness_vs_registry": {
+    "evidence_class": "REGISTRY-MEASUREMENT",
+    "n_prior_rasters_checked": 188,
+    "n_sparse_rasters": 168,
+    "n_dense_witness_rasters": 19,
+    "pre_placement_surface": {
+      "max_spearman_rho": 0.252136,
+      "max_spearman_raster": "dense_witness.tif",
+      "max_top41200_3px_overlap": 0.61,
+      "max_top41200_overlap_raster": "GEMSDOE77__gems77-h77vds-valve-dinkelbach-44090dots-20261021-nan.tif",
+      "pass_rho_le_0_90": true,
+      "pass_overlap_le_0_70": true
+    },
+    "final_dots_primary_41200": {
+      "max_spearman_rho": 0.16873,
+      "max_spearman_raster": "GEMSDOE77__gems77-h77vds-valve-dinkelbach-44090dots-20261021-nan.tif",
+      "max_3px_overlap": 0.61,
+      "max_overlap_raster": "GEMSDOE77__gems77-h77vds-valve-dinkelbach-44090dots-20261021-nan.tif",
+      "vs_H33_spearman_rho": 0.028623,
+      "vs_H33_3px_overlap": 0.439854,
+      "vs_D28_3px_overlap": 0.444102,
+      "vs_dense_witness_spearman_rho": 0.074032,
+      "pass_rho_le_0_90": true,
+      "pass_overlap_le_0_70": true
+    },
+    "final_dots_parity_37654": {
+      "max_spearman_rho": 0.163961,
+      "max_spearman_raster": "GEMSDOE77__gems77-h77vds-valve-dinkelbach-44090dots-20261021-nan.tif",
+      "max_3px_overlap": 0.609975,
+      "max_overlap_raster": "GEMSDOE77__gems77-h77vds-valve-dinkelbach-44090dots-20261021-nan.tif",
+      "vs_H33_spearman_rho": 0.028829,
+      "vs_H33_3px_overlap": 0.446938,
+      "pass_rho_le_0_90": true,
+      "pass_overlap_le_0_70": true
+    }
+  },
+  "submission": {
+    "status_badge": "OK TO DOWNLOAD AND SUBMIT",
+    "submittable": true,
+    "primary_file": "submissions/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif",
+    "download_url_path": "docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif",
+    "submission_name": "gems82-h82-csam-dinkelbach-41200-20261021-zeros",
+    "submission_note": "H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap<=0.61, 0 NaN, EPSG:32611)",
+    "submission_note_length": 109,
+    "raster_sha256": "18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767",
+    "zip_sha256": "328b2ec6ea587300aa2303d4f493a993151073b634a53d46127e5f47d06ca187",
+    "n_positive_dots": 41200,
+    "validator_output": {
+      "file": "/home/user/GEMSDOE82/submissions/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif",
+      "bytes": 150825,
+      "sha256": "18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767",
+      "meta": {
+        "crs": "EPSG:32611",
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "count": 1,
+        "nodata": null,
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "profile_compress": "deflate"
+      },
+      "band_description": [
+        null
+      ],
+      "n_finite": 12279160,
+      "n_nan": 0,
+      "n_infinite": 0,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0033552784007042646,
+      "emitted_positive_pixels": 41200,
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "dimensions_3730x3292": true,
+        "crs_epsg_32611": true,
+        "transform_matches_sample_submission": true,
+        "no_nan_anywhere": true,
+        "no_inf_anywhere": true,
+        "no_sentinel_values": true,
+        "range_0_1_guaranteed": true,
+        "min_ge_0": true,
+        "max_le_1": true,
+        "in_footprint_all_finite": true,
+        "in_footprint_range_0_1": true,
+        "outside_footprint_zero": true,
+        "zero_dots_on_mapped_catalogue": true
+      },
+      "all_checks_passed": true,
+      "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+      "on_catalogue_positive_pixels": 0,
+      "in_footprint_positive_pixels": 41200,
+      "footprint_fraction": 0.007973103547973022
+    },
+    "companion_parity_37654": {
+      "file": "submissions/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif",
+      "download_url_path": "docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif",
+      "submission_name": "gems82-h82-csam-dinkelbach-37654-20261021-zeros",
+      "submission_note": "H82-CSAM 114ch H33-parity 37654 binary dots via Dinkelbach 300m allocator (cap<=0.61, 0 NaN, EPSG:32611)",
+      "raster_sha256": "0cba5858360ae386ec33637b1d48fd705a259677ffdd096c244dab5ce5ea742b",
+      "zip_sha256": "a70689bf2ffb4c133f08f6ece9baf29cdf1321a27a1b3294482d7836a71c971f",
+      "n_positive_dots": 37654,
+      "validator_output": {
+        "file": "/home/user/GEMSDOE82/submissions/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif",
+        "bytes": 144453,
+        "sha256": "0cba5858360ae386ec33637b1d48fd705a259677ffdd096c244dab5ce5ea742b",
+        "meta": {
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "dtype": "float32",
+          "count": 1,
+          "nodata": null,
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "profile_compress": "deflate"
+        },
+        "band_description": [
+          null
+        ],
+        "n_finite": 12279160,
+        "n_nan": 0,
+        "n_infinite": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030664964579045773,
+        "emitted_positive_pixels": 37654,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "dimensions_3730x3292": true,
+          "crs_epsg_32611": true,
+          "transform_matches_sample_submission": true,
+          "no_nan_anywhere": true,
+          "no_inf_anywhere": true,
+          "no_sentinel_values": true,
+          "range_0_1_guaranteed": true,
+          "min_ge_0": true,
+          "max_le_1": true,
+          "in_footprint_all_finite": true,
+          "in_footprint_range_0_1": true,
+          "outside_footprint_zero": true,
+          "zero_dots_on_mapped_catalogue": true
+        },
+        "all_checks_passed": true,
+        "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+        "on_catalogue_positive_pixels": 0,
+        "in_footprint_positive_pixels": 37654,
+        "footprint_fraction": 0.007286874781441169
+      }
+    }
+  },
+  "organizer_confirmed_reference_context": {
+    "evidence_class": "ORGANIZER-CONFIRMED",
+    "GEMSDOE32_H33_live_dti": 0.2778,
+    "GEMSDOE36_PINN_live_dti": 0.275,
+    "GEMSDOE35_H36_1_live_dti": 0.271,
+    "GEMSDOE26_H27_4_live_dti": 0.2708,
+    "GEMSDOE25_D2_8_live_dti": 0.26,
+    "GEMSDOE24_D1_5_live_dti": 0.2477,
+    "GEMSDOE19_H19_5_live_dti": 0.1922,
+    "competition_reference_benchmark": 0.3195,
+    "competition_leaderboard_top": 0.4413,
+    "GEMSDOE82_H82_CSAM_live_dti": null,
+    "live_status_note": "Generated and validated locally on 2026-10-21; awaiting external upload to DrivenData for ORGANIZER-CONFIRMED score."
+  },
+  "verdict": "promote"
+}

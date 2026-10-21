@@ -1,0 +1,35 @@
+# Python & test caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Large restored rasters, memmaps, and temporary files
+*.f32
+*.f16
+*.tmp
+*.mmap
+*.part-*
+data/raw/
+data/processed/
+data/external/
+data/scored/
+data/*.tif
+data/*.npy
+evidence/*.npy
+registry/rasters/*.tif
+
+# Keep small official bridge templates & JSON manifests tracked
+!data/bridge/
+!data/bridge/*.tif
+!data/*.json
+!docs/downloads/*.tif
+!docs/downloads/*.zip
+!docs/downloads/*.json
+!submissions/*.tif
+!submissions/*.zip
+!submissions/*.json

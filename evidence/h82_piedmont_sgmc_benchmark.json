@@ -1,0 +1,17 @@
+{
+  "schema": "gemsdoe82-piedmont-sgmc-benchmark-v1",
+  "description": "External zero-training evaluation against USGS SGMC faults strictly inside low-slope (<=5 deg) off-catalogue (d_cat > 3 px) basin/piedmont terrain",
+  "piedmont_off_catalogue_pixels": 1966476,
+  "piedmont_sgmc_positive_pixels": 3155,
+  "surface_roc_auc_in_piedmont": {
+    "phys98_seed30_loqo": 0.637703,
+    "phys106_csam_seed30_loqo": 0.637571,
+    "h82_csam_full_seed30_loqo": 0.691551
+  },
+  "dot_hit_rate_within_300m_of_piedmont_sgmc": {
+    "H33_static_ref": 0.043257,
+    "D28_static_ref": 0.043257,
+    "H82_CSAM_37654_seed30": 0.033131,
+    "H82_CSAM_41200_seed30": 0.031384
+  }
+}
