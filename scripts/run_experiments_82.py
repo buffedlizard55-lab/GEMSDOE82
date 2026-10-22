@@ -42,19 +42,19 @@ from gems57 import evaluate_holdout as eh
 from gems57 import grid as grid_mod
 from gems57 import holdout, submission_writer, uniqueness, validate
 from gems82 import LANE_ID, MODEL_VERSION
-from gems82.emit import (
+from gems82_punoisyor.emit import (
     DEFAULT_BUDGET_PX,
     DEFAULT_QUADRANT_QUOTAS,
     build_exact_300m_kernel_offsets,
     peak_nms_emit,
     submodular_expected_dti_emit,
 )
-from gems82.features import (
+from gems82_punoisyor.features import (
     FOLD_MECH_NAMES,
     build_or_load_static_stack82,
     compute_fold_safe_mechanics82,
 )
-from gems82.models import (
+from gems82_punoisyor.models import (
     calibrate_quadrant_lidar_seam,
     compute_quadrant_ids,
     disjunctive_noisy_or_on_allow,

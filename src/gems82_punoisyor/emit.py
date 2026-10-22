@@ -1,4 +1,4 @@
-"""Discrete Centerline Emission & Exact Submodular Expected-DTI Cover (`src/gems82/emit.py`).
+r"""Discrete Centerline Emission & Exact Submodular Expected-DTI Cover (`src/gems82/emit.py`).
 
 Implements:
 1. `peak_nms_emit`: Fixed-radius (`r = 2.8 px`) per-quadrant greedy non-maximum suppression
@@ -20,7 +20,7 @@ from typing import Dict, List, Tuple
 
 import numpy as np
 
-from gems82.models import compute_quadrant_ids
+from gems82_punoisyor.models import compute_quadrant_ids
 
 DEFAULT_BUDGET_PX = 37_654
 DEFAULT_QUADRANT_QUOTAS = (0.24, 0.26, 0.25, 0.25)  # NW=24%, NE=26% (NW+NE=50%), SW=25%, SE=25%

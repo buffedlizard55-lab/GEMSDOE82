@@ -1,0 +1,23 @@
+{
+  "lane": "H82-PUNOISYOR",
+  "candidate": "gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif",
+  "sha256": "120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131",
+  "vs_sibling_lanes": {
+    "H82_CSAM_41200": {
+      "fwd_my_dots_within_3px_of_theirs": 0.52608,
+      "rev_their_dots_within_3px_of_mine": 0.38335,
+      "mutual_3px_overlap": 0.38335,
+      "binary_spearman_rho": 0.02873,
+      "surface_spearman_rho": 0.08923,
+      "unique_pass": true
+    },
+    "H82_CSAM_37654": {
+      "fwd_my_dots_within_3px_of_theirs": 0.50858,
+      "rev_their_dots_within_3px_of_mine": 0.38862,
+      "mutual_3px_overlap": 0.38862,
+      "binary_spearman_rho": 0.02832,
+      "surface_spearman_rho": 0.08653,
+      "unique_pass": true
+    }
+  }
+}

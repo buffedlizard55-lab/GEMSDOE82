@@ -24,7 +24,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import RobustScaler
 
-from gems82.features import (
+from gems82_punoisyor.features import (
     DOMAIN_SLICES,
     FOLD_MECH_NAMES,
     STATIC_FEATURE_NAMES,
