@@ -1,0 +1,58 @@
+{
+ "irregularities": [
+  {
+   "id": "IR-82-LB-01",
+   "severity": "high",
+   "status": "PARTIALLY RESOLVED (sibling session read live board 2026-10-21: top = 0.4413, their IR-82-04; this session cannot re-verify: no egress)",
+   "what": "The session prompt contains two incompatible 'current high score' claims: 0.3195 (DARD, public #1) and 0.4413 ('current competition leaderboard GEMSDOE high score'). The digits 0.4413 coincide EXACTLY with GEMSDOE32 IR-33-LM-01, where 0.4413 was a drift-model artifact for a pruned variant (1.35x the then-leader, refuted by the live record) \u2014 not a leaderboard row. Either (a) a team genuinely reached 0.4413 (extraordinary: +38% over 0.3195), or (b) the prompt line misquotes the instrument artifact as a leaderboard score. Sandbox egress blocks drivendata.org, so this repo verified NEITHER. Lane-82 work targets beating the verified group-best chain (0.2778) and is unaffected by this ambiguity, but any 'we are #N on the board' claim must wait for a dated leaderboard snapshot. UPDATE 2026-10-21 merge: a sibling session in this repo reports reading the live leaderboard on 2026-10-21 with the earlier/higher figure (0.4413) on top (their IR-82-04). Adopted as second-source confirmation; 0.3195 treated as stale. The 0.4413-vs-LM-artifact digit coincidence remains unexplained."
+  },
+  {
+   "id": "IR-82-SCORE-01",
+   "severity": "high",
+   "status": "OPEN (structural)",
+   "what": "No organizer receipt links ANY group file's bytes to ANY leaderboard row (same finding as GEMSDOE32 IR-32-SCORE-01). All score attributions (0.2600/0.2708/0.2778 chain, 0.3195 DARD) are OWNER-REPORTED. The live-anchored inversion (T=5069, K~13300) is CONDITIONAL on the chain's attribution being correct. The pixel-exact prune chain (D2.8 -> R1 -> B2) is byte-verified; the SCORES attached to it are not."
+  },
+  {
+   "id": "IR-82-R2-01",
+   "severity": "medium",
+   "status": "FIXED (gate v1.1, evidence/r2_fix_note.md)",
+   "what": "Gate v1.0 compared candidate SGMC-FAR quadrants against hand-copied SGMC-RAW quadrant constants (wrong instrument), falsely failing R2 (1/4 instead of 4/4). Fixed by evaluating the base mask in-process. Regression coverage: tests/test_gate.py pins in-process base quadrants to the receipt."
+  },
+  {
+   "id": "IR-82-SGMC-01",
+   "severity": "medium",
+   "status": "DOCUMENTED (validity domain in knowledge/04_instrument_licensing.md)",
+   "what": "SGMC-proxy truth covers only PART of the live hidden truth and rewards scarp-chasing (SGMC faults are surface-expressed by construction): a fresh h82_1 emission scores SGMC-FAR 0.1403 yet CAT-HIDDEN 0.0030 (~random). SGMC-FAR is therefore licensed ONLY for flank surgery on a fixed carrier + small screened additions \u2014 never for wholesale emission replacement. The historical lane candidate used this proxy within its declared lane, but its results are noncanonical and it is not authorized for submission."
+  },
+  {
+   "id": "IR-82-DATA-01",
+   "severity": "low",
+   "status": "DOCUMENTED",
+   "what": "The 19-band training_features.tif was never fetched (418 MB; only available login-walled or as owner-mirror parts). Lane 82 uses ONLY the sha256-pinned external u8 stacks + GDR tables + catalogue grids. Any detector needing the official 19 bands (e.g. MT conductivity, InSAR) is out of scope for this lane."
+  },
+  {
+   "id": "IR-82-MERGE-01",
+   "severity": "high",
+   "status": "RESOLVED FAIL-CLOSED (no selector authorization)",
+   "what": "The H82-2 lane-local research gate is not a selector decision. Canonical inputs/shared tools are absent, the mirror/private-tooling provenance is disputed, and no selector receipt is present. registry/submission_authorization.json is NOT_AUTHORIZED; the archived TIFF is inspection-only and must not be submitted."
+  },
+  {
+   "id": "IR-82-MERGE-02",
+   "severity": "low",
+   "status": "FIXED",
+   "what": "H82-1 label collision (blindstep lane vs antislope hypotheses) resolved: antislope lane = H82-2, hypotheses H82-2.1..H82-2.5 (code identifiers h82_1.. predate, mapped on lanes page)."
+  },
+  {
+   "id": "IR-82-MERGE-03",
+   "severity": "medium",
+   "status": "OPEN",
+   "what": "H82-1 blindstep raster withheld from main: lane H82-2 could not run duplicate screens against it. Methods differ; no collision inferable, none verifiable."
+  },
+  {
+   "id": "IR-82-DUP-01",
+   "severity": "high",
+   "status": "CONFIRMED DUPLICATE \u2014 STOP",
+   "what": "The archived H82-2 final dots fail the current parallel-run duplicate rule against H33-2-B2: recorded rank rho=0.9522 exceeds 0.90 and 96.1% of final dots fall within 3 px, exceeding 70%. Earlier R6a checks screened only the novel additions; they do not override the required full final-dot screen. Do not submit or promote this raster."
+  }
+ ]
+}

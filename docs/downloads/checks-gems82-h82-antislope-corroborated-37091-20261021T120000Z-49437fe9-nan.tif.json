@@ -1,0 +1,44 @@
+{
+ "filename": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif",
+ "size_bytes": 190643,
+ "sha256": "84e6952e257439ef33ee0788eb98f0f540be203276d471b067ac7967e084392f",
+ "mode": "nan",
+ "crs": "EPSG:32611",
+ "transform": [
+  100.0,
+  0.0,
+  243350.0,
+  0.0,
+  -100.0,
+  4508550.0
+ ],
+ "shape": [
+  3730,
+  3292
+ ],
+ "dtype": "float32",
+ "nodata": null,
+ "nodata_repr": "nan",
+ "emitted_positive_pixels": 37091,
+ "footprint_fraction": 0.007178,
+ "on_catalogue_positive_pixels": 0,
+ "in_footprint_finite_pixels": 5167373,
+ "in_footprint_min": 0.0,
+ "in_footprint_max": 1.0,
+ "full_grid_finite_pixels": 5167373,
+ "checks": {
+  "single_band": true,
+  "dtype_float32": true,
+  "dimensions_3730x3292": true,
+  "crs_epsg_32611": true,
+  "in_footprint_all_finite": true,
+  "in_footprint_zero_nan": true,
+  "in_footprint_zero_inf": true,
+  "in_footprint_zero_sentinel": true,
+  "in_footprint_range_0_1": true,
+  "outside_footprint_compliant": true,
+  "zero_on_catalogue_leakage": true,
+  "validator_range_0_1_guaranteed": true
+ },
+ "all_checks_passed": true
+}

@@ -1,0 +1,22 @@
+{
+  "official": [
+    {"id": "drivendata-competition", "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/", "what": "DOE GEMS Prize competition hub (rules, data, leaderboard)"},
+    {"id": "drivendata-problem-967", "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/", "what": "Problem description: DTI metric definition (triangular kernel R=300m, alpha=0.2, beta=0.8)"},
+    {"id": "drivendata-about-968", "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/", "what": "About page: additional resources"},
+    {"id": "drivendata-data", "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/", "what": "Data download (login-walled; this repo uses sha256-pinned owner mirrors instead)"},
+    {"id": "drivendata-leaderboard", "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/", "what": "Live leaderboard (dynamic; snapshots recorded with dates, never silently updated)"},
+    {"id": "nrel-rules-96647", "url": "https://docs.nlr.gov/docs/fy26osti/96647.pdf", "what": "Official prize rules NREL/TP-5700-96647 (3 submissions/week, one file scored in both rounds)"},
+    {"id": "reference-solution", "url": "https://github.com/drivendataorg/gems-prize-reference-solution", "what": "Organizer reference solution (U-Net + Monte Carlo CV, Tversky loss alpha=0.2 beta=0.8)"},
+    {"id": "scoring-clarification-11516", "url": "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516", "what": "Organizer clarification: known USGS/INGENIOUS faults are masked when scoring (recorded via GEMSDOE32; sandbox could not re-open the thread)"},
+    {"id": "usgs-geodawn", "url": "https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and", "what": "USGS GeoDAWN airborne magnetic+radiometric surveys (DOI 10.5066/P93LGLVQ)"},
+    {"id": "gdr-1391", "url": "https://gdr.openei.org/submissions/1391", "what": "GDR 1391 INGENIOUS well/spring/volcanic-vent tables (DOI 10.15121/1881483, CC BY 4.0)"},
+    {"id": "epsg-32611", "url": "https://epsg.io/32611", "what": "CRS EPSG:32611 (UTM 11N, WGS84) — submission grid CRS"},
+    {"id": "tversky-index", "url": "https://en.wikipedia.org/wiki/Tversky_index", "what": "Tversky index background (DTI = distance-weighted asymmetric Tversky)"},
+    {"id": "gbcge-ingenious", "url": "https://gbcge.org/current-projects/ingenious/", "what": "INGENIOUS project (Great Basin Center for Geothermal Energy)"}
+  ],
+  "group_mirrors": [
+    {"repo": "buffedlizard55-lab/GEMSDOE24", "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b", "what": "Owner mirror: labels/sample_submission/external u8 stacks/GDR csvs (NOT organizer-authenticated)"},
+    {"repo": "buffedlizard55-lab/GEMSDOE32", "ref": "f62038b54dcb7767d4d997f80b033cdc3d42bef9", "what": "Owner mirror: D2.8 + H33-2-B2 rasters, metric/holdout methodology reference"},
+    {"repo": "buffedlizard55-lab/GEMSDOE28", "ref": "84d99d7479bbd8e02deba4e8217c7b73d111eaeb", "what": "Owner mirror: R1-SOLO 0.2708 + H36 rung registry rasters"}
+  ]
+}

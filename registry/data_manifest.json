@@ -1,199 +1,265 @@
 {
-  "generated_utc": "2026-10-21T22:23:36+00:00",
-  "grid_spec": {
-    "shape": [
-      3730,
-      3292
-    ],
-    "crs": "EPSG:32611",
-    "pixel_size_m": 100.0,
-    "origin_utm": [
-      243350.0,
-      4508550.0
-    ],
-    "total_pixels": 12279160,
-    "footprint_valid_pixels": 5167373,
-    "outside_footprint_pixels": 7111787,
-    "catalogue_positive_pixels": 60988,
-    "lidar_1m_covered_pixels": 3894460,
-    "lidar_1m_covered_fraction": 0.753663
-  },
-  "verified_assets": [
+  "schema_version": 1,
+  "note": "Every hash was computed from the restored bytes. Pins prove mirror consistency, not organizer authentication.",
+  "files": [
     {
-      "rel_path": "training_features.tif",
-      "bytes": 418912844,
+      "id": "training_features",
+      "repo": "buffedlizard55-lab/GEMSDOE",
+      "ref": "c0c06ac82178f26b94fce3397036ef8f12a2f3a0",
+      "parts": [
+        "data/bridge/gems-geodawn-numerical-features.tif.part-000",
+        "data/bridge/gems-geodawn-numerical-features.tif.part-001",
+        "data/bridge/gems-geodawn-numerical-features.tif.part-002",
+        "data/bridge/gems-geodawn-numerical-features.tif.part-003",
+        "data/bridge/gems-geodawn-numerical-features.tif.part-004"
+      ],
+      "dest": "training_features.tif",
+      "group": "core",
       "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
-      "source_name": "DOE/NREL GEMS Prize Official 19-Band Numeric Features (GeoDAWN + INGENIOUS + USGS 3DEP)",
-      "official_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
-      "doi_or_ref": "DrivenData Competition 306 / USGS DOI 10.5066/P93LGLVQ / GDR 1391",
-      "status": "VERIFIED"
+      "bytes": 418912844,
+      "provenance": "owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated; 19 float32 bands, nodata -3.4028234663852886e+38"
     },
     {
-      "rel_path": "labels.tif",
-      "bytes": 425830,
+      "id": "labels",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/bridge/labels.tif",
+      "dest": "labels.tif",
+      "group": "core",
       "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
-      "source_name": "DOE/NREL GEMS Prize Known Faults Raster (`labels.tif`)",
-      "official_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
-      "doi_or_ref": "USGS Quaternary Fault & Fold Database + GBCGE INGENIOUS compilation",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "existing_faults.tif",
       "bytes": 425830,
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
-      "source_name": "Known Catalogue Fault Mask (`existing_faults.tif` mirror for `gems57.grid.load_grid`)",
-      "official_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
-      "doi_or_ref": "Identical SHA-256 to `labels.tif`",
-      "status": "VERIFIED"
+      "provenance": "owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated"
     },
     {
-      "rel_path": "sample_submission.tif",
-      "bytes": 1599597,
+      "id": "existing_faults",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/bridge/existing_faults.tif",
+      "dest": "existing_faults.tif",
+      "group": "core",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830,
+      "provenance": "owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated (byte-identical to labels.tif)"
+    },
+    {
+      "id": "sample_submission",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/bridge/sample_submission.tif",
+      "dest": "sample_submission.tif",
+      "group": "core",
       "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
-      "source_name": "DOE/NREL GEMS Prize Template Submission Grid (`3730x3292`, `EPSG:32611`, `100 m`)",
-      "official_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
-      "doi_or_ref": "DrivenData Competition 306 (`5,167,373` valid interior pixels)",
-      "status": "VERIFIED"
+      "bytes": 1599597,
+      "provenance": "owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated; used ONLY as the grid/footprint template (its 60,988 pixels equal to 1 sit on the labelled faults, unlike the page's 'total fault absence' wording)"
     },
     {
-      "rel_path": "external/lidar_scarp_features_u8.tif",
-      "bytes": 36943606,
+      "id": "ext_lidar_scarp_features_u8",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/lidar_scarp_features_u8.tif",
+      "dest": "external/lidar_scarp_features_u8.tif",
+      "group": "external",
       "sha256": "d580bb8bdcdb941e32fefb8b38044bc5bf04e199bf2e83498c3576e6fc465568",
-      "source_name": "USGS 3DEP 1 m LiDAR Scarp Derivative Stack (`12` bands, `75.4%` footprint coverage)",
-      "official_url": "https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5",
-      "doi_or_ref": "USGS 3D Elevation Program (3DEP) 1 m DEM",
-      "status": "VERIFIED"
+      "bytes": 36943606,
+      "provenance": "derived by the owner's CI from USGS 3DEP 1 m DEM tiles (706 of 716 tiles; tile list OCR-recovered from the competition PDF); USGS 3DEP carries no use restrictions per the owner's receipt"
     },
     {
-      "rel_path": "h52_scarp3m_100m.tif",
-      "bytes": 43839078,
-      "sha256": "b5e53d67c3a7d3d1ca44ae04ae1e84d8574857da3fcd5e34ba47276d6c04b923",
-      "source_name": "USGS 3DEP 3 m / Sub-10 m Wallace Fault-Scarp Diffusion Stack (`h_gate07`, `h_gate12`, `sigma`, `strike`)",
-      "official_url": "https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5",
-      "doi_or_ref": "USGS 3DEP Seamless High-Resolution Elevation (`GEMSDOE48` derivation)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "dem1m_high_prior_openness_lrm.npz",
-      "bytes": 610575,
-      "sha256": "62f27929747ad3c35be4dd3e0257b0bde7d7bea8566474956e1711269ad451fe",
-      "source_name": "USGS 3DEP 1 m DEM Topographic Openness & Local Relief Model (`71,974` cells)",
-      "official_url": "https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5",
-      "doi_or_ref": "Yokoyama et al. (2002); Hesse (2010); USGS NV_WestCentral_EarthMRI_2020_D20",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "topo_10m_derived_100m_u8.tif",
-      "bytes": 32523329,
-      "sha256": "a6398d9950965dec6aae6ccecdaa6ced48645d133eab222cbdd11def9bdabfa4",
-      "source_name": "USGS 3DEP Seamless 10 m Sub-Pixel Breakline & Curvature Stack (`9` bands, `100%` coverage)",
-      "official_url": "https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5",
-      "doi_or_ref": "USGS 3DEP 1/3 arc-second (~10 m) Seamless DEM (`60GEMSDOE` derivation)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "dem10_chi_100m_i16.tif",
-      "bytes": 12777098,
-      "sha256": "8897ba9c30ef1cd7ad5f23c16c6dfd7bb070e7e757f36fd9486eb45edfd973a5",
-      "source_name": "USGS 3DEP 10 m Fluvial Chi / Ksn / Drainage Area / Sea-Level Elevation Stack (`5` bands)",
-      "official_url": "https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5",
-      "doi_or_ref": "Willett et al. (2014, Science); Kirby & Whipple (2012)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "external/geodawn_rad_u8.tif",
-      "bytes": 26612970,
+      "id": "ext_geodawn_rad_u8",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/geodawn_rad_u8.tif",
+      "dest": "external/geodawn_rad_u8.tif",
+      "group": "external",
       "sha256": "c22420f75999030d7cc65c9e31e50d232ea6158423bca051613a18a8b20ba682",
-      "source_name": "USGS GeoDAWN Airborne Gamma-Ray Spectrometry (`K`, `Th`, `U`, `TC`)",
-      "official_url": "https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and",
-      "doi_or_ref": "DOI: 10.5066/P93LGLVQ",
-      "status": "VERIFIED"
+      "bytes": 26612970,
+      "provenance": "derived from the USGS GeoDAWN data release (DOI 10.5066/P93LGLVQ) K/Th/U/TC grids, uint8-quantised 1st-99th percentile"
     },
     {
-      "rel_path": "external/geodawn_extensions_u8.tif",
-      "bytes": 27132925,
+      "id": "ext_geodawn_extensions_u8",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/geodawn_extensions_u8.tif",
+      "dest": "external/geodawn_extensions_u8.tif",
+      "group": "external",
       "sha256": "a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b",
-      "source_name": "USGS GeoDAWN Radiometric Ratios & `150 m` Upward-Continued TMI (`Th/K`, `U/K`, `U/Th`, `TMI_up150`)",
-      "official_url": "https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and",
-      "doi_or_ref": "DOI: 10.5066/P93LGLVQ",
-      "status": "VERIFIED"
+      "bytes": 27132925,
+      "provenance": "derived from the USGS GeoDAWN data release (DOI 10.5066/P93LGLVQ): Th/K, U/K, U/Th ratios and TMI upward-continued 150 m"
     },
     {
-      "rel_path": "external/tiger_road_distance_m.tif",
-      "bytes": 10492276,
-      "sha256": "e5350423508968fa2d32b0a6ae0d3fb4ae3ea645e3b8736f0c8e7ad9ff2f2988",
-      "source_name": "U.S. Census TIGER/Line Euclidean Distance to Roads/Railways (`m`)",
-      "official_url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html",
-      "doi_or_ref": "U.S. Census Bureau TIGER/Line (anthropogenic embankment filter)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "external/gdr_wellspring_in_footprint.csv",
-      "bytes": 2146771,
-      "sha256": "122718e65bdf55aab0ee12ad20d80062f0deb1de957225a61ad880dd5dc196ea",
-      "source_name": "DOE GDR 1391 INGENIOUS Thermal Wells, Springs & Geothermometry (`8,891` records)",
-      "official_url": "https://gdr.openei.org/submissions/1391",
-      "doi_or_ref": "DOI: 10.15121/1881483 (GBCGE / UNR)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "2m_temperature_probe_INGENIOUS_regional_data.zip",
-      "bytes": 1080530,
-      "sha256": "1301f70d230058e616ea5d34d1c7a32fabf7d49198172f376c59c89bd652eca3",
-      "source_name": "DOE GDR 1391 INGENIOUS Shallow 2-Meter Temperature Probe Survey (`T2m`, `F2mDAB`)",
-      "official_url": "https://gdr.openei.org/submissions/1391",
-      "doi_or_ref": "DOI: 10.15121/1881483 (Coolbaugh / Kratt / GBCGE UNR)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "Paleo_geothermal_final.csv",
-      "bytes": 105551,
-      "sha256": "c28bd7fac4a3acc7fa2bf24ead0c4f799fd9b059432ea921cc97cc9e012f86dc",
-      "source_name": "DOE GDR 1391 Regional Paleo-Geothermal Sinter, Travertine & Silicified Fault Seals (`709` records)",
-      "official_url": "https://gdr.openei.org/submissions/1391",
-      "doi_or_ref": "DOI: 10.15121/1881483 (GBCGE / NBMG)",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "external/gdr_volcanic_vents_in_footprint.csv",
-      "bytes": 672,
-      "sha256": "f91bafbaccaaf2754e71d60434fc0f9eb2c7b880c6e714883f4974542ff6a0bf",
-      "source_name": "DOE GDR 1391 Quaternary Volcanic Vents in GeoDAWN Footprint",
-      "official_url": "https://gdr.openei.org/submissions/1391",
-      "doi_or_ref": "DOI: 10.15121/1881483",
-      "status": "VERIFIED"
-    },
-    {
-      "rel_path": "external/derived_sgmc_faults_100m_u8.tif",
-      "bytes": 198602,
+      "id": "ext_derived_sgmc_faults_100m_u8",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/derived_sgmc_faults_100m_u8.tif",
+      "dest": "external/derived_sgmc_faults_100m_u8.tif",
+      "group": "external",
       "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
-      "source_name": "USGS State Geologic Map Compilation (`SGMC`) Faults \u2014 NEVER used in features or model training; held out strictly for `Instrument C_pied` live-calibrated diagnostic audit",
-      "official_url": "https://www.usgs.gov/data/state-geologic-map-compilation-sgmc-geodatabase-conterminous-united-states",
-      "doi_or_ref": "Horton et al. (2017), USGS Data Series 1052 (`DOI: 10.3133/ds1052`)",
-      "status": "VERIFIED"
+      "bytes": 198602,
+      "provenance": "derived from USGS SGMC geologic-map faults (proxy only; not used in the factorial)"
+    },
+    {
+      "id": "ext_gdr_wellspring_in_footprint",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/gdr_wellspring_in_footprint.csv",
+      "dest": "external/gdr_wellspring_in_footprint.csv",
+      "group": "external",
+      "sha256": "122718e65bdf55aab0ee12ad20d80062f0deb1de957225a61ad880dd5dc196ea",
+      "bytes": 2146771,
+      "provenance": "GDR 1391 'Well and Spring Temperature and Chemistry' (DOI 10.15121/1881483, CC BY 4.0) points inside the footprint; its dist_known_fault_px column is label-derived and is NOT used"
+    },
+    {
+      "id": "ext_gdr_qfaults_traces",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/gdr_qfaults_traces.csv",
+      "dest": "external/gdr_qfaults_traces.csv",
+      "group": "external",
+      "sha256": "9702f2e5c382a4f472ae834d22b94990983b059677a37adfafd51c50f75e643c",
+      "bytes": 126177,
+      "provenance": "GDR 1391 INGENIOUS Quaternary fault traces (attributes only)"
+    },
+    {
+      "id": "ext_gdr_volcanic_vents_in_footprint",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "data/external/gdr_volcanic_vents_in_footprint.csv",
+      "dest": "external/gdr_volcanic_vents_in_footprint.csv",
+      "group": "external",
+      "sha256": "f91bafbaccaaf2754e71d60434fc0f9eb2c7b880c6e714883f4974542ff6a0bf",
+      "bytes": 672,
+      "provenance": "GDR 1391 Quaternary volcanic vents in the footprint"
+    },
+    {
+      "id": "scored_h19_5",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "dest": "scored/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "group": "scored",
+      "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+      "bytes": 1712322,
+      "provenance": "owner-reported 0.1922"
+    },
+    {
+      "id": "scored_h19_4",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/gems19-h19-4-multiline-corroborated-openness-thermal-pop-20260930-691e4dfa-nan.tif",
+      "dest": "scored/gems19-h19-4-multiline-corroborated-openness-thermal-pop-20260930-691e4dfa-nan.tif",
+      "group": "scored",
+      "sha256": "89109a3bd2cd3b12e7a0f388113c519843acfc9c4f46825affefc3e63dd99b22",
+      "bytes": 1716768,
+      "provenance": "owner-reported 0.1894"
+    },
+    {
+      "id": "scored_h16_1",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-nan.tif",
+      "dest": "scored/gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-nan.tif",
+      "group": "scored",
+      "sha256": "055309694ed499ca3d87e76b3f5e81c292aef6e39c418d33ff5a817aa1309bea",
+      "bytes": 1718028,
+      "provenance": "owner-reported 0.1855"
+    },
+    {
+      "id": "scored_d15_scored",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "docs/downloads/gems24-h25-1-dotted-h19-5-d1-5-20261002-989f59505db1-nan.tif",
+      "dest": "scored/gems24-h25-1-dotted-h19-5-d1-5-20261002-989f59505db1-nan.tif",
+      "group": "scored",
+      "sha256": "68d0e2e4fcc594f9a23f56c44b885fee733d026d39be55e18ad2a07289525310",
+      "bytes": 1632732,
+      "provenance": "owner-mirrored raster labelled 0.2477; user/owner-reported DTI claim is unverified, and no organizer leaderboard page or receipt was accessed"
+    },
+    {
+      "id": "scored_d28_unscored",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "docs/downloads/gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "dest": "scored/gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "group": "scored",
+      "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+      "bytes": 1603424,
+      "provenance": "unscored alternate"
+    },
+    {
+      "id": "calib_13gems_20261001_r13-lattice-s5_v2_nan-ou",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/calibration/13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
+      "dest": "scored/13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
+      "group": "scored",
+      "sha256": "b4570b406efec198eb2f4d142ad8d0d6184b14b66f2f52b5c4d697f0647dc9b2",
+      "bytes": 1706456,
+      "provenance": "calibration raster copied unchanged from the owner siblings"
+    },
+    {
+      "id": "calib_8GEMSDOE_Hedge-v2_submission",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/calibration/8GEMSDOE_Hedge-v2_submission.tif",
+      "dest": "scored/8GEMSDOE_Hedge-v2_submission.tif",
+      "group": "scored",
+      "sha256": "052688eafbc7a55d90caab72252a50304fe5caa8ecf973f8e791b4ae910f0792",
+      "bytes": 736494,
+      "provenance": "calibration raster copied unchanged from the owner siblings"
+    },
+    {
+      "id": "calib_gems10-h25-ctx-ridge-20260927T2329477041",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/calibration/gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif",
+      "dest": "scored/gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif",
+      "group": "scored",
+      "sha256": "1381e784fb8b8340beffd0e735ac9eea89ad35d1a807f8a9bab5506e3fc8275e",
+      "bytes": 1772935,
+      "provenance": "calibration raster copied unchanged from the owner siblings"
+    },
+    {
+      "id": "calib_gems10-h28-dotted-ridge-20260928T0202562",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/calibration/gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif",
+      "dest": "scored/gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif",
+      "group": "scored",
+      "sha256": "7637b72d4c6c3e10226bf46bd72a20272d62ccbe29743062632d10b158b49c58",
+      "bytes": 1620739,
+      "provenance": "calibration raster copied unchanged from the owner siblings"
+    },
+    {
+      "id": "calib_gemsdoe-ens12-adopted-7f00890a",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/calibration/gemsdoe-ens12-adopted-7f00890a.tif",
+      "dest": "scored/gemsdoe-ens12-adopted-7f00890a.tif",
+      "group": "scored",
+      "sha256": "7f00890a62878d612fb5eef67a9a364a2df819433dde74b6762ce4fc0fc4fe15",
+      "bytes": 570890,
+      "provenance": "calibration raster copied unchanged from the owner siblings"
+    },
+    {
+      "id": "calib_gemsdoe9-PLACEHOLDER-2314b599",
+      "repo": "buffedlizard55-lab/GEMSDOE24",
+      "ref": "07345ea0604953d7efb858d9cfbc21e20c7aca0b",
+      "path": "inputs/calibration/gemsdoe9-PLACEHOLDER-2314b599.tif",
+      "dest": "scored/gemsdoe9-PLACEHOLDER-2314b599.tif",
+      "group": "scored",
+      "sha256": "2314b59920bfeeaf6a592d4868b25eca62212825620f9945723c2f6d0a2e5b22",
+      "bytes": 439456,
+      "provenance": "calibration raster copied unchanged from the owner siblings"
+    },
+    {
+      "id": "scored_gems27_tgc_v2_d15",
+      "repo": "buffedlizard55-lab/GEMSDOE27",
+      "ref": "main",
+      "path": "docs/downloads/gems27-topo-gap-closure-t-v2-on-d1-5-20261002-5512495c6bd1-nan.tif",
+      "dest": "scored/gems27-topo-gap-closure-t-v2-on-d1-5-20261002-5512495c6bd1-nan.tif",
+      "group": "scored",
+      "sha256": "33003374335d84bf885f2d8f5e9dd4c57044c8ec58fa6a0d7fa581e8bc41c11d",
+      "bytes": 1635084,
+      "provenance": "owner-supplied scored-artifact mirror (GEMSDOE27 primary candidate manifest, generated_utc 2026-10-03T00:32:37Z); UNSCORED on the leaderboard; added 2026-10-04 because scripts/run_pipeline.py required it and it was absent from this manifest, which made the documented reproduce command abort (IR-32-MANIFEST-01)"
     }
-  ],
-  "irregularities_flagged_for_review": [
-    {
-      "id": "IR-82-01",
-      "title": "Bridged sample_submission.tif mirrors labels.tif > 0 inside footprint",
-      "detail": "Measured 60,988 positive pixels inside sample_submission.tif with 0 pixel differences vs labels.tif > 0, whereas the DrivenData problem description describes an all-absence template. We use np.isfinite(sample_submission) strictly for the 5,167,373-pixel study-area footprint and never read sample_submission pixel values as features."
-    },
-    {
-      "id": "IR-82-02",
-      "title": "USGS 1 m 3DEP LiDAR covers 75.40% of study footprint (24.60% NE/marginal gap)",
-      "detail": "Zero-filling missing LiDAR creates artificial probability cliffs along survey boundaries. Lane H82 passes native NaN to tree ensembles outside 1 m coverage, fuses full-footprint 3 m Wallace scarp diffusion + 10 m 3DEP breaklines + potential-field tilt, and applies per-quadrant non-LiDAR-to-LiDAR quantile calibration."
-    },
-    {
-      "id": "IR-82-03",
-      "title": "Pigeonhole geometry on dense continuous maps and synthetic 5x5 calibration lattices in archive",
-      "detail": "Across all 1,026 historical TIFFs across 93 GEMSDOE repos, whole-footprint positive surfaces (e.g., 17GEMSDOE_E with 5,167,373 positive pixels = 100.0% of footprint) and synthetic 5-px regular grids (13gems_20261001_r13-lattice-s5_v2, 206,895 dots where max Euclidean distance from Z^2 to 5Z^2 is sqrt(2^2+2^2) = 2.8284 px < 3.0 px) cover 100.0% of interior Nevada within 3 px by pure Euclidean geometry. Both un-amended gems57/uniqueness.py forward overlap and mutual/sparse overlap are reported side by side."
-    },
-    {
-      "id": "IR-82-04",
-      "title": "DrivenData '[0, 1]' range check & outside-footprint nodata handling",
-      "detail": "Prior submissions with unmasked NaNs or out-of-range float drift risked portal rejection ('Predicted values must be in range [0, 1]') or score degradation (0.2708 -nan vs 0.2778 -zeros on identical 37,654 dots). Our output enforces strict float32 values in {0.0, 1.0} across all 12,279,160 cells (0 NaNs, 0 Infs, nodata=None)."
-    }
-  ],
-  "elapsed_seconds": 1.2
+  ]
 }

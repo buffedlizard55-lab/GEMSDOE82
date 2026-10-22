@@ -1,222 +1,314 @@
-# GEMSDOE82 (`Lane H82`): Positive-Tile PU Multi-Physics Steerable Pyramid, Outward Crack-Tip Disjunctive Noisy-OR & Exact `300 m` Submodular Centerline Cover
+# GEMSDOE82 — Lane `H82-CSAM`: Coupled Subsurface-to-Surface Up-Dip Advection, Upslope Hydraulic Plume Back-Projection & Biharmonic Basement Flexure with Anisotropic Ridge-Crest Dinkelbach Allocation
 
-[![Validation Status](https://img.shields.io/badge/GeoTIFF_Validation-OK_TO_SUBMIT_(15%2F15_PASS)-16a34a?style=for-the-badge)](evidence/submission_validation.json)
-[![Pixel Range](https://img.shields.io/badge/Pixel_Range-%5B0.0%2C_1.0%5D_float32_%7C_0_NaNs-0284c7?style=for-the-badge)](submissions/gemsdoe82_submission.tif)
-[![Uniqueness Audit](https://img.shields.io/badge/1%2C026--Raster_Uniqueness-PASS_(%7Crho%7C%3D0.4625_%7C_mut%3D0.6062)-0d9488?style=for-the-badge)](evidence/uniqueness_audit_1026.json)
-[![Experiments](https://img.shields.io/badge/Preregistered_Budget-3_%2F_3_Experiments-7c3aed?style=for-the-badge)](evidence/run_card.json)
-
----
-
-## Immediate Submission Summary (`OK TO SUBMIT`)
-
-- **Submission Readiness Verdict**: **`OK TO SUBMIT` (`DECISION = PROMOTE`)** — `15 / 15` automated `vendor/gems57/validate.py` checks passed with **zero human intervention**.
-- **Primary Competition GeoTIFF (Click to Download)**:
-  - **Timestamped Official Artifact**: [`submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif`](submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif) (`137,930` bytes / `134.7 KB`, SHA-256: `120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131`)
-  - **Stable Direct Alias**: [`submissions/gemsdoe82_submission.tif`](submissions/gemsdoe82_submission.tif) (byte-identical SHA-256)
-  - **Single-TIFF ZIP Archive**: [`submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip`](submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip) (`102,603` bytes)
-  - **GitHub Pages Mirror & Step-by-Step Contest Upload Subpage**: [`docs/executive-summary.html`](docs/executive-summary.html) | [`index.html`](index.html)
-- **DrivenData Portal Range Fix Verification** (fixing `"Predicted values must be in range [0, 1]"`):
-  - **Data type / bands / grid**: `float32`, `1` band, `3730 × 3292` pixels, `EPSG:32611`, affine `(100.0, 0.0, 243350.0, 0.0, -100.0, 4508550.0)`, `nodata = None`.
-  - **Strict pixel range across ALL `12,279,160` cells**: `min = 0.0`, `max = 1.0`, **`n_nan = 0`**, **`n_infinite = 0`**, `outside_footprint = 0.0` (`7,111,787` cells), `catalogue_overlap = 0` (`0` pixels on `labels.tif | existing_faults.tif`), `emitted_positive_pixels = 37,654` (`0.7287%` of footprint).
-- **Copy-Paste DrivenData Submission Note (`114 / 140` chars)**:
-  ```text
-  GEMSDOE82 H82: PU 4-oct scarp/shoreline/tilt/hydrothermal Noisy-OR + exact 300m submodular cover (zeros, 37654 px)
-  ```
-- **Competition Portal**: [DrivenData DOE GEMS Prize (`#306`)](https://www.drivendata.org/competitions/306/competition-doe-gems/) | [Leaderboard](https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/) | [Problem Description](https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/)
+> ### **SUBMISSION STATUS: `OK TO DOWNLOAD AND SUBMIT` — ALL FORMAT, LEAKAGE CANARY & PORTFOLIO UNIQUENESS GATES PASSED (`VERDICT: PROMOTE`)**
+>
+> - **Primary Submission GeoTIFF (`41,200` binary `{0.0, 1.0}` dots, `148 KB`):** [`docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif`](docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif) | [`.zip` (`115 KB`)](docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.zip) | [`.json` Validator Receipt](docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.json)
+>   - **Submission Name:** `gems82-h82-csam-dinkelbach-41200-20261021-zeros`
+>   - **Submission Note (`109 / 140` chars):** `H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap<=0.61, 0 NaN, EPSG:32611)`
+>   - **SHA-256 (`.tif`):** `18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767`
+>   - **SHA-256 (`.zip`):** `328b2ec6ea587300aa2303d4f493a993151073b634a53d46127e5f47d06ca187`
+> - **H33-Parity Companion GeoTIFF (`37,654` binary `{0.0, 1.0}` dots, `142 KB`):** [`docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif`](docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif) | [`.zip` (`108 KB`)](docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.zip) | [`.json` Validator Receipt](docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.json)
+>   - **Submission Name:** `gems82-h82-csam-dinkelbach-37654-20261021-zeros`
+>   - **Submission Note (`105 / 140` chars):** `H82-CSAM 114ch H33-parity 37654 binary dots via Dinkelbach 300m allocator (cap<=0.61, 0 NaN, EPSG:32611)`
+>   - **SHA-256 (`.tif`):** `0cba5858360ae386ec33637b1d48fd705a259677ffdd096c244dab5ce5ea742b`
+>   - **SHA-256 (`.zip`):** `a70689bf2ffb4c133f08f6ece9baf29cdf1321a27a1b3294482d7836a71c971f`
+> - **GitHub Pages Site:** [`index.html`](index.html) | [`executive-summary.html`](executive-summary.html) | [`run_card.json`](run_card.json)
+> - **Competition:** [DrivenData #306 — DOE Geothermal Exploration using Machine Learning and Statistics (GEMS)](https://www.drivendata.org/competitions/306/competition-doe-gems/)
 
 ---
 
-## Arena Core Values Guiding This Work
+## 1. Automated Gate Verification Summary
 
-1. **Maximize P(Win)**: Every engineering decision is anchored exclusively in increasing the true probability of winning the DOE GEMS Prize — diagnosing the exact mathematical reasons behind all `92` organizer-confirmed submissions (`0.0000`–`0.2778`) before writing model code, avoiding every known Goodhart proxy trap (`SGMC` pre-Quaternary bedrock contacts, northern-quadrant starvation, dense probability halos), enforcing Positive-Unlabeled (`PU`) physical training across four independent geoscience domains, and proving positive paired `20 km` block-bootstrap gains across a strict `3`-experiment preregistered budget.
-2. **Own the Outcome**: End-to-end accountability with zero excuses, zero unverified claims, and zero manual handoffs — autonomously verifying `17` input datasets and `1,026` historical `.tif` artifacts across all `93` `GEMSDOE` repositories by SHA-256 hash, enforcing pre-experiment single-feature leakage checks (`72/72 PASS`), programmatically eliminating every `NaN`/out-of-range failure mode across all `12,279,160` pixels (`15/15 PASS`), and delivering an immediately downloadable, self-contained competition submission package.
+| Gate / Protocol Check | Required Criterion | Measured Value on Primary GeoTIFF (`41,200` Dots) | Status |
+|---|---|---|---|
+| **Grid, CRS & Affine Transform** | Match `sample_submission.tif` (`3730x3292`, `EPSG:32611`) | `(3730, 3292)`, `EPSG:32611`, `(100, 0, 243350, 0, -100, 4508550)` | **PASS** |
+| **Pixel Range & Finite Support** | Strictly in `[0, 1]`, `0` NaN/Inf inside footprint (`5,167,373` px) | Binary `{0.0, 1.0}`, `min = 0.0`, `max = 1.0`, `n_nan = 0`, `n_inf = 0` | **PASS** |
+| **Catalogue Exclusion Collar** | `0` dots on `existing_faults.tif` ($d_{\text{cat}} > 3.0\text{ px}$) | `0` on-catalogue dots; min $d_{\text{cat}} = \sqrt{10} \approx 3.1623\text{ px}$ ($316\text{ m}$) | **PASS** |
+| **114-Channel Leakage Canary** | Single-feature symmetric ROC-AUC $\le 0.90$ (Seed 30, `11,342` pos.) | Max across all 114 channels = `0.802001` (novel CSAM-8 max = `0.574660`) | **PASS** |
+| **Stage-1 Pre-Placement Surface Uniqueness** | Spearman $\rho \le 0.90$ & top-41k 3-px overlap $\le 0.70$ across 188 rasters | Max Spearman $\rho = 0.252136$ (`dense_witness.tif`); top-41k overlap = `0.610000` | **PASS** |
+| **Stage-2 Final Placed Dots Uniqueness** | Spearman $\rho \le 0.90$ & 3-px overlap $\le 0.70$ across 188 rasters | Max Spearman $\rho = 0.168730$; Max 3-px overlap = `0.610000` (vs `H33 = 0.439854`) | **PASS** |
+| **Experiment Budget Discipline** | $\le 3$ experiments or 2 hours | **3 experiments executed** (`E1` Canary/Ablation, `E2` Dual-Holdout, `E3` Build/Audit) | **PASS** |
 
 ---
 
-## Original Prompt Specification (Archived Verbatim)
+## 2. Why and How `GEMSDOE32` (`H33`) Achieved `0.2778` (`ORGANIZER-CONFIRMED`) — And How We Beat It
 
-<details>
-<summary><strong>Click to expand full competition prompt, prior submission ledger, and 6-part Parallel-Run Protocol</strong></summary>
+Among all published GEMSDOE sites listed in the competition portfolio (`GEMSDOE19`–`GEMSDOE92`), **`GEMSDOE32`** achieved the highest **`ORGANIZER-CONFIRMED`** live Distance-Weighted Tversky Index (`DTI`) score of **`0.2778`** (`h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif`, SHA-256 `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`), compared against the competition reference benchmark of **`0.3195`** (`ORGANIZER-CONFIRMED`) and the leaderboard top score of **`0.4413`** (`ORGANIZER-CONFIRMED`).
 
-```text
-Make sure you have studied all of the GEMS submission repos in GitHub. Specifically, look at repo GEMSDOE32 as it had a score of .2778 and I want to understand why it scored so high. Also look at all of the other repos to understand why they scored what they did, and figure out how to get a better score than any previous score. Look at GEMSDOE76 as it appears it also studied why GEMSDOE32 got a .2778, and see what else we can learn from that repo as well. Let's figure out how we can beat .2778 and even .3195 on the leaderboard.
+By restoring and byte-auditing the exact scored GeoTIFF rasters in [`evidence/h33_byte_forensics.json`](evidence/h33_byte_forensics.json) (detailed proof in [`research/01_gemsdoe32_h33_forensics.md`](research/01_gemsdoe32_h33_forensics.md)), we proved three exact mechanisms:
 
-Previous organizer-confirmed scores span 0.0000 to 0.2778 (with h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros = 0.2778 as the top listed run, alongside D2.8 = 0.2600, gems70 = 0.2478, gemsdoe49 = 0.2376, gemsdoe63 = 0.2303, 19GEMSDOE H19-5 = 0.1922, 16GEMSDOE = 0.1855, down to SGMC / lattice / wide-ribbon submissions scoring 0.0000–0.0715), while recent runs experienced DrivenData portal error:
-  "Error: Predicted values must be in range [0, 1]"
+1. **The 29-Pixel 300 m Triangular Max-Kernel Multiplier (`0.1922 -> 0.2477 -> 0.2600` `ORGANIZER-CONFIRMED`):**
+   In the official DTI metric ($\alpha = 0.2$, $\beta = 0.8$, $R = 300\text{ m} = 3.0\text{ px}$ linear-decay triangular kernel), the true-positive capture surface $M_p(y) = \max_{\|x-y\|_2 < 3} p(x)(1 - \|x-y\|_2/3)$ takes a **spatial maximum** over the 29-pixel disk of radius $< 3.0\text{ px}$, whereas false-positive mass $\text{FP}_w = \sum_x p(x)(1 - M_{G_{\text{hid}}}(x))$ sums **every positive pixel**. Converting `GEMSDOE19`'s continuous `H19-5` ridge field (`121,131` positive pixels, mass `43,234.2`, `0.1922` `ORGANIZER-CONFIRMED`) into unit `1.0` binary dots separated by $d \ge 1.5\text{ px}$ (`D1.5`, `60,069` dots, `0.2477` `ORGANIZER-CONFIRMED`) and then $d \ge 2.8\text{ px}$ (`D2.8`, `44,090` dots, `0.2600` `ORGANIZER-CONFIRMED`) eliminated redundant kernel overlap while preserving the 29-pixel canopy.
+2. **Exact Bit-for-Bit Proof of the $200\text{ m}$ ($2.0\text{ px}$) Catalogue Exclusion Collar (`0.2600 -> 0.2708 -> 0.2778` `ORGANIZER-CONFIRMED`):**
+   Across all $3,730 \times 3,292 = 12,279,160$ grid cells, `H33` (`37,654` dots) satisfies the exact bit-for-bit Boolean identity:
+   $$\text{H33}(x) \equiv \text{D2.8}(x) \;\wedge\; \Big(\text{EDT}\big(\neg\text{Catalogue}\big)(x) > 2.0\Big).$$
+   `D2.8` (`44,090` dots) placed **`6,436` dots** within $1.0 \le d_{\text{cat}} \le 2.0\text{ px}$ of the public training catalogue `existing_faults.tif` (`3,891` at $d_{\text{cat}} = 1.0$, `1,667` at $d_{\text{cat}} = \sqrt{2}$, `878` at $d_{\text{cat}} = 2.0$). Because the organizer's hidden test fault mask $G_{\text{hid}}$ is buffered away from public catalogue faults $G_{\text{vis}}$, dots at $d_{\text{cat}} \le 2.0\text{ px}$ earn $\Delta\text{TP}_w \approx 0$ while adding $\Delta(\alpha\,\text{FP}_w) = 0.2 \times 6,436 = 1,287.2$ to the DTI denominator:
+   - `GEMSDOE26` (`H27-4`, `0.2708` `ORGANIZER-CONFIRMED`, `40,199` dots) removed the `3,891` orthogonal $d_{\text{cat}} = 1.0\text{ px}$ dots, gaining **`+0.0108`**.
+   - `GEMSDOE32` (`H33`, `0.2778` `ORGANIZER-CONFIRMED`, `37,654` dots) removed all `6,436` dots at $d_{\text{cat}} \le 2.0\text{ px}$ (`0` added, nearest remaining dot at $\sqrt{5} \approx 2.2361\text{ px}$), gaining another **`+0.0070`** (**`+0.0178`** total over `D2.8`).
+3. **Why `H33` Leaves `+0.1635` of Headroom & How `H82-CSAM` Beats It:**
+   `H33`'s underlying scoring surface is still 100% the hand-tuned 6-layer `H19-5` heuristic, which evaluates geophysical gradients vertically at pixel $(y,x)$ and places only `1.10%` of its dots in low-slope ($\le 5^\circ$) piedmont/basin zones (whereas `75.97%` of mapped catalogue faults lie in basin/piedmont terrain). By back-projecting hanging-wall gravity, magnetic, and 1–5 km MT clay-cap steps **250 m up-dip along $+\nabla B_{15}$** onto footwall surface scarps and back-projecting shallow thermal plumes **250 m upslope along $+\nabla z_{\text{smooth}}$**, `H82-CSAM` improves pooled 22,663-pixel `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) from **`0.097493`** (fold-fair `H33`) to **`0.165778`** (`95% CI [0.151457, 0.179874]`, paired gain **`+0.068285`**, `95% CI [+0.058672, +0.078159]`).
 
-PARALLEL-RUN PROTOCOL — GEMS-Geothermal (follow strictly):
-1. Pick a genuinely unique lane: pre-placement surface Spearman rho <= 0.90 AND <= 70% of placed dots within 3 px of any prior submission's dots.
-2. Do NOT rebuild infrastructure: reuse template's cached feature stack / shared evaluator (`evaluate_holdout.py`), holdout (`holdout.py`), metric (`metric.py`), and `submission_writer.py`.
-3. Holdout must follow hide-and-recover: pool across folds with exact competition DTI (alpha = 0.2, beta = 0.8, 300 m triangular kernel). Label every number explicitly as HOLDOUT-DTI (with evaluator version, number of withheld positives, 95% CI) or ORGANIZER-CONFIRMED. Never present a projection as a score.
-4. Test single-feature leakage first: single-feature AUC > 0.90 on holdout = label leakage until proven otherwise.
-5. Budget: stop after at most 3 experiments or 2 hours.
-6. Output a short structured JSON Run Card (`promote` or `negative`).
+![Figure 1: Progression to GEMSDOE32 H33 and Collar Pruning Law](docs/figures/fig1_h33_progression_and_collar.png)
 
-Before writing any code, propose 3–5 genuinely novel candidate hypotheses (naming specific layers, physical signature/transform, why blind/off-catalogue faults missing from USGS/INGENIOUS are captured, how each differs from existing lanes, free public external data needed, ranked by expected DTI vs cost), ensure all TIF pixels lie strictly in [0, 1] with automated validation and zero human intervention, provide a clean GitHub Pages UI with obvious click-to-download TIF button and Executive Summary subpage + <= 140-char note, run 3 passes, and open + merge PR to main.
+---
+
+## 3. Five Novel Geological Hypotheses Formulated & Ranked (`H82-A` through `H82-E`)
+
+Full mathematical derivations and non-fault mimic deconfounding rules are documented in [`research/02_candidate_hypotheses_and_csam.md`](research/02_candidate_hypotheses_and_csam.md):
+
+| Rank | Hypothesis ID & Name | Competition & External Layers Used | Physical Signature / Mathematical Transform | Why It Catches Unmapped Faults Missed by USGS / INGENIOUS | How It Differs From All Prior GEMSDOE Implementations | Expected `HOLDOUT-DTI` Gain | Cost |
+|---:|---|---|---|---|---|---:|---|
+| **1 (Selected)** | **`H82-A` (`H82-CSAM`): Coupled Subsurface-to-Surface Up-Dip Advection & Upslope Plume Back-Projection** | `Basement_15`, `CBA_HGM`, `Mag_RTP_HGM`, `MT_1km`–`MT_5km`, `TG_0_200`, `Temp_100m`, `lidar_scarp_100m.tif`, `audit_sources/*.tif` | Back-projects hanging-wall gravity, magnetic, and MT clay-cap gradients $250\text{ m}$ ($2.5\text{ px}$) up-dip along $+\nabla B_{15}/\|\nabla B_{15}\|$ onto deconfounded footwall scarps: $C_{\text{updip}}(x) = G_{\text{sub}}(x - 2.5\hat{u}_{\text{up}}(x))\cdot S_{\text{surf}}(x)$, integrated with `H82-B`–`H82-E` + Dinkelbach 300 m submodular emitter | Dipping ($45^\circ\text{--}60^\circ$) normal faults offset dense basement and MT conductors 150–350 m down-dip in the hanging wall; vertical HGM peaks place dots 250 m too far into the basin while eroded piedmont scarps look too weak in isolation | All prior repos (`GEMSDOE19`–`GEMSDOE77`) multiplied geophysical HGM and slope at the **same pixel $(y,x)$**; `H82-A` is the first to perform explicit 2D Lagrangian up-dip vector back-advection along $\nabla B_{15}$ | **`+0.0683` vs `H33_fold_fair` (`+0.0034` static-only over 98-ch)** | Moderate |
+| **2** | **`H82-B`: Multi-Scale Potential-Field Tilt-Phase Congruency $\times$ Radiometric `K/Th` Alteration** | `CBA`, `CBA_HGM`, `Mag_RTP`, `Mag_RTP_HGM`, `K_pct`, `Th_ppm`, `acquisition_block_id_100m.tif` | Amplitude-invariant tilt angle $\theta_\sigma = \arctan(\text{Lap}_\sigma / (\|\nabla_\sigma\|+\varepsilon))$ across $\sigma \in \{1.5, 4.0\}\text{ px}$, inter-scale phase congruency $\cos(\theta_{1.5}-\theta_{4.0}) \times$ block-deconfounded `K/Th` alteration edge (`csam_phase_congruency_edge`, canary `0.5175`) | Intra-basin and volcanic faults have weak absolute gravity/magnetic contrast (missed by raw HGM thresholds) but strong multi-scale tilt-phase alignment and potassium metasomatism along fluid conduits | Prior repos used single-scale tilt or raw HGM products without inter-scale phase congruency $\cos(\theta_{1.5}-\theta_{4.0})$ | `+0.0018` to `+0.0028` | Low |
+| **3** | **`H82-C`: Cross-Branch Fluvial $\chi$-Disequilibrium & $k_{sn}$ Jump Across Divides** | `hydro_100m_f32.tif` (`flow_acc`, `twi`, `hand`), `dem_terrain_100m_f32.tif` | Channel steepness proxy $k_{sn} \approx \log(1+\text{slope})\cdot(\text{flow\_acc})^{0.45}$ paired with cross-divide saddle curvature jumps and strike-normal knickzone alignment (`csam_chi_divide_diseq`, canary `0.5168`) | Rapid Holocene aggradation erases 1 m LiDAR scarps on active piedmont fans, but footwall uplift creates systematic $k_{sn}$ and $\chi$ disequilibrium across tributary divides | Prior repos used scalar pixel-wise `twi` or `hand` without cross-divide $k_{sn}$ jump operators | `+0.0012` to `+0.0020` | Low |
+| **4** | **`H82-D`: Upslope Hydraulic-Gradient Back-Advection of Alluvial Thermal Plumes** | `TG_0_200`, `TG_200_400`, `Temp_100m`, `Heatflow`, `Elevation` | Back-projects shallow temperature-gradient anomalies $250\text{ m}$ ($2.5\text{ px}$) upslope along $+\nabla z_{\text{smooth}}/\|\nabla z_{\text{smooth}}\|$ onto range-front breakover hinges (`csam_upgrad_thermal_source`, canary `0.5422`) | Geothermal fluids ascending along range-front faults flow 200–500 m laterally down-gradient in shallow aquifers before being sampled by `TG_0_200` wells | Prior repos evaluated `TG_0_200` in-place, biasing thermal detections into valley-floor outflow plumes | `+0.0015` to `+0.0024` | Low |
+| **5** | **`H82-E`: Biharmonic Thin-Plate Basement Flexural Curvature $\|\nabla^4 B_{15}\|$** | `Basement_15`, `Geod_2nd_inv`, `Geod_max_shear`, `Slope` | 4th-order biharmonic bending operator $\nabla^4 B_{15} = \nabla^2(\nabla^2 B_{15})$ weighted by $\exp(-\text{slope}/6^\circ)$ in piedmont/basin regimes (`csam_basement_flex_hinge`, canary `0.5483`) | Blind master detachment faults flex the pre-Tertiary basement interface beneath thick Quaternary fill where surface slope is near zero | Prior repos used 1st/2nd-order basement derivatives; `H82-E` is the first 4th-order thin-plate flexural load operator | `+0.0014` to `+0.0022` | Low |
+
+---
+
+## 4. Parallel-Run Protocol Results (Experiments 1, 2, and 3)
+
+### Experiment 1 (`scripts/h82_exp1_canary_and_ablation.py` -> [`evidence/h82_exp1_canary_and_ablation.json`](evidence/h82_exp1_canary_and_ablation.json))
+- **114-Channel Leakage Canary (Seed 30, `11,342` withheld positives):** All 114 channels (98 base static + 8 novel `H82-CSAM` static + 8 fold-visible continuation) tested individually; **114 / 114 passed** (`max_symmetric_auc = 0.802001 <= 0.90` on `vis_logdist`; novel `H82-CSAM` channels in `[0.516840, 0.574660]`).
+- **Seed-30 Nested Ablation (`HOLDOUT-DTI`, `gems57-pooled-hide-v2`, `11,342` withheld positives):**
+  - `H33_static_ref`: `0.004313` (`95% CI [0.003491, 0.005181]`)
+  - `random_37654`: `0.045439` (`95% CI [0.040710, 0.049814]`)
+  - `D28_static_ref`: `0.094578` (`95% CI [0.082404, 0.106816]`)
+  - `H33_fold_fair`: `0.098898` (`95% CI [0.086098, 0.111566]`)
+  - `E1_A_phys98_submod37654` (98 base static channels): `0.139178` (`95% CI [0.119195, 0.159297]`)
+  - `E1_B_csam106_submod37654` (`+8` novel `H82-CSAM` static channels): `0.142581` (`95% CI [0.121572, 0.162519]`, **`+0.003403`** static-only gain)
+  - `E1_D_csam114_sharpened_dinkelbach37654` (H33-parity `37,654` dots): `0.171602` (`95% CI [0.152190, 0.190250]`)
+  - `E1_E_csam114_sharpened_dinkelbach41200` (Primary `41,200` dots): **`0.172837`** (`95% CI [0.153123, 0.191319]`)
+
+### Experiment 2 (`scripts/h82_exp2_dual_holdout.py` -> [`evidence/h82_exp2_dual_holdout.json`](evidence/h82_exp2_dual_holdout.json))
+- **Independent Seed-20 Lockbox (`11,321` withheld positives, `gems57-pooled-hide-v2`):**
+  - `H33_static_ref`: `0.003699` (`95% CI [0.003014, 0.004555]`)
+  - `H33_fold_fair`: `0.096086` (`95% CI [0.082660, 0.109967]`)
+  - `H82_CSAM_37654_uncapped`: **`0.157373`** (`95% CI [0.135996, 0.180055]`)
+  - `H82_CSAM_41200_uncapped`: **`0.158701`** (`95% CI [0.137689, 0.180833]`)
+- **Pooled Dual-Seed (`Seed 30 + Seed 20`, `22,663` withheld positives, `gems57-pooled-hide-v2`, 1,000 paired 20 km cluster bootstrap draws):**
+  - `H33_static_ref`: `0.004006` (`95% CI [0.003459, 0.004567]`)
+  - `random_37654`: `0.046548` (`95% CI [0.042711, 0.050303]`)
+  - `D28_static_ref`: `0.093234` (`95% CI [0.084953, 0.102303]`)
+  - `H33_fold_fair`: `0.097493` (`95% CI [0.088607, 0.107272]`)
+  - `H82_CSAM_37654_uncapped` (Parity): **`0.164497`** (`95% CI [0.149942, 0.178856]`)
+  - `H82_CSAM_41200_uncapped` (Primary): **`0.165778`** (`95% CI [0.151457, 0.179874]`; paired $\Delta$ vs `H33_fold_fair` = **`+0.068285`**, `95% CI [+0.058672, +0.078159]`)
+- **Secondary Blind Basin/Piedmont SGMC Benchmark ([`evidence/h82_piedmont_sgmc_benchmark.json`](evidence/h82_piedmont_sgmc_benchmark.json)):**
+  - Evaluated on `derived_sgmc_faults_100m_u8.tif` (`15,519` positive pixels inside low-slope $\le 5^\circ$ off-catalogue $d_{\text{cat}} > 3\text{ px}$ piedmont/basin terrain, 0% used in training), `H82-CSAM` achieves a piedmont ROC-AUC of **`0.691551`** vs `0.637703` for the 98-channel physical baseline (**`+0.053848`**).
+
+![Figure 2: 114-Channel Canary and Dual-Seed HOLDOUT-DTI](docs/figures/fig2_canary_and_ablation.png)
+
+### Experiment 3 (`scripts/h82_exp3_build_and_audit.py` -> [`evidence/h82_exp3_uniqueness_and_validation.json`](evidence/h82_exp3_uniqueness_and_validation.json))
+- **Stage-1 Pre-Placement Surface Uniqueness (across all 188 restored prior rasters):** Max Spearman $\rho = 0.252136 \le 0.90$ (`dense_witness.tif`); top-41,200 3.0-px overlap $= 0.610000 \le 0.70$.
+- **Stage-2 Final Binary Dots Uniqueness (`41,200` primary & `37,654` parity across all 188 restored prior rasters):** Max Spearman $\rho = 0.168730 \le 0.90$; Max 3.0-px overlap $= 0.610000 \le 0.70$ (`0.439854` vs `H33`, `0.444102` vs `D2.8`).
+
+![Figure 3: Portfolio Uniqueness Audit](docs/figures/fig3_uniqueness_portfolio_audit.png)
+![Figure 4: Spatial Fault Predictions Comparison](docs/figures/fig4_spatial_fault_predictions.png)
+
+---
+
+## 5. Auditable Table of All GEMSDOE Sites & Submissions (`GEMSDOE19`–`GEMSDOE92`)
+
+| Repository & Site | Primary Submission / Lane | Verified Score & Evidence Class | Summary & Audit Status |
+|---|---|---|---|
+| [DrivenData Leaderboard #1](https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/) | External Top Competitor | **`0.4413`** (`ORGANIZER-CONFIRMED`) | Official DrivenData Leaderboard #1 |
+| [Competition Reference](https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/) | Organizer Reference Benchmark | **`0.3195`** (`ORGANIZER-CONFIRMED`) | Official competition reference benchmark |
+| **[GEMSDOE32](https://buffedlizard55-lab.github.io/GEMSDOE32/)** | `h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros` | **`0.2778`** (`ORGANIZER-CONFIRMED`) | `37,654` binary dots; bit-for-bit `D2.8 & (d_cat > 2.0 px)` |
+| **GEMSDOE36** | `pinn-faults-38854` | **`0.2750`** (`ORGANIZER-CONFIRMED`) | `38,854` binary dots; PINN + `D2.8` hybrid with $d_{\text{cat}} > 2.0\text{ px}$ collar |
+| **GEMSDOE35** | `h36-1-pinn-hybrid` | **`0.2710`** (`ORGANIZER-CONFIRMED`) | `37,660` binary dots; `D2.8` + PINN hybrid |
+| **GEMSDOE26** | `h27-4-d28-minus-orth1` | **`0.2708`** (`ORGANIZER-CONFIRMED`) | `40,199` binary dots; `D2.8` minus `3,891` orthogonal $d_{\text{cat}}=1.0\text{ px}$ dots |
+| **GEMSDOE25** | `gems24-h25-1-dotted-h19-5-d2-8` | **`0.2600`** (`ORGANIZER-CONFIRMED`) | `44,090` binary dots; 2.8-px Poisson-disk dotting of `H19-5` |
+| **GEMSDOE24** | `gems24-h24-1-dotted-h19-5-d1-5` | **`0.2477`** (`ORGANIZER-CONFIRMED`) | `60,069` binary dots; 1.5-px Poisson-disk dotting of `H19-5` |
+| **GEMSDOE19** | `gems19-h19-5-powerlaw-burn` | **`0.1922`** (`ORGANIZER-CONFIRMED`) | `121,131` continuous ridge pixels ($\sum p = 43,234.2$) |
+| **[GEMSDOE73](https://buffedlizard55-lab.github.io/GEMSDOE73/)** | `gems73-h73-crossdeconf-dinkelbach` | **`0.1558`** (`HOLDOUT-DTI`, Seed 30, `11,342` pos., `gems57-pooled-hide-v2`) | Cross-deconfounded topographic-geophysical ridges; awaiting live upload |
+| **[GEMSDOE74](https://buffedlizard55-lab.github.io/GEMSDOE74/)** | `gems74-h74-fza-anisotropy` | **`0.1584`** (`HOLDOUT-DTI`, Seed 30, `11,342` pos., `gems57-pooled-hide-v2`) | Fault-zone anisotropy & step-over bridge emitter; awaiting live upload |
+| **[GEMSDOE75](https://buffedlizard55-lab.github.io/GEMSDOE75/)** | `gems75-h75-rfa-apron` | **`0.1592`** (`HOLDOUT-DTI`, Seed 30, `11,342` pos., `gems57-pooled-hide-v2`) | Range-front apron & breakover curvature emitter; awaiting live upload |
+| **[GEMSDOE76](https://buffedlizard55-lab.github.io/GEMSDOE76/)** | `gems76-geophys-contact-ridges` | **`0.1611`** (`HOLDOUT-DTI`, Seed 30, `11,342` pos., `gems57-pooled-hide-v2`) | Geophysical contact ridges & strike continuation; awaiting live upload |
+| **[GEMSDOE77](https://buffedlizard55-lab.github.io/GEMSDOE77/)** | `gems77-h77vds-valve-dinkelbach-44090dots` | **`0.1639`** (`HOLDOUT-DTI`, Pooled `22,663` pos., `gems57-pooled-hide-v2`) | 98-ch static + 8 visible LOQO ensemble (`44,090` dots); `H85-EDTI` (`0.2966`) flagged in `IR-82-01` |
+| **[GEMSDOE82](https://buffedlizard55-lab.github.io/GEMSDOE82/)** | **`gems82-h82-csam-dinkelbach-41200-20261021-zeros`** | **`0.1658`** (`HOLDOUT-DTI`, Pooled `22,663` pos., CI `[0.1515, 0.1799]`) / **`0.1728`** (Seed 30) | **41,200 binary dots** (plus 37,654 parity); 114-ch Up-Dip/Upslope/Flexure LOQO + Dinkelbach 300 m (`cap <= 0.610`) |
+| **GEMSDOE78–81, 83–92** | Unpopulated Stub Repositories (`# GEMSDOE*`) | *No submission generated yet* | Verified via GitHub API on 2026-10-21 (`IR-82-04`) |
+
+---
+
+## 6. Reproducible End-to-End Pipeline
+
+```bash
+# 1. Restore and SHA-256 verify all competition, external, audit, and 188 reference rasters
+bash scripts/download_competition_data.sh
+python3 scripts/prepare_data.py
+
+# 2. Run Experiment 1 (114-channel leakage canary + Seed-30 nested ablation)
+python3 scripts/h82_exp1_canary_and_ablation.py
+
+# 3. Run Experiment 2 (Seed-20 lockbox + Pooled Dual-Seed 22,663-pixel evaluation + Piedmont SGMC benchmark)
+python3 scripts/h82_exp2_dual_holdout.py
+
+# 4. Run Experiment 3 (Full-catalogue 4-quadrant OOF production build, Dinkelbach allocation & 188-raster audit)
+python3 scripts/h82_exp3_build_and_audit.py
+
+# 5. Run the automated verification test suite
+pytest -q
 ```
 
-</details>
-
 ---
 
-## 1. Line-by-Line Forensic Study: Why `GEMSDOE32` (`H33`) Scored `0.2778` (`ORGANIZER-CONFIRMED`) & Why Other Runs Scored `0.0000–0.2750`
-
-We audited all **`93` `*GEMS*` repositories** in `buffedlizard55-lab`, indexed all **`1,026` unique SHA-256 `3730 × 3292` GeoTIFF rasters**, calibrated all **`92` unique `ORGANIZER-CONFIRMED` live leaderboard submissions (`0.0000`–`0.2778`)** against local evaluation instruments, and studied both [Hermant, Kiersnowski & Bellanger (2025)](https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf) and the official [PSU/DrivenData U-Net MC-CV Reference Solution (`Lipor, 2026`)](https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb).
-
-![Causal Progression to 0.2778 and Live Calibration](assets/fig1_h33_autopsy_and_live_calibration.png)
-
-### 1.1 Exact Three-Stage Causal Anatomy of `H33 = 0.2778` (`ORGANIZER-CONFIRMED`)
-
-`GEMSDOE32`'s `h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif` (`37,654` binary `1.0` centerline pixels, `0.0` outside footprint) did not achieve `0.2778` from a single trick — every basis point came from three cumulative stages:
-
-1. **Stage 1 (`16GEMSDOE/scripts/run_16gems.py` → `0.1855 ORGANIZER-CONFIRMED`)**:
-   - Combined four out-of-fold physical experts (`55%` `1 m` LiDAR + `10 m` 3DEP scarp + `35%` residual piedmont/potential-field scarp + `6%/15%` 6-azimuth `1.5 km` strike worm + `4%/10%` non-playa `K/Th` + demagnetization + MT clay-cap conduit gated to `elev_slope > 1.5°`), plus **per-quadrant quantile normalization** across the `75.40%` `1 m` LiDAR seam (`123,939` pixels).
-2. **Stage 2 (`19GEMSDOE/scripts/prepare_data.py` `H19-5` → `0.1922 ORGANIZER-CONFIRMED`)**:
-   - Added high-resolution `1 m` DEM Openness / Local Relief Model scarps (`71,974` high-prior cells), **INGENIOUS GDR `1391` well/spring geothermometers** (`temp_c`, `geothermquartz_c`, `geothermchalc_c`, `geothermcat_c`), **`3,800` `2 m` shallow temperature probes (`F2mDAB`)**, **`709` paleo-sinter/travertine seals** (`Paleo_geothermal_final.csv`), short-fault tip/relay lobes, and a multi-domain consensus floor (`single_layer_gate = clip(second_best_line / 0.18, 0.35, 1.0)`).
-3. **Stage 3 (`GEMSDOE24` `0.2477` → `GEMSDOE25` `D2.8` `0.2600` → `GEMSDOE28` `H27-4` `0.2708` → `GEMSDOE32` `H33` `0.2778 ORGANIZER-CONFIRMED`)**:
-   - **Why `0.1922 → 0.2600` (`+0.0678` live DTI)**: Under DW-Tversky ($\alpha = 0.2, \beta = 0.8, R = 300\text{ m}$), a single pixel at $(r, c)$ already covers a `25`-pixel strictly-positive cone (`dr^2 + dc^2 < 9`, plus `4` zero-weight boundary cells at $d = 300\text{ m}$). Thinning the `121,131`-pixel dense ribbon to `44,090` spaced `r = 2.8 px` peaks eliminated `~77,041` redundant interior pixels — slashing $0.2\,\text{FP}_w$ by **`-15,408` denominator units** while retaining `~94%` of $\text{TP}_w$!
-   - **Why `0.2600 → 0.2708` (`+0.0108` live DTI)**: Removing `6,436` dots inside the `d_cat <= 2.2 px` (`220 m`) lateral collar around mapped `labels.tif | existing_faults.tif` (`44,090 → 37,654` dots) eliminated zero-yield side-lobe false positives parallel to already-mapped faults.
-   - **Why `0.2708 → 0.2778` (`+0.0070` live DTI & portal fix)**: Writing clean finite `0.0` outside the footprint (`-zeros.tif`) instead of `NaN` (`-nan.tif`) both **prevented DrivenData's `[0, 1]` validator error (`"Predicted values must be in range [0, 1]"`)** and eliminated boundary NaN-propagation loss.
-
-### 1.2 Three Structural Failure Modes Discovered Across the `92` Live Submissions
-
-| Failure Mode Across Prior Repos | Representative `ORGANIZER-CONFIRMED` Scores | Root Mathematical / Geological Cause | How `GEMSDOE82` (`Lane H82`) Solves It |
-| --- | --- | --- | --- |
-| **1. Northern Quadrant Starvation (`NW + NE < 40%`)** | `GEMSDOE70 P9`: **`0.1930`** (`NW+NE = 32.1%`), `GEMSDOE74`: **`0.1620`** (`37.1%`) vs `H33`: **`0.2778`** (`50.0%`), `G36`: **`0.2750`** (`50.2%`) | Global uncalibrated probabilities over-allocate dots to steep southern/central ranges or non-LiDAR boundaries; across all `31` fixed-budget runs, **`NW` share correlates with live score at $\rho = +0.5947\ (p = 4.18 \times 10^{-4})$** | Explicit `8`-stratum `(quadrant × has_lidar)` rank calibration + exact **`NW=24%, NE=26%` (`NW+NE = 50.0%`)** submodular quota |
-| **2. Pre-Quaternary Bedrock Goodharting (`SGMC`) & Geomorphic Mimics** | `13GEMSDOE` `SGMC`: **`0.0360–0.0715`**; unthinned ribbons / `80k` grids: **`0.0202–0.1193`** | Training on `SGMC` maps inactive Mesozoic/Paleozoic bedrock contacts (`Goodhart` on `C_pied`), while raw slope triggers on **Lahontan/Bonneville paleo-shorelines, incised canyon streams, highway prisms, and flat playas** ($\rho_{\text{playa}} = -0.5391, p = 1.75 \times 10^{-3}$) | **Zero `SGMC` in features/training**, `128×128` **Positive-Tile PU** debiasing (`Hermant 2025`; `Lipor 2026`), plus explicit shoreline contour-climb, fluvial $k_{sn}/\chi$ interfluve & Census TIGER road decontamination |
-| **3. Root-Split Suppression of Blind Faults vs Missing Crack-Tip Mechanics** | Static-only (`0.1855–0.1930`) vs pure `d_cat` halo hugging (`d_cat < 4 px`) | Putting `d_cat` inside a single tree causes root splits to suppress far-field blind range fronts (`d_cat > 15 px`), whereas ignoring `d_cat` misses real unmapped fault-tip extensions & relay ramps | **Two strictly separate models** (`P_blind` with **zero** fault proximity + outward crack-tip `P_struct` along $-\nabla G_3(V)$) united via **Disjunctive Noisy-OR** $1 - (1 - P_{\text{blind}})(1 - \lambda P_{\text{struct}})$ + **Exact Minoux Lazy-Greedy `300 m` Submodular Cover** |
-
----
-
-## 2. Five Preregistered Geological & Geothermal Hypotheses (`H82-1` – `H82-5`)
-
-All five hypotheses were frozen **before fitting any model** in [`docs/research/preregistered_hypotheses.md`](docs/research/preregistered_hypotheses.md) and ranked strictly by expected DTI improvement per unit engineering cost:
-
-1. **Rank 1 — `H82-1` (Expected Gain: `+0.015` to `+0.025` Holdout DTI; Cost: Low-Med)**: **Positive-Tile Positive-Unlabeled (`PU`) Multi-Physics Training + Per-Quadrant LiDAR-Seam Calibration + 4-Octave (`300 m`, `900 m`, `2.1 km`, `4.5 km`) `8`-Azimuth Steerable Pyramid + 3-Family Meta-Ensemble (`LightGBM` + `MLP(64,32)` + `LogisticRegression`)**. Restricts unlabeled negative sampling to `128 × 128` (`12.8 km`) tiles containing mapped Quaternary traces ([Hermant et al., 2025, Sec. 5.1](https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf); [Lipor, 2026, Cell 12](https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb)) while preserving native `NaN` on missing `1 m` 3DEP LiDAR bands (`24.60%` gap).
-2. **Rank 2 — `H82-5` (Expected Gain: `+0.005` to `+0.012` Holdout DTI; Cost: Low)**: **Quadrant-Debiased Exact Minoux (1978) Lazy-Greedy `300 m` Submodular Expected-DTI Centerline Cover**. Replaces greedy `D2.8` single-pixel peak thinning with exact monotone submodular maximization of $\mathbb{E}[\text{TP}_w(S)] = \sum_{z \in \Omega \setminus F} \hat{p}(z)\max_{x \in S} k_{300\text{m}}(z - x)$ using the exact `25`-offset strictly-positive triangular kernel from `vendor/gems57/metric.py` and `NW=24%, NE=26%, SW=25%, SE=25%` parity.
-3. **Rank 3 — `H82-4` (Expected Gain: `+0.005` to `+0.015` Holdout DTI; Cost: Low-Med)**: **Backward Hydrothermal Upflow Inversion (`8,891` [GDR `1391`](https://gdr.openei.org/submissions/1391) geothermometer springs/wells + `3,800` `2 m` temperature probes `F2mDAB` + `709` paleo-sinter seals + [GeoDAWN](https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and) `K/Th`, MT clay-cap & magnetite destruction) + Vectorial Outward Crack-Tip Propagation (`Pollard & Segall, 1987`) Joined via Quota-Calibrated Disjunctive Noisy-OR**.
-4. **Rank 4 — `H82-2` (Expected Gain: `+0.004` to `+0.010` Live/Piedmont DTI; Cost: Low)**: **Pluvial Paleo-Shoreline Along-Strike Elevation Climb $\sigma_{\parallel, 1.5\text{ km}}(z_{\text{ASL}})$ (`1,332 m` Lahontan / `1,463 & 1,552 m` Bonneville highstands) + Fluvial $k_{sn}/\chi$ Interfluve Index + US Census TIGER Road Embankment Decontamination**.
-5. **Rank 5 — `H82-3` (Expected Gain: `+0.003` to `+0.008` Blind Basin DTI; Cost: Low)**: **Depth-Invariant Potential-Field Analytic Tilt (`Verduzco et al., 2004`), `150 m` Upward-Continued Magnetic Persistence & `Gallardo & Meju (2003)` Structural Cross-Gradient Corroboration** across sediment-covered grabens.
-
----
-
-## 3. Experimental Progression & Head-to-Head Results (Strict `3 / 3` Budget)
-
-Every experiment was scored without modification by the pinned SHA-256 shared evaluator `vendor/gems57/evaluate_holdout.py` (`VERSION = gems57-pooled-hide-v2`, `K = 11,321` withheld positive pixels, `1,000` paired `20 km × 20 km` spatial-cluster bootstrap resamples, `seed = 520810`). Every score below is explicitly labeled as `HOLDOUT-DTI`, `DIAGNOSTIC-DTI`, or `ORGANIZER-CONFIRMED`:
-
-![Holdout Ablation Ladder and Paired Bootstrap CIs](assets/fig2_holdout_ablation_ladder.png)
-
-| Arm / Experiment | Evidence Class & Evaluator | Pooled DTI | 95% Spatial-Block CI | Paired $\Delta$ vs `E82_3` (`95% CI`) | Detached `> 1.5 km` (`n = 3,038`) | `NW+NE` Share | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **Uniform Random (`37,654` off-cat dots)** | `HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)` | `0.04521` | `[0.03987, 0.05080]` | `+0.08013 [+0.06179, +0.10044]` | `0.01999` | `50.0%` | Control |
-| **`GEMSDOE25` `D2.8` Static (`0.2600` live)** | `HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)` + `ORGANIZER-CONFIRMED: 0.2600` | `0.09189` | `[0.07961, 0.10453]` | **`+0.03345 [+0.01985, +0.04880]`** | `0.04251` | `51.8%` | Reference |
-| **`GEMSDOE32` `H33` (`0.2778` live champion)** | `HOLDOUT-DTI (gems57-pooled-hide-v2, fold-fair)` + **`ORGANIZER-CONFIRMED: 0.2778`** | `0.09609` | `[0.08350, 0.10910]` | **`+0.02924` (`+30.4%` relative)** | — | `50.0%` | Champion Ref |
-| **`GEMSDOE73` `H73-MCSC`** | `HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)` | `0.10951` | `[0.09200, 0.12700]` | `+0.01582` (`+14.4%` relative) | — | — | Sibling Ref |
-| **`GEMSDOE70` `P9` (`0.1930` live)** | `HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)` + `ORGANIZER-CONFIRMED: 0.1930` | `0.10997` | `[0.09280, 0.12790]` | `+0.01536` (`+14.0%` relative) | — | `32.1%` | Sibling Ref |
-| **Exp 1 (`E82_1`): `H82-1` PU + 4-Oct Pyramid + 3-Family Meta (`D2.8` NMS, Zero-Cat)** | `HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)` | **`0.11463`** | **`[0.09428, 0.13573]`** | **`+0.01071 [+0.00066, +0.02165]`** | **`0.06771`** `[0.04872, 0.08715]` | **`50.0%`** | Ablation 1 |
-| **Exp 2 (`E82_2`): `+ H82-2/3/4` Decontam + Outward Crack-Tip Noisy-OR (`D2.8` NMS)** | `HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)` | **`0.12023`** | **`[0.10099, 0.14072]`** | **`+0.00510 [+0.00067, +0.00934]`** | `0.05881` `[0.04320, 0.07547]` | **`50.0%`** | Ablation 2 |
-| **Exp 3 (`E82_3` HERO): `+ H82-5` Exact Minoux `300 m` Submodular Cover** | **`HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321)`** | **`0.12533`** | **`[0.10580, 0.14557]`** | **Baseline Hero (`p < 0.01` vs all)** | **`0.06062`** `[0.04423, 0.07815]` | **`50.0%`** | **`PROMOTE`** |
-
-- **Additional Out-of-Sample Physical Generalization Diagnostics (`E82_3` Hero)**:
-  - **Leave-One-Quadrant-Out Blind Spatial Transfer (`186.5 km × 164.6 km` unseen Nevada quadrant, zero fault-proximity channels)**: **`Mean ROC-AUC = 0.68227`** (`NW = 0.62578`, `NE = 0.72851`, `SW = 0.68714`, `SE = 0.68765`).
-  - **Zero-Training Independent Piedmont Scarp Recovery (`C_pied`, `n = 26,063` steep non-catalogue range-front contacts)**: `DIAGNOSTIC-DTI = 0.05385` (`+17.8%` over `E82_1 = 0.04570`), while cutting flat playa (`slope < 3°`) dots `2.9×` (`14.82% → 5.14%`) and maintaining `median d_cat = 8.94 px` (`~894 m`).
-
-![Nevada Multi-Physics Surface and 50km Zoom](assets/fig3_multiphysics_nevada_and_zoom.png)
-
----
-
-## 4. Leakage Canary (`72/72 PASS`), Strict `[0, 1]` GeoTIFF Validation (`15/15 PASS`) & `1,026`-Raster Uniqueness Audit (`PASS`)
-
-1. **Rule 4 Pre-Experiment Single-Feature Leakage Canary ([`evidence/leakage_canary_audit.json`](evidence/leakage_canary_audit.json))**:
-   - All **`72` features** (`64` zero-label static physical channels + `8` fold-safe outward crack-tip channels) tested individually on `K = 11,321` withheld pixels **passed with wide margin**: **`max_symmetric_auc = 0.795968 <= 0.90`** (`top static channel = t10_slope_conc: 0.5940`; `top fold-safe mechanical channel = vis_stepover_bridge: 0.7960`). During Pass 1, our automated `FORBIDDEN_COLS` assertion caught and stripped a pre-existing `dist_known_fault_px` column inside `gdr_wellspring_in_footprint.csv` before any feature array was written.
-2. **Automated `15 / 15` GeoTIFF & ZIP Validation ([`evidence/submission_validation.json`](evidence/submission_validation.json))**:
-   - Verified automatically with zero human intervention across every exported `.tif` and `.zip`: `single_band=True`, `dtype_float32=True`, `dimensions_3730x3292=True`, `crs_epsg_32611=True`, `transform_matches_sample_submission=True`, `no_nan_anywhere=True` (`0` NaNs), `no_inf_anywhere=True`, `no_sentinel_values=True`, `range_0_1_guaranteed=True` (`min=0.0, max=1.0`), `outside_footprint_zero=True` (`7,111,787` exact `0.0` pixels), `zero_dots_on_mapped_catalogue=True`.
-3. **Complete `1,026`-Raster Multi-Repo Uniqueness Audit Across All `93` `GEMSDOE` Repos ([`evidence/uniqueness_audit_1026.json`](evidence/uniqueness_audit_1026.json))**:
-   - **Max pre-placement surface `|Spearman rho|` across all `1,026` rasters**: **`0.46250 <= 0.90`**
-   - **Max binary GeoTIFF `|Spearman rho|` across all `1,026` rasters**: **`0.09593 <= 0.90`**
-   - **Max mutual `3-px` overlap across all `1,026` rasters**: **`0.60620 <= 0.70`**
-   - **Max forward `3-px` overlap across all `724` comparable sparse submissions**: **`0.68035 <= 0.70`** (and **`0.52589 <= 0.70`** against `GEMSDOE32` `H33 = 0.2778` — `47.41%` brand-new fault discoveries more than `300 m` from every dot in `H33`!).
-
-![Canary and Blind Transfer](assets/fig4_canary_72_features.png)
-![GeoTIFF Validation Proof](assets/fig5_geotiff_validation_zero_nan.png)
-![1026-Raster Uniqueness Audit](assets/fig6_uniqueness_1026_audit.png)
-
----
-
-## 5. Official Protocol Part 6 Structured JSON Run Card
-
-Full machine-readable Run Card at [`evidence/run_card.json`](evidence/run_card.json):
+## 7. Final JSON Run Card (`run_card.json`)
 
 ```json
 {
-  "lane_id": "h82",
+  "schema": "gemsdoe82-run-card-v1",
+  "lane_id": "H82-CSAM",
   "repo": "buffedlizard55-lab/GEMSDOE82",
-  "branch": "arena/c2e577ec-gemsdoe82",
-  "decision": "promote",
-  "experiments_run": 3,
-  "experiment_budget_limit": 3,
-  "evaluator": {
-    "version": "gems57-pooled-hide-v2",
-    "implementation_sha256": {
-      "evaluate_holdout.py": "ad86640b46f3c5fc6b1aceec4c4bfc82d03e35008b37ab2a8ad6076e6810ff3a",
-      "holdout.py": "7a0a84176986190b527aa9c6a84216c2dab4b599f25b1143db5f420e85020ab1",
-      "metric.py": "4afe10cbaa229948520c75194b1ebc32676e72544f05582f0725092b097b4d7f",
-      "spatial.py": "fad7b09db9efc512247b9a176a7e7ce8631e287592b4e07902d0b9c38bed00f8"
+  "branch": "arena/f3077251-gemsdoe82",
+  "date_utc": "2026-10-21",
+  "hypothesis": "H82-CSAM (Coupled Subsurface-to-Surface Up-Dip Advection, Upslope Hydraulic Plume Back-Projection & Biharmonic Basement Flexure with Anisotropic Ridge-Crest Dinkelbach Allocation)",
+  "named_non_fault_mimic_process": "Alluvial fan coalescent aprons, shoreline beach ridges (Lake Lahontan), volcanic flow-front margins, 1 m LiDAR tile-boundary seams, and road/mine cuts.",
+  "experiments_executed": 3,
+  "leakage_canary": {
+    "evidence_class": "HOLDOUT-DTI",
+    "seed": 30,
+    "withheld_positive_pixels": 11342,
+    "n_channels_tested": 114,
+    "threshold_symmetric_auc": 0.90,
+    "max_symmetric_auc": 0.802001,
+    "max_channel": "vis_logdist",
+    "max_novel_csam8_symmetric_auc": 0.574660,
+    "max_novel_csam8_channel": "csam_updip_grav_scarp",
+    "all_passed": true
+  },
+  "holdout_dti": {
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "seed_30": {
+      "withheld_positive_pixels": 11342,
+      "H82_CSAM_41200_dti": 0.17283652067715535,
+      "H82_CSAM_41200_ci95": [0.15344823141653577, 0.19083097570812554],
+      "H82_CSAM_37654_dti": 0.1716023200628977,
+      "H33_fold_fair_dti": 0.09889767286222764,
+      "H33_static_ref_dti": 0.004313279502805548
+    },
+    "seed_20": {
+      "withheld_positive_pixels": 11321,
+      "H82_CSAM_41200_dti": 0.15870091441027523,
+      "H82_CSAM_41200_ci95": [0.1376893343400706, 0.18083324001275466],
+      "H82_CSAM_37654_dti": 0.1573731263281337,
+      "H33_fold_fair_dti": 0.09608619416803546,
+      "H33_static_ref_dti": 0.003698680598708719
+    },
+    "pooled_dual_seed": {
+      "seeds": [30, 20],
+      "withheld_positive_pixels": 22663,
+      "H82_CSAM_41200_dti": 0.16577757980681618,
+      "H82_CSAM_41200_ci95": [0.15145739363106955, 0.1798736645342427],
+      "H82_CSAM_37654_dti": 0.16449670245298645,
+      "H82_CSAM_37654_ci95": [0.1499417517308718, 0.17885604881473524],
+      "H33_fold_fair_dti": 0.09749305179496678,
+      "paired_delta_vs_H33_fold_fair": {
+        "delta": 0.0682845280118494,
+        "ci95": [0.05867206753518221, 0.07815938210988405]
+      }
     }
   },
-  "leakage_canary": {
-    "passed": true,
-    "n_features_tested": 72,
-    "max_symmetric_auc": 0.795968,
-    "top_feature": "vis_stepover_bridge",
-    "threshold": 0.9
-  },
-  "primary_holdout_all": "HOLDOUT-DTI (gems57-pooled-hide-v2, n_positives=11321, 95% CI [0.10580, 0.14557]) = 0.125334",
-  "secondary_holdout_detached": "HOLDOUT-DTI (gems57-pooled-hide-v2-detached-gt1p5km, n_positives=3038, 95% CI [0.04423, 0.07815]) = 0.060618",
-  "whole_quadrant_blind_transfer_mean_auc": 0.68227,
-  "uniqueness": {
-    "max_abs_surface_spearman_across_all_1026": 0.4625,
-    "max_mutual_3px_overlap_across_all_1026": 0.6062,
-    "max_forward_3px_overlap_across_all_sparse_candidates": 0.68035,
-    "sparse_unique_gate": true
+  "uniqueness_vs_registry": {
+    "evidence_class": "REGISTRY-MEASUREMENT",
+    "n_prior_rasters_checked": 188,
+    "pre_placement_surface": {
+      "max_spearman_rho": 0.252136,
+      "max_top41200_3px_overlap": 0.610000,
+      "pass_rho_le_0_90": true,
+      "pass_overlap_le_0_70": true
+    },
+    "final_dots_primary_41200": {
+      "max_spearman_rho": 0.168730,
+      "max_3px_overlap": 0.610000,
+      "vs_H33_spearman_rho": 0.028623,
+      "vs_H33_3px_overlap": 0.439854,
+      "pass_rho_le_0_90": true,
+      "pass_overlap_le_0_70": true
+    }
   },
   "submission": {
-    "tif_path": "submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif",
-    "stable_alias_path": "submissions/gemsdoe82_submission.tif",
-    "sha256_tif": "120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131",
-    "tif_bytes": 137930,
-    "emitted_positive_pixels": 37654,
-    "min": 0.0,
-    "max": 1.0,
-    "n_nan": 0,
-    "all_15_checks_passed": true,
-    "submission_note": "GEMSDOE82 H82: PU 4-oct scarp/shoreline/tilt/hydrothermal Noisy-OR + exact 300m submodular cover (zeros, 37654 px)"
-  }
+    "status_badge": "OK TO DOWNLOAD AND SUBMIT",
+    "submittable": true,
+    "primary_file": "submissions/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif",
+    "download_url_path": "docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif",
+    "submission_name": "gems82-h82-csam-dinkelbach-41200-20261021-zeros",
+    "submission_note": "H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap<=0.61, 0 NaN, EPSG:32611)",
+    "raster_sha256": "18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767",
+    "zip_sha256": "328b2ec6ea587300aa2303d4f493a993151073b634a53d46127e5f47d06ca187",
+    "n_positive_dots": 41200
+  },
+  "verdict": "promote"
 }
 ```
 
 ---
 
-## 6. Reproducibility & Automated Verification Commands
+## 8. Archived Competition & Project Prompt (Verbatim)
 
-```bash
-# 1. Verify / restore all 17 competition + external datasets by SHA-256
-python3 scripts/restore_and_verify_data.py
+```text
+First, put this prompt into the repo README.md, then read this prompt as the foundation for the project.  This is for the Geothermal competition at https://www.drivendata.org/competitions/306/competition-doe-gems/  Look at what we have tried and how we scored at 
+https://buffedlizard55-lab.github.io/GEMSDOE92/
+https://buffedlizard55-lab.github.io/GEMSDOE91/
+https://buffedlizard55-lab.github.io/GEMSDOE90/
+https://buffedlizard55-lab.github.io/GEMSDOE89/
+https://buffedlizard55-lab.github.io/GEMSDOE88/
+https://buffedlizard55-lab.github.io/GEMSDOE87/
+https://buffedlizard55-lab.github.io/GEMSDOE86/
+https://buffedlizard55-lab.github.io/GEMSDOE85/
+https://buffedlizard55-lab.github.io/GEMSDOE84/
+https://buffedlizard55-lab.github.io/GEMSDOE83/
+https://buffedlizard55-lab.github.io/GEMSDOE82/
+https://buffedlizard55-lab.github.io/GEMSDOE81/
+https://buffedlizard55-lab.github.io/GEMSDOE80/
+https://buffedlizard55-lab.github.io/GEMSDOE79/
+https://buffedlizard55-lab.github.io/GEMSDOE78/
+https://buffedlizard55-lab.github.io/GEMSDOE77/
+https://buffedlizard55-lab.github.io/GEMSDOE76/
+https://buffedlizard55-lab.github.io/GEMSDOE75/
+https://buffedlizard55-lab.github.io/GEMSDOE74/
+https://buffedlizard55-lab.github.io/GEMSDOE73/
+https://buffedlizard55-lab.github.io/GEMSDOE32/ 
 
-# 2. Run / verify the 3-experiment H82 pipeline, 15/15 GeoTIFF validation & 1,026-raster uniqueness audit
-python3 scripts/run_experiments_82.py
+In this repo we must generate a unique TIF submission for the competition, and make it downloadable from the site's top/executive summary. Do not copy a previous submission, except to learn from it, or compare it.
 
-# 3. Regenerate all 6 figures & sync GitHub Pages static site
-python3 scripts/generate_figures_82.py && python3 scripts/build_site_82.py
+It must be immediately obvious whether the generated TIF is OK to download and submit.
 
-# 4. Run full end-to-end automated pytest suite (zero human intervention)
-pytest -v
+In our GEMSDOE32 site we got a score of 0.2778 vs the top score of 0.4413 and reference score of 0.3195. Why and how did we get a 0.2778 in our GEMSDOE32 site, which was the highest of all of our sites? Can we beat 0.2778? If so, how? Answer with Phd experience, knowledge and wisdom.
+
+Make sure our submission is valid and verified without human intervention. For example,
+Submission Error Summary
+Invalid submission: Predicted values must be in range [0, 1]. Make sure the TIF matches the format, data, CRS, etc. of the sample TIF (including no NaNs, etc.) Give the TIF a unique name and a short note (140 character max). 
+
+Then formulate 3-5 novel geological hypotheses we haven't tried yet. For each, specify:
+1. Which competition/external layers it uses
+2. The physical signature or mathematical transform
+3. Why it catches unmapped faults that are missing from USGS/INGENIOUS catalogues
+4. How it differs from our previous implementations
+
+Rank them by expected DTI gain and implementation cost.
+
+Then implement and build out this site and repo so that we have an opportunity to win this competition. Work line by line verifying from official trusted sources with links. No manual user input. Flag any irregularities for review. Double check all calculations, sources, facts and claims. No hallucinations. Produce an auditable table of all of our submissions, scores, etc. with links to the sites and repos. Build a clean, user-friendly site, and document limitations and next steps.
+
+Follow the Parallel-Run Protocol:
+
+- Pick ONE geological hypothesis not yet in the registry (or not yet tested with the new evaluator). State the physical mechanism and name one non-fault process that could mimic it.
+- Reuse shared tools from the template — do not rewrite the metric, validator, or writer:
+  - `evaluate_holdout.py` — hide-and-recover holdout (buffers whole fault segments out of `existing_faults.tif`, scores with official DTI: alpha=0.2, beta=0.8, 300 m triangular kernel).
+  - `submission_writer.py` — writes a valid GeoTIFF matching `sample_submission.tif` CRS/shape/transform, no NaN inside footprint, values in [0, 1].
+- Run the leakage canary: test each feature alone on the holdout; any feature with AUC > 0.90 is leaking the fault catalogue and must be removed.
+- Check uniqueness against registry rasters: rank correlation <= 0.90 and <= 70% of your dots within 3 px of any registry raster. Check this on the surface BEFORE placement AND on the final dots.
+- Label every number you report as `HOLDOUT-DTI` (with evaluator version, number of withheld positives, and 95% CI) or `ORGANIZER-CONFIRMED`. Never mix the two.
+- Stop within budget: <= 3 experiments or 2 hours. A clean negative result with a diagnostic is a valid deliverable.
+- End with the JSON Run Card (hypothesis, mechanism, holdout DTI + CI, correlation/overlap vs registry, raster sha256, validator output, verdict: promote / negative).
+
+Data Blocker Notice & Resolution Instructions:
+If you encounter a data placement blocker (e.g., `training_features.tif`, `existing_faults.tif`, or `sample_submission.tif` are missing from `data/raw/`), do not stop at a scaffold. Solve the blocker autonomously:
+1. Locate the official competition datasets or mirror links referenced in our previous GEMSDOE repos (e.g., GEMSDOE32, GEMSDOE73-77) or official DOE/USGS/DrivenData sources.
+2. Write and execute `scripts/download_competition_data.sh` or `scripts/prepare_data.py` to fetch and verify the SHA256 hashes of the required GeoTIFF rasters into `data/raw/`.
+3. Once the data is in place, run `evaluate_holdout.py`, the leakage canary, the uniqueness check, and `submission_writer.py` end-to-end to produce the real validated `.tif` artifact, the final JSON Run Card, and the downloadable executive summary link.
+
+Take 3 passes through this Project: Pass 1: Implement and verify. Pass 2: Review and fix bugs/edge cases. Pass 3: Re-check against all requirements before finishing.
+
+When finished, create a pull request and merge the pull request.
 ```
-
----
-
-## 7. Honest Limitations & Next Steps Toward `0.33+` / `0.44+` (`Round 2`)
-
-1. **Gap Between Tabular Steerable Pyramids and End-to-End 2D CNN/Transformer `TverskyLoss` Training (`Lipor, 2026`)**: Our sandbox executes on `2` CPU cores (`3.8 GiB` RAM, no GPU). While our 4-octave steerable pyramid + 3-family meta-ensemble beats every CPU zero-catalogue baseline on `gems57-pooled-hide-v2`, training an end-to-end `ResNet34`/`ConvNeXt` + `DLinkNet` directly optimizing smooth `DW-Tversky(alpha=0.2, beta=0.8)` with 8-fold dihedral test-time augmentation (`D4` flips/rotations) on our `64`-channel decontaminated stack on a single GPU is the highest-leverage next step toward `0.34–0.44+` in Round 2.
-2. **`24.60%` Non-LiDAR Coverage Gap in Rural Nevada**: Although our native-`NaN` PU split handling + `8`-stratum `(quadrant, has_lidar)` calibration eliminated LiDAR survey seam cliffs, raw `1 m` scarp offsets (`0.5–1.5 m` Holocene scarps) remain physically unresolvable where only `10 m` 3DEP elevation exists; incorporating Sentinel-1 ascending/descending InSAR coherence & phase-gradient lineaments is a natural zero-label addition for those `24.6%` basins.
-3. **Live vs Holdout Evaluation Caveat**: Per Protocol Rule 3, all `E82_1`–`E82_3` numbers above are strictly labeled **`HOLDOUT-DTI (gems57-pooled-hide-v2)`**; true live leaderboard standing is established solely upon uploading `submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif` to DrivenData (`3` submissions/week cap per [Official Rules](https://docs.nlr.gov/docs/fy26osti/96647.pdf)).

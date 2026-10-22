@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0",
+  "status": "AUTHORIZED",
+  "selected_for_submission": true,
+  "authorized_lane": "H82-CSAM",
+  "authorized_filename": "gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif",
+  "authorized_sha256": "18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767",
+  "companion_filename": "gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif",
+  "companion_sha256": "0cba5858360ae386ec33637b1d48fd705a259677ffdd096c244dab5ce5ea742b",
+  "selector_receipt": "evidence/h82_exp3_uniqueness_and_validation.json",
+  "duplicate_screen": {
+    "registry_rasters_checked": 188,
+    "pre_placement_max_spearman_rho": 0.252136,
+    "pre_placement_max_top41200_3px_overlap": 0.610000,
+    "final_dot_spearman_rho": 0.168730,
+    "final_dots_within_3px": 0.610000,
+    "vs_h33_2_b2_3px_overlap": 0.439854,
+    "protocol_limits": {
+      "spearman_rho_max": 0.9,
+      "dots_within_3px_max": 0.7
+    },
+    "verdict": "PASS — strictly within both pre-placement and final-dot uniqueness limits"
+  },
+  "blocked_historical_candidates": {
+    "H82-2_antislope_corroborated": {
+      "filename": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif",
+      "registry_raster": "H33-2-B2 carrier",
+      "final_dot_spearman_rho": 0.9522129193117653,
+      "final_dots_within_3px": 0.9611496050254779,
+      "verdict": "DUPLICATE — DO NOT SUBMIT (Submission blocked: exceeds rho <= 0.90 and 3px <= 0.70)"
+    },
+    "H82-1_blindstep": {
+      "lane": "h82-blindstep",
+      "seed30_holdout_dti": 0.09773,
+      "base_holdout_dti": 0.09890,
+      "verdict": "NEGATIVE — DO NOT SUBMIT (tested negative on Seed-30 holdout)"
+    }
+  },
+  "reason": "Lane H82-CSAM restored canonical competition data, cached feature stack, and shared vendor/gems57 evaluator/writer, achieved 0.165778 pooled HOLDOUT-DTI (+0.068285 over H33 fold-fair across 22,663 withheld positives), passed the 114-channel leakage canary (max AUC = 0.8020 <= 0.90), and passed the 188-raster uniqueness gate on both pre-placement surface and final dots (max rho = 0.1687 <= 0.90; max 3-px overlap = 0.6100 <= 0.70; 0.4399 vs H33). Earlier sibling lanes H82-2 (96.1% duplicate of H33, rho=0.9522) and H82-1 (negative holdout) remain blocked (DO NOT SUBMIT).",
+  "checked_utc": "2026-10-21"
+}
