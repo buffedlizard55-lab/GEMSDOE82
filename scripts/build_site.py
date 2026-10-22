@@ -58,6 +58,17 @@ def page(title: str, body: str, extra_nav: str = "") -> str:
 <footer>GEMSDOE82 · lane H82-3 (coverage-aware antislope + magnetic-tilt + conjugate + radiometric corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>"""
 
 
+def submission_authorized(authorization: dict, raster_sha256: str) -> bool:
+    """Fail closed unless a separate selector receipt binds this exact raster."""
+    return (
+        authorization.get("status") == "AUTHORIZED"
+        and authorization.get("selected_for_submission") is True
+        and bool(authorization.get("selector_receipt"))
+        and authorization.get("authorized_sha256") == raster_sha256
+        and not authorization.get("duplicate_screen", {}).get("verdict", "").startswith("DUPLICATE")
+    )
+
+
 def is_full_mask_duplicate(gate: dict) -> bool:
     """Return True if any registry raster exceeds rho > 0.90 or overlap_3px > 0.70 on final dots."""
     carrier = gate["duplicate_guard"]["carrier_R6b"]

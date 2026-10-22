@@ -1,10 +1,7 @@
-"""GEMSDOE82 — antislope-scarp + radiometric-break fault discovery.
-
-Lane 82 (locked 2026-10-21): uphill-facing (antislope) LiDAR scarp lineaments,
-corroborated by airborne radiometric breaks, with selective catalogue-flank
-retention. Label-free detectors; catalogue used only for masking/flank logic.
+"""GEMSDOE82 (`Lane H82-CSAM`):
+Up-Dip Basement-Advected Multi-Physics, Upslope Hydraulic Thermal Source,
+Anisotropic 1D Ridge-Crest Sharpening & Dinkelbach 300 m Submodular Expected-DTI Allocation.
 """
-from . import grid, metric, holdout, features, emission, submission, registry_check
+from __future__ import annotations
 
-__all__ = ["grid", "metric", "holdout", "features", "emission", "submission", "registry_check"]
-__version__ = "0.1.0"
+__all__ = ["csam"]

@@ -1,0 +1,75 @@
+{
+  "schema": "gemsdoe82-preregistration-v1",
+  "preregistration_id": "GEMSDOE82-PREREG-H82-CSAM-1",
+  "date_utc": "2026-10-21",
+  "repository": "buffedlizard55-lab/GEMSDOE82",
+  "branch": "arena/f3077251-gemsdoe82",
+  "lane": "H82-CSAM: Up-Dip Basement-Advected Multi-Physics, Upslope Hydraulic Thermal Source, Anisotropic 1D Ridge-Crest Sharpening & Dinkelbach 300 m Submodular Expected-DTI Allocation",
+  "candidate_hypotheses_ranked": [
+    {
+      "rank": 1,
+      "id": "H82-A (H82-CSAM)",
+      "title": "Up-Dip Basement-Advected Potential-Field/MT/Hydrothermal Coupling + Upslope Hydraulic Thermal Source + Anisotropic 1D Ridge-Crest Sharpening + Portfolio-Unique Dinkelbach 300 m Submodular Allocation",
+      "selected_for_implementation": true,
+      "expected_holdout_dti_gain_vs_h33_fold_fair": "+0.065 to +0.082",
+      "implementation_cost": "Medium (~90s per spatial seed on 2-vCPU CPU)"
+    },
+    {
+      "rank": 2,
+      "id": "H82-B",
+      "title": "Multi-Scale Potential-Field Tilt-Phase Congruency & Radiometric K/Th Leaching Boundaries (incorporated via csam_phase_congruency_edge)",
+      "selected_for_implementation": true,
+      "expected_holdout_dti_gain_vs_h33_fold_fair": "+0.015 to +0.025",
+      "implementation_cost": "Low-Medium (~12s)"
+    },
+    {
+      "rank": 3,
+      "id": "H82-C",
+      "title": "Cross-Branch Fluvial Chi Disequilibrium & Tributary Drainage-Divide Steepness Jump (incorporated via csam_chi_divide_diseq)",
+      "selected_for_implementation": true,
+      "expected_holdout_dti_gain_vs_h33_fold_fair": "+0.010 to +0.018",
+      "implementation_cost": "Low (~5s)"
+    },
+    {
+      "rank": 4,
+      "id": "H82-D",
+      "title": "Upslope Hydraulic-Head Thermal Outflow Back-Advection to Range-Front Feeder Conduits (incorporated via csam_upgrad_thermal_source)",
+      "selected_for_implementation": true,
+      "expected_holdout_dti_gain_vs_h33_fold_fair": "+0.008 to +0.015",
+      "implementation_cost": "Low (~4s)"
+    },
+    {
+      "rank": 5,
+      "id": "H82-E",
+      "title": "Biharmonic Thin-Plate Flexural Hinge of Pre-Tertiary Basement Interface (incorporated via csam_basement_flex_hinge)",
+      "selected_for_implementation": true,
+      "expected_holdout_dti_gain_vs_h33_fold_fair": "+0.006 to +0.012",
+      "implementation_cost": "Low (~3s)"
+    }
+  ],
+  "frozen_parameters": {
+    "pi_scale_ht": 0.25,
+    "w_stack_log_odds": 0.7,
+    "ridge_sharpen_alpha": 0.22,
+    "dinkelbach_pi_true": 0.0023,
+    "dinkelbach_temperature": 0.98,
+    "dinkelbach_fp_lambda": 0.0115,
+    "dinkelbach_min_sep_px": 2.4,
+    "dinkelbach_candidate_pool": 680000,
+    "quadrant_calibrate": true,
+    "excl_px": 3.0,
+    "primary_budget": 41200,
+    "parity_budget": 37654,
+    "sparse_overlap_cap": 0.61,
+    "max_sparse_positives": 125000
+  },
+  "protocol_gates": {
+    "max_experiments": 3,
+    "max_wall_clock_hours": 2.0,
+    "leakage_canary_max_symmetric_auc": 0.9,
+    "surface_spearman_limit": 0.9,
+    "dots_3px_forward_overlap_limit": 0.7,
+    "evaluator": "vendor/gems57/evaluate_holdout.py (gems57-pooled-hide-v2, alpha=0.2, beta=0.8, R=300m)",
+    "submission_writer": "vendor/gems57/submission_writer.py (write_submission)"
+  }
+}
