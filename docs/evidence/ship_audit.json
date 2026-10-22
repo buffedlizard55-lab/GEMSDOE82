@@ -1,0 +1,43 @@
+{
+ "slug": "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138",
+ "checks": {
+  "zeros": {
+   "audit_12_of_12": true,
+   "sha256": "dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f",
+   "dots": 35000,
+   "nan_inside_footprint": 0,
+   "min_in": 0.0,
+   "max_in": 1.0,
+   "grid_ok": true
+  },
+  "nan": {
+   "audit_12_of_12": true,
+   "sha256": "03cdc638e8d5f40790855837ef84e7c726379857868de808011f0b690b177c37",
+   "dots": 35000,
+   "nan_inside_footprint": 0,
+   "min_in": 0.0,
+   "max_in": 1.0,
+   "grid_ok": true
+  },
+  "zip": {
+   "single_tif": true,
+   "byte_identical": true,
+   "sha256": "3a16e99abf4cda2d61551132a8bf5dab0008559bcc6620c15d01dba3126eb80e"
+  },
+  "gate": {
+   "verdict": "PROMOTED",
+   "rules": {
+    "R1_primary_win": true,
+    "R2_quadrant_consistency": true,
+    "R3_no_loss_mid": true,
+    "R4_no_loss_raw": true,
+    "R5_live_safety": true,
+    "R6a_lane_independence": true,
+    "R6b_full_mask_independence": true,
+    "R7_audit": true
+   }
+  }
+ },
+ "portal_illegal": [],
+ "verdict": "PORTAL-ILLEGAL ARTIFACTS: none"
+}

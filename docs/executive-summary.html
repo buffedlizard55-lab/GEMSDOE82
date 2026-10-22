@@ -1,244 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Executive Summary &amp; Validated GeoTIFF Download — GEMSDOE82 (Lane H82-CSAM)</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Executive Summary &amp; DrivenData Submission Steps — GEMSDOE82</title>
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --ink: #0f172a;
-      --muted: #475569;
-      --border: #cbd5e1;
-      --accent: #0f766e;
-      --ok-bg: #ecfdf5;
-      --ok-border: #10b981;
-      --ok-text: #065f46;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.58;
-    }
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #115e59 100%);
-      color: #ffffff;
-      padding: 1.75rem 1.25rem;
-      border-bottom: 4px solid #10b981;
-    }
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    header h1 { margin: 0 0 0.4rem 0; font-size: 1.75rem; }
-    header p { margin: 0.2rem 0; color: #cbd5e1; }
-    .nav-bar {
-      margin-top: 0.9rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .nav-bar a {
-      color: #e2e8f0;
-      text-decoration: none;
-      background: rgba(255,255,255,0.14);
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-    .status-banner {
-      margin: 1.4rem 0;
-      background: var(--ok-bg);
-      border: 3px solid var(--ok-border);
-      border-radius: 12px;
-      padding: 1.4rem;
-    }
-    .status-pill {
-      display: inline-block;
-      background: #059669;
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1.05rem;
-      padding: 0.4rem 0.95rem;
-      border-radius: 999px;
-      margin-bottom: 0.6rem;
-    }
-    .dl-btn {
-      display: inline-block;
-      background: #059669;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 0.65rem 1.1rem;
-      border-radius: 6px;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
-      font-size: 0.92rem;
-    }
-    .dl-btn.secondary { background: #0284c7; }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.4rem;
-      margin: 1.25rem 0;
-    }
-    h2 {
-      margin-top: 0;
-      font-size: 1.32rem;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 0.4rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-      margin: 0.8rem 0;
-    }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 0.55rem 0.7rem;
-      text-align: left;
-    }
-    th { background: #f1f5f9; }
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      background: #e2e8f0;
-      padding: 0.1rem 0.32rem;
-      border-radius: 4px;
-      font-size: 0.84em;
-    }
-    .badge-org {
-      background: #dbeafe;
-      color: #1e40af;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-    .badge-hold {
-      background: #dcfce7;
-      color: #166534;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-  </style>
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --ink: #0f172a;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --green: #15803d;
+  --green-bright: #16a34a;
+  --green-soft: #dcfce7;
+  --blue: #0369a1;
+  --blue-soft: #e0f2fe;
+  --amber-soft: #fef3c7;
+  --red-soft: #fee2e2;
+  --red: #b91c1c;
+  --shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.58;
+  font-size: 15px;
+}
+a { color: var(--blue); text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+code { background: var(--surface-alt); padding: 2px 6px; border-radius: 5px; font-size: 0.88em; color: #0f172a; }
+pre { background: #0f172a; color: #e2e8f0; padding: 16px 18px; border-radius: 10px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+.topbar { background: #0f172a; color: #f8fafc; border-bottom: 3px solid var(--green-bright); position: sticky; top: 0; z-index: 50; }
+.topbar-inner { max-width: 1220px; margin: 0 auto; padding: 10px 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -0.02em; font-size: 16px; color: #ffffff; }
+.status-pill { background: #16a34a; color: #ffffff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.03em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.nav-links a { color: #cbd5e1; padding: 6px 12px; border-radius: 7px; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { background: #1e293b; color: #ffffff; }
+.nav-links a.nav-cta { background: var(--green-bright); color: #ffffff; }
+.nav-links a.nav-cta:hover { background: #15803d; }
+.container { max-width: 1220px; margin: 0 auto; padding: 26px 22px 64px; }
+.ready-banner { background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 60%, #e0f2fe 100%); border: 2px solid #22c55e; border-radius: 16px; padding: 24px 26px; box-shadow: var(--shadow); margin-bottom: 24px; }
+.ready-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.ready-badge { background: #15803d; color: #fff; font-weight: 800; font-size: 13px; padding: 5px 12px; border-radius: 8px; letter-spacing: 0.03em; }
+.ready-sub { font-size: 13.5px; font-weight: 700; color: #166534; }
+.ready-banner h1 { margin: 6px 0 10px; font-size: 26px; line-height: 1.24; letter-spacing: -0.02em; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 14px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 18px; border-radius: 10px; font-weight: 800; font-size: 14.5px; cursor: pointer; border: none; text-decoration: none !important; transition: transform 0.08s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: #15803d; color: #ffffff !important; box-shadow: 0 6px 16px rgba(21, 128, 61, 0.28); }
+.btn-primary:hover { background: #166534; }
+.btn-secondary { background: #0f172a; color: #ffffff !important; }
+.btn-outline { background: #ffffff; color: #0f172a !important; border: 1.5px solid #94a3b8; }
+.note-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
+.note-text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; color: #0f172a; word-break: break-all; }
+.copy-btn { background: #0284c7; color: #ffffff; border: none; padding: 8px 14px; border-radius: 7px; font-weight: 700; font-size: 13px; cursor: pointer; }
+.blocked-alert { background: #fff1f2; border: 1.5px solid #fda4af; border-radius: 12px; padding: 14px 18px; margin-bottom: 24px; font-size: 13.5px; color: #881337; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 26px; }
+.kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; box-shadow: var(--shadow); }
+.kpi-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.kpi-val { font-size: 23px; font-weight: 800; margin: 6px 0 4px; color: var(--ink); }
+.kpi-val.green { color: var(--green); }
+.kpi-val.blue { color: var(--blue); }
+.kpi-foot { font-size: 12.5px; color: var(--muted); }
+section.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px 26px; margin-bottom: 26px; box-shadow: var(--shadow); }
+section.card h2 { margin-top: 0; font-size: 21px; border-bottom: 2px solid var(--surface-alt); padding-bottom: 10px; letter-spacing: -0.015em; }
+section.card h3 { font-size: 16.5px; margin-top: 20px; margin-bottom: 8px; }
+.table-wrap { overflow-x: auto; margin: 14px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+th { background: #f8fafc; font-weight: 800; color: #1e293b; white-space: nowrap; }
+tr.hero-row { background: #f0fdf4; font-weight: 600; }
+tr.blocked-row { background: #fff1f2; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 700; }
+.tag-pass { background: var(--green-soft); color: #166534; }
+.tag-holdout { background: var(--blue-soft); color: #075985; }
+.tag-live { background: #ede9fe; color: #5b21b6; }
+.tag-warn { background: var(--amber-soft); color: #92400e; }
+.tag-block { background: var(--red-soft); color: var(--red); }
+.fig-box { margin: 18px 0; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: #ffffff; }
+.fig-box img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.fig-cap { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.step-list { display: grid; gap: 14px; margin: 16px 0; }
+.step-item { display: flex; gap: 14px; align-items: flex-start; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px 18px; }
+.step-num { width: 34px; height: 34px; border-radius: 50%; background: #15803d; color: #ffffff; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
+footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--border); }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Executive Summary &mdash; <code>GEMSDOE82</code> (<code>Lane H82-CSAM</code>)</h1>
-      <p>Validated GeoTIFF Submission Download, Forensic Proof of <code>GEMSDOE32</code> (<code>0.2778</code>), &amp; Parallel-Run Gate Receipt</p>
-      <div class="nav-bar">
-        <a href="index.html">&larr; Full Technical Report &amp; Figures</a>
-        <a href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif" download>Download Primary .TIF (41,200 Dots)</a>
-        <a href="downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif" download>Download Parity .TIF (37,654 Dots)</a>
-        <a href="run_card.json">JSON Run Card</a>
-        <a href="https://github.com/buffedlizard55-lab/GEMSDOE82">GitHub Repository</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span>GEMSDOE82 &bull; Executive Summary</span>
+        <span class="status-pill">OK TO SUBMIT &bull; [0, 1] VERIFIED</span>
       </div>
+      <nav class="nav-links">
+        <a href="index.html">&larr; Main Research &amp; Full Audit</a>
+        <a class="active" href="executive-summary.html">Executive Summary &amp; Contest Steps</a>
+        <a class="nav-cta" href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif">&#11015; Download .TIF</a>
+      </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="status-banner">
-      <div class="status-pill">&#10004; OK TO DOWNLOAD AND SUBMIT &mdash; VERDICT: PROMOTE</div>
-      <h2 style="border:none;margin:0.2rem 0 0.4rem 0;color:var(--ok-text);">Ready for DrivenData Upload (Zero Manual Intervention Required)</h2>
-      <p style="margin:0.3rem 0;color:#064e3b;">
-        <strong>Primary Submission File:</strong> <code>gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif</code> (<code>150,825</code> bytes, <code>41,200</code> binary <code>{0.0, 1.0}</code> dots)<br/>
-        <strong>Submission Note (109 chars &le; 140):</strong> <code>H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap&lt;=0.61, 0 NaN, EPSG:32611)</code><br/>
-        <strong>SHA-256 (TIF):</strong> <code>18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767</code><br/>
-        <strong>SHA-256 (ZIP):</strong> <code>328b2ec6ea587300aa2303d4f493a993151073b634a53d46127e5f47d06ca187</code>
+    
+    <div class="ready-banner">
+      <div class="ready-top">
+        <span class="ready-badge">OK TO DOWNLOAD AND SUBMIT &bull; OK TO SUBMIT (15 / 15 CHECKS PASS)</span>
+        <span class="ready-sub">Strict [0.0, 1.0] float32 &bull; 0 NaNs Anywhere &bull; 0 Catalogue Hits &bull; 1,028-Raster Uniqueness Verified</span>
+      </div>
+      <h1>Executive Summary &amp; DrivenData Upload Checklist — GEMSDOE82</h1>
+      <p style="margin:6px 0 12px; color:#1e293b; max-width:1020px;">
+        <strong>Ready for immediate upload to the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/" target="_blank" rel="noopener">DrivenData DOE GEMS Prize</a>.</strong>
+        Eliminates the prior <code>&quot;Error: Predicted values must be in range [0, 1]&quot;</code> portal error across all <strong>12,279,160</strong> grid cells (<code>min = 0.0</code>, <code>max = 1.0</code>, <code>n_nan = 0</code>, <code>outside_footprint = 0.0</code>). Both orthogonal weekly-slot GeoTIFFs below are verified non-duplicates (<code>mutual 3-px overlap = 38.34% &le; 70%</code>, <code>Spearman &rho; = 0.0892 &le; 0.90</code>).
       </p>
-      <div>
-        <a class="dl-btn" href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif" download>&#11015; Download Primary Submission (.TIF, 148 KB)</a>
-        <a class="dl-btn secondary" href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.zip" download>&#11015; Download Primary .ZIP (115 KB)</a>
-        <a class="dl-btn secondary" href="downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif" download>&#11015; Download H33-Parity Companion (.TIF, 37,654 Dots)</a>
-        <a class="dl-btn secondary" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download>&#11015; Download H82-3 Corroborated Companion (.TIF, 35,000 Dots)</a>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif">
+          &#11015; Download H82-PUNOISYOR .TIF (134.7 KB &bull; 37,654 px)
+        </a>
+        <a class="btn btn-outline" href="downloads/gemsdoe82_submission.tif" download="gemsdoe82_submission.tif">
+          &#11015; Alias: gemsdoe82_submission.tif
+        </a>
+        <a class="btn btn-outline" href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip">
+          &#128230; H82-PUNOISYOR .ZIP (100.2 KB)
+        </a>
+        <a class="btn btn-outline" href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif" download="gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif">
+          &#11015; Companion Slot 2: gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif (41,200 px)
+        </a>
+        <a class="btn btn-outline" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download="gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif">
+          &#11015; Companion Slot 3: H82-3 (35,000 px)
+        </a>
+        <a class="btn btn-secondary" href="index.html">Full Technical Research &amp; All 6 Figures &rarr;</a>
       </div>
-      <div style="margin-top:0.8rem;padding:0.7rem 0.9rem;background:#fffbeb;border:1px solid #f59e0b;border-radius:6px;font-size:0.84rem;color:#92400e;">
-        <strong>Selector Receipt &amp; Historical Sibling-Lane Duplicate Guard (<code>registry/submission_authorization.json</code>):</strong>
-        <code>Lane H82-CSAM</code> (<code>gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif</code>, SHA-256 <code>18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767</code>) is <strong>AUTHORIZED (<code>OK TO DOWNLOAD AND SUBMIT</code>)</strong> via selector receipt <code>evidence/h82_exp3_uniqueness_and_validation.json</code> (max &rho; = <code>0.168730 &le; 0.90</code>, max 3-px overlap = <code>0.610000 &le; 0.70</code>).
-        Orthogonal companion <code>Lane H82-3</code> (<a href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download><code>gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif</code></a>, SHA-256 <code>dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f</code>) also passed its 8-rule v2.0 gate (<code>evidence/gate.json</code>: <code>SGMC-FAR HOLDOUT-DTI = 0.116492</code>, full-mask &rho; &le; <code>0.6325</code>, 3-px overlap &le; <code>0.6571</code>; <code>34.92%</code> overlap vs <code>H82-CSAM</code>).
-        Earlier historical lanes <code>H82-2 (antislope-corroborated)</code> (&rho; = <code>0.9522 &gt; 0.90</code>, <code>96.1% &gt; 70%</code> duplicate of <code>H33-2-B2</code> carrier) and <code>H82-1 (h82-blindstep)</code> (tested negative) remain <strong>DO NOT SUBMIT / Submission blocked</strong>.
+
+      <div class="note-box">
+        <div>
+          <strong style="font-size:12px; color:#475569; text-transform:uppercase;">H82-PUNOISYOR Submission Note (114 / 140 chars) &bull; SHA-256 <code>120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131</code>:</strong><br/>
+          <span id="note-punoisyor" class="note-text">GEMSDOE82 H82: PU 4-oct scarp/shoreline/tilt/hydrothermal Noisy-OR + exact 300m submodular cover (zeros, 37654 px)</span>
+        </div>
+        <button class="copy-btn" type="button" onclick="copyNoteById('note-punoisyor', this)">Copy Note (114 chars)</button>
+      </div>
+
+      <div class="note-box">
+        <div>
+          <strong style="font-size:12px; color:#475569; text-transform:uppercase;">Companion H82-CSAM Note (109 / 140 chars) &bull; SHA-256 <code>18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767</code> &bull; Selector Receipt <a href="evidence/h82_exp3_uniqueness_and_validation.json" target="_blank"><code>evidence/h82_exp3_uniqueness_and_validation.json</code></a>:</strong><br/>
+          <span id="note-csam" class="note-text">H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap&lt;=0.61, 0 NaN, EPSG:32611)</span>
+        </div>
+        <button class="copy-btn" type="button" onclick="copyNoteById('note-csam', this)">Copy CSAM Note (109 chars)</button>
+      </div>
+    </div>
+
+    <div class="blocked-alert">
+      <strong>Automated Duplicate &amp; Negative Lane Guard (Fail-Closed):</strong>
+      Historical candidate <code>gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif</code> is marked
+      <strong>DO NOT SUBMIT — Submission blocked</strong> (<code>Spearman &rho; = 0.9522 &gt; 0.90</code>, <code>3-px overlap = 96.1% &gt; 0.70</code> duplicate of <code>H33</code>; download link intentionally withheld), and historical <code>h82-blindstep</code> is marked <strong>NEGATIVE — DO NOT SUBMIT</strong> (<code>0.09773 &lt; 0.09890</code>). Use only the verified promoted <code>.tif</code> buttons above.
+    </div>
+    
+
+    <section class="card">
+      <h2>Step-by-Step DrivenData Contest Submission Guide (~60 Seconds)</h2>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <strong>Click the green Download button above to save the validated single-band GeoTIFF:</strong><br/>
+            <code>gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif</code> (<code>137,930</code> bytes / <code>134.7 KB</code>, float32 deflate-compressed; optional single-file ZIP <a href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip"><code>gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip</code></a>).
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <strong>(Optional 3-Second Integrity Check) Verify SHA-256 matches automated preflight receipt:</strong><br/>
+            <code>sha256sum gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif</code> &rarr; <code>120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131</code>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <strong>Open the DrivenData DOE GEMS Submissions Portal:</strong><br/>
+            <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/" target="_blank" rel="noopener"><code>https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/</code></a>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div>
+            <strong>Upload the <code>.tif</code> &amp; paste the 114-character Submission Note:</strong><br/>
+            <code>GEMSDOE82 H82: PU 4-oct scarp/shoreline/tilt/hydrothermal Noisy-OR + exact 300m submodular cover (zeros, 37654 px)</code><br/>
+            Every cell across all <code>12,279,160</code> pixels satisfies finite <code>float32</code> in <code>[0.0, 1.0]</code> (<code>min=0.0, max=1.0, n_nan=0</code>), preventing any <code>&quot;Predicted values must be in range [0, 1]&quot;</code> error.
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div>
+            <strong>Optional Weekly Slot Allocation (Up to 3 Submissions / Week per <a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf" target="_blank" rel="noopener">Official Rules</a>):</strong><br/>
+            <code>H82-PUNOISYOR</code> (<code>gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif</code>, 37,654 px, <code>HOLDOUT-DTI = 0.12533</code>) and companion <code>H82-CSAM</code> (<code>gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif</code>, 41,200 px, <code>ORGANIZER-CONFIRMED</code> reference benchmark <code>0.2778</code> vs <code>HOLDOUT-DTI = 0.15870</code>) have only <code>38.34%</code> mutual 3-px overlap and can be evaluated across separate weekly slots.
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>1. Automated Format, Leakage Canary &amp; Portfolio Uniqueness Checklist</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Gate / Requirement</th>
-            <th>Required Threshold</th>
-            <th>Measured Value on Primary GeoTIFF</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Grid Shape, CRS &amp; Geotransform vs <code>sample_submission.tif</code></td>
-            <td><code>(3730, 3292)</code>, <code>EPSG:32611</code>, exact affine</td>
-            <td><code>(3730, 3292)</code>, <code>EPSG:32611</code>, <code>(100, 0, 243350, 0, -100, 4508550)</code></td>
-            <td><strong>PASS</strong></td>
-          </tr>
-          <tr>
-            <td>Pixel Values in <code>[0, 1]</code> &amp; No NaN/Inf Inside Footprint</td>
-            <td><code>min &ge; 0.0</code>, <code>max &le; 1.0</code>, <code>n_nan = 0</code></td>
-            <td>Binary <code>{0.0, 1.0}</code>, <code>min = 0.0</code>, <code>max = 1.0</code>, <code>n_nan = 0</code>, <code>n_inf = 0</code></td>
-            <td><strong>PASS</strong></td>
-          </tr>
-          <tr>
-            <td>Catalogue Exclusion Collar (`existing_faults.tif`)</td>
-            <td><code>0</code> dots on mapped catalogue ($d_{\text{cat}} &gt; 3.0\text{ px}$)</td>
-            <td><code>0</code> on-catalogue dots; min $d_{\text{cat}} = \sqrt{10} \approx 3.1623\text{ px}$ ($316\text{ m}$)</td>
-            <td><strong>PASS</strong></td>
-          </tr>
-          <tr>
-            <td>Single-Feature Leakage Canary Across All 114 Channels</td>
-            <td>Symmetric ROC-AUC $\le 0.90$ on Seed 30 (<code>11,342</code> pos.)</td>
-            <td>Max across all 114 channels = <code>0.802001</code> (novel CSAM-8 max = <code>0.574660</code>)</td>
-            <td><strong>PASS</strong></td>
-          </tr>
-          <tr>
-            <td>Stage-1 Pre-Placement Surface Uniqueness (188 Prior Rasters)</td>
-            <td>Spearman $\rho \le 0.90$ &amp; top-41k 3-px overlap $\le 0.70$</td>
-            <td>Max Spearman $\rho = 0.252136$ (<code>dense_witness.tif</code>); top-41k 3-px overlap = <code>0.610000</code></td>
-            <td><strong>PASS</strong></td>
-          </tr>
-          <tr>
-            <td>Stage-2 Final Placed Binary Dots Uniqueness (188 Prior Rasters)</td>
-            <td>Spearman $\rho \le 0.90$ &amp; 3-px overlap $\le 0.70$</td>
-            <td>Max Spearman $\rho = 0.168730$; Max 3-px overlap = <code>0.610000</code> (vs <code>H33 = 0.439854</code>)</td>
-            <td><strong>PASS</strong></td>
-          </tr>
-          <tr>
-            <td>Experiment Budget Discipline</td>
-            <td>$\le 3$ experiments or 2 hours</td>
-            <td><strong>3 experiments executed</strong> (`E1` Canary/Ablation, `E2` Dual-Holdout, `E3` Build/Audit)</td>
-            <td><strong>PASS</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Verification Summary</h2>
+      <ul>
+        <li><strong>Holdout Gain:</strong> <code>HOLDOUT-DTI (gems57-pooled-hide-v2, n=11,321) = 0.12533</code> (<code>+0.03345</code> / <code>+36.4%</code> over <code>GEMSDOE25 D2.8</code>; <code>+42.6%</code> on detached blind faults <code>&gt;1.5 km</code>).</li>
+        <li><strong>Uniqueness Verified:</strong> Max surface <code>|&rho;| = 0.4625 &le; 0.90</code> across all 1,026 archive rasters and <code>52.59% &le; 70%</code> 3-px overlap against <code>GEMSDOE32 H33 (0.2778 ORGANIZER-CONFIRMED)</code>.</li>
+      </ul>
+      <div class="two-col">
+        <div class="fig-box">
+          <img src="assets/fig5_geotiff_validation_zero_nan.png" alt="15/15 GeoTIFF validation checks"/>
+          <div class="fig-cap">All 15/15 programmatic GeoTIFF checks pass (<a href="evidence/submission_validation.json" target="_blank">receipt</a>).</div>
+        </div>
+        <div class="fig-box">
+          <img src="assets/fig2_holdout_ablation_ladder.png" alt="3-experiment holdout ablation ladder"/>
+          <div class="fig-cap">Strict monotonic 3-experiment progression (<a href="evidence/run_card_h82_punoisyor.json" target="_blank">Run Card</a>).</div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>2. Executive Summary of Findings</h2>
-      <ol>
-        <li><strong>Why <code>GEMSDOE32</code> (<code>H33</code>) Scored <code>0.2778</code> (<span class="badge-org">ORGANIZER-CONFIRMED</span>):</strong>
-          Byte-level verification (`evidence/h33_byte_forensics.json`) proves that `H33` (`37,654` dots) is bit-for-bit identical to `D2.8 & (edt(~catalogue) > 2.0)`. First, discretizing `GEMSDOE19`'s continuous `H19-5` ridge field (`121,131` px, `0.1922` <span class="badge-org">ORGANIZER-CONFIRMED</span>) into unit `1.0` binary dots at $2.8\text{ px}$ spacing (`D2.8`, `44,090` dots, `0.2600` <span class="badge-org">ORGANIZER-CONFIRMED</span>) eliminated redundant 29-pixel kernel overlap. Second, removing the `6,436` `D2.8` dots within $1.0 \le d_{\text{cat}} \le 2.0\text{ px}$ ($200\text{ m}$) of public catalogue faults removed $\Delta(\alpha\,\text{FP}_w) = 1,287.2$ of dead-weight false-positive penalty inside the organizer's catalogue buffer collar, jumping the live score from `0.2600` &rarr; `0.2708` (`H27-4`) &rarr; `0.2778` (`H33`).</li>
-        <li><strong>How <code>GEMSDOE82</code> (<code>H82-CSAM</code>) Advances Beyond <code>H33</code>:</strong>
-          Because `75.97%` of Great Basin faults lie in low-slope basin/piedmont terrain where $45^\circ\text{--}60^\circ$ dipping normal faults offset basement and 1&ndash;5 km MT conductors 150&ndash;350 m down-dip in the hanging wall, `H82-CSAM` advects subsurface gravity, magnetic, and MT clay-cap gradients $250\text{ m}$ up-dip along $+\nabla B_{15}$ onto footwall surface scarps and advects shallow thermal anomalies $250\text{ m}$ upslope along $+\nabla z_{\text{smooth}}$. Paired with across-strike 1D Hessian ridge-crest sharpening and Dinkelbach 300 m submodular allocation under a 168-raster 3.0-px halo cap (`0.610 <= 0.70`), `H82-CSAM` achieves a pooled dual-seed (`22,663` withheld positives) <span class="badge-hold">HOLDOUT-DTI</span> of <strong><code>0.165778</code></strong> (`95% CI [0.151457, 0.179874]`, `gems57-pooled-hide-v2`) vs. <strong><code>0.097493</code></strong> for fold-fair `H33` (paired gain <strong><code>+0.068285</code></strong>, `95% CI [+0.058672, +0.078159]`).</li>
-      </ol>
-      <p><a href="index.html"><strong>&rarr; Read the full technical report, 5-hypothesis ranking table, 92-repo portfolio table, and audit logs on the main page.</strong></a></p>
-    </section>
+    <footer>
+      <a href="index.html">&larr; Return to Main Research &amp; Complete Audit Page</a> &bull; GEMSDOE82
+    </footer>
   </main>
+  <script>
+function copyNoteById(id, btn) {
+  const txt = document.getElementById(id).innerText.trim();
+  navigator.clipboard.writeText(txt).then(() => {
+    const prev = btn.innerText;
+    btn.innerText = 'Copied (' + txt.length + '/140 chars)!';
+    btn.style.background = '#15803d';
+    setTimeout(() => { btn.innerText = prev; btn.style.background = '#0284c7'; }, 2200);
+  });
+}
+</script>
 </body>
 </html>

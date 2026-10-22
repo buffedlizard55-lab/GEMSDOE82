@@ -1,0 +1,45 @@
+{
+  "schema": "gemsdoe82-prepared-manifest-v1",
+  "evidence_class": "DATA-MEASUREMENT",
+  "shape": [
+    3730,
+    3292
+  ],
+  "crs": "EPSG:32611",
+  "transform": [
+    100.0,
+    0.0,
+    243350.0,
+    0.0,
+    -100.0,
+    4508550.0
+  ],
+  "footprint_pixels": 5167373,
+  "catalogue_pixels": 60988,
+  "core_files": {
+    "training_features.tif": {
+      "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+      "bytes": 418912844,
+      "ok": true
+    },
+    "existing_faults.tif": {
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830,
+      "ok": true
+    },
+    "labels.tif": {
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830,
+      "ok": true
+    },
+    "sample_submission.tif": {
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "bytes": 1599597,
+      "ok": true
+    }
+  },
+  "archive_registry_rasters": 62,
+  "sibling_rasters": 112,
+  "scored_reference_rasters": 12,
+  "training_labels_note": "existing_faults.tif / labels.tif is the mapped fault catalogue, NOT unpublished organizer test truth"
+}
