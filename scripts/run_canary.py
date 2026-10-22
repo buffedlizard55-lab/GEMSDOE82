@@ -85,6 +85,7 @@ def main() -> int:
         "h82_3_valley_deflection": F.h82_3_valley_deflection(lidar, foot),
         "h82_4_conjugate_intersection": F.h82_4_conjugate_intersection(lidar, foot),
         "h82_5_thermal_upflow_prior": F.h82_5_thermal_upflow_prior(ddir, foot),
+        "h82_6_magnetic_tilt": F.h82_6_magnetic_tilt(ext, foot),
     }
     st = args.stride
     sl = (slice(None, None, st), slice(None, None, st))

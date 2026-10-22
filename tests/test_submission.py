@@ -74,3 +74,30 @@ def test_audit_accepts_clean_pair(tmp_path):
         SUB.write_mask(dots, foot, z, p, outside=mode)
         rec = SUB.audit_geotiff(p, foot, labels, mode)
         assert rec["all_checks_passed"] and rec["emitted_positive_pixels"] == 1000
+
+
+def test_shipped_h82_3_geotiff_pair_in_ci():
+    import json
+    root = Path(__file__).resolve().parents[1]
+    gate = json.loads((root / "evidence" / "gate.json").read_text())
+    assert gate["verdict"] == "PROMOTED"
+    assert all(gate["rules"].values())
+    z_rec = gate["receipts"]["zeros"]
+    n_rec = gate["receipts"]["nan"]
+    z_path = root / "docs" / "downloads" / z_rec["filename"]
+    n_path = root / "docs" / "downloads" / n_rec["filename"]
+    assert SUB.sha256_file(z_path) == z_rec["sha256"] == gate["raster_sha256_zeros"]
+    assert SUB.sha256_file(n_path) == n_rec["sha256"]
+    with rasterio.open(z_path) as sz, rasterio.open(n_path) as sn:
+        az = sz.read(1)
+        an = sn.read(1)
+        assert sz.shape == sn.shape == (G.HEIGHT, G.WIDTH)
+        assert str(sz.crs) == str(sn.crs) == G.CRS
+        assert tuple(sz.transform)[:6] == G.TRANSFORM
+        assert int(np.isfinite(az).sum()) == G.TOTAL_PIXELS
+        assert float(az.min()) >= 0.0 and float(az.max()) <= 1.0
+        assert int(np.isfinite(an).sum()) == G.FOOTPRINT_PIXELS
+        fin_n = an[np.isfinite(an)]
+        assert float(fin_n.min()) >= 0.0 and float(fin_n.max()) <= 1.0
+        assert int((az > 0).sum()) == 35000
+        assert np.array_equal(az > 0, np.isfinite(an) & (an > 0))

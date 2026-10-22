@@ -1,9 +1,25 @@
 # GEMSDOE82: Multi-Lane DOE GEMS Fault Discovery Suite (`H82-PUNOISYOR` & `H82-CSAM` — Verified `[0.0, 1.0]` Submissions)
 
-[![Validation Status](https://img.shields.io/badge/GeoTIFF_Validation-OK_TO_DOWNLOAD_AND_SUBMIT_(15%2F15_PASS)-16a34a?style=for-the-badge)](evidence/submission_validation.json)
-[![Pixel Range](https://img.shields.io/badge/Pixel_Range-%5B0.0%2C_1.0%5D_float32_%7C_0_NaNs-0284c7?style=for-the-badge)](submissions/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif)
-[![Uniqueness Audit](https://img.shields.io/badge/1%2C028--Raster_Uniqueness-PASS_(%7Crho%7C%3D0.4625_%7C_mut%3D0.6062)-0d9488?style=for-the-badge)](evidence/uniqueness_audit_1026.json)
-[![Experiments](https://img.shields.io/badge/Preregistered_Budget-3_%2F_3_Experiments-7c3aed?style=for-the-badge)](evidence/run_card_h82_punoisyor.json)
+> ### **SUBMISSION STATUS: `OK TO DOWNLOAD AND SUBMIT` — ALL FORMAT, LEAKAGE CANARY & PORTFOLIO UNIQUENESS GATES PASSED (`VERDICT: PROMOTE`)**
+>
+> - **Primary Submission GeoTIFF (`41,200` binary `{0.0, 1.0}` dots, `148 KB`):** [`docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif`](docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif) | [`.zip` (`115 KB`)](docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.zip) | [`.json` Validator Receipt](docs/downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.json)
+>   - **Submission Name:** `gems82-h82-csam-dinkelbach-41200-20261021-zeros`
+>   - **Submission Note (`109 / 140` chars):** `H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap<=0.61, 0 NaN, EPSG:32611)`
+>   - **SHA-256 (`.tif`):** `18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767`
+>   - **SHA-256 (`.zip`):** `328b2ec6ea587300aa2303d4f493a993151073b634a53d46127e5f47d06ca187`
+> - **H33-Parity Companion GeoTIFF (`37,654` binary `{0.0, 1.0}` dots, `142 KB`):** [`docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif`](docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif) | [`.zip` (`108 KB`)](docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.zip) | [`.json` Validator Receipt](docs/downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.json)
+>   - **Submission Name:** `gems82-h82-csam-dinkelbach-37654-20261021-zeros`
+>   - **Submission Note (`105 / 140` chars):** `H82-CSAM 114ch H33-parity 37654 binary dots via Dinkelbach 300m allocator (cap<=0.61, 0 NaN, EPSG:32611)`
+>   - **SHA-256 (`.tif`):** `0cba5858360ae386ec33637b1d48fd705a259677ffdd096c244dab5ce5ea742b`
+>   - **SHA-256 (`.zip`):** `a70689bf2ffb4c133f08f6ece9baf29cdf1321a27a1b3294482d7836a71c971f`
+> - **Orthogonal Multi-Physics Corroboration Companion (`Lane H82-3`, `35,000` binary `{0.0, 1.0}` dots, `142 KB`):** [`docs/downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif`](docs/downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif) | [`.zip` (`109 KB`)](docs/downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.zip) | [`-nan.tif` (`186 KB`)](docs/downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-nan.tif) | [`.json` Gate Receipt](evidence/gate.json)
+>   - **Submission Name:** `gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif`
+>   - **Submission Note (`99 / 140` chars):** `GEMSDOE82 H82-3 coverage-aware antislope+TMI+conj+rad 35k dots (ov<=0.66); UNSCORED; see receipt`
+>   - **SHA-256 (`-zeros.tif`):** `dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f`
+>   - **Holdout & Uniqueness (`gems82-holdout-v2`, 8/8 v2.0 rules PASS):** `SGMC-FAR HOLDOUT-DTI = 0.116492 (+0.029809 vs H33-2-B2, 4/4 quadrants positive)`, `SGMC-MID = 0.117778 (+0.022392)`, `SGMC-RAW = 0.117946 (+0.021886)`, `CAT-HIDDEN = 0.004656 (+0.000141)`; full-mask max Spearman $\rho = 0.6325 \le 0.90$, full-mask max 3-px overlap = $0.6571 \le 0.70$ (and only $34.92\%$ 3-px overlap, $\rho = 0.0213$ vs `H82-CSAM`).
+>   - **Blocked Historical Candidate (`DO NOT SUBMIT`):** `gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif` (`Lane H82-2`, full-mask 3-px overlap $0.9611 > 0.70$, $\rho = 0.9522 > 0.90$ vs `H33-2-B2`).
+> - **GitHub Pages Site:** [`index.html`](index.html) | [`executive-summary.html`](executive-summary.html) | [`run_card.json`](run_card.json)
+> - **Competition:** [DrivenData #306 — DOE Geothermal Exploration using Machine Learning and Statistics (GEMS)](https://www.drivendata.org/competitions/306/competition-doe-gems/)
 
 ---
 

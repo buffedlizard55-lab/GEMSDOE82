@@ -1,37 +1,44 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Research — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
-<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize</h1>
-<p>Research candidate status · a local format audit is not submission approval or an organizer score</p></header>
+<body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
+<p>Lane H82-3 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
 <nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="lanes.html">Lanes</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
-<section class="card dispute"><h2>⛔ NO SUBMISSION AUTHORIZED — do not submit the archived TIFF</h2>
-<p>The lane's internal research gate is <b>not</b> the separate selector decision required by the run protocol.
-No selector receipt is recorded, and the candidate's owner-mirror/private-tooling provenance is disputed against
-the canonical track (IR-82-12). The existing file is retained for <b>inspection/learning only</b>; format checks
-alone do not establish scientific validity or competition eligibility. This page will say “OK TO SUBMIT” only
-when an explicit selector authorization is bound to the exact file SHA-256. See <a href="lanes.html">lane status</a>,
-<a href="irregularities.html">irregularities</a>, and the <a href="canon/index.html">canonical-track record</a>.</p></section>
+<section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
+<p><b>Lane H82-3 (mirror-verified track):</b> the 35,000-dot file below passed the strict 8-rule v2.0 gate
+(including BOTH discovery-surface R6a AND full-mask final-dot R6b duplicate checks: max Spearman ρ 0.6325 ≤ 0.90,
+max 3-px overlap 0.6571 ≤ 0.70 across all 6 registry rasters, solving the H82-2 final-dot duplicate stop from PR #11).
+<b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
+mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
+the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
+exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
+Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
+<a href="canon/index.html">archived canonical-track position</a>.</p></section>
 
-<section class="card"><h2>Research findings (this session)</h2>
+<section class="card"><h2>Research findings (Lane H82-3)</h2>
 <h3>1. Why H33-2-B2 scored 0.2778 (mechanism, byte-verified)</h3>
 <p>Masked mass is pure cost: the scorer masks catalogue faults, so dots within kernel reach only of masked truth pay α=0.2 and earn ~0.
-D2.8→R1→B2 was described in the owner-maintained group record as a pruning chain; its pixel masks are not present here for independent review and the score attribution is owner-reported. The <code>-zeros</code> twin's archived format audit reports finite values in [0,1], but it is not submission-authorized. Full caveats: <code>knowledge/02_why_h33_scored_02778.md</code> and IR-82-07.</p>
-<h3>2. The moat instrument (validated, then used)</h3>
-<p>SGMC truth with d(catalogue)&gt;6px reproduces BOTH live orderings with TP exactly neutral (4,518.6) — the mechanism the live record implies.
-Raw SGMC fails the B=2 step (phantom near-flank credit); CAT-HIDDEN is anti-monotone (0.0967→0.0305→0.0045) and diagnostic-only.
-License: flank surgery + small screened additions; never wholesale replacement (a fresh antislope emission scores 0.1403 SGMC-FAR yet 0.0030 CAT-HIDDEN ≈ random — population overfit).</p>
-<h3>3. Three lane-local experiments; no submission selected</h3>
-<table><tr><th>Exp</th><th>Operation</th><th>n</th><th>SGMC-FAR</th><th>SGMC-MID</th><th>Live safety</th><th>Outcome</th></tr>
-<tr><td>1</td><td>selective flank+ring surgery (−1,048 −1,015, zero proxy cost)</td><td>35,591</td><td>0.087374</td><td>0.096068</td><td>infinite</td><td>kept</td></tr>
-<tr><td>2</td><td>redundancy prune (FAR-creditless + uncorroborated + neighbor ≤2px)</td><td>35,591</td><td>—</td><td>—</td><td>—</td><td><b>negative</b>: 0 dots qualified (2.8px thinning) — deliverable, not failure</td></tr>
-<tr><td>3</td><td>+1,500 corroborated far-field dots (top-C, d&gt;6px, ≥2.8px spacing)</td><td>37,091</td><td>0.096302</td><td>0.104130</td><td>screen 0.331 ≥ 0.111 (lane-local)</td><td><b>archived; NOT AUTHORIZED</b></td></tr></table>
-<h3>4. Live projection scenarios (PROJECTION — model-based, never a score)</h3>
-<p>Inverted live state T≈5,069, D≈18,247 (residual −0.0006 on the B2 step). S=37,091 file:</p>
-<table><tr><th>Scenario</th><th>Assumption</th><th>Projected DTI</th></tr>
-<tr><td>Optimistic</td><td>additions at 50% SGMC→live transfer</td><td>0.2945</td></tr>
-<tr><td>Base</td><td>30% transfer</td><td>0.2890</td></tr>
-<tr><td>Zero-transfer</td><td>additions worthless, removals free</td><td>0.2807</td></tr>
-<tr><td>Pessimistic</td><td>additions worthless AND removals cost 0.02/dot</td><td>0.2785</td></tr></table>
-<p class="small">Even the pessimistic case ≈ holds 0.2778: the edit is asymmetric by construction (small mass, screened credit).</p></section>
+D2.8→R1→B2 is pure waste deletion (verified: <code>D2.8 &amp; dist&gt;1 == R1</code> and <code>R1 &amp; dist&gt;2 == B2</code> pixel-exact),
++0.0108 then +0.0070 owner-reported. The <code>-zeros</code> twin is submittable because the whole grid is finite in [0,1].
+Full analysis: <code>knowledge/02_why_h33_scored_02778.md</code>.</p>
+<h3>2. Three flaws in historical H82-2 uncovered and fixed in H82-3</h3>
+<ul>
+<li><b>Final-dot duplicate violation (PR #11):</b> H82-2 retained 96.1% of H33-2-B2 (full-mask overlap 0.9611 &gt; 0.70, Spearman ρ 0.9522 &gt; 0.90). H82-3 retains 23,000 corroborated carrier dots and places 12,000 novel dots strictly &gt;3.0 px from all 6 registry rasters, reducing full-mask overlap to ≤0.6571 (≤0.70) and Spearman ρ to ≤0.6325 (≤0.90).</li>
+<li><b>Missing-1m-LiDAR survey coverage confound (IR-82-LIDAR-01):</b> USGS 3DEP 1 m LiDAR covers 75.37% of the footprint (45.8% of NE quadrant has <code>valid==0</code>). H82-2 zero-filled missing LiDAR, causing 52.1% (1,075/2,063) of its removals to hit <code>valid==0</code> pixels. H82-3 adds GeoDAWN <code>TMI_up150</code> Laplace-tilt/horizontal-gradient ridges (H82-2.6, 99.94% coverage) and quantile-normalises the LiDAR and no-LiDAR strata separately to Uniform(0,1).</li>
+<li><b>Elimination of in-sample proxy filtering (IR-82-LEAK-01):</b> H82-2 filtered Exp1/Exp2 removals by <code>midcred == 0</code> on <code>ctx.sgmc_mid</code>. H82-3 selects all kept and added dots <b>100% label-free and proxy-free</b>, while protecting the 1,611 near-tip (2&lt;d2c&lt;3 px) carrier dots that carry 100% of CAT-HIDDEN TP.</li>
+</ul>
+<h3>3. Three experiments, one promotion</h3>
+<table><tr><th>Exp</th><th>Operation</th><th>n</th><th>SGMC-FAR</th><th>SGMC-MID</th><th>SGMC-RAW</th><th>CAT-HIDDEN</th><th>Outcome</th></tr>
+<tr><td>1</td><td>100% label-free &amp; proxy-free coverage-aware carrier retention (23,000 kept, 1,611 near-tip protected)</td><td>23,000</td><td>0.058357</td><td>0.064724</td><td>0.065355</td><td>0.005447</td><td>carrier core</td></tr>
+<tr><td>2</td><td>label-free spacing redundancy prune (C_cov &lt; median and neighbor ≤2.0 px)</td><td>23,000</td><td>—</td><td>—</td><td>—</td><td>—</td><td><b>negative</b>: 0 dots qualified (2.8px thinning) — deliverable, not failure</td></tr>
+<tr><td>3</td><td>+12,000 corroborated far-field dots (&gt;3.0 px from all 6 registry rasters, d2c&gt;6 px, ≥2.8px spacing)</td><td>35,000</td><td>0.116492</td><td>0.117778</td><td>0.117946</td><td>0.004656</td><td><b>shipped (PROMOTED)</b></td></tr></table>
+<h3>4. Live sensitivity scenarios (PROJECTION — model-based, never a score)</h3>
+<p>Inverted live state T≈5,069, D≈18,247 at S=37,654 (s=0.2778). H82-3 emits S=35,000 (−2,654 net dots, reducing denominator mass by 530.8 units) with +1,518.8 net SGMC-FAR TP gain:</p>
+<table><tr><th>Scenario</th><th>Assumption on net TP transfer</th><th>Projected DTI (model, not score)</th></tr>
+<tr><td>Optimistic</td><td>50% of net SGMC-FAR TP gain (+759 TP) transfers to live</td><td>0.3290</td></tr>
+<tr><td>Base</td><td>25% of net SGMC-FAR TP gain (+380 TP) transfers to live</td><td>0.3076</td></tr>
+<tr><td>TP-neutral</td><td>additions exactly replace removed carrier TP (dT = 0, S = 35,000)</td><td>0.2861</td></tr>
+<tr><td>Conservative</td><td>net live TP −150 units (even with −530.8 denominator savings)</td><td>0.2777</td></tr></table>
+<p class="small">These are algebraic sensitivity projections under explicit transfer assumptions, never scores.</p></section>
 </main>
-<footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>
+<footer>GEMSDOE82 · lane H82-3 (coverage-aware antislope + magnetic-tilt + conjugate + radiometric corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>

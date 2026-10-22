@@ -34,7 +34,10 @@ def main() -> int:
         "h82_3_valley": lambda: F.h82_3_valley_deflection(lidar, foot),
         "h82_4_conjugate": lambda: F.h82_4_conjugate_intersection(lidar, foot),
         "h82_5_thermal": lambda: F.h82_5_thermal_upflow_prior(ddir, foot),
+        "h82_6_magnetic": lambda: F.h82_6_magnetic_tilt(ext, foot),
     }
+    valid_lidar = np.isfinite(lidar["valid"]) & (lidar["valid"] > 0) & foot
+    np.save(out / "valid_lidar.npy", valid_lidar)
     meta = {}
     for name, fn in builders.items():
         t1 = time.time()

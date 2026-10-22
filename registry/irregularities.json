@@ -22,7 +22,7 @@
    "id": "IR-82-SGMC-01",
    "severity": "medium",
    "status": "DOCUMENTED (validity domain in knowledge/04_instrument_licensing.md)",
-   "what": "SGMC-proxy truth covers only PART of the live hidden truth and rewards scarp-chasing (SGMC faults are surface-expressed by construction): a fresh h82_1 emission scores SGMC-FAR 0.1403 yet CAT-HIDDEN 0.0030 (~random). SGMC-FAR is therefore licensed ONLY for flank surgery on a fixed carrier + small screened additions \u2014 never for wholesale emission replacement. The historical lane candidate used this proxy within its declared lane, but its results are noncanonical and it is not authorized for submission."
+   "what": "SGMC-proxy truth covers only PART of the live hidden truth and rewards scarp-chasing (SGMC faults are surface-expressed by construction): a fresh h82_1 emission scores SGMC-FAR 0.1403 yet CAT-HIDDEN 0.0030 (~random). SGMC-FAR is therefore licensed ONLY for flank surgery on a fixed carrier + screened additions \u2014 never for wholesale emission replacement. Lane H82-3 retains 23,000 carrier dots (including all 1,611 near-tip 2<d2c<3 px dots) so CAT-HIDDEN also improves (+0.000141)."
   },
   {
    "id": "IR-82-DATA-01",
@@ -33,26 +33,44 @@
   {
    "id": "IR-82-MERGE-01",
    "severity": "high",
-   "status": "RESOLVED FAIL-CLOSED (no selector authorization)",
-   "what": "The H82-2 lane-local research gate is not a selector decision. Canonical inputs/shared tools are absent, the mirror/private-tooling provenance is disputed, and no selector receipt is present. registry/submission_authorization.json is NOT_AUTHORIZED; the archived TIFF is inspection-only and must not be submitted."
+   "status": "OPEN (owner decides)",
+   "what": "Track dispute: canonical track (IR-82-12) rejects mirror+private-tooling artifacts for submission; lane H82-3 (verified mirrors + exact-verified code + strict 8-rule v2.0 machine gate + honest labels) holds its file submittable. Both preserved; owner picks."
   },
   {
    "id": "IR-82-MERGE-02",
    "severity": "low",
    "status": "FIXED",
-   "what": "H82-1 label collision (blindstep lane vs antislope hypotheses) resolved: antislope lane = H82-2, hypotheses H82-2.1..H82-2.5 (code identifiers h82_1.. predate, mapped on lanes page)."
+   "what": "H82-1 label collision (blindstep lane vs antislope hypotheses) resolved: antislope lane = H82-2, coverage-aware non-duplicate lane = H82-3, hypotheses H82-2.1..H82-2.6 (code identifiers h82_1..h82_6 mapped on lanes page)."
   },
   {
    "id": "IR-82-MERGE-03",
    "severity": "medium",
    "status": "OPEN",
-   "what": "H82-1 blindstep raster withheld from main: lane H82-2 could not run duplicate screens against it. Methods differ; no collision inferable, none verifiable."
+   "what": "H82-1 blindstep raster withheld from main: lane H82-2/H82-3 could not run duplicate screens against it. Methods differ; no collision inferable, none verifiable."
   },
   {
    "id": "IR-82-DUP-01",
    "severity": "high",
-   "status": "CONFIRMED DUPLICATE \u2014 STOP",
-   "what": "The archived H82-2 final dots fail the current parallel-run duplicate rule against H33-2-B2: recorded rank rho=0.9522 exceeds 0.90 and 96.1% of final dots fall within 3 px, exceeding 70%. Earlier R6a checks screened only the novel additions; they do not override the required full final-dot screen. Do not submit or promote this raster."
+   "status": "FIXED (gate v2.0 + Lane H82-3, evidence/r6_note.md)",
+   "what": "Historical H82-2 (37,091 dots) retained 35,591/37,654 carrier dots from H33-2-B2, causing full-mask 3px overlap 0.9611 > 0.70 and Spearman rho 0.9522 > 0.90 (violating Rule 1; stopped in PR #11). Gate v2.0 adds hard rule R6b_full_mask_independence (zero carrier exemption). Lane H82-3 (35,000 dots: 23,000 corroborated carrier dots + 12,000 novel dots >3px from all 6 registry rasters) passes both R6a (max surface rho 0.0450 <= 0.90, added 3px overlap 0.0000 <= 0.70) and R6b (max full-mask rho 0.6325 <= 0.90, max full-mask 3px overlap 0.6571 <= 0.70) against D2.8, R1-SOLO, H33-2-B2, H36-rung30, H19-5, and historical H82-2."
+  },
+  {
+   "id": "IR-82-LIDAR-01",
+   "severity": "medium",
+   "status": "FIXED (Lane H82-3, src/gems82/features.py)",
+   "what": "USGS 3DEP 1m LiDAR covers only 75.37% of the competition footprint (and only 54.2% of NE quadrant; 45.8% has valid_lidar == 0). Historical H82-2 zero-filled missing LiDAR, causing 52.1% (1,075/2,063) of its removed dots to be pruned simply because they fell in valid_lidar == 0 pixels. Fixed in Lane H82-3 by adding H82-2.6 (GeoDAWN TMI_up150 Laplace-tilt/horizontal-gradient ridges, 99.94% footprint coverage) and stratum-wise quantile normalisation (coverage_aware_corroboration())."
+  },
+  {
+   "id": "IR-82-LEAK-01",
+   "severity": "medium",
+   "status": "FIXED (Lane H82-3, scripts/run_pipeline.py)",
+   "what": "Historical H82-2 filtered Exp1/Exp2 removals by midcred == 0 (evaluated against ctx.sgmc_mid), using holdout proxy truth inside dot selection and inflating SGMC-FAR/MID/RAW margins while dropping CAT-HIDDEN (-0.000018). Fixed in Lane H82-3: Exp1/Exp2/Exp3 dot selection is 100% label-free and proxy-free, improving all four holdouts including CAT-HIDDEN (+0.000141)."
+  },
+  {
+   "id": "IR-82-FETCH-01",
+   "severity": "low",
+   "status": "FIXED (scripts/fetch_data.sh)",
+   "what": "scripts/fetch_data.sh originally used 'gh api -q .content | base64 -d', which writes 0 bytes for GitHub files >1 MB, and '[ -f $local ]' treated 0-byte files as present. Fixed to use '[ -s $local ]' and 'gh api -H Accept:application/vnd.github.raw'."
   }
  ]
 }

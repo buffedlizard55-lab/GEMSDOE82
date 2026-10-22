@@ -22,16 +22,23 @@ OVERLAP_LIMIT = 0.70
 
 
 def spearman_binary(a: np.ndarray, b: np.ndarray) -> float:
-    a = np.asarray(a, bool).ravel().astype(np.float64)
-    b = np.asarray(b, bool).ravel().astype(np.float64)
-    if a.std() == 0 or b.std() == 0:
+    """Exact Spearman rank correlation for binary {0,1} masks.
+
+    For binary arrays, average-rank assignment is a positive affine transform of
+    the indicator, so Spearman rank correlation equals Pearson phi correlation
+    identically (to machine precision ~1e-16) without O(N log N) sorting.
+    """
+    a_b = np.asarray(a, bool)
+    b_b = np.asarray(b, bool)
+    n = float(a_b.size)
+    na = float(a_b.sum())
+    nb = float(b_b.sum())
+    if na == 0.0 or na == n or nb == 0.0 or nb == n:
         return 0.0
-    ra = rankdata(a)
-    rb = rankdata(b)
-    ra -= ra.mean()
-    rb -= rb.mean()
-    denom = np.sqrt((ra ** 2).sum() * (rb ** 2).sum())
-    return float((ra * rb).sum() / denom) if denom else 0.0
+    nab = float(np.count_nonzero(a_b & b_b))
+    num = nab * n - na * nb
+    den = np.sqrt(na * (n - na) * nb * (n - nb))
+    return float(num / den) if den else 0.0
 
 
 def overlap_within_3px(dots: np.ndarray, ref_dots: np.ndarray) -> float:

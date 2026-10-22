@@ -13,12 +13,11 @@ have() { command -v "$1" >/dev/null 2>&1; }
 
 fetch_file() { # repo, ref, remote_path, local_path
   local repo="$1" ref="$2" remote="$3" local="$4"
-  if [ -f "$local" ]; then echo "exists: $local"; return 0; fi
+  if [ -s "$local" ]; then echo "exists: $local"; return 0; fi
   mkdir -p "$(dirname "$local")"
   echo "fetch: $repo@$ref:$remote -> $local"
   if have gh; then
-    gh api "repos/$repo/contents/$remote?ref=$ref" -q .content 2>/dev/null | base64 -d > "$local" \
-      || git archive --remote="https://github.com/$repo.git" "$ref" "$remote" | tar -x -O "$remote" > "$local"
+    gh api -H "Accept: application/vnd.github.raw" "repos/$repo/contents/$remote?ref=$ref" > "$local"
   else
     git archive --remote="https://github.com/$repo.git" "$ref" "$remote" | tar -x -O "$remote" > "$local"
   fi
@@ -54,6 +53,10 @@ fetch_file "$G28_REPO" "$G28_REF" "docs/downloads/gems28-h27-4-r1-solo-d2-8-2026
   "$DATA_DIR/registry/r1-solo-40199-nan.tif"
 fetch_file "$G32_REPO" "$G32_REF" "docs/downloads/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-nan.tif" \
   "$DATA_DIR/registry/h33-2-b2-37654-nan.tif"
+fetch_file "$G28_REPO" "$G28_REF" "docs/downloads/gems28-h36-1-rung30-blind-r1-20261003-b531dae0a36f-nan.tif" \
+  "$DATA_DIR/registry/h36-rung30-nan.tif"
+fetch_file "$G24_REPO" "$G24_REF" "inputs/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif" \
+  "$DATA_DIR/registry/h19-5-nan.tif"
 
 echo "done. Verifying pins..."
 python3 scripts/verify_data.py --data-dir "$DATA_DIR"

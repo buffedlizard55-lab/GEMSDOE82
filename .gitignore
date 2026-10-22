@@ -16,3 +16,26 @@ __pycache__/
 .DS_Store
 *.log
 *.tmp
+*.mmap
+*.part-*
+data/raw/
+data/processed/
+data/external/
+data/registry/
+data/scored/
+data/*.tif
+data/*.npy
+work/
+evidence/*.npy
+registry/rasters/*.tif
+
+# Keep small official bridge templates & JSON manifests tracked
+!data/bridge/
+!data/bridge/*.tif
+!data/*.json
+!docs/downloads/*.tif
+!docs/downloads/*.zip
+!docs/downloads/*.json
+!submissions/*.tif
+!submissions/*.zip
+!submissions/*.json

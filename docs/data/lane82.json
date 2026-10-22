@@ -1,23 +1,13 @@
 {
- "lane": "H82-2 antislope-corroborated",
- "updated_utc": "20261021T120000Z",
- "research_gate_status": "PASS",
- "submission_status": "DUPLICATE \u2014 NOT SELECTED \u2014 DO NOT SUBMIT",
- "selector_receipt": null,
- "duplicate_screen": {
-  "registry_raster": "H33-2-B2 carrier",
-  "final_dot_spearman_rho": 0.9522129193117653,
-  "final_dots_within_3px": 0.9611496050254779,
-  "protocol_limits": {
-   "spearman_rho_max": 0.9,
-   "dots_within_3px_max": 0.7
-  },
-  "verdict": "DUPLICATE \u2014 exceeds both lane thresholds"
- },
- "slug": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9",
- "dots": 37091,
- "sha256_zeros": "3a167949311bb4cac947b95bf8f78b83abddff5e2dbf86e8c4b8fd594b4afc02",
- "holdout_far": 0.09630186412868248,
- "quad_ci95": 0.015241611186542471,
- "note": "GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt"
+ "lane": "H82-3 coverage-aware antislope+magnetic-tilt+conjugate+radiometric",
+ "updated_utc": "20261021T233000Z",
+ "slug": "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138",
+ "verdict": "PROMOTED",
+ "dots": 35000,
+ "sha256_zeros": "dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f",
+ "holdout_far": 0.11649158136582816,
+ "quad_ci95": 0.03189590445368457,
+ "max_full_mask_rho": 0.6324754196075331,
+ "max_full_mask_overlap_3px": 0.6571428571428571,
+ "note": "GEMSDOE82 H82-3 coverage-aware antislope+TMI+conj+rad 35k dots (ov<=0.66); UNSCORED; see receipt"
 }

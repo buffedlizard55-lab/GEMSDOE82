@@ -298,6 +298,106 @@ def h82_5_thermal_upflow_prior(data_dir: str | Path, foot: np.ndarray,
     return np.where(foot, np.clip(out, 0, 1), 0.0).astype(np.float32)
 
 
+def h82_6_magnetic_tilt(ext: dict, foot: np.ndarray) -> np.ndarray:
+    """H82-2.6: GeoDAWN TMI_up150 horizontal-gradient + Laplace-tilt edge ridges.
+
+    Upward-continued (150 m) total magnetic intensity covers 99.94% of the
+    competition footprint (including the 24.63% of the footprint and 45.8% of
+    the NE quadrant where 1 m 3DEP LiDAR has valid==0). By Laplace's equation in
+    source-free space above the magnetic basement, d2M/dz2 = -(d2M/dx2 + d2M/dy2).
+    Combining the NMS crest of the horizontal gradient ||grad_h M|| (Blakely &
+    Simpson 1986) with the NMS crest of the harmonic tilt-angle gradient
+    ||grad arctan(V2 / ||grad_h M||)|| (Miller & Singh 1994; Verduzco et al.
+    2004) locates concealed intrabasin and basement-step fault contacts beneath
+    alluvial cover. Mimic: unfaulted plutonic/volcanic contacts and dikes.
+    """
+    raw = ext["TMI_up150"]
+    tmi = _fill(raw, foot, sigma=1.5)
+    gx = gaussian_filter(tmi, 1.5, order=(0, 1), mode="nearest")
+    gy = gaussian_filter(tmi, 1.5, order=(1, 0), mode="nearest")
+    hgrad = np.hypot(gx, gy).astype(np.float32)
+    lap_h = -(gaussian_filter(tmi, 1.5, order=(0, 2), mode="nearest") +
+              gaussian_filter(tmi, 1.5, order=(2, 0), mode="nearest"))
+    tilt = np.arctan2(lap_h, np.maximum(hgrad, 1e-6)).astype(np.float32)
+    tilt_grad = grad_mag(tilt, sigma=1.0)
+    s = (0.6 * robust_unit(nms_ridge(hgrad, foot), foot) +
+         0.4 * robust_unit(nms_ridge(tilt_grad, foot), foot))
+    valid_tmi = np.asarray(foot, bool) & np.isfinite(raw)
+    return np.where(valid_tmi, robust_unit(s, foot), 0.0).astype(np.float32)
+
+
+def _stratum_unit(a: np.ndarray, mask: np.ndarray, pct: float = 99.5) -> np.ndarray:
+    v = np.clip(np.nan_to_num(a, nan=0.0), 0.0, None)
+    m = np.asarray(mask, bool)
+    if not m.any():
+        return np.zeros(a.shape, dtype=np.float32)
+    hi = float(np.percentile(v[m], pct))
+    return np.clip(v / max(hi, 1e-9), 0.0, 1.0).astype(np.float32)
+
+
+def _quantile_rank(a: np.ndarray, mask: np.ndarray) -> np.ndarray:
+    from scipy.stats import rankdata
+    out = np.zeros(a.shape, dtype=np.float32)
+    m = np.asarray(mask, bool) & np.isfinite(a)
+    if not m.any():
+        return out
+    vals = a[m]
+    out[m] = ((rankdata(vals, method="average") - 0.5) / float(vals.size)).astype(np.float32)
+    return out
+
+
+def coverage_aware_corroboration(
+    s1_antislope: np.ndarray,
+    s2_rad: np.ndarray,
+    s3_valley: np.ndarray,
+    s4_conj: np.ndarray,
+    s5_thermal: np.ndarray,
+    s6_mag: np.ndarray,
+    valid_lidar: np.ndarray,
+    foot: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Coverage-aware multi-physics corroboration (C_cov, C_add).
+
+    Fixes the H82-2 missing-LiDAR coverage confound (IR-82-LIDAR-01): 1 m LiDAR
+    covers 75.37% of the footprint (valid_lidar==False on 24.63% of footprint
+    and 45.8% of NE quadrant). Averaging zero-filled LiDAR surfaces with
+    full-coverage GeoDAWN surfaces caused 52.1% of H82-2's dot removals to fall
+    in valid_lidar==0 regions purely due to missing LiDAR survey tiles.
+
+    Returns:
+      * C_cov : stratum-quantile-normalised score in [0, 1] with identical
+                Uniform(0, 1) marginal distribution on both valid_lidar and
+                no_lidar strata (used for unbiased carrier retention).
+      * C_add : coverage-aware physical corroboration amplitude in [0, 1] (used
+                for field-first Poisson-disk placement of novel far-field dots).
+    """
+    foot_b = np.asarray(foot, bool)
+    vl = np.asarray(valid_lidar, bool) & foot_b
+    nl = foot_b & ~vl
+
+    u1 = _stratum_unit(s1_antislope, vl)
+    u3 = _stratum_unit(s3_valley, vl)
+    u4 = _stratum_unit(s4_conj, vl)
+    u2 = _stratum_unit(s2_rad, foot_b)
+    u5 = _stratum_unit(s5_thermal, foot_b)
+    u6 = _stratum_unit(s6_mag, foot_b)
+
+    c_lidar = (0.45 * u1 + 0.25 * u4 + 0.12 * u3 + 0.09 * u2 + 0.09 * u6).astype(np.float32)
+    c_nolidar = (0.45 * u6 + 0.40 * u2 + 0.15 * u5).astype(np.float32)
+
+    c_cov = np.zeros(foot_b.shape, dtype=np.float32)
+    c_cov[vl] = _quantile_rank(c_lidar, vl)[vl]
+    c_cov[nl] = _quantile_rank(c_nolidar, nl)[nl]
+
+    c_add = np.where(
+        vl,
+        0.50 * u1 + 0.25 * u4 + 0.15 * u3 + 0.05 * u2 + 0.05 * u6,
+        0.25 * (0.55 * u6 + 0.45 * u2),
+    ).astype(np.float32)
+    c_add = np.where(foot_b, c_add, 0.0).astype(np.float32)
+    return c_cov, c_add
+
+
 def fuse(surfaces: dict[str, np.ndarray], foot: np.ndarray,
          weights: dict[str, float] | None = None) -> np.ndarray:
     """Weighted-mean fusion of [0,1] surfaces (default: equal weights)."""
