@@ -21,6 +21,9 @@ PINS = {
     "external/geodawn_extensions_u8.tif": ("a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b", 27132925),
     "external/gdr_wellspring_in_footprint.csv": ("122718e65bdf55aab0ee12ad20d80062f0deb1de957225a61ad880dd5dc196ea", 2146771),
     "registry/d28-44090-nan.tif": ("91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8", 1603424),
+    "registry/r1-solo-40199-nan.tif": ("ab02300152248fdda04e988e2cd2a0c13f35eec42fcf670a15e8b76b19e24a73", 1595850),
+    "registry/h36-rung30-nan.tif": ("5556aa1438fd67376b60d5ffc99228ec09dcc11a8408298a743ccb88d6163641", 1590848),
+    "registry/h19-5-nan.tif": ("ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d", 1712322),
     "registry/h33-2-b2-37654-nan.tif": ("baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd", 355443),
 }
 

@@ -2,15 +2,59 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Download — GEMSDOE82</title><link rel="stylesheet" href="assets/site.css"></head>
 <body><header><h1>GEMSDOE82 — fault discovery for the DOE GEMS Prize (two tracks)</h1>
-<p>Lane H82-2 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
+<p>Lane H82-3 mirror-verified submission + canonical-template track position · every number below is generated from audited receipts</p></header>
 <nav><a href="index.html">Download</a><a href="executive-summary.html">Executive summary</a><a href="hypotheses.html">Hypotheses</a><a href="research.html">Research</a><a href="leaderboard.html">Leaderboard</a><a href="lanes.html">Lanes</a><a href="sources.html">Sources</a><a href="irregularities.html">Irregularities</a></nav><main>
 <section class="card dispute"><h2>⚠️ Track status + policy dispute (read before downloading)</h2>
-<p><b>Lane H82-2 (mirror-verified track):</b> the file below passed the lane's 7-rule gate — see the verdict badge.
+<p><b>Lane H82-3 (mirror-verified track):</b> the 35,000-dot file below passed the strict 8-rule v2.0 gate
+(including BOTH discovery-surface R6a AND full-mask final-dot R6b duplicate checks: max Spearman ρ 0.6325 ≤ 0.90,
+max 3-px overlap 0.6571 ≤ 0.70 across all 6 registry rasters, solving the H82-2 final-dot duplicate stop from PR #11).
 <b>Canonical-template track:</b> holds NOT READY (no canonical data/tools in repo; IR-82-12) and disputes
 mirror+private-tooling artifacts as submission-eligible. <b>Both positions are preserved in this repo;</b>
 the owner decides. Assumptions: sha256-verified owner mirrors (pins in <code>registry/data_manifest.json</code>),
 exact brute-force-verified metric code, owner-reported live chain (no organizer receipts).
 Details: <a href="lanes.html">all lanes + dispute</a> · <a href="irregularities.html">irregularities</a> ·
 <a href="canon/index.html">archived canonical-track position</a>.</p></section>
-<section class='card dispute'><h2>DO NOT SUBMIT — duplicate</h2><p>Historical H82-2 final dots overlap a registered raster by more than 70% within 3 pixels (H33-2-B2: 96.1%; rank correlation 0.952). The previous lane gate exempted carrier dots; that exemption conflicts with the explicit final-dot duplicate rule. No eligible submission is available. See the negative run card and irregularities.</p><p><a href='data/run_card.json'>Canonical run card</a></p></section></main>
-<footer>GEMSDOE82 · lane 82 (antislope-scarp + radiometric-break corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>
+
+<section class="card">
+<h2>⬇ Submission download — verdict first</h2>
+<p><span class="badge promoted">PROMOTED</span>
+ — machine-verified (8/8 rules PASS incl. strict full-mask duplicate guard): safe to download and submit.</p>
+<p><a class="btn" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif">⬇ Download gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif (139.2 KB)</a>
+<a class="btn sec" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-nan.tif">NaN-outside twin (182.6 KB)</a>
+<a class="btn sec" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.zip">ZIP container</a></p>
+<p class="small">Submit the <b>-zeros.tif</b> (or its <b>.zip</b>): all 12,279,160 cells finite and in [0,1], so the portal validator cannot raise
+“Predicted values must be in range [0,1]”. Copy-paste note (≤140 chars):<br>
+<code class="mono">GEMSDOE82 H82-3 coverage-aware antislope+TMI+conj+rad 35k dots (ov<=0.66); UNSCORED; see receipt</code></p>
+<table><tr><th>Receipt</th><th>Value</th></tr>
+<tr><td>Dots (positive px)</td><td>35,000</td></tr>
+<tr><td>On-catalogue dots</td><td>0</td></tr>
+<tr><td>sha256 (-zeros.tif)</td><td class="mono">dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f</td></tr>
+<tr><td>Grid</td><td>3730×3292 · EPSG:32611 · 100 m · float32 · single band</td></tr>
+<tr><td>Validator audit</td><td>12/12 PASS (<a href="downloads/checks-gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif.json">zeros receipt</a> · <a href="downloads/checks-gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-nan.tif.json">nan receipt</a>)</td></tr></table>
+<p class="small"><b>Historical duplicate note (PR #11):</b> the earlier 37,091-dot H82-2 artifact
+(<code>gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9</code>) is archived as
+<b>DO NOT SUBMIT — duplicate</b> (final-dot overlap 0.9611 &gt; 0.70 vs H33-2-B2) and excluded from download links here.</p>
+</section>
+<section class="card"><h2>What this file is (Lane H82-3)</h2>
+<p>Lane H82-3 candidate (35,000 dots): retains the top <b>23,000</b> coverage-aware corroborated dots from H33-2-B2
+(protecting the 1,611 near-tip 2&lt;d2c&lt;3 px dots that carry 100% of CAT-HIDDEN TP, removing 14,654 uncorroborated
+dots with <b>zero test-proxy leakage</b>) and adds <b>12,000</b> corroborated far-field dots placed strictly &gt;3.0 px
+from all 6 registry rasters (novel-change fraction 76.15%). Coverage-aware corroboration solves the 24.63% missing-1m-LiDAR
+confound (45.8% of NE quadrant) by fusing GeoDAWN <code>TMI_up150</code> Laplace-tilt/horizontal-gradient ridges (H82-2.6)
++ radiometric ratio breaks (H82-2.2) + GDR thermal priors (H82-2.5) in the no-LiDAR stratum — all 6 surfaces pass the
+leakage canary (max AUC 0.5415 ≤ 0.90).</p>
+<div class="grid"><div><h3>Holdout-DTI (gems82-holdout-v2)</h3>
+<table><tr><th>Instrument</th><th>Pooled</th><th>Margin vs base</th></tr>
+<tr><td>SGMC-FAR (primary, K=55,109)</td><td>0.116492</td><td>+0.029809</td></tr>
+<tr><td>SGMC-MID (K=62,122)</td><td>0.117778</td><td>+0.022392</td></tr>
+<tr><td>SGMC-RAW (K=62,703)</td><td>0.117946</td><td>+0.021886</td></tr>
+<tr><td>CAT-HIDDEN (K=22,232)</td><td>0.004656</td><td>+0.000141</td></tr></table>
+<p class="small">Primary 95% CI (quadrant): 0.11533 ± 0.03190; quadrants positive 4/4. A projection is never written as a score.</p></div>
+<div><h3>Gate v2.0 (8 rules)</h3><table><tr><td><code>R1_primary_win</code></td><td>PASS</td></tr><tr><td><code>R2_quadrant_consistency</code></td><td>PASS</td></tr><tr><td><code>R3_no_loss_mid</code></td><td>PASS</td></tr><tr><td><code>R4_no_loss_raw</code></td><td>PASS</td></tr><tr><td><code>R5_live_safety</code></td><td>PASS</td></tr><tr><td><code>R6a_lane_independence</code></td><td>PASS</td></tr><tr><td><code>R6b_full_mask_independence</code></td><td>PASS</td></tr><tr><td><code>R7_audit</code></td><td>PASS</td></tr></table>
+<p class="small">Net dots −2,654 vs base · net TP +1,518.8 FAR / +1,257.7 MID · added-dot screen 0.2647/dot vs 0.111 bar (4.76× live bar 0.0556).</p></div></div></section>
+<section class="card"><h2>Strict duplicate guard (R6a surface + R6b full final-dot mask)</h2>
+<table><tr><th>Registry raster</th><th>Surface rank-ρ (≤0.90)</th><th>Added-dots 3px overlap (≤0.70)</th><th>Full-mask rank-ρ (≤0.90)</th><th>Full-mask 3px overlap (≤0.70)</th><th>Verdict</th></tr><tr><td><code>d28-44090</code></td><td>0.0298</td><td>0.0000</td><td>0.5842</td><td>0.6571</td><td>independent</td></tr><tr><td><code>r1-solo-40199</code></td><td>0.0281</td><td>0.0000</td><td>0.6120</td><td>0.6571</td><td>independent</td></tr><tr><td><code>h33-2-b2-37654</code></td><td>0.0273</td><td>0.0000</td><td>0.6325</td><td>0.6571</td><td>independent</td></tr><tr><td><code>h36-rung30</code></td><td>0.0282</td><td>0.0000</td><td>0.4445</td><td>0.6561</td><td>independent</td></tr><tr><td><code>h19-5</code></td><td>0.0450</td><td>0.0000</td><td>0.3502</td><td>0.6571</td><td>independent</td></tr><tr><td><code>h82-2-37091</code></td><td>0.0367</td><td>0.0000</td><td>0.6087</td><td>0.6339</td><td>independent</td></tr></table>
+<p class="small">Both discovery-surface (R6a) and full final-dot mask (R6b) checks pass against all 6 registry rasters (including H33-2-B2 and historical H82-2) with zero carrier exemption.</p></section>
+<section class="card"><h2>Per-quadrant primary DTI</h2><table><tr><th>Quadrant</th><th>SGMC-FAR DTI</th></tr><tr><td>NW</td><td>0.086995</td></tr><tr><td>NE</td><td>0.097164</td></tr><tr><td>SW</td><td>0.116628</td></tr><tr><td>SE</td><td>0.160533</td></tr></table></section>
+</main>
+<footer>GEMSDOE82 · lane H82-3 (coverage-aware antislope + magnetic-tilt + conjugate + radiometric corroboration) · Core values: Maximize P(Win) · Own the Outcome · No organizer score exists for any artifact here unless a receipt is shown.</footer></body></html>

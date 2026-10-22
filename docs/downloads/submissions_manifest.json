@@ -1,10 +1,13 @@
 {
- "slug": "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9",
+ "slug": "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138",
  "verdict": "PROMOTED",
- "note": "GEMSDOE82 H82 antislope+conjugate corroborated surgery+addition on H33-2-B2 base; UNSCORED; see receipt",
+ "note": "GEMSDOE82 H82-3 coverage-aware antislope+TMI+conj+rad 35k dots (ov<=0.66); UNSCORED; see receipt",
  "files": [
-  "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif",
-  "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-nan.tif",
-  "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.zip"
+  "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif",
+  "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-nan.tif",
+  "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.zip"
+ ],
+ "archived_duplicates": [
+  "gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9"
  ]
 }

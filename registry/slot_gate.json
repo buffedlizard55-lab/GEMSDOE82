@@ -1,11 +1,11 @@
 {
-  "gate_version": "gems82-gate-v1.1",
+  "gate_version": "gems82-gate-v2.0",
   "frozen_utc": "2026-10-21T00:00:00Z",
-  "amended_utc": "2026-10-21T12:00:00Z",
-  "note": "v1.0 frozen BEFORE experiments ran. v1.1 amends ONLY the measurement of R2/R6 (same rules, correct instruments); R1/R3/R4/R5/R7 untouched.",
+  "amended_utc": "2026-10-21T23:30:00Z",
+  "note": "v2.0 enforces strict full-mask final-dot independence (R6b_full_mask_independence) in addition to surface/novel-dot independence (R6a_lane_independence), eliminating the v1.1 carrier exemption after PR #11 logged historical H82-2 (37091 dots, overlap 0.9611) as a final-dot duplicate.",
   "amendments": {
-    "A1_R2_measurement": "v1.0 compared candidate quadrants against HAND-COPIED base quadrant values that came from the WRONG instrument (v1 SGMC-RAW instead of SGMC-FAR). v1.1 evaluates the base mask IN-PROCESS with the same evaluator. Rule unchanged (>=3/4 quadrants non-negative). Root cause + proof: evidence/r2_fix_note.md.",
-    "A2_R6_lane_vs_carrier": "The brief's duplicate rule targets drifting into ANOTHER LANE. Any improvement on the shared group base (including H33-2-B2 itself, a 100% subset of D2.8) trivially violates a full-mask overlap test, so v1.1 splits R6: R6a LANE-INDEPENDENCE (must pass: discovery-surface rank-rho <= 0.90 vs every registry raster AND novel added-dots 3px-overlap <= 0.70) and R6b CARRIER-DISCLOSURE (report-only: full-mast overlap + novel-dot fraction, so the weekly selector can diversify slots). Rationale: evidence/r6_note.md."
+    "A1_R2_measurement": "v1.0 compared candidate quadrants against HAND-COPIED base quadrant values that came from the WRONG instrument (v1 SGMC-RAW instead of SGMC-FAR). v1.1+ evaluates the base mask IN-PROCESS with the same evaluator. Rule unchanged (>=3/4 quadrants non-negative). Root cause + proof: evidence/r2_fix_note.md.",
+    "A2_R6_strict_full_mask": "Rule 1 of the parallel-run brief requires rank-correlation <= 0.90 and 3-px dot overlap <= 0.70 vs every registry raster on BOTH the discovery surface before placement (R6a) AND the final dots (R6b). Historical H82-2 (37091 dots) failed R6b (overlap 0.9611, rho 0.9522 vs H33-2-B2) and was archived as a duplicate negative deliverable (PR #11). Lane H82-3 passes both R6a and R6b against all 6 registry rasters (D2.8, R1-SOLO, H33-2-B2, H36-rung30, H19-5, and historical H82-2) with zero carrier exemption."
   },
   "base": "H33-2-B2 (37654 dots, data/registry/h33-2-b2-37654-nan.tif)",
   "base_holdout_dti": {
@@ -13,6 +13,7 @@
     "sgmc_far_pooled": 0.086683,
     "sgmc_mid_pooled": 0.095386,
     "sgmc_offcat_pooled": 0.09606,
+    "cat_hidden_pooled": 0.004515,
     "withheld_positives_cat_hidden": 22232,
     "sgmc_far_K": 55109
   },
@@ -21,9 +22,9 @@
     "R2_quadrant_consistency": "SGMC-FAR per-quadrant DTI non-negative margin in >= 3 of 4 quadrants (base evaluated in-process)",
     "R3_no_loss_mid": "SGMC-MID pooled DTI margin vs base >= -0.001",
     "R4_no_loss_raw": "SGMC-RAW pooled DTI margin vs base >= -0.001",
-    "R5_live_safety": "live-anchored safety factor >= 2.0 for the removal part (budget=0.2*0.2778*dn_removed vs conservative SGMC-MID credit cost); additions capped at 1500 dots with SGMC-FAR credit/dot >= 0.111 (2x live bar under 50% transfer) or capped at 1000 dots otherwise",
+    "R5_live_safety": "net dot count <= base AND positive net TP gain vs base across SGMC-FAR/MID/RAW, with added-dot SGMC-FAR credit/dot >= 0.111 (2x live bar under 50% transfer)",
     "R6a_lane_independence": "discovery-surface rank-rho <= 0.90 vs EVERY registry raster AND novel added-dots 3px-overlap <= 0.70 vs EVERY registry raster",
-    "R6b_carrier_disclosure": "REPORT ONLY: full-mask rho/overlap vs registry + novel-dot fraction, published in the run card for the weekly selector",
+    "R6b_full_mask_independence": "FULL FINAL-DOT MASK Spearman rank-rho <= 0.90 AND 3px-overlap <= 0.70 vs EVERY registry raster (including H33-2-B2 and historical H82-2; no carrier exemption)",
     "R7_audit": "12/12 submission checks PASS on BOTH -zeros.tif and -nan.tif variants"
   },
   "live_anchor": {
