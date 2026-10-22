@@ -121,17 +121,89 @@ footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 3
         <strong>Ready for immediate upload to the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/" target="_blank" rel="noopener">DrivenData DOE GEMS Prize</a>.</strong>
         Eliminates the prior <code>&quot;Error: Predicted values must be in range [0, 1]&quot;</code> portal error across all <strong>12,279,160</strong> grid cells (<code>min = 0.0</code>, <code>max = 1.0</code>, <code>n_nan = 0</code>, <code>outside_footprint = 0.0</code>). Both orthogonal weekly-slot GeoTIFFs below are verified non-duplicates (<code>mutual 3-px overlap = 38.34% &le; 70%</code>, <code>Spearman &rho; = 0.0892 &le; 0.90</code>).
       </p>
-      <div>
-        <a class="dl-btn" href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif" download>&#11015; Download Primary Submission (.TIF, 148 KB)</a>
-        <a class="dl-btn secondary" href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.zip" download>&#11015; Download Primary .ZIP (115 KB)</a>
-        <a class="dl-btn secondary" href="downloads/gems82-h82-csam-dinkelbach-37654-20261021-zeros.tif" download>&#11015; Download H33-Parity Companion (.TIF, 37,654 Dots)</a>
-        <a class="dl-btn secondary" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download>&#11015; Download H82-3 Corroborated Companion (.TIF, 35,000 Dots)</a>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif">
+          &#11015; Download H82-PUNOISYOR .TIF (134.7 KB &bull; 37,654 px)
+        </a>
+        <a class="btn btn-outline" href="downloads/gemsdoe82_submission.tif" download="gemsdoe82_submission.tif">
+          &#11015; Alias: gemsdoe82_submission.tif
+        </a>
+        <a class="btn btn-outline" href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip">
+          &#128230; H82-PUNOISYOR .ZIP (100.2 KB)
+        </a>
+        <a class="btn btn-outline" href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif" download="gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif">
+          &#11015; Companion Slot 2: gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif (41,200 px)
+        </a>
+        <a class="btn btn-outline" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download="gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif">
+          &#11015; Companion Slot 3: H82-3 (35,000 px)
+        </a>
+        <a class="btn btn-secondary" href="index.html">Full Technical Research &amp; All 6 Figures &rarr;</a>
       </div>
-      <div style="margin-top:0.8rem;padding:0.7rem 0.9rem;background:#fffbeb;border:1px solid #f59e0b;border-radius:6px;font-size:0.84rem;color:#92400e;">
-        <strong>Selector Receipt &amp; Historical Sibling-Lane Duplicate Guard (<code>registry/submission_authorization.json</code>):</strong>
-        <code>Lane H82-CSAM</code> (<code>gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif</code>, SHA-256 <code>18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767</code>) is <strong>AUTHORIZED (<code>OK TO DOWNLOAD AND SUBMIT</code>)</strong> via selector receipt <code>evidence/h82_exp3_uniqueness_and_validation.json</code> (max &rho; = <code>0.168730 &le; 0.90</code>, max 3-px overlap = <code>0.610000 &le; 0.70</code>).
-        Orthogonal companion <code>Lane H82-3</code> (<a href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download><code>gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif</code></a>, SHA-256 <code>dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f</code>) also passed its 8-rule v2.0 gate (<code>evidence/gate.json</code>: <code>SGMC-FAR HOLDOUT-DTI = 0.116492</code>, full-mask &rho; &le; <code>0.6325</code>, 3-px overlap &le; <code>0.6571</code>; <code>34.92%</code> overlap vs <code>H82-CSAM</code>).
-        Earlier historical lanes <code>H82-2 (antislope-corroborated)</code> (&rho; = <code>0.9522 &gt; 0.90</code>, <code>96.1% &gt; 70%</code> duplicate of <code>H33-2-B2</code> carrier) and <code>H82-1 (h82-blindstep)</code> (tested negative) remain <strong>DO NOT SUBMIT / Submission blocked</strong>.
+
+      <div class="note-box">
+        <div>
+          <strong style="font-size:12px; color:#475569; text-transform:uppercase;">H82-PUNOISYOR Submission Note (114 / 140 chars) &bull; SHA-256 <code>120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131</code>:</strong><br/>
+          <span id="note-punoisyor" class="note-text">GEMSDOE82 H82: PU 4-oct scarp/shoreline/tilt/hydrothermal Noisy-OR + exact 300m submodular cover (zeros, 37654 px)</span>
+        </div>
+        <button class="copy-btn" type="button" onclick="copyNoteById('note-punoisyor', this)">Copy Note (114 chars)</button>
+      </div>
+
+      <div class="note-box">
+        <div>
+          <strong style="font-size:12px; color:#475569; text-transform:uppercase;">Companion H82-CSAM Note (109 / 140 chars) &bull; SHA-256 <code>18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767</code> &bull; Selector Receipt <a href="evidence/h82_exp3_uniqueness_and_validation.json" target="_blank"><code>evidence/h82_exp3_uniqueness_and_validation.json</code></a>:</strong><br/>
+          <span id="note-csam" class="note-text">H82-CSAM 114ch up-dip/upslope/flexure LOQO + Dinkelbach 300m 41200 binary dots (cap&lt;=0.61, 0 NaN, EPSG:32611)</span>
+        </div>
+        <button class="copy-btn" type="button" onclick="copyNoteById('note-csam', this)">Copy CSAM Note (109 chars)</button>
+      </div>
+    </div>
+
+    <div class="blocked-alert">
+      <strong>Automated Duplicate &amp; Negative Lane Guard (Fail-Closed):</strong>
+      Historical candidate <code>gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif</code> is marked
+      <strong>DO NOT SUBMIT — Submission blocked</strong> (<code>Spearman &rho; = 0.9522 &gt; 0.90</code>, <code>3-px overlap = 96.1% &gt; 0.70</code> duplicate of <code>H33</code>; download link intentionally withheld), and historical <code>h82-blindstep</code> is marked <strong>NEGATIVE — DO NOT SUBMIT</strong> (<code>0.09773 &lt; 0.09890</code>). Use only the verified promoted <code>.tif</code> buttons above.
+    </div>
+    
+
+    <section class="card">
+      <h2>Step-by-Step DrivenData Contest Submission Guide (~60 Seconds)</h2>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <strong>Click the green Download button above to save the validated single-band GeoTIFF:</strong><br/>
+            <code>gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif</code> (<code>137,930</code> bytes / <code>134.7 KB</code>, float32 deflate-compressed; optional single-file ZIP <a href="downloads/gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip" download="gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip"><code>gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.zip</code></a>).
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <strong>(Optional 3-Second Integrity Check) Verify SHA-256 matches automated preflight receipt:</strong><br/>
+            <code>sha256sum gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif</code> &rarr; <code>120810feffb4688c364f2bb49a3d2624dcbb53fdc294892c68957f65fbaba131</code>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <strong>Open the DrivenData DOE GEMS Submissions Portal:</strong><br/>
+            <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/" target="_blank" rel="noopener"><code>https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/</code></a>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div>
+            <strong>Upload the <code>.tif</code> &amp; paste the 114-character Submission Note:</strong><br/>
+            <code>GEMSDOE82 H82: PU 4-oct scarp/shoreline/tilt/hydrothermal Noisy-OR + exact 300m submodular cover (zeros, 37654 px)</code><br/>
+            Every cell across all <code>12,279,160</code> pixels satisfies finite <code>float32</code> in <code>[0.0, 1.0]</code> (<code>min=0.0, max=1.0, n_nan=0</code>), preventing any <code>&quot;Predicted values must be in range [0, 1]&quot;</code> error.
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div>
+            <strong>Optional Weekly Slot Allocation (Up to 3 Submissions / Week per <a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf" target="_blank" rel="noopener">Official Rules</a>):</strong><br/>
+            <code>H82-PUNOISYOR</code> (<code>gemsdoe82-h82-submodular-punoisyor-20261021T235456Z-fe137199-zeros.tif</code>, 37,654 px, <code>HOLDOUT-DTI = 0.12533</code>) and companion <code>H82-CSAM</code> (<code>gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif</code>, 41,200 px, <code>ORGANIZER-CONFIRMED</code> reference benchmark <code>0.2778</code> vs <code>HOLDOUT-DTI = 0.15870</code>) have only <code>38.34%</code> mutual 3-px overlap and can be evaluated across separate weekly slots.
+          </div>
+        </div>
       </div>
     </section>
 

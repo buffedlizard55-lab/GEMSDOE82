@@ -169,7 +169,10 @@ def _hero_section(rc: dict, auth: dict, csam_rc: dict, is_exec: bool) -> str:
           &#128230; H82-PUNOISYOR .ZIP ({kb_zip:.1f} KB)
         </a>
         <a class="btn btn-outline" href="downloads/{csam_tif}" download="{csam_tif}">
-          &#11015; Companion: {csam_tif} (41,200 px)
+          &#11015; Companion Slot 2: {csam_tif} (41,200 px)
+        </a>
+        <a class="btn btn-outline" href="downloads/gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif" download="gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif">
+          &#11015; Companion Slot 3: H82-3 (35,000 px)
         </a>
         {nav_btn}
       </div>

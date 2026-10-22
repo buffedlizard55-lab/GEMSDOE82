@@ -18,6 +18,14 @@
       "binary_spearman_rho": 0.02832,
       "surface_spearman_rho": 0.08653,
       "unique_pass": true
+    },
+    "H82_3_35000": {
+      "fwd_my_dots_within_3px_of_theirs": 0.41608,
+      "rev_their_dots_within_3px_of_mine": 0.31946,
+      "mutual_3px_overlap": 0.31946,
+      "binary_spearman_rho": 0.02205,
+      "surface_spearman_rho": 0.06036,
+      "unique_pass": true
     }
   }
 }
