@@ -1,32 +1,35 @@
-# Merged 2026-10-21: canonical-track patterns (anchored) + lane-82 patterns.
-# NOTE: patterns are anchored with leading / so docs/data/ (Pages artifact)
-# stays committable.
-
-# Authorized competition inputs and derived caches are local-only.
-/data/
-!/data/README.md
-/data/*.tif
-/data/*.tiff
-/data/*.zip
-/data/*.csv
-/data/*.json
-/data/cache/
-/cache/
-/work/
-/registry/rasters/*.tif
-/registry/rasters/*.tiff
-
-# Python and local environment artifacts.
+# Python & test caches
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
-.env
-
-# Keep generated candidate artifacts out of source unless deliberately published
-# after validation in docs/downloads/ with a run card and checksum.
-submission.tif
-gems82-*-inspection.tif
-
-# Lane-82 local fetch/scratch (reproducible via scripts/fetch_data.sh).
-*.egg-info/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Large restored rasters, memmaps, and temporary files
+*.f32
+*.f16
+*.tmp
+*.mmap
+*.part-*
+data/raw/
+data/processed/
+data/external/
+data/scored/
+data/*.tif
+data/*.npy
+evidence/*.npy
+registry/rasters/*.tif
+
+# Keep small official bridge templates & JSON manifests tracked
+!data/bridge/
+!data/bridge/*.tif
+!data/*.json
+!docs/downloads/*.tif
+!docs/downloads/*.zip
+!docs/downloads/*.json
+!submissions/*.tif
+!submissions/*.zip
+!submissions/*.json

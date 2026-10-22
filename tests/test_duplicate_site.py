@@ -1,4 +1,4 @@
-"""Fail closed when historical final dots violate the user's duplicate rule."""
+"""Fail closed when historical H82-2 final dots violate the user's duplicate rule."""
 import json
 import unittest
 from pathlib import Path
@@ -14,6 +14,8 @@ class DuplicateSiteTest(unittest.TestCase):
                             for v in carrier.values()))
         for page in ('index.html', 'executive-summary.html'):
             text = (ROOT / 'docs' / page).read_text()
-            self.assertIn('DO NOT SUBMIT' if page == 'index.html' else 'Submission blocked', text)
-            self.assertNotIn('href="downloads/', text)
-            self.assertNotIn("href='downloads/", text)
+            self.assertIn('DO NOT SUBMIT', text)
+            self.assertIn('Submission blocked', text)
+            self.assertNotIn('href="downloads/gems82-h82-antislope-corroborated', text)
+            self.assertNotIn("href='downloads/gems82-h82-antislope-corroborated", text)
+            self.assertIn('href="downloads/gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif"', text)
