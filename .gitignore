@@ -1,0 +1,14 @@
+# Local heavy dataset, memmap & 1,026-raster caches (restorable via scripts/restore_and_verify_data.py)
+.cache/
+
+# Python bytecode & test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS & temporary scratch
+.DS_Store
+*.log
+*.tmp
