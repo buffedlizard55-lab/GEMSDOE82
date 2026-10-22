@@ -351,6 +351,13 @@
           <div style="font-size:0.8rem;color:var(--muted);">Max 3-px overlap <code>0.6100</code> (`0.4399` vs H33); max &rho; = <code>0.2521</code></div>
         </div>
       </div>
+
+      <div style="margin-top:0.9rem;padding:0.85rem 1rem;background:#fffbeb;border:1px solid #f59e0b;border-radius:8px;font-size:0.86rem;color:#92400e;">
+        <strong>Selector Receipt &amp; Historical Sibling-Lane Duplicate Guard (<code>registry/submission_authorization.json</code>):</strong><br/>
+        &bull; <strong>Authorized &amp; Promoted (<code>OK TO DOWNLOAD AND SUBMIT</code>):</strong> <code>Lane H82-CSAM</code> (<code>gems82-h82-csam-dinkelbach-41200-20261021-zeros.tif</code>, SHA-256 <code>18bdf3f4eb021b0b2a45aca2627d9c81c656d366618cc9f39f413f2163e01767</code>, selector receipt <code>evidence/h82_exp3_uniqueness_and_validation.json</code>) &mdash; <code>0.165778</code> pooled <code>HOLDOUT-DTI</code>, max Spearman &rho; = <code>0.168730 &le; 0.90</code>, max 3-px overlap = <code>0.610000 &le; 0.70</code> (<code>43.99%</code> vs. <code>H33-2-B2</code>).<br/>
+        &bull; <strong>Historical Sibling Lane <code>H82-2 (antislope-corroborated)</code> &mdash; <code>DO NOT SUBMIT</code> (Submission blocked &mdash; duplicate of <code>H33-2-B2</code> carrier):</strong> <code>gems82-h82-antislope-corroborated-37091-20261021T120000Z-49437fe9-zeros.tif</code> had final-dot Spearman &rho; = <code>0.9522 &gt; 0.90</code> and <code>96.1%</code> (<code>0.9611 &gt; 0.70</code>) dots within 3 px of <code>H33-2-B2</code>. Retained in repository history for audit/learning only; download links suppressed on entry pages.<br/>
+        &bull; <strong>Historical Sibling Lane <code>H82-1 (h82-blindstep)</code> &mdash; <code>DO NOT SUBMIT</code> (Submission blocked &mdash; tested negative):</strong> Seed-30 <code>HOLDOUT-DTI = 0.0977</code> vs. <code>0.0989</code> base (<code>-0.0012</code>).
+      </div>
     </section>
 
     <!-- SECTION 2: GEMSDOE32 FORENSICS -->
