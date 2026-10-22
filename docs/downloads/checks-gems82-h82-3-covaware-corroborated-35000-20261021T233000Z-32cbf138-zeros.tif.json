@@ -1,0 +1,44 @@
+{
+ "filename": "gems82-h82-3-covaware-corroborated-35000-20261021T233000Z-32cbf138-zeros.tif",
+ "size_bytes": 142538,
+ "sha256": "dbc4cdb6a541e0c2e608100aa18d1608218d20eda0763d9bedf5f541959efc2f",
+ "mode": "zeros",
+ "crs": "EPSG:32611",
+ "transform": [
+  100.0,
+  0.0,
+  243350.0,
+  0.0,
+  -100.0,
+  4508550.0
+ ],
+ "shape": [
+  3730,
+  3292
+ ],
+ "dtype": "float32",
+ "nodata": null,
+ "nodata_repr": "None",
+ "emitted_positive_pixels": 35000,
+ "footprint_fraction": 0.006773,
+ "on_catalogue_positive_pixels": 0,
+ "in_footprint_finite_pixels": 5167373,
+ "in_footprint_min": 0.0,
+ "in_footprint_max": 1.0,
+ "full_grid_finite_pixels": 12279160,
+ "checks": {
+  "single_band": true,
+  "dtype_float32": true,
+  "dimensions_3730x3292": true,
+  "crs_epsg_32611": true,
+  "in_footprint_all_finite": true,
+  "in_footprint_zero_nan": true,
+  "in_footprint_zero_inf": true,
+  "in_footprint_zero_sentinel": true,
+  "in_footprint_range_0_1": true,
+  "outside_footprint_compliant": true,
+  "zero_on_catalogue_leakage": true,
+  "validator_range_0_1_guaranteed": true
+ },
+ "all_checks_passed": true
+}

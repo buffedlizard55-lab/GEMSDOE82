@@ -17,9 +17,11 @@ __pycache__/
 data/raw/
 data/processed/
 data/external/
+data/registry/
 data/scored/
 data/*.tif
 data/*.npy
+work/
 evidence/*.npy
 registry/rasters/*.tif
 
